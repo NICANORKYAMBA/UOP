@@ -16,6 +16,16 @@ CS1111 covers fundamental concepts in computer science including:
 
 ```
 UOP/
+├── CS1111_Unit1_Introduction/
+│   ├── Assignment/          # Introduction assignments
+│   ├── Discussion/          # Discussion posts and templates
+│   └── Learning_Notes/      # Unit 1 study materials
+│
+├── CS1111_Unit3_Logic_Design/
+│   ├── Assignment/          # Logic design assignments
+│   ├── Learning_Notes/      # Logic gates and truth tables
+│   └── Resources/           # Complete study package
+│
 ├── CS1111_Unit6_Networks_Security/
 │   ├── Assignment/          # Network security assignment
 │   ├── Discussion/          # Discussion posts and peer responses
@@ -26,14 +36,29 @@ UOP/
 │   ├── Discussion/          # Discussion posts and peer responses
 │   └── Learning_Notes/      # Programming paradigms notes
 │
-└── CS1111_Unit8_Emerging_Trends/
-    ├── Assignment/          # Technology integration assignment
-    ├── Discussion/          # Discussion posts (TBD)
-    ├── Learning_Notes/      # Comprehensive tech notes
-    └── Resources/           # Additional materials
+├── CS1111_Unit8_Emerging_Trends/
+│   ├── Assignment/          # Technology integration assignment
+│   ├── Discussion/          # Discussion posts
+│   ├── Learning_Notes/      # Comprehensive tech notes
+│   └── Resources/           # Additional materials
+│
+├── General_Resources/       # Course-wide resources and guides
+├── Database_Management_Systems_Unit5/  # DBMS coursework
+├── Operating_Systems_Study/ # OS study materials
+└── EXAM_STUDY_GUIDE.md      # Comprehensive exam preparation
 ```
 
 ## 🎯 Completed Units
+
+### Unit 1: Introduction to Computer Science
+- **Topics**: Computer systems, hardware/software, programming basics, problem-solving
+- **Assignment**: Introduction to CS concepts
+- **Discussion**: Initial discussion post and peer responses
+
+### Unit 3: Logic Design
+- **Topics**: Boolean logic, logic gates (AND, OR, NOT, NAND, NOR, XOR), truth tables, circuit design
+- **Assignment**: Logic circuit design with truth tables
+- **Learning Notes**: Quick guide with gate symbols and problem-solving strategies
 
 ### Unit 6: Networks and Security
 - **Topics**: Network topologies, protocols, ISP risks, CIA principles, cybersecurity threats, multi-layered defense
@@ -52,13 +77,23 @@ UOP/
 
 ## 📖 Learning Notes Highlights
 
-Each unit includes comprehensive learning notes with:
+Each unit includes comprehensive learning notes (all in .md format) with:
 - Detailed concept explanations
 - Real-world examples and applications
 - Comparison tables and visual aids
 - Quick study guides with mnemonics
 - Proper APA references
 - Exam preparation tips
+
+### Unit 1 Notes
+- Computer hardware and software fundamentals
+- Programming basics and problem-solving
+- Academic writing and APA formatting
+
+### Unit 3 Notes
+- Logic gates and Boolean algebra
+- Truth tables and circuit design
+- Quick reference guide with gate symbols
 
 ### Unit 6 Notes
 - Network fundamentals (topologies, protocols, devices)
@@ -143,11 +178,13 @@ All assignments target maximum rubric points through:
 
 ## 📝 Notes
 
+- **All files converted to .md format** for better organization and readability
 - All assignments meet word count requirements (500-750 words body content)
 - References properly formatted in APA 7th edition
 - In-text citations include page numbers for books
 - Italicized titles for books and websites
 - Ampersand (&) used in parenthetical citations
+- Comprehensive exam study guide included (EXAM_STUDY_GUIDE.md)
 
 ## 👤 Author
 
@@ -157,10 +194,47 @@ All assignments target maximum rubric points through:
 - Email: nicanorkyamba98@gmail.com
 - GitHub: [@NICANORKYAMBA](https://github.com/NICANORKYAMBA)
 
+## 📚 Study Resources
+
+### EXAM_STUDY_GUIDE.md
+Comprehensive exam preparation guide covering:
+- All units (1, 3, 6, 7, 8) with key concepts
+- Quick reference tables and comparison charts
+- Mnemonics for memorization (SUR, IPS, VVVVV, BCNCC, CIA)
+- Exam tips and strategies
+- Common question types and how to approach them
+- Final checklist for exam readiness
+
+### Unit-Specific README Files
+Each unit folder contains a README.md with:
+- Unit overview and learning objectives
+- File organization and descriptions
+- Key topics covered
+- Study tips and strategies
+- Checklists for completion
+
 ## 📅 Last Updated
 
 January 2026
 
 ---
 
-**Note**: This repository contains academic coursework. All assignments and discussions are original work completed for University of the People courses.
+## 🎓 Exam Preparation
+
+**Start with**: EXAM_STUDY_GUIDE.md for comprehensive review
+
+**Then review**:
+1. Unit-specific Quick Study Guides
+2. Comparison tables in each unit
+3. Assignment examples for practical applications
+4. Discussion posts for different perspectives
+
+**Practice**:
+- Create flashcards from quick reference tables
+- Explain concepts to someone else
+- Work through example problems
+- Take self-quizzes in each unit
+
+---
+
+**Note**: This repository contains academic coursework. All assignments and discussions are original work completed for University of the People courses. All files are in Markdown (.md) format for easy viewing and organization.
