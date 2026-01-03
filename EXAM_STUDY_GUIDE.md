@@ -9,12 +9,15 @@ This comprehensive study guide covers all units in CS1111 Computer Science Funda
 ## 📖 Table of Contents
 
 1. [Unit 1: Introduction to Computer Science](#unit-1-introduction)
-2. [Unit 3: Logic Design](#unit-3-logic-design)
-3. [Unit 6: Networks and Security](#unit-6-networks-and-security)
-4. [Unit 7: Programming Fundamentals](#unit-7-programming-fundamentals)
-5. [Unit 8: Emerging Trends](#unit-8-emerging-trends)
-6. [Exam Tips and Strategies](#exam-tips)
-7. [Quick Reference Tables](#quick-reference)
+2. [Unit 2: Number Systems and Codes](#unit-2-number-systems)
+3. [Unit 3: Logic Design](#unit-3-logic-design)
+4. [Unit 4: Operating Systems](#unit-4-operating-systems)
+5. [Unit 5: Database Management Systems](#unit-5-database-management)
+6. [Unit 6: Networks and Security](#unit-6-networks-and-security)
+7. [Unit 7: Programming Fundamentals](#unit-7-programming-fundamentals)
+8. [Unit 8: Emerging Trends](#unit-8-emerging-trends)
+9. [Exam Tips and Strategies](#exam-tips)
+10. [Quick Reference Tables](#quick-reference)
 
 ---
 
@@ -48,6 +51,53 @@ This comprehensive study guide covers all units in CS1111 Computer Science Funda
 
 ---
 
+## Unit 2: Number Systems and Codes
+
+### Key Concepts
+
+**Number Systems:**
+- **Binary (Base-2)**: Uses 0, 1; foundation of computing
+- **Decimal (Base-10)**: Standard human counting (0-9)
+- **Hexadecimal (Base-16)**: Uses 0-9, A-F; compact binary representation
+- **Octal (Base-8)**: Uses 0-7; less common
+
+**Conversions:**
+
+**Binary to Decimal:**
+```
+1011₂ = (1×2³) + (0×2²) + (1×2¹) + (1×2⁰) = 8+0+2+1 = 11₁₀
+```
+
+**Decimal to Binary:**
+```
+13₁₀: Divide by 2, record remainders
+13÷2=6 r1, 6÷2=3 r0, 3÷2=1 r1, 1÷2=0 r1
+Read bottom to top: 1101₂
+```
+
+**Binary to Hex:**
+```
+Group by 4: 11010110₂ = 1101 0110 = D6₁₆
+```
+
+**Binary Arithmetic:**
+- Addition: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (carry)
+- Subtraction: 0-0=0, 1-0=1, 1-1=0, 0-1=1 (borrow)
+
+**Character Encoding:**
+- **ASCII**: 7-bit (128 chars), Extended 8-bit (256 chars)
+  - 'A' = 65₁₀, 'a' = 97₁₀, '0' = 48₁₀
+- **Unicode**: Universal encoding, UTF-8/16/32
+
+### Essential Questions
+1. Convert 1101₂ to decimal
+2. Convert 25₁₀ to binary
+3. Convert FF₁₆ to binary
+4. What is ASCII code for 'A'?
+5. Why is hexadecimal useful in computing?
+
+---
+
 ## Unit 3: Logic Design
 
 ### Logic Gates (Memorize These!)
@@ -72,6 +122,146 @@ This comprehensive study guide covers all units in CS1111 Computer Science Funda
 2. How do you create a truth table?
 3. What makes NAND a universal gate?
 4. How do logic gates relate to computer processors?
+
+---
+
+## Unit 4: Operating Systems
+
+### Key Concepts
+
+**OS Functions:**
+1. **Process Management**: Create, schedule, terminate processes
+2. **Memory Management**: Allocate/deallocate, virtual memory, paging
+3. **File System Management**: Create, delete, organize files
+4. **Device Management**: Control I/O devices, drivers
+5. **Security**: Authentication, access control, protection
+
+**Process States:**
+```
+New → Ready → Running → Waiting → Terminated
+         ↑       ↓
+         └───────┘
+```
+
+**CPU Scheduling Algorithms:**
+- **FCFS (First-Come, First-Served)**: Simple, can cause long waits
+- **SJF (Shortest Job First)**: Minimizes average wait time
+- **Round Robin**: Time slices, fair for interactive systems
+- **Priority**: Based on priority levels, can cause starvation
+
+**Memory Management:**
+- **Paging**: Fixed-size pages, eliminates external fragmentation
+- **Segmentation**: Variable-size logical segments
+- **Virtual Memory**: Use disk as RAM extension, demand paging
+
+**File Systems:**
+- **FAT32**: Simple, 4GB file limit
+- **NTFS**: Windows, large files, security
+- **ext4**: Linux, journaling
+- **APFS**: macOS, SSD-optimized
+
+**OS Types:**
+- **Batch**: Process jobs in batches
+- **Time-Sharing**: Multiple users share CPU
+- **Distributed**: Multiple computers as one system
+- **Real-Time**: Guaranteed response time
+- **Mobile**: Touch interface, power management
+
+**Popular Operating Systems:**
+- **Windows**: Proprietary, GUI, general use
+- **macOS**: Proprietary, Unix-based, creative work
+- **Linux**: Open-source, CLI/GUI, servers
+- **Unix**: Enterprise servers, stable
+- **Android**: Mobile, Linux-based
+- **iOS**: Apple mobile, secure
+
+### Essential Questions
+1. What are the five main OS functions?
+2. What are the process states?
+3. What is the difference between paging and segmentation?
+4. Compare FCFS and Round Robin scheduling
+5. What is virtual memory?
+6. Compare Windows, Linux, and macOS
+
+---
+
+## Unit 5: Database Management Systems
+
+### Key Concepts
+
+**Database Models:**
+
+**Relational:**
+- Tables (rows and columns)
+- SQL for querying
+- ACID compliance
+- Examples: MySQL, PostgreSQL, Oracle
+
+**NoSQL:**
+- **Document**: JSON/XML (MongoDB)
+- **Key-Value**: Simple pairs (Redis)
+- **Column-Family**: Column storage (Cassandra)
+- **Graph**: Nodes and relationships (Neo4j)
+
+**SQL Basics:**
+```sql
+-- Create
+CREATE TABLE students (id INT, name VARCHAR(50));
+
+-- Insert
+INSERT INTO students VALUES (1, 'Alice');
+
+-- Select
+SELECT * FROM students WHERE id = 1;
+
+-- Update
+UPDATE students SET name = 'Bob' WHERE id = 1;
+
+-- Delete
+DELETE FROM students WHERE id = 1;
+```
+
+**Keys:**
+- **Primary Key**: Uniquely identifies row, cannot be NULL
+- **Foreign Key**: References primary key in another table
+- **Composite Key**: Multiple columns together
+
+**Normalization:**
+- **1NF**: Atomic values, no repeating groups
+- **2NF**: 1NF + no partial dependencies
+- **3NF**: 2NF + no transitive dependencies
+- **Purpose**: Reduce redundancy, ensure integrity
+
+**ACID Properties:**
+- **Atomicity**: All or nothing
+- **Consistency**: Valid state maintained
+- **Isolation**: Transactions don't interfere
+- **Durability**: Changes permanent after commit
+
+**Transactions:**
+```sql
+BEGIN TRANSACTION;
+  UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+  UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT; -- or ROLLBACK if error
+```
+
+**Popular DBMS:**
+- **MySQL**: Open-source, web apps, fast
+- **PostgreSQL**: Open-source, advanced features
+- **MongoDB**: NoSQL, flexible schema, JSON
+- **Oracle**: Enterprise, robust, expensive
+- **SQL Server**: Microsoft, Windows integration
+- **SQLite**: Lightweight, mobile apps
+
+### Essential Questions
+1. What is the difference between relational and NoSQL databases?
+2. What are the basic SQL commands (CRUD)?
+3. What is a primary key vs. foreign key?
+4. Explain the three normal forms
+5. What are ACID properties?
+6. What is a database transaction?
+7. Compare MySQL, PostgreSQL, and MongoDB
 
 ---
 
@@ -435,7 +625,10 @@ This comprehensive study guide covers all units in CS1111 Computer Science Funda
 
 ### Content Review
 - [ ] Unit 1: Computer basics, hardware, software
+- [ ] Unit 2: Number systems, conversions, binary arithmetic
 - [ ] Unit 3: Logic gates, truth tables, circuits
+- [ ] Unit 4: Operating systems, process/memory management
+- [ ] Unit 5: Databases, SQL, normalization, ACID
 - [ ] Unit 6: Networks, security, CIA triad
 - [ ] Unit 7: Programming paradigms, algorithms, debugging
 - [ ] Unit 8: ML, Cloud, Big Data, Blockchain, IoT, VR

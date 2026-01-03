@@ -21,10 +21,24 @@ UOP/
 │   ├── Discussion/          # Discussion posts and templates
 │   └── Learning_Notes/      # Unit 1 study materials
 │
+├── CS1111_Unit2_Number_Systems/
+│   ├── Assignment/          # Number systems assignment
+│   └── Learning_Notes/      # Conversions and binary arithmetic
+│
 ├── CS1111_Unit3_Logic_Design/
 │   ├── Assignment/          # Logic design assignments
 │   ├── Learning_Notes/      # Logic gates and truth tables
 │   └── Resources/           # Complete study package
+│
+├── CS1111_Unit4_Operating_Systems/
+│   ├── Discussion/          # OS discussion posts
+│   ├── Learning_Notes/      # OS study guides (4 parts)
+│   └── Resources/           # Additional materials
+│
+├── CS1111_Unit5_Database_Management/
+│   ├── Discussion/          # DBMS discussion and peer responses
+│   ├── Learning_Notes/      # DBMS study guides (3 parts)
+│   └── Resources/           # Additional materials
 │
 ├── CS1111_Unit6_Networks_Security/
 │   ├── Assignment/          # Network security assignment
@@ -43,9 +57,7 @@ UOP/
 │   └── Resources/           # Additional materials
 │
 ├── General_Resources/       # Course-wide resources and guides
-├── Database_Management_Systems_Unit5/  # DBMS coursework
-├── Operating_Systems_Study/ # OS study materials
-└── EXAM_STUDY_GUIDE.md      # Comprehensive exam preparation
+└── EXAM_STUDY_GUIDE.md      # Comprehensive exam preparation (all 8 units)
 ```
 
 ## 🎯 Completed Units
@@ -55,10 +67,24 @@ UOP/
 - **Assignment**: Introduction to CS concepts
 - **Discussion**: Initial discussion post and peer responses
 
+### Unit 2: Number Systems and Codes
+- **Topics**: Binary, decimal, hexadecimal, octal systems; conversions; binary arithmetic; ASCII/Unicode
+- **Assignment**: Number system conversions and calculations
+
 ### Unit 3: Logic Design
 - **Topics**: Boolean logic, logic gates (AND, OR, NOT, NAND, NOR, XOR), truth tables, circuit design
 - **Assignment**: Logic circuit design with truth tables
 - **Learning Notes**: Quick guide with gate symbols and problem-solving strategies
+
+### Unit 4: Operating Systems
+- **Topics**: OS functions, process/memory management, file systems, scheduling algorithms, popular OSes
+- **Discussion**: OS concepts and applications
+- **Learning Notes**: 4-part comprehensive study guide + quick reference
+
+### Unit 5: Database Management Systems
+- **Topics**: Database models, SQL, normalization, ACID properties, transactions, popular DBMS
+- **Discussion**: DBMS concepts + 3 peer responses
+- **Learning Notes**: 3-part study guide + quick reference
 
 ### Unit 6: Networks and Security
 - **Topics**: Network topologies, protocols, ISP risks, CIA principles, cybersecurity threats, multi-layered defense
@@ -90,10 +116,28 @@ Each unit includes comprehensive learning notes (all in .md format) with:
 - Programming basics and problem-solving
 - Academic writing and APA formatting
 
+### Unit 2 Notes
+- Number systems (binary, decimal, hex, octal)
+- Conversion techniques and formulas
+- Binary arithmetic operations
+- Character encoding (ASCII, Unicode)
+
 ### Unit 3 Notes
 - Logic gates and Boolean algebra
 - Truth tables and circuit design
 - Quick reference guide with gate symbols
+
+### Unit 4 Notes
+- Operating system functions and architecture
+- Process and memory management
+- File systems and scheduling algorithms
+- Popular OS comparison (Windows, Linux, macOS, Unix)
+
+### Unit 5 Notes
+- Database models (Relational vs. NoSQL)
+- SQL fundamentals and commands
+- Normalization and database design
+- ACID properties and transactions
 
 ### Unit 6 Notes
 - Network fundamentals (topologies, protocols, devices)
@@ -198,9 +242,13 @@ All assignments target maximum rubric points through:
 
 ### EXAM_STUDY_GUIDE.md
 Comprehensive exam preparation guide covering:
-- All units (1, 3, 6, 7, 8) with key concepts
+- All units (1, 2, 3, 4, 5, 6, 7, 8) with key concepts
 - Quick reference tables and comparison charts
 - Mnemonics for memorization (SUR, IPS, VVVVV, BCNCC, CIA)
+- Number system conversion formulas
+- Logic gates truth tables
+- OS scheduling algorithms
+- SQL command reference
 - Exam tips and strategies
 - Common question types and how to approach them
 - Final checklist for exam readiness
