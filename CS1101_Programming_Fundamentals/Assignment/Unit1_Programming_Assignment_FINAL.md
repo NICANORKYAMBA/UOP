@@ -10,7 +10,7 @@
 
 ## PART 1: Learning from Mistakes
 
-This section explores frequently occurring errors in Python programming by intentionally making mistakes and analyzing the results. As Downey (2015) suggests in Chapter 1, Section 1.9 of *Think Python*, experimenting with errors helps understand error messages and remember programming concepts (p. 7).
+Experimenting with programming errors is a valuable learning strategy. According to Downey (2015), "when you are experimenting with a new feature, you should try to make mistakes" because this approach helps programmers remember what they read and understand error messages (p. 7). This section examines four common Python errors by deliberately creating them and analyzing the results.
 
 ### Question (a): Missing Quotation Marks When Printing Name
 
@@ -31,9 +31,9 @@ SyntaxError: unterminated string literal (detected at line 1)
 
 **Screenshot:** [Insert screenshot showing code and error output]
 
-**Explanation:**
+**Justification:**
 
-When one quotation mark is missing, Python raises a **SyntaxError: unterminated string literal**. This occurs because Python expects strings to be enclosed in matching quotation marks (either both single `'` or both double `"`). When the opening quote is present but the closing quote is missing, Python continues looking for the closing quote until the end of the line. Since it doesn't find a matching quote, it cannot determine where the string ends, resulting in a syntax error. The error message "unterminated string literal" clearly indicates that a string was started but not properly closed. The caret (^) symbol points to where Python detected the problem.
+When one quotation mark is missing, Python generates a SyntaxError with the message "unterminated string literal." This error occurs because Python requires strings to be enclosed in matching quotation marks—either both single quotes or both double quotes (Python Software Foundation, 2024). When the interpreter encounters an opening quotation mark without a corresponding closing mark, it continues searching for the closing delimiter until reaching the end of the line. Unable to locate the matching quote, Python cannot determine where the string terminates, resulting in a syntax error. The caret symbol (^) in the error message indicates the position where Python first detected the problem.
 
 **Experiment 2: Missing Both Quotation Marks**
 
@@ -52,9 +52,9 @@ SyntaxError: invalid syntax
 
 **Screenshot:** [Insert screenshot showing code and error output]
 
-**Explanation:**
+**Justification:**
 
-When both quotation marks are missing, Python raises a **SyntaxError: invalid syntax**. Without quotes, Python interprets `Nicanor` and `Kyamba` as variable names rather than string literals. Since variable names in Python cannot contain spaces, the space between `Nicanor` and `Kyamba` creates invalid syntax. Python expects either a comma (for multiple arguments), an operator, or the closing parenthesis after `Nicanor`, but instead finds a space and another identifier. This demonstrates that strings must be explicitly marked with quotation marks to distinguish them from variable names and keywords.
+When both quotation marks are omitted, Python generates a SyntaxError with the message "invalid syntax." Without quotation marks, Python interprets Nicanor and Kyamba as variable identifiers rather than string literals. However, Python variable names cannot contain whitespace characters (Python Software Foundation, 2024). The interpreter expects either a comma separating multiple arguments, an operator, or the closing parenthesis after the first identifier. Instead, it encounters a space followed by another identifier, which violates Python's syntax rules. This error demonstrates that string literals must be explicitly delimited with quotation marks to distinguish them from variable names and reserved keywords.
 
 **Correct Code:**
 ```python
@@ -119,11 +119,11 @@ print("2 ** -3 =", result5)
 
 **Screenshot:** [Insert screenshot showing code and output]
 
-**Explanation:**
+**Comprehensive Explanation:**
 
-The `*` operator performs **multiplication** when used with numbers. In the example, `5 * 3` multiplies 5 by 3, resulting in 15. However, the `*` operator is **overloaded** in Python, meaning it behaves differently depending on the data types of its operands. When used with a string and an integer, it performs **string repetition**. The expression `"Python" * 3` repeats the string "Python" three times, concatenating them into "PythonPythonPython".
+The asterisk (*) and double asterisk (**) operators serve distinctly different purposes in Python. The single asterisk operator performs multiplication when applied to numeric operands. For instance, the expression `5 * 3` computes the product of 5 and 3, yielding 15. Python implements operator overloading, allowing the same operator symbol to exhibit different behaviors depending on operand types (Python Software Foundation, 2024). When the multiplication operator is applied to a string and an integer, it performs string repetition. The expression `"Python" * 3` creates a new string by concatenating three copies of "Python," producing "PythonPythonPython."
 
-The `**` operator performs **exponentiation** (raising to a power). In the expression `5 ** 3`, it calculates 5³ = 5 × 5 × 5 = 125. The `**` operator is more versatile than simple multiplication. It can handle **fractional exponents**: `16 ** 0.5` calculates the square root of 16, which equals 4.0. It also supports **negative exponents**: `2 ** -3` calculates 2⁻³ = 1/(2³) = 1/8 = 0.125. This operator is essential for mathematical calculations involving powers, roots, and exponential growth.
+The double asterisk operator performs exponentiation, raising the left operand to the power of the right operand. The expression `5 ** 3` calculates 5 raised to the third power (5³), which equals 125. This operator supports fractional exponents, enabling root calculations. For example, `16 ** 0.5` computes the square root of 16, returning 4.0. The operator also handles negative exponents, calculating reciprocals of positive powers. The expression `2 ** -3` evaluates to 2⁻³, which equals 1/(2³) or 0.125. According to Downey (2015), understanding operator precedence and functionality is fundamental to writing correct Python expressions (p. 5).
 
 **Summary Comparison:**
 
@@ -155,9 +155,9 @@ SyntaxError: leading zeros in decimal integer literals are not permitted; use an
 
 **Justification:**
 
-**No, it is not possible** to display an integer like `09` directly in Python 3. The code raises a **SyntaxError** because Python 3 does not allow leading zeros in decimal integer literals. This restriction was introduced to prevent confusion with octal (base-8) numbers. In Python 2, a leading zero indicated an octal number (e.g., `010` meant octal 10 = decimal 8), which was a common source of bugs when programmers accidentally added leading zeros.
+No, Python 3 does not permit displaying an integer literal with a leading zero such as 09. Attempting to use this syntax generates a SyntaxError with the message "leading zeros in decimal integer literals are not permitted." Python 3 introduced this restriction to eliminate ambiguity that existed in Python 2, where leading zeros indicated octal (base-8) notation (Python Software Foundation, 2024). In Python 2, the literal 010 represented octal 10, equivalent to decimal 8. This convention frequently caused programming errors when developers inadvertently included leading zeros in decimal numbers.
 
-Python 3 requires explicit prefixes for non-decimal number systems: **Octal** uses `0o` prefix (e.g., `0o9`), **Hexadecimal** uses `0x` prefix (e.g., `0x9`), and **Binary** uses `0b` prefix (e.g., `0b1001`). If the goal is to display a number with a leading zero for formatting purposes (e.g., dates, times, or IDs), the best approach is to use string formatting. The integer value should be stored without the leading zero, and formatting should be applied only when displaying.
+Python 3 requires explicit prefixes for non-decimal number systems: 0o for octal (e.g., 0o11 for decimal 9), 0x for hexadecimal (e.g., 0x9), and 0b for binary (e.g., 0b1001 for decimal 9). When the objective is to display a number with leading zeros for formatting purposes—such as in dates, times, or identification numbers—the recommended approach is to store the numeric value without leading zeros and apply string formatting only during output. For example, the format specifier `{number:02d}` displays an integer with at least two digits, padding with a leading zero if necessary.
 
 **Correct Alternatives:**
 
@@ -200,9 +200,9 @@ type(67) = <class 'int'>
 
 **Explanation:**
 
-The difference in output is due to the **data types** of the arguments. **type('67')** returns `<class 'str'>` because `'67'` is a **string literal**. The quotation marks indicate that this is text data, not a number. Even though the string contains numeric characters, Python treats it as a sequence of characters. You cannot perform mathematical operations directly on strings (e.g., `'67' + 1` would cause a TypeError).
+The difference in output results from the distinct data types of the arguments passed to the type() function. The expression type('67') returns `<class 'str'>` because '67' is a string literal. The presence of quotation marks instructs Python to interpret the content as textual data rather than a numeric value (Python Software Foundation, 2024). Although the string contains digit characters, Python treats it as an immutable sequence of characters. Attempting to perform arithmetic operations directly on strings, such as '67' + 1, generates a TypeError because Python cannot add an integer to a string without explicit type conversion.
 
-**type(67)** returns `<class 'int'>` because `67` is an **integer literal**. Without quotation marks, Python interprets this as a numeric value. Integers can be used in mathematical operations (e.g., `67 + 1 = 68`).
+Conversely, type(67) returns `<class 'int'>` because 67 without quotation marks is an integer literal. Python interprets this as a numeric value suitable for mathematical operations. Integers support all standard arithmetic operations, including addition, subtraction, multiplication, and division. The expression 67 + 1 correctly evaluates to 68. This distinction illustrates a fundamental principle in programming: data type determines which operations are valid and how operators behave (Downey, 2015, p. 3).
 
 **Key Differences:**
 
@@ -369,27 +369,21 @@ Weather condition: Moderate
 
 ---
 
-## Learning Reflections from Part 2
+## What I Learned from Part 2 Experiments
 
-Through completing Part 2 of this assignment, I gained practical experience with fundamental programming concepts that are essential for software development.
+Completing the four programming exercises in Part 2 provided valuable insights into fundamental Python concepts and programming methodology.
 
-**Variables and Data Types**: I learned to work with both numeric (integers, floats) and text (strings) data. Understanding that variables are containers for data that can be manipulated is foundational to all programming. In question (a), I used integer variables to store and calculate age values. In question (b), I used string variables to store location information. This demonstrated that Python is dynamically typed, meaning variables can hold different types of data without explicit type declarations.
+The age multiplication program in question (a) demonstrated variable assignment and arithmetic operations. Variables function as named storage locations for data values. The statement `age = 25` creates a variable named age and assigns it the integer value 25. The multiplication operation `age * 2` computes the product and stores the result in another variable. This exercise illustrated that Python uses dynamic typing, where variables can hold different data types without explicit type declarations (Python Software Foundation, 2024).
 
-**Operators and Expressions**: I used arithmetic operators (`*`, `/`, `+`) for calculations and the string repetition operator for formatting. The temperature conversion in question (d) required applying the formula F = (C × 9/5) + 32, which demonstrated how mathematical expressions translate directly into Python code. The string repetition operator in question (c) showed that operators can behave differently depending on the data types they work with—a concept called operator overloading.
+The location display program in question (b) introduced string variables and output formatting techniques. String variables store textual data enclosed in quotation marks. The program used multiple print() statements to display information on separate lines. I learned that f-strings provide an elegant method for embedding variables within strings. The syntax `f"Full location: {city}, {country}, {continent}"` inserts variable values directly into the string, creating more readable code than concatenation or older formatting methods.
 
-**Input/Output Formatting**: The `print()` function is essential for displaying information to users. I learned multiple ways to format output, from simple comma-separated values to sophisticated f-strings. F-strings, introduced in Python 3.6, provide a clean and readable way to embed variables within strings. For example, `f"Temperature: {temperature_celsius}°C"` is more intuitive than older formatting methods. The ability to create professional-looking output with decorative lines and proper spacing makes programs more user-friendly.
+The examination schedule program in question (c) demonstrated string repetition and professional output formatting. The expression `"=" * 50` uses operator overloading to create a decorative line of 50 equal signs. This exercise showed that thoughtful formatting enhances program output readability. Organizing related information into clearly labeled sections makes programs more user-friendly and professional in appearance.
 
-**Modules and Libraries**: Importing the datetime module in question (d) showed me that Python has extensive built-in functionality that can be accessed when needed. The `datetime.date.today()` function retrieves the current system date, and the `strftime()` method formats it into a human-readable string. This modular approach keeps the core language simple while providing powerful capabilities through libraries. Understanding how to import and use modules is crucial for leveraging Python's ecosystem.
+The temperature display program in question (d) introduced several advanced concepts. First, importing the datetime module demonstrated Python's modular architecture. The import statement provides access to additional functionality without cluttering the core language. The datetime.date.today() function retrieves the current system date, while the strftime() method formats it into a human-readable string using format codes. Second, the program applied a mathematical formula to convert Celsius to Fahrenheit: F = (C × 9/5) + 32. This showed how mathematical expressions translate directly into Python code. Third, the if-elif-else conditional structure introduced decision-making logic. The program evaluates temperature ranges and assigns appropriate weather descriptions, demonstrating how programs can adapt behavior based on input values.
 
-**Conditional Logic**: The if-elif-else structure in the temperature program introduced decision-making in code. This allows programs to respond differently to different situations. The weather categorization logic checks temperature ranges and assigns appropriate descriptions. Conditional statements are fundamental to creating intelligent, responsive programs that adapt their behavior based on input data.
+These exercises reinforced several important programming principles. Descriptive variable names like temperature_celsius improve code readability compared to abbreviated names like temp or t. Comments explain code purpose and functionality, aiding future maintenance. Breaking complex problems into smaller, manageable steps—a process Downey (2015) describes as essential to computational thinking—makes programming tasks more approachable (p. 1). Testing programs with various inputs verifies that logic functions correctly and helps identify errors early in development.
 
-**Code Organization and Readability**: By using descriptive variable names like `temperature_celsius` instead of `t` or `temp`, the code becomes self-documenting. Adding comments like `# Program to display location information` helps other programmers (and my future self) understand the code's purpose. Well-organized code is easier to understand, maintain, and debug. This is especially important in collaborative environments where multiple developers work on the same codebase.
-
-**Problem-Solving Approach**: Each program required breaking down a problem into smaller steps: identify what data is needed, determine what operations to perform, and format the output appropriately. For the temperature program, I needed to: (1) import the datetime module, (2) define temperature and location variables, (3) calculate Fahrenheit conversion, (4) get and format the current date, (5) display the information, and (6) categorize the weather. This systematic approach is applicable to all programming tasks, from simple scripts to complex applications.
-
-**Debugging and Testing**: While writing these programs, I encountered several errors that taught me valuable lessons. For example, forgetting to import the datetime module before using it resulted in a NameError. Misspelling variable names caused undefined variable errors. These experiences reinforced the importance of careful attention to detail and systematic testing. Running each program multiple times with different values helped verify that the logic was correct.
-
-These exercises provided hands-on experience with Python syntax and programming concepts. The progression from simple arithmetic in question (a) to more complex programs with conditional logic and module imports in question (d) gave me confidence in my ability to write functional Python code. Most importantly, I learned that programming is about solving problems systematically and communicating solutions clearly through code. As Downey (2015) emphasizes, thinking like a computer scientist involves breaking down complex problems into manageable pieces and expressing solutions in a form that computers can execute (p. 1).
+The progression from simple arithmetic to programs incorporating module imports and conditional logic built confidence in writing functional Python code. Most significantly, these exercises demonstrated that programming involves systematic problem-solving: identifying required data, determining necessary operations, and formatting output appropriately. This methodical approach applies to programming tasks of any complexity level.
 
 ---
 
@@ -403,7 +397,7 @@ Python Software Foundation. (2024). *datetime — Basic date and time types*. Py
 
 ---
 
-**Word Count**: 2,847 words (body content, excluding code blocks, tables, and references)
+**Word Count**: Approximately 1,850 words (body content, excluding code blocks, tables, title page, and references)
 
 **Submission Date**: January 15, 2025
 
