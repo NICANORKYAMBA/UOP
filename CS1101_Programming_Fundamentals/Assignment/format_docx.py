@@ -2,7 +2,7 @@
 """
 Format the assignment DOCX file with proper APA formatting:
 - Times New Roman, 12pt font
-- Double spacing (2.0)
+- 1.5 line spacing
 - 1" margins on all sides
 - Code blocks in Courier New
 """
@@ -29,9 +29,9 @@ def format_assignment(input_file, output_file):
             run.font.name = 'Times New Roman'
             run.font.size = Pt(12)
         
-        # Set line spacing to double (2.0)
+        # Set line spacing to 1.5
         paragraph_format = paragraph.paragraph_format
-        paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+        paragraph_format.line_spacing = 1.5
         
         # Check if this is a code block (starts with specific patterns)
         text = paragraph.text.strip()
@@ -41,8 +41,8 @@ def format_assignment(input_file, output_file):
                 run.font.name = 'Courier New'
                 run.font.size = Pt(10)
             # Single spacing for code blocks
-            paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
-            # Add light gray background
+            paragraph_format.line_spacing = 1.0
+            # Add left indent
             paragraph_format.left_indent = Inches(0.5)
     
     # Format tables (if any)
@@ -53,13 +53,14 @@ def format_assignment(input_file, output_file):
                     for run in paragraph.runs:
                         run.font.name = 'Times New Roman'
                         run.font.size = Pt(12)
+                    paragraph.paragraph_format.line_spacing = 1.5
     
     # Save the formatted document
     doc.save(output_file)
     print(f"✓ Document formatted and saved as: {output_file}")
     print("\nFormatting applied:")
     print("  - Font: Times New Roman, 12pt")
-    print("  - Line spacing: Double (2.0)")
+    print("  - Line spacing: 1.5")
     print("  - Margins: 1 inch on all sides")
     print("  - Code blocks: Courier New, 10pt, single-spaced")
 
