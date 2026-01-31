@@ -132,7 +132,7 @@ This confirms I am using Python 3.12.1, which is a recent stable release with al
 
 Downey, A. (2015). *Think Python: How to think like a computer scientist* (2nd ed.). Green Tea Press. https://greenteapress.com/thinkpython2/thinkpython2.pdf
 
-Python Software Foundation. (2024). *What's new in Python 3.0*. Python Documentation. https://docs.python.org/3/whatsnew/3.0.html
+Python Software Foundation. (n.d.). *What's new in Python 3.0*. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/whatsnew/3.0.html
 
 ---
 
