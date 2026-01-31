@@ -373,7 +373,7 @@ Weather condition: Moderate
 
 Completing the four programming exercises in Part 2 provided valuable insights into fundamental Python concepts and programming methodology.
 
-The age multiplication program in question (a) demonstrated variable assignment and arithmetic operations. Variables function as named storage locations for data values. The statement `age = 25` creates a variable named age and assigns it the integer value 25. The multiplication operation `age * 2` computes the product and stores the result in another variable. This exercise illustrated that Python uses dynamic typing, where variables can hold different data types without explicit type declarations (Python Software Foundation, 2024).
+The age multiplication program in question (a) demonstrated variable assignment and arithmetic operations. Variables function as named storage locations for data values. The statement `age = 25` creates a variable named age and assigns it the integer value 25. The multiplication operation `age * 2` computes the product and stores the result in another variable. This exercise illustrated that Python uses dynamic typing, where variables can hold different data types without explicit type declarations (Python Software Foundation, n.d.-e).
 
 The location display program in question (b) introduced string variables and output formatting techniques. String variables store textual data enclosed in quotation marks. The program used multiple print() statements to display information on separate lines. I learned that f-strings provide an elegant method for embedding variables within strings. The syntax `f"Full location: {city}, {country}, {continent}"` inserts variable values directly into the string, creating more readable code than concatenation or older formatting methods.
 
@@ -391,15 +391,15 @@ The progression from simple arithmetic to programs incorporating module imports 
 
 Downey, A. (2015). *Think Python: How to think like a computer scientist* (2nd ed.). Green Tea Press. https://greenteapress.com/thinkpython2/thinkpython2.pdf
 
-Python Software Foundation. (n.d.-a). *Lexical analysis*. Python 3.12.1 Documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
+Python Software Foundation. (n.d.-a). *Lexical analysis* [String and bytes literals]. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
 
-Python Software Foundation. (n.d.-b). *Lexical analysis*. Python 3.12.1 Documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#identifiers
+Python Software Foundation. (n.d.-b). *Lexical analysis* [Identifiers and keywords]. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#identifiers
 
-Python Software Foundation. (n.d.-c). *Built-in types*. Python 3.12.1 Documentation. Retrieved January 15, 2025, from https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+Python Software Foundation. (n.d.-c). *Built-in types* [Numeric types]. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
 
-Python Software Foundation. (n.d.-d). *Lexical analysis*. Python 3.12.1 Documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#integer-literals
+Python Software Foundation. (n.d.-d). *Lexical analysis* [Integer literals]. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/reference/lexical_analysis.html#integer-literals
 
-Python Software Foundation. (n.d.-e). *Built-in functions*. Python 3.12.1 Documentation. Retrieved January 15, 2025, from https://docs.python.org/3/library/functions.html#type
+Python Software Foundation. (n.d.-e). *Built-in functions* [Type function]. Python 3.12.1 documentation. Retrieved January 15, 2025, from https://docs.python.org/3/library/functions.html#type
 
 ---
 
