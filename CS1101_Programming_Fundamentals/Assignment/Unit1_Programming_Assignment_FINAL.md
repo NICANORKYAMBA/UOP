@@ -10,7 +10,7 @@
 
 ## PART 1: Learning from Mistakes
 
-Experimenting with programming errors is a valuable learning strategy. According to Downey (2015), "when you are experimenting with a new feature, you should try to make mistakes" because this approach helps programmers remember what they read and understand error messages (p. 7). This section examines four common Python errors by deliberately creating them and analyzing the results.
+Experimenting with programming errors is a valuable learning strategy. Downey (2015) recommends that when learning new programming features, students should deliberately make mistakes to better understand error messages and remember concepts (p. 7). This section examines four common Python errors by intentionally creating them and analyzing the results.
 
 ### Question (a): Missing Quotation Marks When Printing Name
 
@@ -33,7 +33,7 @@ SyntaxError: unterminated string literal (detected at line 1)
 
 **Justification:**
 
-When one quotation mark is missing, Python generates a SyntaxError with the message "unterminated string literal." This error occurs because Python requires strings to be enclosed in matching quotation marks—either both single quotes or both double quotes (Python Software Foundation, 2024). When the interpreter encounters an opening quotation mark without a corresponding closing mark, it continues searching for the closing delimiter until reaching the end of the line. Unable to locate the matching quote, Python cannot determine where the string terminates, resulting in a syntax error. The caret symbol (^) in the error message indicates the position where Python first detected the problem.
+When one quotation mark is missing, Python generates a SyntaxError with the message "unterminated string literal." This error occurs because Python requires strings to be enclosed in matching quotation marks—either both single quotes or both double quotes. When the interpreter encounters an opening quotation mark without a corresponding closing mark, it continues searching for the closing delimiter until reaching the end of the line. Unable to locate the matching quote, Python cannot determine where the string terminates, resulting in a syntax error. The caret symbol (^) in the error message indicates the position where Python first detected the problem.
 
 **Experiment 2: Missing Both Quotation Marks**
 
@@ -54,7 +54,7 @@ SyntaxError: invalid syntax
 
 **Justification:**
 
-When both quotation marks are omitted, Python generates a SyntaxError with the message "invalid syntax." Without quotation marks, Python interprets Nicanor and Kyamba as variable identifiers rather than string literals. However, Python variable names cannot contain whitespace characters (Python Software Foundation, 2024). The interpreter expects either a comma separating multiple arguments, an operator, or the closing parenthesis after the first identifier. Instead, it encounters a space followed by another identifier, which violates Python's syntax rules. This error demonstrates that string literals must be explicitly delimited with quotation marks to distinguish them from variable names and reserved keywords.
+When both quotation marks are omitted, Python generates a SyntaxError with the message "invalid syntax." Without quotation marks, Python interprets Nicanor and Kyamba as variable identifiers rather than string literals. However, Python variable names cannot contain whitespace characters. The interpreter expects either a comma separating multiple arguments, an operator, or the closing parenthesis after the first identifier. Instead, it encounters a space followed by another identifier, which violates Python's syntax rules. This error demonstrates that string literals must be explicitly delimited with quotation marks to distinguish them from variable names and reserved keywords.
 
 **Correct Code:**
 ```python
@@ -121,9 +121,9 @@ print("2 ** -3 =", result5)
 
 **Comprehensive Explanation:**
 
-The asterisk (*) and double asterisk (**) operators serve distinctly different purposes in Python. The single asterisk operator performs multiplication when applied to numeric operands. For instance, the expression `5 * 3` computes the product of 5 and 3, yielding 15. Python implements operator overloading, allowing the same operator symbol to exhibit different behaviors depending on operand types (Python Software Foundation, 2024). When the multiplication operator is applied to a string and an integer, it performs string repetition. The expression `"Python" * 3` creates a new string by concatenating three copies of "Python," producing "PythonPythonPython."
+The asterisk (*) and double asterisk (**) operators serve distinctly different purposes in Python. The single asterisk operator performs multiplication when applied to numeric operands. For instance, the expression `5 * 3` computes the product of 5 and 3, yielding 15. Python implements operator overloading, allowing the same operator symbol to exhibit different behaviors depending on operand types. When the multiplication operator is applied to a string and an integer, it performs string repetition. The expression `"Python" * 3` creates a new string by concatenating three copies of "Python," producing "PythonPythonPython."
 
-The double asterisk operator performs exponentiation, raising the left operand to the power of the right operand. The expression `5 ** 3` calculates 5 raised to the third power (5³), which equals 125. This operator supports fractional exponents, enabling root calculations. For example, `16 ** 0.5` computes the square root of 16, returning 4.0. The operator also handles negative exponents, calculating reciprocals of positive powers. The expression `2 ** -3` evaluates to 2⁻³, which equals 1/(2³) or 0.125. According to Downey (2015), understanding operator precedence and functionality is fundamental to writing correct Python expressions (p. 5).
+The double asterisk operator performs exponentiation, raising the left operand to the power of the right operand. The expression `5 ** 3` calculates 5 raised to the third power (5³), which equals 125. This operator supports fractional exponents, enabling root calculations. For example, `16 ** 0.5` computes the square root of 16, returning 4.0. The operator also handles negative exponents, calculating reciprocals of positive powers. The expression `2 ** -3` evaluates to 2⁻³, which equals 1/(2³) or 0.125. As Downey (2015) explains, understanding operator precedence and functionality is fundamental to writing correct Python expressions (p. 5).
 
 **Summary Comparison:**
 
@@ -155,7 +155,7 @@ SyntaxError: leading zeros in decimal integer literals are not permitted; use an
 
 **Justification:**
 
-No, Python 3 does not permit displaying an integer literal with a leading zero such as 09. Attempting to use this syntax generates a SyntaxError with the message "leading zeros in decimal integer literals are not permitted." Python 3 introduced this restriction to eliminate ambiguity that existed in Python 2, where leading zeros indicated octal (base-8) notation (Python Software Foundation, 2024). In Python 2, the literal 010 represented octal 10, equivalent to decimal 8. This convention frequently caused programming errors when developers inadvertently included leading zeros in decimal numbers.
+No, Python 3 does not permit displaying an integer literal with a leading zero such as 09. Attempting to use this syntax generates a SyntaxError with the message "leading zeros in decimal integer literals are not permitted." Python 3 introduced this restriction to eliminate ambiguity that existed in Python 2, where leading zeros indicated octal (base-8) notation. In Python 2, the literal 010 represented octal 10, equivalent to decimal 8. This convention frequently caused programming errors when developers inadvertently included leading zeros in decimal numbers.
 
 Python 3 requires explicit prefixes for non-decimal number systems: 0o for octal (e.g., 0o11 for decimal 9), 0x for hexadecimal (e.g., 0x9), and 0b for binary (e.g., 0b1001 for decimal 9). When the objective is to display a number with leading zeros for formatting purposes—such as in dates, times, or identification numbers—the recommended approach is to store the numeric value without leading zeros and apply string formatting only during output. For example, the format specifier `{number:02d}` displays an integer with at least two digits, padding with a leading zero if necessary.
 
@@ -200,7 +200,7 @@ type(67) = <class 'int'>
 
 **Explanation:**
 
-The difference in output results from the distinct data types of the arguments passed to the type() function. The expression type('67') returns `<class 'str'>` because '67' is a string literal. The presence of quotation marks instructs Python to interpret the content as textual data rather than a numeric value (Python Software Foundation, 2024). Although the string contains digit characters, Python treats it as an immutable sequence of characters. Attempting to perform arithmetic operations directly on strings, such as '67' + 1, generates a TypeError because Python cannot add an integer to a string without explicit type conversion.
+The difference in output results from the distinct data types of the arguments passed to the type() function. The expression type('67') returns `<class 'str'>` because '67' is a string literal. The presence of quotation marks instructs Python to interpret the content as textual data rather than a numeric value. Although the string contains digit characters, Python treats it as an immutable sequence of characters. Attempting to perform arithmetic operations directly on strings, such as '67' + 1, generates a TypeError because Python cannot add an integer to a string without explicit type conversion.
 
 Conversely, type(67) returns `<class 'int'>` because 67 without quotation marks is an integer literal. Python interprets this as a numeric value suitable for mathematical operations. Integers support all standard arithmetic operations, including addition, subtraction, multiplication, and division. The expression 67 + 1 correctly evaluates to 68. This distinction illustrates a fundamental principle in programming: data type determines which operations are valid and how operators behave (Downey, 2015, p. 3).
 
