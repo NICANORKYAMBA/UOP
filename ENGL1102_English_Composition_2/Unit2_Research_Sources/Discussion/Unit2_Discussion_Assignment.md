@@ -30,7 +30,7 @@ Traditional offices generate frequent disruptions through impromptu meetings, co
 
 ### Schedule Autonomy
 
-Remote arrangements grant workers control over timing, enabling alignment with biological performance peaks rather than standardized schedules. Chronobiology research demonstrates individual circadian rhythm variations—some individuals optimize morning productivity while others peak during afternoon or evening hours (Roenneberg et al., 2019). FlexJobs (2020) surveyed remote workers, finding 65% reported productivity increases attributed to reduced distractions and peak-hour work capability. Schedule flexibility enables workers to match task demands with personal energy cycles, improving output quality.
+Remote arrangements grant workers control over timing, enabling alignment with biological performance peaks rather than standardized schedules. Chronobiology research demonstrates individual circadian rhythm variations—some individuals optimize morning productivity while others peak during afternoon or evening hours (Roenneberg et al., 2019). Recent survey data shows 85% of workers cite remote work as the primary factor influencing job applications, with 69% willing to accept pay cuts for remote opportunities (FlexJobs, 2026). Schedule flexibility enables workers to match task demands with personal energy cycles, improving output quality.
 
 ### Counterargument Analysis
 
@@ -46,7 +46,7 @@ Empirical evidence confirms remote work productivity advantages through commute 
 
 Bloom, N., Liang, J., Roberts, J., & Ying, Z. J. (2015). Does working from home work? Evidence from a Chinese experiment. *The Quarterly Journal of Economics, 130*(1), 165-218. https://doi.org/10.1093/qje/qju032
 
-FlexJobs. (2020). *2020 State of remote work report*. https://www.flexjobs.com/blog/post/remote-work-statistics/
+FlexJobs. (2026). *FlexJobs remote work index: Remote work trends and statistics for 2026*. Retrieved February 1, 2026, from https://www.flexjobs.com/blog/post/remote-work-statistics/
 
 Hall, B., & Wallace, E. (2018). *College ESL writers: Applied grammar and composing strategies for success*. GALILEO Open Learning Materials. https://oer.galileo.usg.edu/english-textbooks/14
 
@@ -54,7 +54,7 @@ Mark, G., Iqbal, S. T., Czerwinski, M., Johns, P., & Sano, A. (2018). Email dura
 
 Roenneberg, T., Pilz, L. K., Zerbini, G., & Winnebeck, E. C. (2019). Chronotype and social jetlag: A (self-) critical review. *Biology, 8*(3), 54. https://doi.org/10.3390/biology8030054
 
-U.S. Census Bureau. (2021). *American Community Survey: Commuting characteristics by sex*. https://data.census.gov/
+U.S. Census Bureau. (2021). *American Community Survey: Commuting characteristics by sex*. Retrieved February 1, 2026, from https://data.census.gov/
 
 Weaver, R., Bost, L., Kassorla, M., McKinney-Holley, K., Crowther, K., Curtright, L., Gilbert, N., Hall, B., Ravita, T., & Swenson, K. (2016). *Successful college composition* (3rd ed.). GALILEO Open Learning Materials. https://oer.galileo.usg.edu/english-textbooks/8
 
