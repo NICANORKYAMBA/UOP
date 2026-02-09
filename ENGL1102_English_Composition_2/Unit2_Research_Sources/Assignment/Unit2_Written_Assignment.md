@@ -41,17 +41,17 @@ This hypothesis aligns with SMART goals criteria (CFI Team, 2023): It is **Speci
 
 **Credibility**: NIST is a non-regulatory federal agency developing technology standards and guidelines. The NIST Cybersecurity Framework is internationally recognized as the gold standard for organizational risk management, adopted by businesses and governments worldwide. Its credibility stems from extensive collaboration with private sector stakeholders, academic experts, and international partners. As a .gov source, it provides unbiased, evidence-based guidance with regular updates ensuring relevance to evolving threats.
 
-### Source 5: Harvard Business Review
+### Source 5: Small Business Administration (SBA) Cybersecurity Guide
 
-**Citation**: Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. Retrieved January 31, 2026, from https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
+**Citation**: U.S. Small Business Administration. (2023). *Cybersecurity for small businesses*. Retrieved January 31, 2026, from https://www.sba.gov/business-guide/manage-your-business/stay-safe-cybersecurity-threats
 
-**Credibility**: *Harvard Business Review* is a premier business publication affiliated with Harvard Business School. Articles undergo editorial review by business experts and are written by credentialed authors—Martin Zwilling (startup advisor) and Luis Anaya (cybersecurity consultant). While not peer-reviewed academically, HBR maintains rigorous editorial standards with evidence-based analysis supported by research citations (Ryan, 2023). This article addresses economic vulnerabilities of small businesses, providing business-focused analysis complementing technical sources.
+**Credibility**: The U.S. Small Business Administration is a federal agency dedicated to supporting American small businesses. As a .gov source with no commercial interests, it provides authoritative, unbiased guidance specifically tailored to small business needs and constraints. The SBA collaborates with cybersecurity experts and industry partners to develop practical, actionable recommendations. This resource addresses the unique economic vulnerabilities and resource limitations small businesses face when implementing cybersecurity measures, providing business-focused analysis that complements technical sources.
 
 ---
 
 ## Conclusion
 
-This research hypothesis and literature review establish a framework for investigating cybersecurity investment correlation with data breach prevention in small businesses. The five credible sources represent diverse perspectives—government agencies (CISA, NIST), peer-reviewed academic research, industry data analysis (Verizon DBIR), and business management expertise (HBR)—providing comprehensive coverage of technical, regulatory, empirical, and economic dimensions. Future research will collect quantitative data from small businesses across sectors to validate the predicted 50% breach reduction.
+This research hypothesis and literature review establish a framework for investigating cybersecurity investment correlation with data breach prevention in small businesses. The five credible sources represent diverse perspectives—government agencies (CISA, NIST, SBA), peer-reviewed academic research, and industry data analysis (Verizon DBIR)—providing comprehensive coverage of technical, regulatory, empirical, and economic dimensions. Future research will collect quantitative data from small businesses across sectors to validate the predicted 50% breach reduction.
 
 ---
 
@@ -73,7 +73,7 @@ Ryan, E. (2023, May 31). How to find sources | Scholarly articles, books, etc. *
 
 Verizon. (2023). *2023 Data Breach Investigations Report*. Retrieved January 31, 2026, from https://www.verizon.com/business/resources/reports/dbir/
 
-Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. Retrieved January 31, 2026, from https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
+U.S. Small Business Administration. (2023). *Cybersecurity for small businesses*. Retrieved January 31, 2026, from https://www.sba.gov/business-guide/manage-your-business/stay-safe-cybersecurity-threats
 
 ---
 
