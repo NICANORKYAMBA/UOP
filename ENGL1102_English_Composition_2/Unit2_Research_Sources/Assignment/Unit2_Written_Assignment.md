@@ -11,7 +11,7 @@
 
 Small businesses that invest at least 10% of their annual IT budget in comprehensive cybersecurity measures (including employee training, multi-factor authentication, and regular security audits) will experience 50% fewer data breaches compared to businesses with minimal cybersecurity investment over a 24-month period.
 
-This hypothesis aligns with SMART goals criteria (CFI Team, 2023): It is **Specific** by defining exact measures and outcomes; **Measurable** through quantifiable metrics (10% budget, 50% reduction, 24 months); **Achievable** as industry standards recommend 6-15% IT budget allocation for security (Cybersecurity & Infrastructure Security Agency, 2023); **Relevant** since 60% of small businesses close within six months of cyberattacks (National Cyber Security Alliance, 2023); and **Time-bound** with a clear 24-month evaluation period. This hypothesis can be tested through quantitative comparison of breach incidents between businesses with comprehensive versus minimal cybersecurity investments.
+This hypothesis is testable and measurable through quantitative comparison of breach incidents between businesses with comprehensive versus minimal cybersecurity investments. The 10% budget allocation aligns with industry best practices for small business security investments, while the 24-month timeframe provides sufficient data collection period to observe meaningful patterns in breach prevention outcomes.
 
 ---
 
@@ -57,15 +57,11 @@ This research hypothesis and literature review establish a framework for investi
 
 ## References
 
-CFI Team. (2023, November 19). SMART goals. *Corporate Finance Institute*. Retrieved January 31, 2026, from https://corporatefinanceinstitute.com/resources/management/smart-goal/
-
 Cybersecurity & Infrastructure Security Agency. (2023). *Organizations and cyber safety*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety
 
 Eling, M., & Schnell, W. (2016). What do we know about cyber risk and cyber risk insurance? *The Journal of Risk Finance, 17*(5), 474-491. https://doi.org/10.1108/JRF-09-2016-0122
 
 George, T. (2024, May 9). What are credible sources & how to spot them | Examples. *Scribbr*. Retrieved January 31, 2026, from https://www.scribbr.com/working-with-sources/credible-sources/
-
-National Cyber Security Alliance. (2023). *Small business cybersecurity statistics*. Retrieved January 31, 2026, from https://staysafeonline.org/
 
 National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. Retrieved January 31, 2026, from https://www.nist.gov/cyberframework
 
