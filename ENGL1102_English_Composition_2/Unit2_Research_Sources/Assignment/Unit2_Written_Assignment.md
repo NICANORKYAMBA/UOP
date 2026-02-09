@@ -19,7 +19,7 @@ This hypothesis aligns with SMART goals criteria (CFI Team, 2023): It is **Speci
 
 ### Source 1: Cybersecurity & Infrastructure Security Agency (CISA)
 
-**Citation**: Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
+**Citation**: Cybersecurity & Infrastructure Security Agency. (2023). *Organizations and cyber safety*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety
 
 **Credibility**: CISA is the authoritative U.S. federal agency for cybersecurity infrastructure protection under the Department of Homeland Security. As a .gov domain with no commercial interests, it provides unbiased, expert-developed guidance informed by national threat intelligence. The agency collaborates with private sector partners and academic institutions to create evidence-based recommendations regularly updated for emerging threats, making it highly reliable for foundational cybersecurity best practices.
 
@@ -59,7 +59,7 @@ This research hypothesis and literature review establish a framework for investi
 
 CFI Team. (2023, November 19). SMART goals. *Corporate Finance Institute*. Retrieved January 31, 2026, from https://corporatefinanceinstitute.com/resources/management/smart-goal/
 
-Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
+Cybersecurity & Infrastructure Security Agency. (2023). *Organizations and cyber safety*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety
 
 Eling, M., & Schnell, W. (2022). Capital requirements for cyber risk: A theoretical framework and empirical evidence from the insurance industry. *Journal of Cybersecurity, 8*(1), 1-18. https://doi.org/10.1093/cybsec/tyac005
 
