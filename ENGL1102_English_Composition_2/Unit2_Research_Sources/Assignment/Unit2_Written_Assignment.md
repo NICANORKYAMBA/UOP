@@ -27,7 +27,7 @@ This hypothesis is testable through quantitative methods comparing breach incide
 
 ### Source 1: Cybersecurity & Infrastructure Security Agency (CISA) – Small Business Resources
 
-**Citation**: Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
+**Citation**: Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
 
 **Credibility Analysis**: CISA is the authoritative U.S. federal agency responsible for cybersecurity infrastructure protection, operating under the Department of Homeland Security. This source is highly credible because it represents official government guidance developed by cybersecurity experts and informed by national threat intelligence. The agency collaborates with private sector partners and academic institutions to develop evidence-based recommendations. As a .gov domain, it meets the highest standards for reliability and is regularly updated to reflect emerging threats. The absence of commercial bias—since CISA does not sell security products—ensures objective, public-interest-focused information. This source provides foundational best practices and statistical data on small business vulnerabilities that establish the research context.
 
@@ -39,19 +39,19 @@ This hypothesis is testable through quantitative methods comparing breach incide
 
 ### Source 3: Verizon Data Breach Investigations Report (DBIR)
 
-**Citation**: Verizon. (2023). *2023 Data Breach Investigations Report*. https://www.verizon.com/business/resources/reports/dbir/
+**Citation**: Verizon. (2023). *2023 Data Breach Investigations Report*. Retrieved January 31, 2026, from https://www.verizon.com/business/resources/reports/dbir/
 
 **Credibility Analysis**: The Verizon DBIR is an industry-leading annual report analyzing thousands of real-world data breaches and security incidents across multiple sectors and organization sizes. Its credibility stems from its comprehensive data collection methodology—the 2023 report analyzed 16,312 security incidents and 5,199 confirmed breaches from 94 contributing organizations worldwide (Verizon, 2023). This large sample size and multi-source data aggregation provide statistical reliability that individual case studies cannot match. Verizon's cybersecurity division employs experienced threat researchers and forensic investigators who analyze breach patterns using standardized frameworks. The report's transparency about methodology, including data limitations and classification criteria, demonstrates scientific rigor. While Verizon is a commercial entity, the DBIR is freely available and widely cited by academic researchers, government agencies, and security professionals, indicating cross-sector validation of its findings.
 
 ### Source 4: National Institute of Standards and Technology (NIST) Cybersecurity Framework
 
-**Citation**: National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. https://www.nist.gov/cyberframework
+**Citation**: National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. Retrieved January 31, 2026, from https://www.nist.gov/cyberframework
 
 **Credibility Analysis**: NIST is a non-regulatory federal agency within the U.S. Department of Commerce responsible for developing technology standards and guidelines. The NIST Cybersecurity Framework is internationally recognized as the gold standard for organizational cybersecurity risk management, adopted by businesses, government agencies, and critical infrastructure operators worldwide. Its credibility derives from its development process, which involved extensive collaboration with private sector stakeholders, academic experts, and international partners over multiple years. The framework is evidence-based, drawing on documented best practices and lessons learned from real-world incidents. As a .gov source with no commercial interests, NIST provides unbiased, scientifically grounded guidance. The framework's voluntary nature and widespread adoption across industries demonstrate its practical applicability and effectiveness. Regular updates—including the 2024 version 2.0—ensure the framework remains relevant to evolving cyber threats.
 
 ### Source 5: Harvard Business Review – Small Business Cybersecurity Economics
 
-**Citation**: Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
+**Citation**: Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. Retrieved January 31, 2026, from https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
 
 **Credibility Analysis**: *Harvard Business Review* (HBR) is a premier business management publication affiliated with Harvard Business School, one of the world's leading academic institutions. HBR articles undergo editorial review by business experts and are written by credentialed authors—in this case, Martin Zwilling (startup advisor and founder of Startup Professionals) and Luis Anaya (cybersecurity consultant). While not peer-reviewed in the academic sense, HBR maintains rigorous editorial standards and publishes evidence-based analysis supported by research citations and expert interviews (Ryan, 2023). The publication's reputation depends on accuracy and practical applicability, incentivizing thorough fact-checking. This article specifically addresses the economic vulnerabilities of small businesses to cyber threats, providing business-focused analysis that complements technical sources. HBR's audience includes executives and business leaders, ensuring content is both credible and actionable for decision-makers implementing cybersecurity strategies.
 
@@ -65,23 +65,23 @@ This research hypothesis and literature review foundation establish a framework 
 
 ## References
 
-Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
+CFI Team. (2023, November 19). SMART goals. *Corporate Finance Institute*. Retrieved January 31, 2026, from https://corporatefinanceinstitute.com/resources/management/smart-goal/
 
-CFI Team. (2023, November 19). SMART goals. *Corporate Finance Institute*. https://corporatefinanceinstitute.com/resources/management/smart-goal/
+Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
 
 Eling, M., & Schnell, W. (2022). Capital requirements for cyber risk: A theoretical framework and empirical evidence from the insurance industry. *Journal of Cybersecurity, 8*(1), 1-18. https://doi.org/10.1093/cybsec/tyac005
 
-George, T. (2024, May 9). What are credible sources & how to spot them | Examples. *Scribbr*. https://www.scribbr.com/working-with-sources/credible-sources/
+George, T. (2024, May 9). What are credible sources & how to spot them | Examples. *Scribbr*. Retrieved January 31, 2026, from https://www.scribbr.com/working-with-sources/credible-sources/
 
-National Cyber Security Alliance. (2023). *Small business cybersecurity statistics*. https://staysafeonline.org/
+National Cyber Security Alliance. (2023). *Small business cybersecurity statistics*. Retrieved January 31, 2026, from https://staysafeonline.org/
 
-National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. https://www.nist.gov/cyberframework
+National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. Retrieved January 31, 2026, from https://www.nist.gov/cyberframework
 
-Ryan, E. (2023, May 31). How to find sources | Scholarly articles, books, etc. *Scribbr*. https://www.scribbr.com/working-with-sources/finding-sources/
+Ryan, E. (2023, May 31). How to find sources | Scholarly articles, books, etc. *Scribbr*. Retrieved January 31, 2026, from https://www.scribbr.com/working-with-sources/finding-sources/
 
-Verizon. (2023). *2023 Data Breach Investigations Report*. https://www.verizon.com/business/resources/reports/dbir/
+Verizon. (2023). *2023 Data Breach Investigations Report*. Retrieved January 31, 2026, from https://www.verizon.com/business/resources/reports/dbir/
 
-Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
+Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. Retrieved January 31, 2026, from https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
 
 ---
 

@@ -5,7 +5,7 @@
 - **Unit**: 1 - Introduction and Fundamental Concepts
 - **Topics**: Programming basics, debugging, errors, formal vs natural languages
 - **Author**: Nicanor Kyamba
-- **Date**: January 2025
+- **Date**: January 2026
 
 ---
 
