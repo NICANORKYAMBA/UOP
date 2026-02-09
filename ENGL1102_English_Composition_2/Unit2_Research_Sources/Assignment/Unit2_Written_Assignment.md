@@ -11,55 +11,47 @@
 
 Small businesses that invest at least 10% of their annual IT budget in comprehensive cybersecurity measures (including employee training, multi-factor authentication, and regular security audits) will experience 50% fewer data breaches compared to businesses with minimal cybersecurity investment over a 24-month period.
 
-This hypothesis aligns with SMART goals criteria (CFI Team, 2023):
-
-- **Specific**: Focuses on small businesses implementing defined cybersecurity measures (employee training, multi-factor authentication, security audits) and their impact on data breach frequency.
-- **Measurable**: Quantifies investment (10% of IT budget), outcome (50% reduction in breaches), and timeframe (24 months), allowing for empirical testing through comparative analysis.
-- **Achievable**: The 10% investment threshold is realistic for small businesses, as industry recommendations suggest 6-15% of IT budgets should address security (Cybersecurity & Infrastructure Security Agency, 2023).
-- **Relevant**: Addresses a critical business problem—60% of small businesses close within six months of a cyberattack, making this research directly applicable to business survival (National Cyber Security Alliance, 2023).
-- **Time-bound**: Establishes a clear 24-month evaluation period, sufficient to capture breach patterns while remaining practical for longitudinal study.
-
-This hypothesis is testable through quantitative methods comparing breach incidents between small businesses with comprehensive cybersecurity investments and those with minimal security measures, controlling for variables such as industry sector, employee count, and revenue size.
+This hypothesis aligns with SMART goals criteria (CFI Team, 2023): It is **Specific** by defining exact measures and outcomes; **Measurable** through quantifiable metrics (10% budget, 50% reduction, 24 months); **Achievable** as industry standards recommend 6-15% IT budget allocation for security (Cybersecurity & Infrastructure Security Agency, 2023); **Relevant** since 60% of small businesses close within six months of cyberattacks (National Cyber Security Alliance, 2023); and **Time-bound** with a clear 24-month evaluation period. This hypothesis can be tested through quantitative comparison of breach incidents between businesses with comprehensive versus minimal cybersecurity investments.
 
 ---
 
 ## Credible Sources for Literature Review
 
-### Source 1: Cybersecurity & Infrastructure Security Agency (CISA) – Small Business Resources
+### Source 1: Cybersecurity & Infrastructure Security Agency (CISA)
 
 **Citation**: Cybersecurity & Infrastructure Security Agency. (2023). *Cybersecurity for small businesses*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety/small-and-medium-sized-businesses
 
-**Credibility Analysis**: CISA is the authoritative U.S. federal agency responsible for cybersecurity infrastructure protection, operating under the Department of Homeland Security. This source is highly credible because it represents official government guidance developed by cybersecurity experts and informed by national threat intelligence. The agency collaborates with private sector partners and academic institutions to develop evidence-based recommendations. As a .gov domain, it meets the highest standards for reliability and is regularly updated to reflect emerging threats. The absence of commercial bias—since CISA does not sell security products—ensures objective, public-interest-focused information. This source provides foundational best practices and statistical data on small business vulnerabilities that establish the research context.
+**Credibility**: CISA is the authoritative U.S. federal agency for cybersecurity infrastructure protection under the Department of Homeland Security. As a .gov domain with no commercial interests, it provides unbiased, expert-developed guidance informed by national threat intelligence. The agency collaborates with private sector partners and academic institutions to create evidence-based recommendations regularly updated for emerging threats, making it highly reliable for foundational cybersecurity best practices.
 
-### Source 2: Journal of Cybersecurity – Peer-Reviewed Academic Research
+### Source 2: Journal of Cybersecurity – Peer-Reviewed Research
 
 **Citation**: Eling, M., & Schnell, W. (2022). Capital requirements for cyber risk: A theoretical framework and empirical evidence from the insurance industry. *Journal of Cybersecurity, 8*(1), 1-18. https://doi.org/10.1093/cybsec/tyac005
 
-**Credibility Analysis**: The *Journal of Cybersecurity* is a peer-reviewed, open-access academic journal published by Oxford University Press, one of the most prestigious academic publishers globally. Peer review ensures that multiple independent experts evaluate research methodology, data analysis, and conclusions before publication, filtering out flawed or biased studies (George, 2024). The authors, Martin Eling and Werner Schnell, are established researchers affiliated with the University of St. Gallen's Institute of Insurance Economics, lending academic authority to their work. The article's empirical approach—analyzing quantitative data from the insurance industry—provides methodologically rigorous evidence about cyber risk financial impacts. The DOI (Digital Object Identifier) ensures permanent accessibility and verifiability, while the 2022 publication date guarantees currency in the rapidly evolving cybersecurity field.
+**Credibility**: This peer-reviewed academic journal published by Oxford University Press ensures multiple independent experts evaluate research methodology before publication (George, 2024). The authors are established researchers from the University of St. Gallen's Institute of Insurance Economics, providing academic authority. The empirical approach analyzing quantitative insurance industry data offers methodologically rigorous evidence, while the 2022 publication date and DOI ensure currency and permanent verifiability.
 
 ### Source 3: Verizon Data Breach Investigations Report (DBIR)
 
 **Citation**: Verizon. (2023). *2023 Data Breach Investigations Report*. Retrieved January 31, 2026, from https://www.verizon.com/business/resources/reports/dbir/
 
-**Credibility Analysis**: The Verizon DBIR is an industry-leading annual report analyzing thousands of real-world data breaches and security incidents across multiple sectors and organization sizes. Its credibility stems from its comprehensive data collection methodology—the 2023 report analyzed 16,312 security incidents and 5,199 confirmed breaches from 94 contributing organizations worldwide (Verizon, 2023). This large sample size and multi-source data aggregation provide statistical reliability that individual case studies cannot match. Verizon's cybersecurity division employs experienced threat researchers and forensic investigators who analyze breach patterns using standardized frameworks. The report's transparency about methodology, including data limitations and classification criteria, demonstrates scientific rigor. While Verizon is a commercial entity, the DBIR is freely available and widely cited by academic researchers, government agencies, and security professionals, indicating cross-sector validation of its findings.
+**Credibility**: The Verizon DBIR analyzes real-world breaches across multiple sectors with comprehensive methodology—the 2023 report examined 16,312 security incidents and 5,199 confirmed breaches from 94 contributing organizations worldwide (Verizon, 2023). This large sample size provides statistical reliability beyond individual case studies. The report's methodological transparency and widespread citation by academic researchers, government agencies, and security professionals demonstrate cross-sector validation despite Verizon's commercial status.
 
-### Source 4: National Institute of Standards and Technology (NIST) Cybersecurity Framework
+### Source 4: National Institute of Standards and Technology (NIST)
 
 **Citation**: National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. Retrieved January 31, 2026, from https://www.nist.gov/cyberframework
 
-**Credibility Analysis**: NIST is a non-regulatory federal agency within the U.S. Department of Commerce responsible for developing technology standards and guidelines. The NIST Cybersecurity Framework is internationally recognized as the gold standard for organizational cybersecurity risk management, adopted by businesses, government agencies, and critical infrastructure operators worldwide. Its credibility derives from its development process, which involved extensive collaboration with private sector stakeholders, academic experts, and international partners over multiple years. The framework is evidence-based, drawing on documented best practices and lessons learned from real-world incidents. As a .gov source with no commercial interests, NIST provides unbiased, scientifically grounded guidance. The framework's voluntary nature and widespread adoption across industries demonstrate its practical applicability and effectiveness. Regular updates—including the 2024 version 2.0—ensure the framework remains relevant to evolving cyber threats.
+**Credibility**: NIST is a non-regulatory federal agency developing technology standards and guidelines. The NIST Cybersecurity Framework is internationally recognized as the gold standard for organizational risk management, adopted by businesses and governments worldwide. Its credibility stems from extensive collaboration with private sector stakeholders, academic experts, and international partners. As a .gov source, it provides unbiased, evidence-based guidance with regular updates ensuring relevance to evolving threats.
 
-### Source 5: Harvard Business Review – Small Business Cybersecurity Economics
+### Source 5: Harvard Business Review
 
 **Citation**: Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targets for cyberattacks. *Harvard Business Review*. Retrieved January 31, 2026, from https://hbr.org/2023/08/why-small-businesses-are-prime-targets-for-cyberattacks
 
-**Credibility Analysis**: *Harvard Business Review* (HBR) is a premier business management publication affiliated with Harvard Business School, one of the world's leading academic institutions. HBR articles undergo editorial review by business experts and are written by credentialed authors—in this case, Martin Zwilling (startup advisor and founder of Startup Professionals) and Luis Anaya (cybersecurity consultant). While not peer-reviewed in the academic sense, HBR maintains rigorous editorial standards and publishes evidence-based analysis supported by research citations and expert interviews (Ryan, 2023). The publication's reputation depends on accuracy and practical applicability, incentivizing thorough fact-checking. This article specifically addresses the economic vulnerabilities of small businesses to cyber threats, providing business-focused analysis that complements technical sources. HBR's audience includes executives and business leaders, ensuring content is both credible and actionable for decision-makers implementing cybersecurity strategies.
+**Credibility**: *Harvard Business Review* is a premier business publication affiliated with Harvard Business School. Articles undergo editorial review by business experts and are written by credentialed authors—Martin Zwilling (startup advisor) and Luis Anaya (cybersecurity consultant). While not peer-reviewed academically, HBR maintains rigorous editorial standards with evidence-based analysis supported by research citations (Ryan, 2023). This article addresses economic vulnerabilities of small businesses, providing business-focused analysis complementing technical sources.
 
 ---
 
 ## Conclusion
 
-This research hypothesis and literature review foundation establish a framework for investigating how cybersecurity investment levels correlate with data breach prevention in small businesses. The five credible sources represent diverse perspectives—government agencies (CISA, NIST), peer-reviewed academic research (*Journal of Cybersecurity*), industry data analysis (Verizon DBIR), and business management expertise (HBR)—providing comprehensive coverage of technical, regulatory, empirical, and economic dimensions of small business cybersecurity. By combining authoritative government guidance, rigorous academic research, large-scale industry data, standardized frameworks, and business-focused analysis, this literature review ensures a well-rounded, evidence-based approach to testing the hypothesis. Future research will involve collecting quantitative data from small businesses across multiple sectors to empirically validate or refute the predicted 50% reduction in data breaches associated with comprehensive cybersecurity investment.
+This research hypothesis and literature review establish a framework for investigating cybersecurity investment correlation with data breach prevention in small businesses. The five credible sources represent diverse perspectives—government agencies (CISA, NIST), peer-reviewed academic research, industry data analysis (Verizon DBIR), and business management expertise (HBR)—providing comprehensive coverage of technical, regulatory, empirical, and economic dimensions. Future research will collect quantitative data from small businesses across sectors to validate the predicted 50% breach reduction.
 
 ---
 
@@ -85,4 +77,4 @@ Zwilling, M., & Anaya, L. (2023, August 15). Why small businesses are prime targ
 
 ---
 
-**Word Count**: 747 words (excluding title, headings, and references)
+**Word Count**: 649 words (excluding title, headings, and references)
