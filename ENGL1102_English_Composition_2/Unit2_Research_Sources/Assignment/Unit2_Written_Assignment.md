@@ -69,12 +69,10 @@ National Cyber Security Alliance. (2023). *Small business cybersecurity statisti
 
 National Institute of Standards and Technology. (2024). *NIST Cybersecurity Framework 2.0*. U.S. Department of Commerce. Retrieved January 31, 2026, from https://www.nist.gov/cyberframework
 
-Ryan, E. (2023, May 31). How to find sources | Scholarly articles, books, etc. *Scribbr*. Retrieved January 31, 2026, from https://www.scribbr.com/working-with-sources/finding-sources/
+U.S. Small Business Administration. (2023). *Cybersecurity for small businesses*. Retrieved January 31, 2026, from https://www.sba.gov/business-guide/manage-your-business/stay-safe-cybersecurity-threats
 
 Verizon. (2023). *2023 Data Breach Investigations Report*. Retrieved January 31, 2026, from https://www.verizon.com/business/resources/reports/dbir/
 
-U.S. Small Business Administration. (2023). *Cybersecurity for small businesses*. Retrieved January 31, 2026, from https://www.sba.gov/business-guide/manage-your-business/stay-safe-cybersecurity-threats
-
 ---
 
-**Word Count**: 649 words (excluding title, headings, and references)
+**Word Count**: 632 words (excluding title, headings, and references)
