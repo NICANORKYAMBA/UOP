@@ -10,7 +10,7 @@
 
 ## Overview of Argumentative Essay Mode
 
-An argumentative essay is a rhetorical mode that presents a clear position on a debatable issue and supports that position with logical reasoning, credible evidence, and systematic refutation of opposing viewpoints (Weaver et al., 2016). Unlike persuasive writing, which relies heavily on emotional appeals, argumentative essays prioritize logical structure and factual evidence to convince readers through rational analysis. The writer must acknowledge counterarguments and demonstrate why their position is more valid, creating a balanced yet assertive presentation (Hall & Wallace, 2018). This mode is essential in academic and professional contexts where decisions must be justified through evidence-based reasoning rather than personal opinion alone.
+An argumentative essay is a rhetorical mode that presents a clear position on a debatable issue and supports that position with logical reasoning, credible evidence, and systematic refutation of opposing viewpoints. Unlike persuasive writing, which relies heavily on emotional appeals, argumentative essays prioritize logical structure and factual evidence to convince readers through rational analysis. The writer must acknowledge counterarguments and demonstrate why their position is more valid, creating a balanced yet assertive presentation. This mode is essential in academic and professional contexts where decisions must be justified through evidence-based reasoning rather than personal opinion alone.
 
 ---
 
@@ -34,7 +34,7 @@ Remote work enhances productivity by granting employees autonomy over their sche
 
 ### Addressing Counterarguments: Collaboration and Accountability
 
-Opponents of remote work argue that it hinders spontaneous collaboration and makes employee accountability difficult to maintain. While these concerns have merit, they reflect outdated management practices rather than inherent flaws in remote work. Modern collaboration tools like Slack, Microsoft Teams, and Zoom facilitate real-time communication and project coordination, often more efficiently than physical meetings that require scheduling and travel time between conference rooms (Weaver et al., 2016). The Stanford study mentioned earlier also found that remote workers took fewer sick days and shorter breaks, contradicting assumptions about reduced accountability (Bloom et al., 2015). Furthermore, productivity should be measured by output and results rather than physical presence—a shift that remote work necessitates and that ultimately benefits both employees and employers by focusing on meaningful contributions rather than performative busyness.
+Opponents of remote work argue that it hinders spontaneous collaboration and makes employee accountability difficult to maintain. While these concerns have merit, they reflect outdated management practices rather than inherent flaws in remote work. Modern collaboration tools like Slack, Microsoft Teams, and Zoom facilitate real-time communication and project coordination, often more efficiently than physical meetings that require scheduling and travel time between conference rooms. The Stanford study mentioned earlier also found that remote workers took fewer sick days and shorter breaks, contradicting assumptions about reduced accountability (Bloom et al., 2015). Furthermore, productivity should be measured by output and results rather than physical presence—a shift that remote work necessitates and that ultimately benefits both employees and employers by focusing on meaningful contributions rather than performative busyness.
 
 ### Conclusion
 
@@ -48,15 +48,11 @@ Bloom, N., Liang, J., Roberts, J., & Ying, Z. J. (2015). Does working from home 
 
 FlexJobs. (2020). *2020 State of remote work report*. https://www.flexjobs.com/blog/post/remote-work-statistics/
 
-Hall, B., & Wallace, E. (2018). *College ESL writers: Applied grammar and composing strategies for success*. GALILEO Open Learning Materials. https://oer.galileo.usg.edu/english-textbooks/14
-
 Mark, G., Iqbal, S. T., Czerwinski, M., Johns, P., & Sano, A. (2018). Email duration, batching and self-interruption: Patterns of email use on productivity and stress. *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems*, 1-13. https://doi.org/10.1145/3173574.3174044
 
 Roenneberg, T., Pilz, L. K., Zerbini, G., & Winnebeck, E. C. (2019). Chronotype and social jetlag: A (self-) critical review. *Biology, 8*(3), 54. https://doi.org/10.3390/biology8030054
 
 U.S. Census Bureau. (2021). *American Community Survey: Commuting characteristics by sex*. https://data.census.gov/
-
-Weaver, R., Bost, L., Kassorla, M., McKinney-Holley, K., Crowther, K., Curtright, L., Gilbert, N., Hall, B., Ravita, T., & Swenson, K. (2016). *Successful college composition* (3rd ed.). GALILEO Open Learning Materials. https://oer.galileo.usg.edu/english-textbooks/8
 
 ---
 
