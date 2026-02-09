@@ -23,11 +23,11 @@ This hypothesis aligns with SMART goals criteria (CFI Team, 2023): It is **Speci
 
 **Credibility**: CISA is the authoritative U.S. federal agency for cybersecurity infrastructure protection under the Department of Homeland Security. As a .gov domain with no commercial interests, it provides unbiased, expert-developed guidance informed by national threat intelligence. The agency collaborates with private sector partners and academic institutions to create evidence-based recommendations regularly updated for emerging threats, making it highly reliable for foundational cybersecurity best practices.
 
-### Source 2: Journal of Cybersecurity – Peer-Reviewed Research
+### Source 2: Computers & Security – Peer-Reviewed Research
 
-**Citation**: Eling, M., & Schnell, W. (2022). Capital requirements for cyber risk: A theoretical framework and empirical evidence from the insurance industry. *Journal of Cybersecurity, 8*(1), 1-18. https://doi.org/10.1093/cybsec/tyac005
+**Citation**: Eling, M., & Schnell, W. (2016). What do we know about cyber risk and cyber risk insurance? *The Journal of Risk Finance, 17*(5), 474-491. https://doi.org/10.1108/JRF-09-2016-0122
 
-**Credibility**: This peer-reviewed academic journal published by Oxford University Press ensures multiple independent experts evaluate research methodology before publication (George, 2024). The authors are established researchers from the University of St. Gallen's Institute of Insurance Economics, providing academic authority. The empirical approach analyzing quantitative insurance industry data offers methodologically rigorous evidence, while the 2022 publication date and DOI ensure currency and permanent verifiability.
+**Credibility**: *The Journal of Risk Finance* is a peer-reviewed academic journal published by Emerald Publishing, ensuring multiple independent experts evaluate research methodology before publication (George, 2024). The authors, Martin Eling and Werner Schnell from the University of St. Gallen's Institute of Insurance Economics, are established researchers in cyber risk management. Their systematic literature review analyzing cyber risk insurance provides empirically grounded evidence about financial impacts of cybersecurity investments. The DOI ensures permanent accessibility and verifiability, while the peer-review process guarantees academic rigor.
 
 ### Source 3: Verizon Data Breach Investigations Report (DBIR)
 
@@ -61,7 +61,7 @@ CFI Team. (2023, November 19). SMART goals. *Corporate Finance Institute*. Retri
 
 Cybersecurity & Infrastructure Security Agency. (2023). *Organizations and cyber safety*. U.S. Department of Homeland Security. Retrieved January 31, 2026, from https://www.cisa.gov/topics/cybersecurity-best-practices/organizations-and-cyber-safety
 
-Eling, M., & Schnell, W. (2022). Capital requirements for cyber risk: A theoretical framework and empirical evidence from the insurance industry. *Journal of Cybersecurity, 8*(1), 1-18. https://doi.org/10.1093/cybsec/tyac005
+Eling, M., & Schnell, W. (2016). What do we know about cyber risk and cyber risk insurance? *The Journal of Risk Finance, 17*(5), 474-491. https://doi.org/10.1108/JRF-09-2016-0122
 
 George, T. (2024, May 9). What are credible sources & how to spot them | Examples. *Scribbr*. Retrieved January 31, 2026, from https://www.scribbr.com/working-with-sources/credible-sources/
 
