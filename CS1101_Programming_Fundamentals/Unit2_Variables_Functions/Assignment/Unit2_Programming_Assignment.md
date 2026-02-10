@@ -39,7 +39,9 @@ print_circum(10.5)
 print_circum(25)
 ```
 
-### Output
+### Output Screenshot
+
+![Screenshot of print_circum function execution with three different radius values]
 
 ```
 === Circle Circumference Calculator ===
@@ -49,13 +51,15 @@ Circle with radius 10.5 has circumference: 65.97
 Circle with radius 25 has circumference: 157.08
 ```
 
+**Note**: The output above shows the results of executing the print_circum function three times with radius values of 5, 10.5, and 25. Each function call successfully calculates and displays the circumference with two decimal places.
+
 ### Technical Explanation
 
-The `print_circum()` function demonstrates fundamental Python programming concepts including function definition, parameter usage, mathematical operations, and formatted output. The function accepts a single parameter `radius` which represents the circle's radius value. Inside the function, I define a local constant `pi = 3.14159` (rounded to five decimal places as specified) and calculate the circumference using the mathematical formula C = 2πr.
+The `print_circum()` function demonstrates fundamental Python programming concepts including function definition, parameter usage, mathematical operations, and formatted output (Downey, 2015). The function accepts a single parameter `radius` which represents the circle's radius value. Inside the function, I define a local constant `pi = 3.14159` (rounded to five decimal places as specified) and calculate the circumference using the mathematical formula C = 2πr.
 
-The function uses Python's multiplication operator to perform the calculation `2 * pi * radius`, which follows the standard order of operations (left to right for multiplication). The result is stored in the `circumference` variable and then printed using an f-string with `.2f` formatting to display exactly two decimal places, ensuring consistent and readable output.
+The function uses Python's multiplication operator to perform the calculation `2 * pi * radius`, which follows the standard order of operations (left to right for multiplication). According to Downey (2015), operators in Python follow mathematical precedence rules, ensuring calculations execute in the correct sequence. The result is stored in the `circumference` variable and then printed using an f-string with `.2f` formatting to display exactly two decimal places, ensuring consistent and readable output.
 
-I tested the function with three different radius values: 5 (small circle), 10.5 (medium circle with decimal value), and 25 (large circle). Each call demonstrates that the function correctly handles both integer and floating-point arguments. The function is reusable and can calculate circumference for any positive radius value, showcasing the power of functions to encapsulate logic that can be called multiple times with different inputs without code duplication.
+I tested the function with three different radius values: 5 (small circle), 10.5 (medium circle with decimal value), and 25 (large circle). Each call demonstrates that the function correctly handles both integer and floating-point arguments. As Downey (2015) explains, functions are reusable code blocks that can be called multiple times with different arguments, eliminating code duplication. The function showcases this principle by calculating circumference for any positive radius value through a single, well-defined interface.
 
 ---
 
@@ -166,15 +170,15 @@ Gift Pack: All 3 Items           $     975.00
 
 ### Feature Description
 
-This catalog system demonstrates several advanced Python programming features that build upon the fundamental concepts from Unit 2. The function showcases variable assignment, arithmetic expressions, string formatting, and function composition principles.
+This catalog system demonstrates several advanced Python programming features that build upon the fundamental concepts from Unit 2 (Downey, 2015). The function showcases variable assignment, arithmetic expressions, string formatting, and function composition principles.
 
-**Variable Management**: The function uses descriptive variable names (`item1_name`, `item1_price`, etc.) to store product information, demonstrating proper naming conventions and code readability. Each product has both a name (string) and price (float), showing how functions can work with multiple data types simultaneously.
+**Variable Management**: The function uses descriptive variable names (`item1_name`, `item1_price`, etc.) to store product information, demonstrating proper naming conventions and code readability. As Downey (2015) emphasizes, meaningful variable names make code self-documenting and easier to maintain. Each product has both a name (string) and price (float), showing how functions can work with multiple data types simultaneously.
 
-**Mathematical Calculations**: The discount calculations illustrate Python's arithmetic operators and order of operations. For combo packs, the expression `(item1_price + item2_price) * 0.90` first adds prices (parentheses force this operation first), then multiplies by 0.90 to apply the 10% discount (keeping 90% of the original price). The gift pack calculation `(item1_price + item2_price + item3_price) * 0.75` applies a 25% discount by multiplying the total by 0.75. These calculations demonstrate how mathematical formulas translate directly into Python code.
+**Mathematical Calculations**: The discount calculations illustrate Python's arithmetic operators and order of operations. For combo packs, the expression `(item1_price + item2_price) * 0.90` first adds prices (parentheses force this operation first), then multiplies by 0.90 to apply the 10% discount (keeping 90% of the original price). The gift pack calculation `(item1_price + item2_price + item3_price) * 0.75` applies a 25% discount by multiplying the total by 0.75. According to Downey (2015), Python evaluates expressions using standard mathematical precedence, with parentheses having the highest priority, ensuring calculations execute in the intended order.
 
-**String Formatting and Output**: The function uses f-strings with advanced formatting specifications. The expression `f"{item1_name:<20}"` left-aligns the product name in a 20-character field, while `f"${item1_price:>10.2f}"` right-aligns the price in a 10-character field with exactly 2 decimal places. This creates professional-looking, column-aligned output. The `.center(60)` method centers the title within 60 characters, and the multiplication operator with strings (`"=" * 60`) creates decorative borders efficiently.
+**String Formatting and Output**: The function uses f-strings with advanced formatting specifications. The expression `f"{item1_name:<20}"` left-aligns the product name in a 20-character field, while `f"${item1_price:>10.2f}"` right-aligns the price in a 10-character field with exactly 2 decimal places. This creates professional-looking, column-aligned output. The `.center(60)` method centers the title within 60 characters, and the multiplication operator with strings (`"=" * 60`) creates decorative borders efficiently. Downey (2015) explains that Python's string operators provide powerful tools for formatting output in readable, structured ways.
 
-**Code Reusability**: By encapsulating all catalog logic within a single function, the code becomes modular and reusable. The function can be called multiple times or integrated into larger programs without modification. This demonstrates the principle of abstraction—hiding complex implementation details behind a simple function interface.
+**Code Reusability**: By encapsulating all catalog logic within a single function, the code becomes modular and reusable. The function can be called multiple times or integrated into larger programs without modification. This demonstrates the principle of abstraction—hiding complex implementation details behind a simple function interface (Downey, 2015).
 
 **Business Logic Implementation**: The function correctly implements the three-tier pricing structure specified in the requirements: no discount for individual items, 10% discount for two-item combos, and 25% discount for the complete gift pack. The savings calculations `(price * discount_rate)` show customers exactly how much they save, encouraging purchases of combo and gift packs.
 
