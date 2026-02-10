@@ -29,6 +29,7 @@ def display_catalog():
     print("=" * 60)
     print("TECHSTORE PRODUCT CATALOG".center(60))
     print("=" * 60)
+    print("For delivery Contact: +1-555-TECH-SHOP")
     print()
     
     # Individual items
