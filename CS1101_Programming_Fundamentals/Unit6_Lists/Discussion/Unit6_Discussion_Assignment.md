@@ -3,7 +3,7 @@
 **Name**: Nicanor Kyamba  
 **Course**: CS1101 Programming Fundamentals  
 **Unit**: 6 — Lists  
-**Date**: February 2026
+**Date**: March 2026
 
 ---
 
@@ -79,17 +79,8 @@ Because lists are passed by reference, a function receives a reference to the or
 
 ```python
 def apply_raise(salary_list, percent):
-    """
-    Applies a percentage raise to every salary in salary_list.
-    
-    Arguments:
-        salary_list (list): the original list of salaries — passed by reference
-        percent (float): raise percentage, e.g. 0.04 for 4%
-    
-    The parameter salary_list is a reference to the same object
-    as the argument passed in. Modifying elements via index
-    modifies the original list object in memory.
-    """
+    # salary_list is a reference to the same object as the argument
+    # Index assignment modifies the original list object in place
     for i in range(len(salary_list)):
         salary_list[i] = round(salary_list[i] * (1 + percent), 2)
 
@@ -105,7 +96,7 @@ Before: [50000, 62000, 47500, 71000, 55000]
 After:  [52000.0, 64480.0, 49400.0, 73840.0, 57200.0]
 ```
 
-The function `apply_raise` takes `salary_list` as a **parameter** — a local reference that points to the same list object as the **argument** `salaries`. Because the function modifies elements in place using index assignment (`salary_list[i] = ...`), it modifies the original object. After the function returns, `salaries` reflects the updated values without any return statement needed. This demonstrates how Python's reference-based argument passing gives functions direct access to mutable objects like lists (Downey, 2015, p. 109).
+The function `apply_raise` takes `salary_list` as a **parameter** — a local reference that points to the same list object as the **argument** `salaries`. Because the function modifies elements in place using index assignment (`salary_list[i] = ...`), it modifies the original object directly. After the function returns, `salaries` reflects the updated values without any `return` statement needed. This is a direct consequence of Python's reference semantics: when a list is passed as an argument, the parameter and the argument are two names for the same object in memory. Downey (2015) notes that this behaviour is important to keep in mind because "if a function modifies a list parameter, the caller sees the change" (p. 110).
 
 ---
 
@@ -121,4 +112,4 @@ Downey, A. (2015). *Think Python: How to think like a computer scientist*. Green
 
 ---
 
-**Word Count**: ~612 words
+**Word Count**: ~640 words (body prose, excluding code blocks and header)
