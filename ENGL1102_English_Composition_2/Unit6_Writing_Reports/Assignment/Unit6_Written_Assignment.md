@@ -15,7 +15,7 @@ Understanding how people allocate their time across daily activities offers valu
 
 ## Findings
 
-The pie chart reveals that sleeping constitutes the single largest share of Americans' daily time, accounting for approximately 8.8 hours per day — roughly 37% of a 24-hour period (U.S. Bureau of Labor Statistics, 2024). This finding is consistent with medical recommendations that adults require between seven and nine hours of sleep per night for optimal health (U.S. Bureau of Labor Statistics, 2024).
+The pie chart reveals that sleeping constitutes the single largest share of Americans' daily time, accounting for approximately 8.8 hours per day — roughly 37% of a 24-hour period (U.S. Bureau of Labor Statistics, 2024). This finding aligns with the widely recognized recommendation that adults require between seven and nine hours of sleep per night for optimal cognitive and physical health (U.S. Bureau of Labor Statistics, 2024).
 
 The second largest category is leisure and sports, which accounts for approximately 5.0 hours per day, or about 21% of daily time. This is a notably large proportion and suggests that, on average, Americans dedicate a substantial portion of their waking hours to recreational activities. Working and work-related activities account for approximately 3.6 hours per day, representing roughly 15% of the daily total. Household activities follow at approximately 1.8 hours (8%), while eating and drinking and caring for household members each account for approximately 1.1 hours (5% each). The remaining time is distributed across smaller categories including educational activities, purchasing goods and services, and other personal care.
 
@@ -43,8 +43,8 @@ College of Business and Economics. (2024, November 1). *Guidelines for reports*.
 
 Serdikoff, S. (2021). *Research methods for the behavioral sciences* (5th ed.). GALILEO Open Learning Materials. https://oer.galileo.usg.edu/psychology-textbooks/12/
 
-U.S. Bureau of Labor Statistics. (2024). *American time use survey*. https://www.bls.gov/tus/
+U.S. Bureau of Labor Statistics. (2024). *American time use survey — charts by topic: How do you spend your time?* https://www.bls.gov/tus/charts/
 
 ---
 
-**Word Count**: ~620 words (body, excluding title and references)
+**Word Count**: ~609 words (body, excluding title and references)
