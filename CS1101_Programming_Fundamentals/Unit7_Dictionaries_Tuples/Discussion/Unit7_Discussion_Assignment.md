@@ -9,7 +9,7 @@
 
 ## Tuples with Loops: zip, enumerate, and items
 
-Tuples are immutable sequences that become especially powerful when combined with Python's built-in looping tools. Downey (2015) notes that tuples are useful for "iterating through multiple lists at once, and iterating through the key-value pairs in a dictionary" (p. 121). This post demonstrates all three tools — `zip`, `enumerate`, and `.items()` — with original examples from a student grade tracking context.
+Tuples are immutable sequences that become especially powerful when combined with Python's built-in looping tools. Downey (2015) notes that tuples are useful for "iterating through multiple lists at once, and iterating through the key-value pairs in a dictionary" (p. 121). Each of the three tools covered below — `zip`, `enumerate`, and `.items()` — works by producing tuples that are immediately unpacked in the loop header, making tuple assignment central to how they operate. This post demonstrates all three tools — `zip`, `enumerate`, and `.items()` — with original examples from a student grade tracking context.
 
 ---
 
@@ -63,7 +63,7 @@ Course 3: CS2001
 Course 4: ENGL1102
 ```
 
-Without `enumerate`, this would require `for i in range(len(courses))` and manual indexing. `enumerate` makes the intent clearer — we want both the position and the value — and eliminates the risk of off-by-one errors when the start index matters (Downey, 2015, p. 122).
+Without `enumerate`, this would require `for i in range(len(courses))` and manual indexing. `enumerate` makes the intent clearer — we want both the position and the value — and eliminates the risk of off-by-one errors when the start index matters (Downey, 2015, p. 122). Crucially, the `(index, course)` pair yielded on each iteration is a tuple — the same tuple assignment mechanism that makes `zip` and `.items()` work.
 
 ---
 
@@ -104,4 +104,4 @@ Downey, A. (2015). *Think Python: How to think like a computer scientist*. Green
 
 ---
 
-**Word Count**: ~530 words
+**Word Count**: ~560 words
