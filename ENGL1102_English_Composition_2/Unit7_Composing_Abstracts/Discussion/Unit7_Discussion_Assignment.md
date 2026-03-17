@@ -11,7 +11,7 @@
 
 ### Background
 
-Small businesses represent 99.9% of all U.S. firms and employ approximately 46% of the private-sector workforce, yet they remain disproportionately vulnerable to cyberattacks due to limited resources, fragmented guidance, and insufficient attention to long-term training sustainability (Small Business Administration [SBA], 2023). The Verizon (2023) Data Breach Investigations Report found that 74% of all breaches involve the human element, confirming that technological defenses alone are insufficient when employees remain the primary attack vector. Despite the availability of frameworks such as the NIST Cybersecurity Framework (2018) and CISA best practices (2024), existing guidance largely fails to address how small businesses can progressively mature from foundational security measures toward comprehensive risk management over time.
+Small businesses represent 99.9% of all U.S. firms and employ approximately 46% of the private-sector workforce, yet they remain disproportionately vulnerable to cyberattacks due to limited budgets, fragmented guidance, and insufficient attention to long-term training sustainability (Small Business Administration [SBA], 2023). The Verizon (2023) *Data Breach Investigations Report* found that 74% of all breaches involve the human element, confirming that technological defenses alone are insufficient when employees remain the primary attack vector. Despite the availability of established frameworks such as the NIST Cybersecurity Framework (2018) and CISA best practices (2024), existing guidance largely fails to address how small businesses can progressively mature from foundational security measures toward comprehensive risk management over time. This gap is particularly consequential because small businesses often lack dedicated IT staff, making scalable, self-directed implementation models essential rather than optional.
 
 ### Problem Statement
 
@@ -27,13 +27,13 @@ This study employs a mixed-methods research design, combining a quantitative sur
 
 ### Proposed Contribution
 
-The study proposes a tiered cybersecurity maturity model that enables small businesses to advance systematically from SBA's (2023) foundational practices toward NIST's (2018) comprehensive framework, incorporating Eling and Schnell's (2016) quantitative risk assessment principles to measure progress and justify investment. This model addresses the training sustainability gap through built-in reinforcement mechanisms and measurable milestones, providing a structured, evidence-based pathway for strengthening cybersecurity resilience across the small business sector.
+The study proposes a tiered cybersecurity maturity model that enables small businesses to advance systematically from SBA's (2023) foundational practices toward NIST's (2018) comprehensive framework, incorporating Eling and Schnell's (2016) quantitative risk assessment principles to measure progress and justify investment. This model directly addresses the training sustainability gap through built-in reinforcement mechanisms and measurable milestones, providing a structured, evidence-based pathway for strengthening cybersecurity resilience across the small business sector. By bridging the divide between high-level policy frameworks and the day-to-day operational realities of resource-constrained organizations, this research contributes a practical, actionable model that practitioners and policymakers can adapt to diverse small business contexts.
 
 ---
 
 ### Discussion Question
 
-An effective abstract must summarize background, problem, objectives, questions, methodology, and findings in a concise space. Which of these six elements do you find most challenging to condense without losing essential meaning, and what strategies do you use to ensure that element remains clear and complete?
+An effective abstract must compress background, problem, objectives, questions, methodology, and findings into a concise space without sacrificing clarity. In drafting your own abstract, which of these six elements proved most difficult to condense, and what specific strategies — such as prioritizing scope over detail, or using precise terminology to carry more meaning in fewer words — did you apply to keep that element clear and complete?
 
 ---
 
@@ -55,4 +55,4 @@ Writing Center, University of Wisconsin–Madison. (n.d.). *Writing an abstract 
 
 ---
 
-**Word Count**: ~430 words (body, excluding title and references)
+**Word Count**: ~490 words (body, excluding title and references)
