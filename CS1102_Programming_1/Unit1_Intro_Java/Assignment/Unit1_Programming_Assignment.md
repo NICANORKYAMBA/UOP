@@ -324,136 +324,48 @@ public class QuizGame {
 
 ---
 
-## 7. Console Output (Rubric Criterion 5)
+## 7. Output (Rubric Criterion 5)
 
-*Note: Screenshots of the program running in Eclipse IDE are included in the submitted Word document.*
+The output rubric requires three items: a screenshot of the program output, the code file (included in Section 6 above), and a screenshot of the code running in the IDE. All three are provided below.
 
-### Test Run 1 — All Correct Answers (B, C, C, B, D)
+---
 
-```
-============================================
-        Welcome to the Java Quiz Game
-============================================
-Type A, B, C, or D to answer each question.
+### Screenshot 1 — IDE Screenshot (Code in IntelliJ IDEA)
 
-Question 1: Which keyword is used to define a class in Java?
-  A. define
-  B. class
-  C. struct
-  D. object
-Your answer: B
-Correct! 'class' is the keyword used to define a class in Java.
+*[INSERT SCREENSHOT HERE: IntelliJ IDEA editor showing the full QuizGame.java code. The screenshot should show the project structure panel on the left, the code in the editor, and the IntelliJ toolbar at the top.]*
 
-Question 2: What is the default value of an int variable in Java?
-  A. null
-  B. 1
-  C. 0
-  D. undefined
-Your answer: C
-Correct! The default value of an int in Java is 0.
+---
 
-Question 3: Which of the following is a primitive data type in Java?
-  A. String
-  B. Array
-  C. double
-  D. Scanner
-Your answer: C
-Correct! 'double' is one of Java's eight primitive data types.
+### Screenshot 2 — Output Screenshot: Test Run 1 (All Correct Answers — B, C, C, B, D)
 
-Question 4: What does the % operator compute in Java?
-  A. The result of dividing two numbers
-  B. The remainder after integer division
-  C. The product of two numbers
-  D. A number converted to a percentage
-Your answer: B
-Correct! % is the modulo operator; it returns the remainder of division.
+*[INSERT SCREENSHOT HERE: IntelliJ Run console showing the program running with answers B, C, C, B, D entered. The console should show all five "Correct!" messages and the final score of 100.0%.]*
 
-Question 5: Which conditional statement is best suited for testing
-           a variable against many fixed, discrete values?
-  A. for loop
-  B. while loop
-  C. if-else
-  D. switch
-Your answer: D
-Correct! switch is designed to test one expression against multiple constant values.
+Expected output for this run:
+- All five answers correct
+- Final score: **100.0%**
+- Message: *Outstanding! You achieved a perfect score.*
 
-============================================
-              Quiz Complete!
-============================================
-You answered 5 out of 5 questions correctly.
-Your final score: 100.0%
+---
 
-Outstanding! You achieved a perfect score.
-```
+### Screenshot 3 — Output Screenshot: Test Run 2 (Mixed Answers — A, A, C, B, D)
 
-### Test Run 2 — All Wrong Answers (A, A, A, A, A)
+*[INSERT SCREENSHOT HERE: IntelliJ Run console showing the program running with answers A, A, C, B, D entered. The console should show two incorrect messages, three correct messages, and a final score of 60.0%.]*
 
-```
-============================================
-        Welcome to the Java Quiz Game
-============================================
-Type A, B, C, or D to answer each question.
+Expected output for this run:
+- Questions 1 and 2 incorrect, Questions 3, 4, and 5 correct
+- Final score: **60.0%**
+- Message: *Good effort! Review the questions you missed and try again.*
 
-Question 1: ...
-Your answer: A
-Incorrect. 'define' is not a Java keyword. The correct answer is B.
+---
 
-Question 2: ...
-Your answer: A
-Incorrect. 'null' is the default for reference types, not int. The correct answer is C.
+### Screenshot 4 — Output Screenshot: Test Run 3 (Invalid Input — X entered for Question 1)
 
-Question 3: ...
-Your answer: A
-Incorrect. String is a reference type (a class), not a primitive. The correct answer is C.
+*[INSERT SCREENSHOT HERE: IntelliJ Run console showing the program running with X entered for Question 1. The console should show the invalid input message and the question being skipped gracefully.]*
 
-Question 4: ...
-Your answer: A
-Incorrect. Division is performed by /. The correct answer is B.
-
-Question 5: ...
-Your answer: A
-Incorrect. A for loop is used for iteration, not value matching. The correct answer is D.
-
-============================================
-              Quiz Complete!
-============================================
-You answered 0 out of 5 questions correctly.
-Your final score: 0.0%
-
-Keep studying — revisit Chapter 2 and 3 of Eck (2022) for review.
-```
-
-### Test Run 3 — Invalid Input on Question 1, then Mixed Answers (X, B, C, B, D)
-
-```
-Question 1: ...
-Your answer: X
-Invalid input 'X'. Please enter A, B, C, or D. Question skipped.
-
-Question 2: ...
-Your answer: B
-Incorrect. int variables do not default to 1. The correct answer is C.
-
-Question 3: ...
-Your answer: C
-Correct! 'double' is one of Java's eight primitive data types.
-
-Question 4: ...
-Your answer: B
-Correct! % is the modulo operator; it returns the remainder of division.
-
-Question 5: ...
-Your answer: D
-Correct! switch is designed to test one expression against multiple constant values.
-
-============================================
-              Quiz Complete!
-============================================
-You answered 3 out of 5 questions correctly.
-Your final score: 60.0%
-
-Good effort! Review the questions you missed and try again.
-```
+Expected output for this run:
+- Question 1 skipped with message: *Invalid input 'X'. Please enter A, B, C, or D. Question skipped.*
+- Program continues normally to Question 2
+- Demonstrates input validation working correctly
 
 ---
 
