@@ -248,6 +248,144 @@ This connection between cost structure and market structure is why understanding
 
 ---
 
+## Part 6: Perfect Competition (Chapter 8)
+
+### 6.1 Characteristics of a Perfectly Competitive Market (Section 8.1)
+
+Firms are in perfect competition when four conditions hold (Greenlaw et al., 2022, Section 8.1):
+1. **Many firms** produce **identical products** — no differentiation
+2. **Many buyers and sellers** — no single participant can influence price
+3. **Perfect information** — all buyers and sellers have all relevant information
+4. **Free entry and exit** — no restrictions on entering or leaving the market
+
+Because of these conditions, a perfectly competitive firm is a **price taker** — it must accept the prevailing market price. If it raises its price by even one cent, it loses all customers to competitors. If it lowers its price, it earns less than necessary when it could sell everything at the market price.
+
+Agricultural markets are the classic example. A corn farmer who tried to sell at $6.00 per bushel when the market price is $5.47 would find no buyers. The market price is determined by the interaction of all supply and demand in the market, not by any individual farmer (Greenlaw et al., 2022, Section 8.1).
+
+**Long-run outcome**: In the long run, positive economic profits attract new entrants, which increases supply, drives down price, and eliminates profits. Economic losses cause firms to exit, reducing supply, raising price, and eliminating losses. This continues until **economic profit = 0** — the long-run equilibrium.
+
+---
+
+### 6.2 How Perfectly Competitive Firms Make Output Decisions (Section 8.2)
+
+**The only decision a perfectly competitive firm makes is: what quantity to produce.**
+
+Since price is given by the market, the firm maximizes profit by choosing quantity. Profit is:
+
+**Profit = Total Revenue − Total Cost = (Price × Q) − (ATC × Q) = (Price − ATC) × Q**
+
+**The profit-maximizing rule: produce where MR = MC**
+
+For a perfectly competitive firm, **MR = Price** (because selling one more unit always brings in exactly the market price). Therefore the rule becomes:
+
+**P = MR = MC** ← the profit-maximizing condition for a perfectly competitive firm
+
+**Raspberry farm example from Greenlaw et al. (2022, Section 8.2):**
+
+Price = $4 per pack. The farm's data:
+
+| Q | Total Cost | Total Revenue | Profit | Marginal Cost | Marginal Revenue |
+|---|-----------|--------------|--------|--------------|------------------|
+| 0 | $62 | $0 | −$62 | — | $4 |
+| 40 | $138 | $160 | $22 | $1.20 | $4 |
+| 60 | $165 | $240 | $75 | $1.50 | $4 |
+| 70 | $190 | $280 | $90 | $2.50 | $4 |
+| 80 | $230 | $320 | $90 | $4.00 | $4 |
+| 90 | $296 | $360 | $64 | $6.60 | $4 |
+| 100 | $400 | $400 | $0 | $10.40 | $4 |
+
+Maximum profit ($90) occurs at Q = 70–80. MR = MC at Q = 80 (both equal $4). The firm produces 80 packs.
+
+**Why MR = MC is the stopping signal**: If MR > MC (e.g., at Q = 60), producing one more unit adds more revenue than cost — profit rises. If MR < MC (e.g., at Q = 90), producing one more unit adds more cost than revenue — profit falls. The firm should stop expanding at MR = MC.
+
+---
+
+### 6.3 Profits, Losses, and the Break-Even Point
+
+Whether the firm earns profit or loss depends on the relationship between price and ATC:
+
+| Condition | Outcome |
+|-----------|--------|
+| Price > ATC | Economic profit (positive) |
+| Price = ATC | Zero economic profit — **break-even point** |
+| Price < ATC | Economic loss |
+
+**Profit calculation** (from Greenlaw et al., 2022, Section 8.2):
+
+At price = $5, Q = 85, ATC = $3.09:
+- Profit = (Price − ATC) × Q = ($5.00 − $3.09) × 85 = **$162.35**
+
+At price = $2.80, Q = 75, ATC = $2.80:
+- Profit = ($2.80 − $2.80) × 75 = **$0** (break-even)
+
+At price = $2.00, Q = 65, ATC = $2.73:
+- Profit = ($2.00 − $2.73) × 65 = **−$47.45** (loss)
+
+---
+
+### 6.4 The Shutdown Point
+
+When a firm is making losses, it faces a choice: continue producing or shut down?
+
+**Key insight**: In the short run, fixed costs are already paid — they are sunk costs. Shutting down eliminates variable costs but does NOT eliminate fixed costs. Therefore:
+
+- If **Price > AVC**: the firm covers all variable costs and some fixed costs. Continuing to produce reduces losses compared to shutting down. **Stay open.**
+- If **Price < AVC**: the firm cannot even cover variable costs. Every unit produced makes losses worse. **Shut down immediately.**
+- If **Price = AVC**: the firm is indifferent — this is the **shutdown point**.
+
+**Yoga Center example from Greenlaw et al. (2022, Section 8.2):**
+
+Fixed costs = $10,000/month. Variable costs (yoga teachers) = $15,000/month.
+
+- Scenario 1: Revenue = $0 → Loss = $10,000 (fixed costs only). Shut down.
+- Scenario 2: Revenue = $10,000 → Loss = $15,000 (worse than shutting down). Shut down.
+- Scenario 3: Revenue = $20,000 → Loss = $5,000 (better than $10,000 fixed cost loss). Stay open.
+
+**Raspberry farm shutdown**: At price = $1.50, the farm would produce Q = 60, but price ($1.50) is below minimum AVC ($1.72). The farm shuts down immediately, incurring only fixed costs of $62 rather than losses of $75.
+
+**Summary rule**:
+- Price < minimum AVC → **shut down**
+- Price > minimum AVC → **stay in business** (even if making losses)
+- The MC curve above the minimum AVC point IS the firm's short-run supply curve
+
+---
+
+### 6.5 Entry, Exit, and Long-Run Equilibrium (Section 8.3)
+
+**Entry**: When firms earn positive economic profits, new firms enter the market. This increases market supply, shifts the supply curve right, drives down the market price, and reduces profits for all firms. Entry continues until economic profit = 0.
+
+**Exit**: When firms earn economic losses, firms exit the market. This decreases market supply, shifts the supply curve left, raises the market price, and reduces losses. Exit continues until economic profit = 0.
+
+**Long-run equilibrium**: P = MR = MC = minimum ATC
+
+At this point, no firm wants to enter (no profits to attract them) and no firm wants to exit (no losses to drive them out).
+
+**Three types of industries in the long run** (Greenlaw et al., 2022, Section 8.3):
+
+| Industry Type | What Happens to Costs as Industry Expands | Long-Run Supply Curve |
+|--------------|------------------------------------------|----------------------|
+| Constant-cost | Input prices unchanged | Horizontal (flat) |
+| Increasing-cost | Input prices rise (e.g., skilled labor becomes scarce) | Upward-sloping |
+| Decreasing-cost | Input prices fall (e.g., technology improves) | Downward-sloping |
+
+North Dakota corn farming is a real-world example: as wheat and corn prices converged, farmers switched to corn (higher yield per acre), demonstrating how entry/exit and output switching drive markets toward equilibrium (Greenlaw et al., 2022, Section 8.3).
+
+---
+
+### 6.6 Efficiency in Perfectly Competitive Markets (Section 8.4)
+
+Perfectly competitive markets achieve two types of efficiency in the long run:
+
+**Productive efficiency**: production occurs at the minimum point of the long-run average cost curve — no waste. Firms produce at the lowest possible cost per unit.
+
+**Allocative efficiency**: P = MC — the price consumers pay (reflecting the social benefit of the last unit) equals the marginal cost of producing it (reflecting the social cost). Resources are allocated to their highest-valued use.
+
+**Why P = MC ensures allocative efficiency**: If P > MC, society would benefit from producing more (the benefit of another unit exceeds its cost). If P < MC, society would benefit from producing less (the cost exceeds the benefit). Only at P = MC is the allocation optimal.
+
+**Important caveat** (Greenlaw et al., 2022, Section 8.4): Perfect competition is a theoretical benchmark, not a description of real markets. Real markets involve monopolies, externalities, information asymmetries, income inequality, and public goods — all of which cause deviations from this ideal. This is precisely why regulatory policies and competition laws are necessary: to push real markets closer to the efficiency benchmark that perfect competition represents.
+
+---
+
 ## Key Terms Summary
 
 | Term | Definition |
@@ -270,6 +408,14 @@ This connection between cost structure and market structure is why understanding
 | Economies of scale | LRAC falls as output rises |
 | Diseconomies of scale | LRAC rises as output rises |
 | Constant returns to scale | LRAC unchanged as output rises |
+| Price taker | Firm that accepts market price as given |
+| MR = MC rule | Profit-maximizing output condition |
+| Break-even point | Price = ATC — zero economic profit |
+| Shutdown point | Price = minimum AVC — below this, firm shuts down |
+| Entry | New firms enter when economic profits exist |
+| Exit | Firms leave when economic losses persist |
+| Productive efficiency | Production at minimum ATC — no waste |
+| Allocative efficiency | P = MC — resources at highest-valued use |
 
 ---
 
