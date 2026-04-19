@@ -1,209 +1,275 @@
 # ECON 1580 — Unit 2: Regulatory Policies and Market Competition
-## Comprehensive Learning Notes
-### Based on Greenlaw et al. (2022) Chapters 7, 8, 9 | Spulber (2022) | Tirole (2024)
+## Comprehensive Learning Notes — Chapter 7: Production, Costs, and Industry Structure
+### Source: Greenlaw, Shapiro, & MacDonald (2022), Principles of Economics, 3rd ed., Chapter 7
 
 ---
 
-## Part 1: Production, Costs and Industry Structure (Chapter 7)
+## Overview: What This Chapter Is About
 
-### 1.1 Explicit and Implicit Costs, Accounting vs Economic Profit (Section 7.1)
+A firm is an organization that combines inputs of labor, capital, land, and raw or finished component materials to produce outputs (Greenlaw et al., 2022, Section 7 Introduction). The central question of this chapter is: how do firms determine their costs, and how do those costs shape their behavior? Understanding costs is foundational to understanding market competition — because a firm's cost structure determines whether it can survive in a competitive market, whether it will grow or shrink, and whether it will attract new competitors.
 
-Understanding costs is foundational to understanding why firms behave the way they do and why regulation is sometimes necessary.
+Every firm must answer five key production decisions:
+1. What product to produce?
+2. How to produce it (which production process)?
+3. How much output to produce?
+4. What price to charge?
+5. How much labor to employ?
 
-**Explicit costs** are direct, out-of-pocket payments a firm makes — wages, rent, raw materials, utilities. These appear on accounting statements.
-
-**Implicit costs** are opportunity costs — the value of the next best alternative the firm gives up by using a resource in its current way. A business owner who works in their own firm forgoes a salary they could earn elsewhere; that foregone salary is an implicit cost.
-
-| Cost Type | Definition | Example |
-|-----------|-----------|---------|
-| Explicit | Direct monetary payments | Paying $50,000 in wages |
-| Implicit | Opportunity cost of owned resources | Owner's foregone salary of $60,000 |
-
-**Accounting profit** = Total Revenue − Explicit Costs
-**Economic profit** = Total Revenue − Explicit Costs − Implicit Costs
-
-A firm can show positive accounting profit but zero or negative economic profit. When economic profit is zero, the firm is earning exactly what it could earn in its next best alternative — this is called **normal profit**, and it is the long-run equilibrium condition in perfectly competitive markets.
+The answers depend on the firm's production function and cost conditions — and on the market structure in which it operates.
 
 ---
 
-### 1.2 Production in the Short Run (Section 7.2)
+## Part 1: Explicit and Implicit Costs, Accounting and Economic Profit (Section 7.1)
 
-In the **short run**, at least one input is fixed (typically capital — machinery, buildings). Only variable inputs (typically labor) can be adjusted.
+### 1.1 Two Types of Cost
 
-**Production function**: relates inputs to outputs — how much output (Q) is produced from a given amount of labor (L) with fixed capital (K).
+**Explicit costs** are out-of-pocket costs — actual monetary payments the firm makes. Wages paid to employees, rent paid for office space, payments for raw materials — these are all explicit costs. They appear directly on accounting statements (Greenlaw et al., 2022, Section 7.1).
 
-**Marginal Product (MP)** = the additional output produced by adding one more unit of a variable input (labor), holding all other inputs constant.
+**Implicit costs** are opportunity costs — the value of resources the firm already owns that are being used in the business, rather than in their next best alternative use. They do not involve a cash payment but are just as real economically. The most common example: a business owner who works in their own firm foregoes the salary they could earn working elsewhere. That foregone salary is an implicit cost (Greenlaw et al., 2022, Section 7.1).
 
-**Law of Diminishing Marginal Returns**: As more units of a variable input are added to a fixed input, the marginal product of the variable input eventually decreases. The first worker added to a factory may be very productive; the tenth worker, with the same fixed machinery, adds less additional output than the ninth.
+### 1.2 Accounting Profit vs. Economic Profit
+
+These two cost types give rise to two different measures of profit:
+
+| Profit Type | Formula | What It Measures |
+|-------------|---------|-----------------|
+| **Accounting profit** | Total Revenue − Explicit Costs | Cash profit — what appears on tax returns |
+| **Economic profit** | Total Revenue − Explicit Costs − Implicit Costs | True profitability — whether the firm is doing better than its next best alternative |
+
+**Why the distinction matters:** A firm can show positive accounting profit but negative economic profit. This means the firm is earning less than it could by deploying its resources elsewhere.
+
+**Worked Example from Greenlaw et al. (2022, Section 7.1):**
+
+Eryn is considering leaving her corporate law job (salary: $125,000/year) to open her own practice, which she expects to earn $200,000/year. Her explicit costs would be office rent ($50,000) and a law clerk's salary ($35,000).
+
+- Accounting profit = $200,000 − $85,000 = **$115,000** (looks profitable)
+- Economic profit = $200,000 − $85,000 − $125,000 = **−$10,000** (actually losing money relative to her alternative)
+
+Eryn would be earning $10,000 less per year than if she stayed at the corporate firm. The accounting profit is misleading without accounting for the implicit cost of her foregone salary.
+
+---
+
+## Part 2: Production in the Short Run (Section 7.2)
+
+### 2.1 The Production Function
+
+A **production function** is a mathematical expression that shows how much output a firm can produce with given amounts of inputs:
+
+**Q = f[NR, L, K, t, E]**
+
+Where NR = natural resources, L = labor, K = capital, t = technology, E = entrepreneurship.
+
+In simplified form: **Q = f[L, K]**
+
+### 2.2 Fixed vs. Variable Inputs
+
+**Fixed inputs** cannot easily be increased or decreased in a short period of time. In the pizza example from the textbook, the building is a fixed input — the owner is locked into the lease. Fixed inputs define the firm's maximum output capacity (Greenlaw et al., 2022, Section 7.2).
+
+**Variable inputs** can easily be increased or decreased. Ingredients and labor hours are variable — the owner can order more flour or hire another worker quickly.
+
+**Short run**: the period during which at least one input is fixed (typically capital).
+**Long run**: the period during which all inputs are variable.
+
+### 2.3 Total Product and Marginal Product
+
+**Total Product (TP)** = the total amount of output produced with a given amount of labor and fixed capital.
+
+**Marginal Product (MP)** = the additional output produced by adding one more unit of labor:
+
+**MP = ΔTP / ΔL**
+
+**Lumberjack example from Greenlaw et al. (2022, Section 7.2):**
+
+| Lumberjacks | Trees (TP) | Marginal Product |
+|-------------|-----------|-----------------|
+| 1 | 4 | 4 |
+| 2 | 10 | 6 |
+| 3 | 12 | 2 |
+| 4 | 13 | 1 |
+| 5 | 13 | 0 |
+
+The second worker's MP (6) is higher than the first's (4) because a two-person saw works much better with two people. But from the third worker onward, MP declines.
+
+### 2.4 The Law of Diminishing Marginal Returns
+
+**Definition**: As more units of a variable input are added to a fixed input, the marginal product of the variable input eventually decreases (Greenlaw et al., 2022, Section 7.2).
+
+**Why it happens**: Because capital is fixed. Each additional worker has less capital to work with relative to the previous worker. Eventually, adding more workers produces smaller and smaller increases in output — and may even reduce output if workers get in each other's way.
 
 This law is critical because it explains why short-run costs eventually rise as output increases.
 
 ---
 
-### 1.3 Costs in the Short Run (Section 7.3)
+## Part 3: Costs in the Short Run (Section 7.3)
 
-| Cost Concept | Definition | Formula |
-|-------------|-----------|---------|
-| Fixed Cost (FC) | Costs that do not change with output | Rent, insurance |
-| Variable Cost (VC) | Costs that change with output | Labor, materials |
-| Total Cost (TC) | Sum of fixed and variable costs | TC = FC + VC |
-| Average Fixed Cost (AFC) | FC per unit of output | AFC = FC / Q |
-| Average Variable Cost (AVC) | VC per unit of output | AVC = VC / Q |
-| Average Total Cost (ATC) | TC per unit of output | ATC = TC / Q |
-| Marginal Cost (MC) | Cost of producing one more unit | MC = ΔTC / ΔQ |
+### 3.1 Factor Payments and Cost Origins
 
-**Key relationship**: The MC curve intersects the ATC and AVC curves at their minimum points. When MC < ATC, average cost is falling; when MC > ATC, average cost is rising.
+For every factor of production, there is a **factor payment** — what the firm pays for using that input:
+- Raw materials → raw materials prices
+- Land/buildings → rent
+- Labor → wages and salaries
+- Financial capital → interest and dividends
+- Entrepreneurship → profit
 
-**Profit maximization rule**: A firm maximizes profit by producing where **Marginal Revenue (MR) = Marginal Cost (MC)**.
+Costs originate from the production function combined with factor prices. If workers earn $10/hour and producing 1 widget requires 3.25 workers, the cost of 1 widget = 3.25 × $10 = $32.50 (Greenlaw et al., 2022, Section 7.3).
 
----
+### 3.2 Fixed and Variable Costs
 
-### 1.4 Long-Run Production and Costs (Sections 7.4, 7.5)
+**Fixed costs (FC)**: costs of fixed inputs — do not change regardless of output level. Rent on a factory is the same whether you produce 1 unit or 1,000 units.
 
-In the **long run**, all inputs are variable — the firm can adjust capital, labor, and scale of operations.
+**Variable costs (VC)**: costs of variable inputs — increase or decrease with output. Labor and raw materials are variable costs.
 
-**Economies of scale**: As output increases, long-run average cost (LRAC) falls. This occurs because of specialization, bulk purchasing, and spreading fixed costs over more units.
+**Total cost (TC) = Fixed Cost + Variable Cost**
 
-**Diseconomies of scale**: Beyond a certain output level, LRAC rises due to coordination problems, management inefficiencies, and communication breakdowns in large organizations.
+**Barber shop example from Greenlaw et al. (2022, Section 7.3):**
 
-**Constant returns to scale**: LRAC remains flat — doubling inputs doubles output.
+| Labor | Quantity | Fixed Cost | Variable Cost | Total Cost |
+|-------|----------|-----------|--------------|-----------|
+| 1 | 16 | $160 | $80 | $240 |
+| 2 | 40 | $160 | $160 | $320 |
+| 3 | 60 | $160 | $240 | $400 |
+| 4 | 72 | $160 | $320 | $480 |
+| 5 | 80 | $160 | $400 | $560 |
+| 6 | 84 | $160 | $480 | $640 |
+| 7 | 82 | $160 | $560 | $720 |
 
-The **long-run average cost (LRAC) curve** is the envelope of all short-run ATC curves, showing the minimum cost of producing each output level when all inputs are variable.
+Note: at 7 barbers, output actually falls (from 84 to 82) — negative marginal returns.
 
----
+### 3.3 Average and Marginal Costs
 
-## Part 2: Perfect Competition (Chapter 8)
+| Cost Measure | Formula | What It Tells You |
+|-------------|---------|------------------|
+| **Average Total Cost (ATC)** | TC / Q | Cost per unit of output |
+| **Average Variable Cost (AVC)** | VC / Q | Variable cost per unit |
+| **Average Fixed Cost (AFC)** | FC / Q | Fixed cost per unit (always declining) |
+| **Marginal Cost (MC)** | ΔTC / ΔQ | Cost of producing one more unit |
 
-### 2.1 Characteristics of Perfect Competition (Section 8.1)
+**Extended widget example from Greenlaw et al. (2022, Section 7.3):**
 
-A **perfectly competitive market** has four key features:
-1. Many buyers and sellers — no single firm can influence price
-2. Identical (homogeneous) products — no differentiation
-3. Perfect information — all buyers and sellers know prices
-4. Free entry and exit — no barriers to entering or leaving the market
+| Q | Total Cost | Average Cost | Marginal Cost |
+|---|-----------|-------------|--------------|
+| 1 | $32.50 | $32.50 | $32.50 |
+| 2 | $44.00 | $22.00 | $11.50 |
+| 3 | $52.00 | $17.33 | $8.00 |
+| 4 | $90.00 | $22.50 | $38.00 |
 
-Because of these features, perfectly competitive firms are **price takers** — they accept the market price as given and cannot charge more (buyers would go elsewhere) or less (no reason to).
+### 3.4 The Critical MC-ATC Relationship
 
----
+The marginal cost curve intersects the average total cost curve **at the minimum point of ATC**. This is not a coincidence — it is a mathematical necessity:
 
-### 2.2 Output Decisions and the Shutdown Point (Section 8.2)
+- When MC < ATC: each additional unit costs less than the average, so the average is being pulled **down**
+- When MC > ATC: each additional unit costs more than the average, so the average is being pulled **up**
+- The transition point — where MC stops pulling ATC down and starts pulling it up — is the **minimum of ATC**
 
-A perfectly competitive firm maximizes profit by producing where **P = MC** (since P = MR for a price taker).
+Greenlaw et al. (2022) use a grades analogy: if your most recent quiz score is below your average, it pulls your average down; if it is above your average, it pulls your average up (Section 7.3).
 
-**Profit** = Total Revenue − Total Cost = (P × Q) − (ATC × Q) = (P − ATC) × Q
+### 3.5 Average Profit (Profit Margin)
 
-- If P > ATC: firm earns economic profit
-- If P = ATC: firm earns zero economic profit (normal profit) — break-even
-- If AVC < P < ATC: firm makes a loss but covers variable costs — continue operating in short run
-- If P < AVC: **shutdown point** — firm should temporarily stop production because it cannot cover variable costs
+**Average profit = Price − Average Total Cost**
 
----
+- If Price > ATC: positive profit
+- If Price = ATC: zero profit (break-even)
+- If Price < ATC: negative profit (loss)
 
-### 2.3 Long-Run Equilibrium: Entry and Exit (Section 8.3)
-
-In the long run, economic profits attract new entrants, which increases supply, drives down price, and eliminates profits. Economic losses cause firms to exit, reducing supply, raising price, and eliminating losses. The process continues until **economic profit = 0**.
-
-Long-run equilibrium: **P = MR = MC = ATC** (minimum ATC)
-
-**Industry types in the long run:**
-- **Constant-cost industry**: input prices unchanged as industry expands — horizontal long-run supply curve
-- **Increasing-cost industry**: input prices rise as industry expands — upward-sloping long-run supply curve
-- **Decreasing-cost industry**: input prices fall as industry expands — downward-sloping long-run supply curve
-
----
-
-### 2.4 Efficiency in Perfect Competition (Section 8.4)
-
-Perfect competition achieves two types of efficiency:
-- **Productive efficiency**: production at minimum ATC — no waste
-- **Allocative efficiency**: P = MC — resources allocated to their highest-valued use; the price consumers pay equals the cost of producing the last unit
-
-These efficiency properties make perfect competition the benchmark against which other market structures are evaluated. Real markets deviate from this benchmark due to monopolies, externalities, and information asymmetries — which is precisely why regulatory policies and competition laws are needed.
+This formula shows directly why a firm's cost structure determines its ability to compete at any given market price.
 
 ---
 
-## Part 3: Monopoly (Chapter 9)
+## Part 4: Production in the Long Run (Section 7.4)
 
-### 3.1 How Monopolies Form: Barriers to Entry (Section 9.1)
+In the long run, **all inputs are variable**: Q = f[L, K]
 
-A **monopoly** exists when a single firm is the sole seller in a market with no close substitutes. Monopolies arise from **barriers to entry** — obstacles that prevent new firms from entering the market:
+**Typing firm example from Greenlaw et al. (2022, Section 7.4):**
 
-| Barrier Type | Description | Example |
-|-------------|-------------|---------|
-| Economies of scale | Natural monopoly — one firm can serve the market at lower cost than two | Water utilities, electricity grids |
-| Control over resources | Exclusive ownership of a key input | De Beers and diamonds (historically) |
-| Government regulations | Legal barriers — licenses, patents, copyrights | Pharmaceutical patents |
-| Network externalities | Product becomes more valuable as more people use it | Social media platforms, operating systems |
+With 1 PC (short run), adding typists beyond 2 produces sharply diminishing returns — the third typist adds only 1 letter/hour because there is only one PC to share.
 
-**Intellectual property** (patents, copyrights, trademarks) creates temporary monopolies to incentivize innovation. The trade-off: short-term monopoly power in exchange for long-term public benefit from the innovation.
+With 3 PCs (long run), the firm can hire 3 typists before diminishing returns set in, because each typist now has adequate capital to work with.
 
----
+**Key insight**: Diminishing marginal returns in the short run occur because capital is fixed. In the long run, when capital can be adjusted, the firm can find the most efficient combination of inputs for any level of output.
 
-### 3.2 Monopoly Pricing and Output (Section 9.2)
+**Choice of production technology**: Firms choose the least-cost combination of inputs given factor prices. As labor becomes more expensive relative to capital, firms substitute capital for labor. This is why firms in high-wage countries use more machinery than firms in low-wage countries producing the same product (Greenlaw et al., 2022, Section 7.5).
 
-Unlike a competitive firm, a monopolist faces the entire downward-sloping market demand curve. To sell more, it must lower the price on all units — so **Marginal Revenue (MR) < Price** for a monopolist.
+**Park cleaning example from Greenlaw et al. (2022, Section 7.5):**
 
-**Monopolist's profit-maximizing rule**: Produce where **MR = MC**, then charge the price consumers are willing to pay for that quantity (read from the demand curve).
+| Technology | Workers | Machines |
+|-----------|---------|---------|
+| Technology 1 | 10 | 2 |
+| Technology 2 | 7 | 4 |
+| Technology 3 | 3 | 7 |
 
-**Consequences of monopoly:**
-- Output is lower than the competitive level
-- Price is higher than the competitive level
-- **Deadweight loss** — units that would have been produced in a competitive market are not produced, creating a welfare loss to society
-- Consumer surplus is transferred to the monopolist as profit
+When workers cost $40 and machines cost $80: Technology 1 is cheapest ($560).
+When workers cost $90 and machines cost $80: Technology 3 is cheapest ($830 vs $1,060).
 
-This is why antitrust laws exist: to prevent or break up monopolies that harm consumers and reduce economic efficiency.
+As labor costs rise, firms shift toward more capital-intensive production.
 
 ---
 
-## Part 4: Regulatory Policies and Antitrust Law
+## Part 5: Costs in the Long Run (Section 7.5)
 
-### 4.1 Role of Regulatory Policies
+### 5.1 Economies of Scale
 
-Regulatory policies are government rules designed to ensure markets remain competitive and fair. Their goals are:
-- **Consumer protection**: prevent exploitation through high prices or poor quality
-- **Market fairness**: ensure small and new firms can compete
-- **Economic efficiency**: prevent deadweight loss from monopoly power
-- **Innovation**: prevent incumbents from blocking new entrants
+**Economies of scale**: as output increases, long-run average cost (LRAC) falls. A larger factory produces at lower average cost than a smaller one (Greenlaw et al., 2022, Section 7.5).
 
-### 4.2 Key Antitrust Cases
+**Alarm clock example:**
+- Small factory (1,000 units): ATC = $12
+- Medium factory (2,000 units): ATC = $8
+- Large factory (5,000 units): ATC = $4
 
-**Microsoft (USA, 1998)**: DOJ sued Microsoft for bundling Internet Explorer with Windows, using its OS monopoly to suppress browser competition. Outcome: Microsoft found to have violated antitrust law; behavioral remedies imposed.
+**Why economies of scale occur:**
+- Specialization of labor and management
+- Bulk purchasing of inputs at lower prices
+- Spreading fixed costs over more units
+- Technical advantages (e.g., chemical pipes: doubling circumference quadruples volume capacity)
 
-**Google Shopping (EU, 2017)**: European Commission fined Google €2.42 billion for favoring its own comparison-shopping service in search results, disadvantaging competitors. Demonstrated EU's aggressive antitrust enforcement in digital markets.
+### 5.2 The Long-Run Average Cost (LRAC) Curve
 
-**FTC vs. Amazon (2023)**: FTC and 17 state AGs sued Amazon for allegedly punishing sellers who offered lower prices elsewhere and using anti-discounting practices to maintain monopoly power in online retail.
+The LRAC curve is the **envelope** of all possible short-run average cost (SRAC) curves — it shows the minimum cost of producing each output level when all inputs can vary (Greenlaw et al., 2022, Section 7.5).
 
-### 4.3 Antitrust and Innovation (Spulber, 2022)
+**Three regions of the LRAC curve:**
 
-Spulber (2022) argues that traditional antitrust frameworks focused on price competition are insufficient for the digital economy, where competition occurs primarily through innovation. Antitrust policymakers must update their frameworks to address:
-- Non-price competition (quality, features, data)
-- The role of intellectual property in enabling innovation competition
-- Platform markets where network effects create winner-take-all dynamics
+| Region | What Happens | Name |
+|--------|-------------|------|
+| Downward-sloping | LRAC falls as output rises | Economies of scale |
+| Flat | LRAC unchanged as output rises | Constant returns to scale |
+| Upward-sloping | LRAC rises as output rises | Diseconomies of scale |
 
-### 4.4 Competition Policy in the Digital Economy (Tirole, 2024)
+**Diseconomies of scale** occur when firms become too large to manage efficiently — coordination problems, communication failures, and management layers increase costs. This is called the **leviathan effect** (Greenlaw et al., 2022, Section 7.5).
 
-Tirole (2024) identifies large fixed costs and network externalities as the primary barriers to entry in digital markets. Once a platform achieves scale, it becomes self-reinforcing — users attract more users, making it nearly impossible for new entrants to compete. Policy responses include:
-- **Interoperability requirements**: forcing dominant platforms to allow competitors to connect
-- **Data portability**: allowing users to move their data to competing services
-- **Ex ante regulation**: setting rules before harm occurs, rather than waiting for antitrust cases after the fact
+### 5.3 LRAC Shape and Market Structure
+
+The shape of the LRAC curve determines how many firms will compete in a market:
+
+- **Single minimum point on LRAC**: all firms will be approximately the same size
+- **Flat-bottomed LRAC**: firms of various sizes can compete equally
+- **If market demand < quantity at minimum LRAC**: market tends toward monopoly (one firm can serve the entire market at lower cost than two firms)
+- **If market demand >> quantity at minimum LRAC**: many firms compete
+
+This connection between cost structure and market structure is why understanding production costs is essential for analyzing competition and the need for regulatory policy.
 
 ---
 
-## Key Terms
+## Key Terms Summary
 
 | Term | Definition |
 |------|-----------|
-| Explicit cost | Direct monetary payment for inputs |
+| Explicit cost | Out-of-pocket monetary payment |
 | Implicit cost | Opportunity cost of owned resources |
-| Economic profit | Revenue minus all costs including implicit |
-| Marginal product | Additional output from one more unit of input |
-| Diminishing returns | MP eventually falls as variable input increases |
-| Price taker | Firm that accepts market price as given |
-| Shutdown point | Price below which firm stops producing (P < AVC) |
-| Deadweight loss | Welfare loss from monopoly underproduction |
-| Barrier to entry | Obstacle preventing new firms from entering a market |
-| Antitrust law | Law preventing anti-competitive practices |
-| Network externality | Product value increases as more users adopt it |
+| Accounting profit | Revenue minus explicit costs |
+| Economic profit | Revenue minus all costs (explicit + implicit) |
+| Production function | Q = f[L, K] — relates inputs to outputs |
+| Fixed input | Cannot change in short run (e.g., capital) |
+| Variable input | Can change in short run (e.g., labor) |
+| Marginal product | ΔTP/ΔL — additional output from one more worker |
+| Diminishing marginal returns | MP eventually falls as variable input increases |
+| Fixed cost | Does not change with output |
+| Variable cost | Changes with output |
+| Marginal cost | ΔTC/ΔQ — cost of one more unit |
+| ATC | TC/Q — average total cost per unit |
+| AVC | VC/Q — average variable cost per unit |
+| LRAC | Long-run average cost — envelope of all SRAC curves |
+| Economies of scale | LRAC falls as output rises |
+| Diseconomies of scale | LRAC rises as output rises |
+| Constant returns to scale | LRAC unchanged as output rises |
 
 ---
 
