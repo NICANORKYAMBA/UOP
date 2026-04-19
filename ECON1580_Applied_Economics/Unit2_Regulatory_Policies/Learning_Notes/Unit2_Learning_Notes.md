@@ -416,6 +416,106 @@ Perfectly competitive markets achieve two types of efficiency in the long run:
 | Exit | Firms leave when economic losses persist |
 | Productive efficiency | Production at minimum ATC — no waste |
 | Allocative efficiency | P = MC — resources at highest-valued use |
+| Barrier to entry | Legal, technological, or market force preventing competition |
+| Natural monopoly | One firm serves market at lower cost than multiple firms |
+| Legal monopoly | Government-granted exclusive right to produce |
+| Patent | Exclusive legal right to produce an invention (20 years in US) |
+| Predatory pricing | Slashing prices to drive out competitors, then raising them |
+| Intellectual property | Patents, trademarks, copyrights, trade secrets |
+| Monopoly | Single firm produces all output in a market |
+| MR < Price (monopoly) | Monopolist must lower price on all units to sell more |
+| Deadweight loss | Welfare loss from monopoly underproduction |
+
+---
+
+## Part 7: Monopoly (Chapter 9)
+
+### 7.1 How Monopolies Form: Barriers to Entry (Section 9.1)
+
+A **monopoly** exists when one firm produces all or nearly all of the output in a market. Monopolies persist because **barriers to entry** — legal, technological, or market forces — prevent competitors from entering (Greenlaw et al., 2022, Section 9.1).
+
+There are five types of barriers to entry:
+
+**1. Natural Monopoly**
+Occurs when economies of scale are so large relative to market demand that only one firm can efficiently serve the entire market. If a second firm tried to enter at a smaller scale, its average costs would be higher. If it tried to enter at a larger scale, it could not sell all its output. Water utilities and electricity grids are classic examples — it would be wasteful and duplicative for a second company to build an entire second set of pipes or wires (Greenlaw et al., 2022, Section 9.1).
+
+**2. Control of a Physical Resource**
+A firm that controls a scarce, essential input can monopolize the market. Historical example: ALCOA controlled most of the world's bauxite supply in the 1930s, preventing other firms from producing aluminum competitively. DeBeers historically controlled the majority of global diamond production.
+
+**3. Legal Monopoly**
+Governments sometimes grant exclusive rights to produce a good or service. The U.S. Postal Service has the legal monopoly on first-class mail delivery. Many cities grant a single company the right to provide water, electricity, or garbage collection. These are typically regulated monopolies in industries with natural monopoly characteristics.
+
+**4. Patents, Trademarks, and Copyrights (Intellectual Property)**
+To incentivize innovation, governments grant temporary monopoly rights:
+- **Patent**: exclusive right to make, use, or sell an invention for 20 years in the US. Without patents, competitors could copy a new drug without bearing R&D costs, undercutting the innovator and eliminating the incentive to invest in research.
+- **Trademark**: identifying symbol or name (e.g., Nike swoosh, Chiquita). Can be renewed indefinitely.
+- **Copyright**: protects original creative works (books, music, art) for the life of the author plus 70 years.
+- **Trade secret**: confidential business information (e.g., Coca-Cola formula) protected from theft even without formal registration.
+
+Collectively these are called **intellectual property** — ownership over an idea or concept rather than a physical object (Greenlaw et al., 2022, Section 9.1).
+
+**5. Intimidating Potential Competition (Predatory Pricing)**
+**Predatory pricing**: a dominant firm slashes prices to the bone when a new competitor enters, making it impossible for the entrant to earn profit. Once the entrant exits, the dominant firm raises prices again. After this pattern repeats, potential entrants decide not to try. This is illegal under US antitrust law but difficult to prove (Greenlaw et al., 2022, Section 9.1).
+
+| Barrier to Entry | Government Role? | Example |
+|-----------------|-----------------|--------|
+| Natural monopoly | Government regulates | Water, electricity |
+| Control of physical resource | No | DeBeers (diamonds) |
+| Legal monopoly | Yes | US Postal Service |
+| Patent/trademark/copyright | Yes | New drugs, software |
+| Predatory pricing | Somewhat | Large airlines vs. startups |
+
+---
+
+### 7.2 How a Monopolist Chooses Output and Price (Section 9.2)
+
+**The key difference from perfect competition**: A monopolist faces the entire downward-sloping market demand curve. To sell more, it must lower the price on ALL units — not just the additional unit. This means:
+
+**For a monopolist: MR < Price**
+
+When a monopolist sells one more unit, it gains revenue from that unit at the new lower price, but loses revenue because all previous units now also sell at the lower price. The net effect is that marginal revenue is always less than the price (Greenlaw et al., 2022, Section 9.2).
+
+For a straight-line demand curve: MR has the same vertical intercept as demand but falls twice as fast — the horizontal intercept of MR is halfway to the horizontal intercept of demand.
+
+**HealthPill monopoly example from Greenlaw et al. (2022, Section 9.2):**
+
+| Q | Price (P) | Total Revenue | Marginal Revenue | Total Cost | Marginal Cost |
+|---|----------|--------------|-----------------|-----------|---------------|
+| 1 | $1,200 | $1,200 | $1,200 | $500 | $500 |
+| 2 | $1,100 | $2,200 | $1,000 | $775 | $275 |
+| 3 | $1,000 | $3,000 | $800 | $1,000 | $225 |
+| 4 | $900 | $3,600 | $600 | $1,250 | $250 |
+| 5 | $800 | $4,000 | $400 | $1,650 | $400 |
+| 6 | $700 | $4,200 | $200 | $2,500 | $850 |
+| 7 | $600 | $4,200 | $0 | $4,000 | $1,500 |
+| 8 | $500 | $4,000 | −$200 | $6,400 | $2,400 |
+
+Note: MR turns zero at Q=7 and negative at Q=8. Total revenue peaks at Q=6 or Q=7, but profit peaks earlier.
+
+**The monopolist's three-step process:**
+
+**Step 1 — Find profit-maximizing quantity**: Produce where **MR = MC**. In the HealthPill example, MR = MC at Q = 5 (both equal $400).
+
+**Step 2 — Find the price**: Draw a line straight up from the profit-maximizing quantity to the demand curve. The price the market will pay for Q=5 is **$800**.
+
+**Step 3 — Calculate profit**:
+- Total Revenue = Q × P = 5 × $800 = **$4,000**
+- Total Cost = Q × ATC = 5 × $330 = **$1,650**
+- Profit = $4,000 − $1,650 = **$2,350**
+
+Profit = (Price − ATC) × Q = ($800 − $330) × 5 = $2,350
+
+---
+
+### 7.3 Why Monopoly is Inefficient
+
+A monopolist produces **less** output at a **higher** price than a perfectly competitive market would. This creates **deadweight loss** — units that would have been produced in a competitive market (where P = MC) are not produced under monopoly (where P > MC at the profit-maximizing output).
+
+**Allocative inefficiency**: At the monopolist's profit-maximizing output, Price > MC. This means the social benefit of producing one more unit (measured by price/willingness to pay) exceeds the social cost (measured by MC). Society would be better off with more output, but the monopolist restricts output to keep prices high (Greenlaw et al., 2022, Section 9.2).
+
+**Dynamic inefficiency**: Monopolists protected by barriers to entry have less incentive to innovate. John Hicks (Nobel Prize 1972) wrote: "The best of all monopoly profits is a quiet life" — meaning monopolists may bank profits and stop trying to improve. The breakup of AT&T in 1982 illustrates this: after the monopoly ended, an explosion of innovation followed — call waiting, caller ID, mobile phones, wireless internet, and a wide variety of payment plans and phone designs (Greenlaw et al., 2022, Section 9.2).
+
+**This is the fundamental economic justification for antitrust law**: monopolies harm consumers through higher prices, lower output, and reduced innovation. Regulatory intervention is necessary to restore the efficiency benefits of competition.
 
 ---
 
