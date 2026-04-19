@@ -519,9 +519,79 @@ A monopolist produces **less** output at a **higher** price than a perfectly com
 
 ---
 
+## Part 8: Antitrust Laws and the Digital Economy
+
+### 8.1 How Antitrust Laws Prevent Monopolies and Promote Competition
+
+Antitrust laws are the legal tools governments use to prevent monopolistic behavior and maintain competitive markets. The economic justification is rooted in Chapters 8 and 9: perfectly competitive markets achieve productive and allocative efficiency, while monopolies produce less output at higher prices, creating deadweight loss and reducing consumer welfare. Antitrust law attempts to push real markets closer to the competitive benchmark.
+
+**Core antitrust prohibitions:**
+- **Price-fixing**: competitors agreeing to charge the same price, eliminating price competition
+- **Market allocation**: competitors dividing markets among themselves to avoid competing
+- **Bid-rigging**: competitors coordinating bids on contracts
+- **Abuse of dominance**: a firm with market power using that power to exclude competitors (e.g., predatory pricing, tying arrangements, exclusive dealing)
+- **Anti-competitive mergers**: acquisitions that substantially reduce competition in a market
+
+**Key antitrust cases from the learning guide:**
+
+| Case | Country | Issue | Outcome |
+|------|---------|-------|--------|
+| Microsoft (1998) | USA | Bundling Internet Explorer with Windows to suppress browser competition | Found to have violated antitrust law; behavioral remedies imposed |
+| Google Shopping (2017) | EU | Favoring own comparison-shopping service in search results | €2.42 billion fine; required equal treatment of competitors |
+| FTC vs. Amazon (2023) | USA | Punishing sellers who offered lower prices elsewhere | Ongoing litigation seeking to prohibit anti-discounting practices |
+
+Spulber (2022) argues that traditional antitrust frameworks were designed for price competition in physical goods markets. They measure market power through price effects and market share. However, in innovation-driven markets, competition occurs primarily through new products, new features, and new business models — not just price. A firm can have a large market share while still facing intense innovation competition from potential entrants (p. 6).
+
+**The role of intellectual property in antitrust**: Patents and copyrights create temporary legal monopolies to incentivize innovation. Antitrust law must balance protecting these rights (which encourage R&D investment) against preventing their abuse to permanently exclude competition. Spulber (2022) identifies this as one of the central tensions in modern antitrust policy: intellectual property law and antitrust law can pull in opposite directions (p. 8).
+
+---
+
+### 8.2 Challenges in Enforcing Antitrust Laws in the Digital Economy
+
+The digital economy presents fundamentally new challenges for antitrust enforcement that existing frameworks were not designed to address.
+
+**Challenge 1: Network externalities create winner-take-all markets**
+
+Tirole (2024) identifies large fixed costs and network externalities as the primary barriers to entry in digital markets. A platform becomes more valuable as more users join — this is a network externality. Once a platform achieves sufficient scale, it becomes self-reinforcing: users attract more users, making it nearly impossible for new entrants to compete even if they offer a superior product (p. i984). This is structurally different from traditional monopolies based on physical resource control or government regulation.
+
+Examples: social media platforms, operating systems, search engines, payment networks. Each exhibits strong network effects that entrench the dominant firm.
+
+**Challenge 2: Zero-price markets obscure traditional market power analysis**
+
+Many digital services are offered free to users (Google Search, Facebook, Chrome). Traditional antitrust analysis focuses on price effects — if a firm raises prices, consumers are harmed. But when the price is zero, this framework breaks down. The "price" consumers pay is their data and attention, not money. Regulators must develop new frameworks to measure harm in zero-price markets (Tirole, 2024, p. i986).
+
+**Challenge 3: Platform ecosystems and self-preferencing**
+
+Munir et al. (2024) examine Google's Chrome browser as a case study in how a dominant platform can use one product to reinforce dominance in adjacent markets. Chrome, distributed free and pre-installed on Android devices, gives Google privileged access to user browsing data, which strengthens its advertising business. The browser also defaults to Google Search, reinforcing search dominance. This creates a self-reinforcing ecosystem where dominance in one market (mobile OS → Chrome → Search → Advertising) compounds across multiple markets (p. 3).
+
+This "antitrust paradox" — a product offered free that simultaneously entrenches monopoly power across multiple markets — is difficult to address with traditional tools that focus on price effects in a single market.
+
+**Challenge 4: Data as a barrier to entry**
+
+Eshbayev et al. (2022) identify data accumulation as a new form of barrier to entry in the digital economy. Dominant platforms accumulate vast datasets that improve their AI and recommendation systems, creating a competitive advantage that new entrants cannot replicate without access to similar data volumes (p. 18). This is analogous to the physical resource control barrier (like ALCOA's bauxite) but operates through data rather than minerals.
+
+Eshbayev et al. (2022) classify current anti-monopoly research in the digital economy into seven areas: big data, artificial intelligence, platform economy, digital trade, financial technology, sustainability, and human welfare — reflecting the breadth of markets where digital monopoly concerns now arise (p. 19).
+
+**Policy responses being developed:**
+
+| Policy Tool | Description | Example |
+|------------|-------------|--------|
+| Interoperability requirements | Force dominant platforms to allow competitors to connect | EU Digital Markets Act |
+| Data portability | Allow users to move data to competing services | GDPR portability rights |
+| Ex ante regulation | Set rules before harm occurs, not just after | EU Digital Markets Act |
+| Structural separation | Prevent platforms from competing in markets they also regulate | Proposed Amazon marketplace rules |
+
+Tirole (2024) argues that ex ante regulation — setting rules in advance rather than waiting for antitrust cases after harm has occurred — is essential for digital markets because the pace of change is too fast for traditional case-by-case enforcement (p. i990). By the time a case is resolved (often 5–10 years), the market may have already been permanently shaped by the dominant firm's conduct.
+
+---
+
 ## References
 
+Eshbayev, O., Rakhimova, S., Mirzaliev, S., Mulladjanova, N., Alimxodjaeva, N., Akhmedova, D., & Akbarova, B. (2022). A systematic mapping study of effective regulations and policies against digital monopolies. *ACM Digital Library*, 16–22. https://doi.org/10.1145/3584202.3584205
+
 Greenlaw, S., Shapiro, D., & MacDonald, D. (2022). *Principles of economics* (3rd ed.). OpenStax. https://openstax.org/books/principles-economics-3e/pages/1-introduction
+
+Munir, S., Kollnig, K., Shuba, A., & Shafiq, Z. (2024). Google's Chrome antitrust paradox. *arXiv*. https://arxiv.org/abs/2406.11856
 
 Spulber, D. F. (2022). Antitrust and innovation competition. *Journal of Antitrust Enforcement*, *11*(1), 5–50. https://doi.org/10.1093/jaenfo/jnac013
 
