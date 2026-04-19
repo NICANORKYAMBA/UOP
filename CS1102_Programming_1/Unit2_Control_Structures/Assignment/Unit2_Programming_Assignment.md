@@ -9,36 +9,51 @@
 
 ## 1. Program Overview
 
-This program implements a basic library management system that allows users to add books, borrow books, and return books through a menu-driven interface. The program maintains a record of each book's title, author, and available quantity using parallel arrays. It runs continuously until the user selects the Exit option. The program demonstrates all key Unit 2 control structures: a `while` loop for the main menu, a `switch` statement for menu dispatch, `if-else` for availability checks, and `try-catch` for exception handling of invalid numeric input.
+This program implements a basic library management system that allows users to add books, borrow books, and return books through a continuously running menu. The program stores each book's title, author, and available quantity using parallel arrays. It demonstrates all the key control structures from Unit 2: a `while` loop for the main menu, a `switch` statement for menu dispatch, `if-else` for availability and membership checks, a `for` loop for searching the book collection, and `try-catch` for handling invalid numeric input without crashing the program.
 
 ---
 
 ## 2. Compilation
 
-The program is contained in a single public class `LibrarySystem` stored in `LibrarySystem.java`. It imports only `java.util.Scanner` for keyboard input. The program compiles cleanly under Java 17 with zero errors and zero warnings using `javac LibrarySystem.java`. The class and method structure follows the standard Java application pattern with a `public static void main(String[] args)` entry point (Eck, 2022, Section 2.1). Static helper methods (`addBook`, `borrowBook`, `returnBook`, `findBook`, `printMenu`) are used to organize the program into logical, readable units.
+The program is a single public class `LibrarySystem` in `LibrarySystem.java`. It imports only `java.util.Scanner` for keyboard input — no other libraries are needed. The program compiles cleanly under Java 17 with zero errors and zero warnings. The entry point is `public static void main(String[] args)`, following the standard Java application structure described by Eck (2022, Section 2.1). Static helper methods (`addBook`, `borrowBook`, `returnBook`, `findBook`, `printMenu`) organize the program into logical units, each with a single responsibility.
 
 ---
 
 ## 3. Input Validation
 
-Every numeric input — menu choice and book quantity — is read as a `String` using `input.nextLine()` and then parsed with `Integer.parseInt()` inside a `try-catch` block. This approach catches `NumberFormatException` when the user enters non-numeric text, preventing a program crash:
+Every numeric input — menu choice and book quantity — is read as a `String` using `input.nextLine()` and then converted with `Integer.parseInt()` inside a `try-catch` block. This approach is taken directly from the pattern Eck (2022) demonstrates in Section 3.7.2, where `Double.parseDouble(str)` is wrapped in try-catch to handle the case where the string is not a valid number.
+
+When the user types something that is not an integer, `Integer.parseInt()` throws a `NumberFormatException`. The catch block handles it gracefully:
 
 ```java
 try {
     choice = Integer.parseInt(input.nextLine().trim());
 } catch (NumberFormatException e) {
     System.out.println("Invalid input. Please enter a number between 1 and 4.");
-    continue; // skip to next while loop iteration
+    continue;   // skip to next iteration of the while loop
 }
 ```
 
-The `.trim()` call removes accidental whitespace. Quantity values are additionally validated to be positive — a quantity of zero or negative is rejected with a clear error message. Empty title and author strings are also rejected in the Add Books operation. This multi-layer validation ensures the program handles all forms of invalid input gracefully (Eck, 2022, Section 3.7).
+The `continue` statement — covered in Eck (2022, Section 3.3.3) — skips the rest of the current loop iteration and jumps back to the top of the while loop, so the menu is displayed again without executing any operation. The `.trim()` call removes accidental whitespace before parsing.
+
+Beyond exception handling, quantity values are validated to be positive integers — a quantity of zero or negative is rejected with a clear error message. Empty title and author strings are also rejected in the Add Books operation. This multi-layer validation ensures the program handles all forms of invalid input gracefully.
 
 ---
 
 ## 4. Logic and Computation
 
-**Data storage**: Three parallel arrays (`titles`, `authors`, `quantity`) store library data, with a `bookCount` integer tracking how many distinct titles exist. A `findBook` method performs a linear search using a `for` loop and case-insensitive comparison:
+### 4.1 Data Storage
+
+Three parallel arrays store library data:
+- `titles[]` — book titles
+- `authors[]` — corresponding authors
+- `quantity[]` — available copies
+
+A `bookCount` integer tracks how many distinct titles currently exist. This approach uses only the array concepts introduced so far in the course, without requiring more advanced data structures.
+
+### 4.2 Finding a Book — for Loop
+
+The `findBook` method performs a linear search through the titles array using a `for` loop — the appropriate structure here because the number of iterations is known (from 0 to `bookCount - 1`):
 
 ```java
 static int findBook(String title) {
@@ -49,9 +64,27 @@ static int findBook(String title) {
 }
 ```
 
-**Add Books**: If `findBook` returns -1, the book is new and is added at index `bookCount`. If it returns a valid index, the existing quantity is incremented. This satisfies the requirement to handle both new and existing books.
+The loop control variable `i` takes on every integer value from 0 to `bookCount - 1`, which is the standard counting loop pattern described by Eck (2022, Section 3.4.1). The method returns the index if found, or -1 if not — a standard sentinel return value.
 
-**Borrow Books**: Uses `if-else` to check two conditions — whether the book exists and whether sufficient copies are available:
+### 4.3 Add Books — if-else for New vs Existing
+
+After finding the book, an `if-else` statement handles two cases:
+
+```java
+int index = findBook(title);
+if (index != -1) {
+    quantity[index] += qty;   // book exists — update quantity
+} else {
+    titles[bookCount] = title;
+    authors[bookCount] = author;
+    quantity[bookCount] = qty;
+    bookCount++;              // new book — add to collection
+}
+```
+
+### 4.4 Borrow Books — chained if-else
+
+Borrowing requires checking two conditions in sequence — whether the book exists, and whether enough copies are available. A chained `if-else if-else` handles this cleanly:
 
 ```java
 if (index == -1) {
@@ -64,26 +97,32 @@ if (index == -1) {
 }
 ```
 
-**Return Books**: Checks whether the book belongs to the library (`findBook != -1`) before updating quantity. If the book is not in the system, an error message is displayed.
+This is the multiway branching pattern described by Eck (2022, Section 3.5.2) — each condition is tested in order, and only one branch executes.
 
-**Score computation**: No percentage calculation is needed for this assignment, but all arithmetic operations on quantity use correct integer addition and subtraction.
+### 4.5 Main Menu — while Loop and switch
+
+The main menu uses a `while` loop because the program must keep running for an unknown number of iterations until the user explicitly exits — exactly the use case Eck (2022, Section 3.3.1) describes for while loops. The `boolean running` variable is a flag variable (Eck, 2022, Section 3.3.2) that controls the loop:
+
+```java
+boolean running = true;
+while (running) {
+    printMenu();
+    // read and validate choice...
+    switch (choice) {
+        case 1 -> addBook(input);
+        case 2 -> borrowBook(input);
+        case 3 -> returnBook(input);
+        case 4 -> { running = false; }   // set flag to exit loop
+        default -> System.out.println("Invalid choice.");
+    }
+}
+```
+
+The `switch` statement is appropriate here because it tests one variable (`choice`) against a fixed set of integer values — the exact scenario Eck (2022, Section 3.6) identifies as the strength of switch over if-else.
 
 ---
 
-## 5. Program Flow and Structure
-
-The program follows a clear, linear flow:
-
-1. **Setup** — initialize parallel arrays and `bookCount = 0`
-2. **Main loop** — `while (running)` displays menu, reads choice, dispatches via `switch`
-3. **Operations** — each case calls a dedicated static method
-4. **Exit** — sets `running = false`, terminating the while loop cleanly
-
-All variable names are meaningful (`titles`, `authors`, `quantity`, `bookCount`, `index`, `running`). The `while` loop is the correct structure here because the program must keep running for an unknown number of iterations until the user explicitly exits — a classic while loop use case (Eck, 2022, Section 3.3.1). The `switch` statement is appropriate for menu dispatch because it tests one variable (`choice`) against a fixed set of integer values (Eck, 2022, Section 3.6).
-
----
-
-## 6. Full Program Code
+## 5. Full Program Code
 
 ```java
 import java.util.Scanner;
@@ -101,6 +140,7 @@ import java.util.Scanner;
  *   - while loop: keeps the menu running until the user exits
  *   - switch statement: dispatches menu choices
  *   - if-else: validates availability and membership
+ *   - for loop: searches the book collection
  *   - try-catch: handles invalid numeric input
  *
  * Author : Nicanor Kyamba
@@ -118,31 +158,34 @@ public class LibrarySystem {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        boolean running = true;
+        boolean running = true;  // flag variable — controls the main loop
 
         System.out.println("============================================");
         System.out.println("       Welcome to the Library System        ");
         System.out.println("============================================");
 
+        // while loop: runs until user selects Exit (sets running = false)
         while (running) {
             printMenu();
             System.out.print("Enter your choice (1-4): ");
 
             int choice = 0;
+            // try-catch: handle non-integer menu input (NumberFormatException)
             try {
                 choice = Integer.parseInt(input.nextLine().trim());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a number between 1 and 4.\n");
-                continue;
+                continue;  // skip to next while iteration
             }
 
+            // switch: dispatch to the correct operation based on menu choice
             switch (choice) {
                 case 1 -> addBook(input);
                 case 2 -> borrowBook(input);
                 case 3 -> returnBook(input);
                 case 4 -> {
                     System.out.println("Thank you for using the Library System. Goodbye!");
-                    running = false;
+                    running = false;  // set flag to exit the while loop
                 }
                 default -> System.out.println("Invalid choice. Please enter 1, 2, 3, or 4.\n");
             }
@@ -151,6 +194,7 @@ public class LibrarySystem {
         input.close();
     }
 
+    // Displays the main menu options
     static void printMenu() {
         System.out.println("--------------------------------------------");
         System.out.println("1. Add Books");
@@ -160,25 +204,34 @@ public class LibrarySystem {
         System.out.println("--------------------------------------------");
     }
 
+    // Searches for a book by title (case-insensitive)
+    // Returns the index if found, -1 if not found
     static int findBook(String title) {
+        // for loop: counting loop from 0 to bookCount-1
         for (int i = 0; i < bookCount; i++) {
-            if (titles[i].equalsIgnoreCase(title)) return i;
+            if (titles[i].equalsIgnoreCase(title)) {
+                return i;
+            }
         }
-        return -1;
+        return -1;  // sentinel return value: book not found
     }
 
+    // Adds a new book or updates quantity of an existing book
     static void addBook(Scanner input) {
         System.out.println("\n--- Add Books ---");
         System.out.print("Enter book title: ");
         String title = input.nextLine().trim();
+
         System.out.print("Enter author name: ");
         String author = input.nextLine().trim();
 
+        // Validate that title and author are not empty strings
         if (title.isEmpty() || author.isEmpty()) {
             System.out.println("Error: Title and author cannot be empty.\n");
             return;
         }
 
+        // try-catch: handle non-integer quantity input
         int qty = 0;
         try {
             System.out.print("Enter quantity to add: ");
@@ -193,13 +246,14 @@ public class LibrarySystem {
         }
 
         int index = findBook(title);
+        // if-else: update existing book or add new book
         if (index != -1) {
             quantity[index] += qty;
             System.out.println("Updated: \"" + titles[index] + "\" — new quantity: "
                     + quantity[index] + "\n");
         } else {
             if (bookCount >= MAX_BOOKS) {
-                System.out.println("Error: Library is full.\n");
+                System.out.println("Error: Library is full. Cannot add more titles.\n");
                 return;
             }
             titles[bookCount]   = title;
@@ -211,6 +265,7 @@ public class LibrarySystem {
         }
     }
 
+    // Borrows books if available in sufficient quantity
     static void borrowBook(Scanner input) {
         System.out.println("\n--- Borrow Books ---");
         System.out.print("Enter book title: ");
@@ -230,6 +285,7 @@ public class LibrarySystem {
         }
 
         int index = findBook(title);
+        // chained if-else if-else: check existence then availability
         if (index == -1) {
             System.out.println("Error: \"" + title + "\" is not in the library.\n");
         } else if (quantity[index] < qty) {
@@ -242,6 +298,7 @@ public class LibrarySystem {
         }
     }
 
+    // Returns books to the library if they belong to the system
     static void returnBook(Scanner input) {
         System.out.println("\n--- Return Books ---");
         System.out.print("Enter book title: ");
@@ -261,6 +318,7 @@ public class LibrarySystem {
         }
 
         int index = findBook(title);
+        // if-else: check if book belongs to this library before accepting return
         if (index == -1) {
             System.out.println("Error: \"" + title
                     + "\" does not belong to this library system.\n");
@@ -275,27 +333,27 @@ public class LibrarySystem {
 
 ---
 
-## 7. Output (Screenshots)
+## 6. Output (Screenshots)
 
 *Run the program in IntelliJ IDEA and insert screenshots below.*
 
 ### Screenshot 1 — IDE Screenshot
-*[INSERT: IntelliJ editor showing LibrarySystem.java with project panel visible]*
+*[INSERT: IntelliJ editor showing LibrarySystem.java with project panel visible on the left]*
 
-### Screenshot 2 — Test Run: Add and Borrow (Success)
-*[INSERT: Console showing — add "Clean Code" qty 3, add "Java Programming" qty 5, borrow "Clean Code" qty 2 → Success, remaining 1]*
+### Screenshot 2 — Add Books and Borrow (Success)
+*[INSERT: Console showing — add "Clean Code" by Robert Martin qty 3 → Added successfully; add "Java Programming" by James Gosling qty 5 → Added; borrow "Clean Code" qty 2 → Success, remaining 1]*
 
-### Screenshot 3 — Test Run: Borrow Insufficient and Return
-*[INSERT: Console showing — borrow "Java Programming" qty 10 → Error (only 5 available), return "Clean Code" qty 1 → Success, new qty 2]*
+### Screenshot 3 — Borrow Insufficient Copies and Return
+*[INSERT: Console showing — borrow "Java Programming" qty 10 → Error only 5 available; return "Clean Code" qty 1 → Success new qty 2]*
 
-### Screenshot 4 — Test Run: Invalid Inputs
-*[INSERT: Console showing — return "Unknown Book" → Error not in library, enter "abc" as quantity → Error invalid quantity, enter "X" as menu choice → Error invalid input]*
+### Screenshot 4 — Invalid Inputs and Error Handling
+*[INSERT: Console showing — return "Unknown Book" → Error not in library; enter "abc" as quantity → Error invalid quantity (NumberFormatException caught); enter "X" as menu choice → Error invalid input (NumberFormatException caught)]*
 
 ---
 
-## 8. Code Style and Readability
+## 7. Code Style and Readability
 
-The code uses consistent four-space indentation throughout. Every method has a single, clearly named responsibility. Variable names are descriptive (`bookCount`, `running`, `index`). Every logical section is preceded by a comment block. The `try-catch` blocks are placed precisely around the parsing operations that can throw exceptions, not around entire methods. The `Scanner` is closed at the end of `main`. The Javadoc header documents purpose, control structures used, author, and course.
+The code uses consistent four-space indentation throughout. Every method has a single, clearly named responsibility. Variable names are descriptive and follow Java's camelCase convention: `bookCount`, `running`, `index`, `totalQuestions`. Every logical section is preceded by a comment explaining its purpose and which control structure is being used. The `try-catch` blocks are placed precisely around the `parseInt` calls that can throw exceptions — not around entire methods — which is the targeted approach Eck (2022, Section 3.7.2) demonstrates. The `Scanner` is closed at the end of `main` with `input.close()` to release the system resource. The Javadoc comment at the top of the class documents the program's purpose, all control structures used, author, and course.
 
 ---
 
