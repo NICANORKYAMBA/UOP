@@ -1,0 +1,93 @@
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 0
+------------------------------------------
+Enter your choice: Enter student name: Enter student ID: Enter student age: Enter student grade: Student added successfully.
+
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 1
+------------------------------------------
+Enter your choice: Enter student name: Enter student ID: Enter student age: Enter student grade: Student added successfully.
+
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 2
+------------------------------------------
+Enter your choice: Enter student ID: Student Details
+---------------
+Name : Alice Kim
+ID   : S001
+Age  : 20
+Grade: A
+
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 2
+------------------------------------------
+Enter your choice: Enter student ID to update: Leave field blank to keep current value.
+New name (current: Brian Otieno): New age (current: 21): New grade (current: B+): Student updated successfully.
+
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 2
+------------------------------------------
+Enter your choice: All Students
+-----------
+Student Details
+---------------
+Name : Alice Kim
+ID   : S001
+Age  : 20
+Grade: A
+
+Student Details
+---------------
+Name : Brian Otieno
+ID   : S002
+Age  : 22
+Grade: A-
+
+
+==========================================
+ Student Record Management System
+==========================================
+1. Add New Student
+2. Update Student Information
+3. View Student Details (by ID)
+4. View All Students
+5. Exit
+Current total students: 2
+------------------------------------------
+Enter your choice: Exiting system. Goodbye.
+
