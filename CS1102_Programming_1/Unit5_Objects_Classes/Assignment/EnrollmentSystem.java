@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * CourseManagement.java
+ * EnrollmentSystem.java
  *
- * Central management class for the Course Enrollment and Grade Management System.
+ * Central management class for the EnrollmentCourse Enrollment and Grade Management System.
  * Uses private static variables to store the list of courses and students.
  * Provides static methods for all administrative operations.
  * Contains the main() method with the interactive administrator interface.
@@ -15,17 +15,17 @@ import java.util.Scanner;
  * shared across the entire system — they do not belong to any single instance.
  *
  * Author : Nicanor Kyamba
- * Course : CS 1102 — Programming 1, Unit 5
+ * EnrollmentCourse : CS 1102 — Programming 1, Unit 5
  */
-public class CourseManagement {
+public class EnrollmentSystem {
 
     // ── Private static variables ─────────────────────────────────
-    private static ArrayList<Course>  courses  = new ArrayList<>();
-    private static ArrayList<Student> students = new ArrayList<>();
+    private static ArrayList<EnrollmentCourse>  courses  = new ArrayList<>();
+    private static ArrayList<EnrollmentStudent> students = new ArrayList<>();
 
     // ── addCourse ────────────────────────────────────────────────
     /**
-     * Creates a new Course and adds it to the course list.
+     * Creates a new EnrollmentCourse and adds it to the course list.
      *
      * @param courseCode   unique course identifier (e.g., "CS1102")
      * @param courseName   full name of the course
@@ -33,34 +33,34 @@ public class CourseManagement {
      */
     public static void addCourse(String courseCode, String courseName, int maxCapacity) {
         // Check for duplicate course code
-        for (Course c : courses) {
+        for (EnrollmentCourse c : courses) {
             if (c.getCourseCode().equalsIgnoreCase(courseCode)) {
-                System.out.println("Error: Course code '" + courseCode + "' already exists.");
+                System.out.println("Error: EnrollmentCourse code '" + courseCode + "' already exists.");
                 return;
             }
         }
-        Course newCourse = new Course(courseCode, courseName, maxCapacity);
+        EnrollmentCourse newCourse = new EnrollmentCourse(courseCode, courseName, maxCapacity);
         courses.add(newCourse);
-        System.out.println("Course added: " + newCourse);
+        System.out.println("EnrollmentCourse added: " + newCourse);
     }
 
     // ── addStudent ───────────────────────────────────────────────
     /**
-     * Creates a new Student and adds them to the student list.
+     * Creates a new EnrollmentStudent and adds them to the student list.
      *
      * @param name       student's full name
      * @param studentId  unique student ID
      */
     public static void addStudent(String name, int studentId) {
-        for (Student s : students) {
+        for (EnrollmentStudent s : students) {
             if (s.getStudentId() == studentId) {
-                System.out.println("Error: Student ID " + studentId + " already exists.");
+                System.out.println("Error: EnrollmentStudent ID " + studentId + " already exists.");
                 return;
             }
         }
-        Student newStudent = new Student(name, studentId);
+        EnrollmentStudent newStudent = new EnrollmentStudent(name, studentId);
         students.add(newStudent);
-        System.out.println("Student added: " + newStudent);
+        System.out.println("EnrollmentStudent added: " + newStudent);
     }
 
     // ── enrollStudent ────────────────────────────────────────────
@@ -69,10 +69,10 @@ public class CourseManagement {
      * Checks that the student exists, the course exists, the student is not
      * already enrolled, and the course has not reached maximum capacity.
      *
-     * @param student  the Student to enroll
-     * @param course   the Course to enroll them in
+     * @param student  the EnrollmentStudent to enroll
+     * @param course   the EnrollmentCourse to enroll them in
      */
-    public static void enrollStudent(Student student, Course course) {
+    public static void enrollStudent(EnrollmentStudent student, EnrollmentCourse course) {
         if (student.isEnrolledIn(course)) {
             System.out.println("Error: " + student.getName() +
                                " is already enrolled in " + course.getCourseCode());
@@ -96,11 +96,11 @@ public class CourseManagement {
      * The student must be enrolled in the course.
      * Grade must be between 0.0 and 100.0.
      *
-     * @param student  the Student receiving the grade
-     * @param course   the Course for which the grade is assigned
+     * @param student  the EnrollmentStudent receiving the grade
+     * @param course   the EnrollmentCourse for which the grade is assigned
      * @param grade    numeric grade (0.0 – 100.0)
      */
-    public static void assignGrade(Student student, Course course, double grade) {
+    public static void assignGrade(EnrollmentStudent student, EnrollmentCourse course, double grade) {
         if (!student.isEnrolledIn(course)) {
             System.out.println("Error: " + student.getName() +
                                " is not enrolled in " + course.getCourseCode());
@@ -120,9 +120,9 @@ public class CourseManagement {
      * Calculates and displays the overall average grade for a student
      * across all courses in which they have received a grade.
      *
-     * @param student  the Student whose overall grade is calculated
+     * @param student  the EnrollmentStudent whose overall grade is calculated
      */
-    public static void calculateOverallGrade(Student student) {
+    public static void calculateOverallGrade(EnrollmentStudent student) {
         if (student.getGrades().isEmpty()) {
             System.out.println(student.getName() + " has no grades recorded.");
             return;
@@ -151,16 +151,16 @@ public class CourseManagement {
     }
 
     // ── Helper: find course by code ──────────────────────────────
-    private static Course findCourse(String code) {
-        for (Course c : courses) {
+    private static EnrollmentCourse findCourse(String code) {
+        for (EnrollmentCourse c : courses) {
             if (c.getCourseCode().equalsIgnoreCase(code)) return c;
         }
         return null;
     }
 
     // ── Helper: find student by ID ───────────────────────────────
-    private static Student findStudent(int id) {
-        for (Student s : students) {
+    private static EnrollmentStudent findStudent(int id) {
+        for (EnrollmentStudent s : students) {
             if (s.getStudentId() == id) return s;
         }
         return null;
@@ -173,7 +173,7 @@ public class CourseManagement {
             return;
         }
         System.out.println("\nAvailable Courses:");
-        for (Course c : courses) {
+        for (EnrollmentCourse c : courses) {
             System.out.println("  " + c);
         }
     }
@@ -185,7 +185,7 @@ public class CourseManagement {
             return;
         }
         System.out.println("\nRegistered Students:");
-        for (Student s : students) {
+        for (EnrollmentStudent s : students) {
             System.out.println("  " + s);
         }
     }
@@ -197,7 +197,7 @@ public class CourseManagement {
         boolean running = true;
 
         System.out.println("==============================================");
-        System.out.println("  Course Enrollment & Grade Management System");
+        System.out.println("  EnrollmentCourse Enrollment & Grade Management System");
         System.out.println("==============================================");
 
         while (running) {
@@ -224,9 +224,9 @@ public class CourseManagement {
             switch (choice) {
 
                 case 1: // Add course
-                    System.out.print("Course code: ");
+                    System.out.print("EnrollmentCourse code: ");
                     String code = sc.nextLine().trim();
-                    System.out.print("Course name: ");
+                    System.out.print("EnrollmentCourse name: ");
                     String name = sc.nextLine().trim();
                     System.out.print("Max capacity: ");
                     try {
@@ -239,9 +239,9 @@ public class CourseManagement {
                     break;
 
                 case 2: // Add student
-                    System.out.print("Student name: ");
+                    System.out.print("EnrollmentStudent name: ");
                     String sName = sc.nextLine().trim();
-                    System.out.print("Student ID: ");
+                    System.out.print("EnrollmentStudent ID: ");
                     try {
                         int id = Integer.parseInt(sc.nextLine().trim());
                         if (id <= 0) { System.out.println("ID must be positive."); break; }
@@ -259,10 +259,10 @@ public class CourseManagement {
                         int sid = Integer.parseInt(sc.nextLine().trim());
                         System.out.print("Enter course code: ");
                         String ccode = sc.nextLine().trim();
-                        Student st = findStudent(sid);
-                        Course co = findCourse(ccode);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
-                        if (co == null) { System.out.println("Course code not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        EnrollmentCourse co = findCourse(ccode);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
+                        if (co == null) { System.out.println("EnrollmentCourse code not found."); break; }
                         enrollStudent(st, co);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid student ID.");
@@ -279,10 +279,10 @@ public class CourseManagement {
                         String ccode = sc.nextLine().trim();
                         System.out.print("Enter grade (0.0 - 100.0): ");
                         double grade = Double.parseDouble(sc.nextLine().trim());
-                        Student st = findStudent(sid);
-                        Course co = findCourse(ccode);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
-                        if (co == null) { System.out.println("Course code not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        EnrollmentCourse co = findCourse(ccode);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
+                        if (co == null) { System.out.println("EnrollmentCourse code not found."); break; }
                         assignGrade(st, co, grade);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid input. Check ID and grade format.");
@@ -294,8 +294,8 @@ public class CourseManagement {
                     System.out.print("Enter student ID: ");
                     try {
                         int sid = Integer.parseInt(sc.nextLine().trim());
-                        Student st = findStudent(sid);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
                         calculateOverallGrade(st);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid student ID.");
@@ -307,7 +307,7 @@ public class CourseManagement {
 
                 case 8:
                     System.out.println("Total enrollments across all courses: " +
-                                       Course.getTotalEnrolledStudents());
+                                       EnrollmentCourse.getTotalEnrolledStudents());
                     break;
 
                 case 9:

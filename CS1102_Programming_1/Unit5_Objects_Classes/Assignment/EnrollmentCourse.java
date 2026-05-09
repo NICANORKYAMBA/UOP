@@ -1,16 +1,16 @@
 package CS1102_Programming_1.Unit5_Objects_Classes.Assignment;
 
 /**
- * Course.java
+ * EnrollmentCourse.java
  *
  * Represents a university course with a code, name, and maximum capacity.
  * Uses a static variable to track the total number of enrolled students
- * across ALL instances of the Course class.
+ * across ALL instances of the EnrollmentCourse class.
  *
  * Author : Nicanor Kyamba
  * Course : CS 1102 — Programming 1, Unit 5
  */
-public class Course {
+public class EnrollmentCourse {
 
     // ── Private instance variables ───────────────────────────────
     private String courseCode;
@@ -29,7 +29,7 @@ public class Course {
      * @param courseName   full name of the course
      * @param maxCapacity  maximum number of students allowed
      */
-    public Course(String courseCode, String courseName, int maxCapacity) {
+    public EnrollmentCourse(String courseCode, String courseName, int maxCapacity) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.maxCapacity = maxCapacity;

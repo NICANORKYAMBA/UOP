@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Student.java
+ * EnrollmentStudent.java
  *
  * Represents a university student with a name, ID, enrolled courses,
  * and grades. Demonstrates encapsulation through private instance
@@ -13,12 +13,12 @@ import java.util.HashMap;
  * Author : Nicanor Kyamba
  * Course : CS 1102 — Programming 1, Unit 5
  */
-public class Student {
+public class EnrollmentStudent {
 
     // ── Private instance variables ───────────────────────────────
     private String name;
     private int studentId;
-    private ArrayList<Course> enrolledCourses;  // list of enrolled courses
+    private ArrayList<EnrollmentCourse> enrolledCourses;  // list of enrolled courses
     private HashMap<String, Double> grades;     // courseCode → grade
 
     // ── Constructor ──────────────────────────────────────────────
@@ -28,7 +28,7 @@ public class Student {
      * @param name       the student's full name
      * @param studentId  the student's unique ID number
      */
-    public Student(String name, int studentId) {
+    public EnrollmentStudent(String name, int studentId) {
         this.name = name;
         this.studentId = studentId;
         this.enrolledCourses = new ArrayList<>();
@@ -39,7 +39,7 @@ public class Student {
     public String getName()      { return name; }
     public int getStudentId()    { return studentId; }
 
-    public ArrayList<Course> getEnrolledCourses() {
+    public ArrayList<EnrollmentCourse> getEnrolledCourses() {
         return enrolledCourses;
     }
 
@@ -63,9 +63,9 @@ public class Student {
      * Enrolls this student in the given course.
      * Does nothing if the student is already enrolled.
      *
-     * @param course  the Course object to enroll in
+     * @param course  the EnrollmentCourse object to enroll in
      */
-    public void enrollCourse(Course course) {
+    public void enrollCourse(EnrollmentCourse course) {
         if (!enrolledCourses.contains(course)) {
             enrolledCourses.add(course);
         }
@@ -77,10 +77,10 @@ public class Student {
      * The student must be enrolled in the course.
      * Grade must be between 0.0 and 100.0.
      *
-     * @param course  the Course for which the grade is being assigned
+     * @param course  the EnrollmentCourse for which the grade is being assigned
      * @param grade   the numeric grade (0.0 – 100.0)
      */
-    public void assignGrade(Course course, double grade) {
+    public void assignGrade(EnrollmentCourse course, double grade) {
         if (enrolledCourses.contains(course) && grade >= 0.0 && grade <= 100.0) {
             grades.put(course.getCourseCode(), grade);
         }
@@ -90,7 +90,7 @@ public class Student {
     /**
      * Returns true if this student is enrolled in the given course.
      */
-    public boolean isEnrolledIn(Course course) {
+    public boolean isEnrolledIn(EnrollmentCourse course) {
         return enrolledCourses.contains(course);
     }
 
