@@ -9,13 +9,13 @@
 
 ## 1. System Overview
 
-This project implements a Course Enrollment and Grade Management System for a university using three Java classes: `Student`, `Course`, and `CourseManagement`. The system demonstrates:
+This project implements a Course Enrollment and Grade Management System for a university using three Java classes: `Student`, `Course`, and `CourseManagement`. The design follows the object-oriented programming principles described by Eck (2022), where objects encapsulate both data and behavior, and classes serve as blueprints for creating those objects (Section 5.1). The system demonstrates:
 
-- **Encapsulation** — all instance variables are `private`; access is controlled through `public` getter and setter methods
-- **Instance methods** — manipulate the state of individual `Student` and `Course` objects
-- **Static variables and methods** — track enrollment data shared across all instances of the `Course` class
-- **Object-oriented design** — each class has a single, well-defined responsibility
-- **Error handling** — invalid inputs, duplicate IDs, and capacity violations are all handled gracefully
+- **Encapsulation** — all instance variables are `private`; access is controlled through `public` getter and setter methods, following Eck's (2022) recommendation that "almost all member variables should be declared private" (Section 5.1.3)
+- **Instance methods** — manipulate the state of individual `Student` and `Course` objects; Eck (2022) explains that instance methods belong to individual objects and operate on their specific data (Section 5.1)
+- **Static variables and methods** — track enrollment data shared across all instances; Eck (2022) explains that static variables belong to the class itself rather than any individual object, making them ideal for class-wide counters (Section 5.1.1)
+- **Object-oriented design** — each class has a single, well-defined responsibility, reflecting the modularity that Liang (2020) identifies as a core benefit of OOP (p. 330)
+- **Error handling** — invalid inputs and capacity violations handled using `try-catch` blocks, as demonstrated by Eck (2022, Section 3.7)
 
 ---
 
@@ -68,7 +68,7 @@ The program displays a 9-option menu. Type the number and press Enter for each o
 ## 3. Student Class — Documentation
 
 ### Purpose
-Represents a university student. Encapsulates all student data and provides instance methods to enroll in courses and receive grades.
+Represents a university student. Encapsulates all student data and provides instance methods to enroll in courses and receive grades. Eck (2022) uses a `Student` class as the primary example for introducing instance variables and methods, noting that each object gets its own copy of the non-static instance variables (Section 5.1.2).
 
 ### Private Instance Variables
 
@@ -79,13 +79,13 @@ Represents a university student. Encapsulates all student data and provides inst
 | `enrolledCourses` | `ArrayList<Course>` | List of courses the student is enrolled in |
 | `grades` | `HashMap<String, Double>` | Maps course code to numeric grade |
 
-All variables are `private` — enforcing encapsulation. No external code can directly read or modify them.
+All variables are `private` — enforcing encapsulation. Eck (2022) states that making member variables private gives the programmer "complete control over what can be done with the variable" (Section 5.1.3).
 
 ### Constructor
 ```java
 public Student(String name, int studentId)
 ```
-Initializes all instance variables. Uses `this.name = name` to distinguish the instance variable from the constructor parameter — the `this` keyword refers to the current object being constructed.
+Initializes all instance variables. Uses `this.name = name` to distinguish the instance variable from the constructor parameter. Eck (2022) explains that `this` is a special variable automatically defined in any instance method or constructor that refers to the current object (Section 5.6.1). A constructor has no return type and must share the class name (Eck, 2022, Section 5.2.2).
 
 ### Getter Methods
 ```java
@@ -94,32 +94,32 @@ public int getStudentId()
 public ArrayList<Course> getEnrolledCourses()
 public HashMap<String, Double> getGrades()
 ```
-Provide read access to private variables without exposing the variables themselves.
+Provide read access to private variables. By convention, getter names begin with "get" followed by the capitalized variable name (Eck, 2022, Section 5.1.3).
 
 ### Setter Methods
 ```java
-public void setName(String name)       // rejects null or empty strings
+public void setName(String name)        // rejects null or empty strings
 public void setStudentId(int studentId) // rejects non-positive IDs
 ```
-Include validation — setters enforce data integrity before accepting a new value.
+Include validation. Eck (2022) demonstrates this with a `setTitle()` method that rejects null values, noting that setters "can take any action at all" including validation (Section 5.1.3).
 
 ### Instance Methods
 
 **`enrollCourse(Course course)`**
-Adds the given course to the student's enrolled courses list. Checks for duplicates — a student cannot be enrolled in the same course twice. This method manipulates the object's state by modifying `enrolledCourses`.
+Adds the given course to the student's enrolled courses list. Checks for duplicates. This method manipulates the object's state by modifying `enrolledCourses`. Eck (2022) describes instance methods as subroutines that belong to individual objects and operate on their specific data (Section 5.1).
 
 **`assignGrade(Course course, double grade)`**
-Stores a grade for the given course. Only executes if the student is enrolled in the course AND the grade is between 0.0 and 100.0. Manipulates the `grades` HashMap.
+Stores a grade only if the student is enrolled and the grade is between 0.0 and 100.0.
 
 **`isEnrolledIn(Course course)`**
-Returns `true` if the student is enrolled in the given course. Used by `CourseManagement` before enrolling or grading.
+Returns `true` if the student is enrolled in the given course.
 
 ---
 
 ## 4. Course Class — Documentation
 
 ### Purpose
-Represents a university course. Tracks its own enrollment count and contributes to a class-level total enrollment counter using a static variable.
+Represents a university course. Tracks its own enrollment count and contributes to a class-level total using a static variable. Eck (2022) explains that a class can contain both static and non-static variables — static variables are part of the class itself, while instance variables belong to individual objects (Section 5.1.1).
 
 ### Private Instance Variables
 
@@ -130,11 +130,13 @@ Represents a university course. Tracks its own enrollment count and contributes 
 | `maxCapacity` | `int` | Maximum students allowed |
 | `currentEnrollment` | `int` | Current number of enrolled students |
 
+All variables are `private`. Eck (2022) recommends this as standard practice to maintain encapsulation (Section 5.1.3).
+
 ### Static Variable
 ```java
 private static int totalEnrolledStudents = 0;
 ```
-This variable belongs to the **class itself**, not to any individual course object. There is exactly one copy of it in memory, shared across all `Course` instances. Every time any student is enrolled in any course, this counter increments. This is how static variables track information across multiple instances — they persist at the class level, not the object level.
+This variable belongs to the **class itself**, not to any individual course object. There is exactly one copy in memory, shared across all `Course` instances. Eck (2022) illustrates this with the `PlayerData` example: a static variable like `playerCount` is stored as part of the class in memory, while instance variables like `name` exist separately in each object (Section 5.1.1). Every time any student is enrolled in any course, this counter increments.
 
 ### Getter Methods
 ```java
@@ -143,8 +145,7 @@ public String getCourseName()
 public int getMaxCapacity()
 public int getCurrentEnrollment()
 ```
-
-### Instance Methods
+All getter methods are `public` to allow read access while keeping the underlying variables `private` (Eck, 2022, Section 5.1.3).
 
 **`hasSpace()`** — returns `true` if `currentEnrollment < maxCapacity`. Used before enrolling a student to prevent exceeding capacity.
 
@@ -154,14 +155,14 @@ public int getCurrentEnrollment()
 ```java
 public static int getTotalEnrolledStudents()
 ```
-Returns the class-level total. Called as `Course.getTotalEnrolledStudents()` — it belongs to the class, not any instance. This is the correct way to access data that is shared across all instances.
+Returns the class-level total. Called as `Course.getTotalEnrolledStudents()`. Eck (2022) notes that static methods are members of the class itself and can be called using the class name rather than an object reference (Section 4.2).
 
 ---
 
 ## 5. CourseManagement Class — Documentation
 
 ### Purpose
-The central management layer. Stores the system's data in private static variables and provides static methods for all administrative operations. Contains the `main()` method with the interactive administrator interface.
+The central management layer. Stores the system's data in private static variables and provides static methods for all administrative operations. Contains the `main()` method with the interactive administrator interface. Eck (2022) describes this pattern as using a class to group together related subroutines and variables, which is one of the primary purposes of classes in Java (Section 4.2).
 
 ### Private Static Variables
 
@@ -170,28 +171,28 @@ private static ArrayList<Course>  courses  = new ArrayList<>();
 private static ArrayList<Student> students = new ArrayList<>();
 ```
 
-These are `static` because the course and student lists belong to the system as a whole — they are not associated with any particular instance of `CourseManagement`. They are `private` to prevent external code from directly modifying the lists.
+These are `static` because the course and student lists belong to the system as a whole — not to any particular instance. They are `private` to prevent external code from directly modifying the lists, enforcing encapsulation (Eck, 2022, Section 5.1.3). `ArrayList` is used rather than a fixed array because the number of courses and students is not known in advance — ArrayList's dynamic resizing handles this automatically (Eck, 2022, Section 7.3).
 
 ### Static Methods
 
 **`addCourse(String courseCode, String courseName, int maxCapacity)`**
-Creates a new `Course` object and adds it to the `courses` list. Checks for duplicate course codes before adding.
+Creates a new `Course` object using the `new` operator and adds it to the `courses` list. Checks for duplicate course codes. Eck (2022) explains that the `new` operator allocates memory for the object, initializes its instance variables, and returns a reference to the newly created object (Section 5.2.2).
 
 **`addStudent(String name, int studentId)`**
-Creates a new `Student` object and adds it to the `students` list. Checks for duplicate student IDs before adding.
+Creates a new `Student` object and adds it to the `students` list. Checks for duplicate student IDs.
 
 **`enrollStudent(Student student, Course course)`**
-Validates that the student is not already enrolled and the course has space, then calls `student.enrollCourse(course)` and `course.incrementEnrollment()`. This demonstrates how `CourseManagement` delegates to instance methods on the `Student` and `Course` objects.
+Validates that the student is not already enrolled and the course has space, then calls `student.enrollCourse(course)` and `course.incrementEnrollment()`. This demonstrates how `CourseManagement` delegates to instance methods on the `Student` and `Course` objects — a key aspect of OOP where behavior is defined within the objects that own the data (Eck, 2022, Section 5.1).
 
 **`assignGrade(Student student, Course course, double grade)`**
 Validates enrollment and grade range, then calls `student.assignGrade(course, grade)`.
 
 **`calculateOverallGrade(Student student)`**
-Iterates over the student's grades HashMap, computes the average, and converts to a letter grade using the private helper `getLetterGrade()`.
+Iterates over the student's grades HashMap, computes the average, and converts to a letter grade. Liang (2020) notes that computing averages from stored data is a common pattern that demonstrates the practical value of encapsulated data structures (p. 385).
 
 ### How Static Methods and Variables Track Enrollment
 
-The `CourseManagement` class uses static variables (`courses`, `students`) to maintain the system state across the entire program. The `Course` class uses a static variable (`totalEnrolledStudents`) to count all enrollments across all course instances. Because static variables belong to the class rather than any object, they persist and accumulate data regardless of how many objects are created or destroyed. This is the key advantage of static variables for system-wide tracking.
+The `CourseManagement` class uses static variables (`courses`, `students`) to maintain the system state across the entire program. The `Course` class uses a static variable (`totalEnrolledStudents`) to count all enrollments across all course instances. Because static variables belong to the class rather than any object, they persist and accumulate data regardless of how many objects are created or destroyed. Eck (2022) explains this distinction clearly: static variables are stored as part of the class representation in memory and exist as long as the program runs, while instance variables exist only as long as the object that contains them (Section 5.1.1). This is the key advantage of static variables for system-wide tracking.
 
 ---
 
@@ -598,3 +599,5 @@ public class CourseManagement {
 ## References
 
 Eck, D. J. (2022). *Introduction to programming using Java* (Version 9, Swing ed.). Creative Commons CC 4.0. https://math.hws.edu/javanotes/
+
+Liang, Y. D. (2020). *Introduction to Java programming and data structures* (12th ed.). Pearson.
