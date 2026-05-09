@@ -1,3 +1,5 @@
+package CS1102_Programming_1.Unit5_Objects_Classes.Assignment;
+
 /**
  * Course.java
  *
