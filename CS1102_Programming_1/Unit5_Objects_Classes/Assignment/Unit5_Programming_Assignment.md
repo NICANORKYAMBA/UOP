@@ -1,18 +1,18 @@
 # CS 1102 — Unit 5 Programming Assignment
-## Course Enrollment and Grade Management System
+## EnrollmentCourse Enrollment and Grade Management System
 
-**Student**: Nicanor Kyamba
-**Course**: CS 1102 — Programming 1
+**EnrollmentStudent**: Nicanor Kyamba
+**EnrollmentCourse**: CS 1102 — Programming 1
 **Unit**: 5 — Objects and Classes
 
 ---
 
 ## 1. System Overview
 
-This project implements a Course Enrollment and Grade Management System for a university using three Java classes: `Student`, `Course`, and `CourseManagement`. The design follows the object-oriented programming principles described by Eck (2022), where objects encapsulate both data and behavior, and classes serve as blueprints for creating those objects (Section 5.1). The system demonstrates:
+This project implements a EnrollmentCourse Enrollment and Grade Management System for a university using three Java classes: `EnrollmentStudent`, `EnrollmentCourse`, and `EnrollmentSystem`. The design follows the object-oriented programming principles described by Eck (2022), where objects encapsulate both data and behavior, and classes serve as blueprints for creating those objects (Section 5.1). The system demonstrates:
 
 - **Encapsulation** — all instance variables are `private`; access is controlled through `public` getter and setter methods, following Eck's (2022) recommendation that "almost all member variables should be declared private" (Section 5.1.3)
-- **Instance methods** — manipulate the state of individual `Student` and `Course` objects; Eck (2022) explains that instance methods belong to individual objects and operate on their specific data (Section 5.1)
+- **Instance methods** — manipulate the state of individual `EnrollmentStudent` and `EnrollmentCourse` objects; Eck (2022) explains that instance methods belong to individual objects and operate on their specific data (Section 5.1)
 - **Static variables and methods** — track enrollment data shared across all instances; Eck (2022) explains that static variables belong to the class itself rather than any individual object, making them ideal for class-wide counters (Section 5.1.1)
 - **Object-oriented design** — each class has a single, well-defined responsibility, reflecting the modularity that Liang (2020) identifies as a core benefit of OOP (p. 330)
 - **Error handling** — invalid inputs and capacity violations handled using `try-catch` blocks, as demonstrated by Eck (2022, Section 3.7)
@@ -23,17 +23,17 @@ This project implements a Course Enrollment and Grade Management System for a un
 
 ### Prerequisites
 - Java 17 or later installed (`java -version` to check)
-- All three files in the same directory: `Student.java`, `Course.java`, `CourseManagement.java`
+- All three files: EnrollmentStudent.java, EnrollmentCourse.java, EnrollmentSystem.java
 
 ### Compilation
 Open a terminal in the directory containing the files and run:
 ```
-javac Student.java Course.java CourseManagement.java
+javac CS1102_Programming_1/Unit5_Objects_Classes/Assignment/*.java
 ```
 
 ### Running
 ```
-java CourseManagement
+java -cp . CS1102_Programming_1.Unit5_Objects_Classes.Assignment.EnrollmentSystem
 ```
 
 ### Using the Administrator Interface
@@ -65,25 +65,25 @@ The program displays a 9-option menu. Type the number and press Enter for each o
 
 ---
 
-## 3. Student Class — Documentation
+## 3. EnrollmentStudent Class — Documentation
 
 ### Purpose
-Represents a university student. Encapsulates all student data and provides instance methods to enroll in courses and receive grades. Eck (2022) uses a `Student` class as the primary example for introducing instance variables and methods, noting that each object gets its own copy of the non-static instance variables (Section 5.1.2).
+Represents a university student. Encapsulates all student data and provides instance methods to enroll in courses and receive grades. Eck (2022) uses a `EnrollmentStudent` class as the primary example for introducing instance variables and methods, noting that each object gets its own copy of the non-static instance variables (Section 5.1.2).
 
 ### Private Instance Variables
 
 | Variable | Type | Purpose |
 |----------|------|---------|
-| `name` | `String` | Student's full name |
+| `name` | `String` | EnrollmentStudent's full name |
 | `studentId` | `int` | Unique student identifier |
-| `enrolledCourses` | `ArrayList<Course>` | List of courses the student is enrolled in |
+| `enrolledCourses` | `ArrayList<EnrollmentCourse>` | List of courses the student is enrolled in |
 | `grades` | `HashMap<String, Double>` | Maps course code to numeric grade |
 
 All variables are `private` — enforcing encapsulation. Eck (2022) states that making member variables private gives the programmer "complete control over what can be done with the variable" (Section 5.1.3).
 
 ### Constructor
 ```java
-public Student(String name, int studentId)
+public EnrollmentStudent(String name, int studentId)
 ```
 Initializes all instance variables. Uses `this.name = name` to distinguish the instance variable from the constructor parameter. Eck (2022) explains that `this` is a special variable automatically defined in any instance method or constructor that refers to the current object (Section 5.6.1). A constructor has no return type and must share the class name (Eck, 2022, Section 5.2.2).
 
@@ -91,7 +91,7 @@ Initializes all instance variables. Uses `this.name = name` to distinguish the i
 ```java
 public String getName()
 public int getStudentId()
-public ArrayList<Course> getEnrolledCourses()
+public ArrayList<EnrollmentCourse> getEnrolledCourses()
 public HashMap<String, Double> getGrades()
 ```
 Provide read access to private variables. By convention, getter names begin with "get" followed by the capitalized variable name (Eck, 2022, Section 5.1.3).
@@ -105,18 +105,18 @@ Include validation. Eck (2022) demonstrates this with a `setTitle()` method that
 
 ### Instance Methods
 
-**`enrollCourse(Course course)`**
+**`enrollCourse(EnrollmentCourse course)`**
 Adds the given course to the student's enrolled courses list. Checks for duplicates. This method manipulates the object's state by modifying `enrolledCourses`. Eck (2022) describes instance methods as subroutines that belong to individual objects and operate on their specific data (Section 5.1).
 
-**`assignGrade(Course course, double grade)`**
+**`assignGrade(EnrollmentCourse course, double grade)`**
 Stores a grade only if the student is enrolled and the grade is between 0.0 and 100.0.
 
-**`isEnrolledIn(Course course)`**
+**`isEnrolledIn(EnrollmentCourse course)`**
 Returns `true` if the student is enrolled in the given course.
 
 ---
 
-## 4. Course Class — Documentation
+## 4. EnrollmentCourse Class — Documentation
 
 ### Purpose
 Represents a university course. Tracks its own enrollment count and contributes to a class-level total using a static variable. Eck (2022) explains that a class can contain both static and non-static variables — static variables are part of the class itself, while instance variables belong to individual objects (Section 5.1.1).
@@ -136,7 +136,7 @@ All variables are `private`. Eck (2022) recommends this as standard practice to 
 ```java
 private static int totalEnrolledStudents = 0;
 ```
-This variable belongs to the **class itself**, not to any individual course object. There is exactly one copy in memory, shared across all `Course` instances. Eck (2022) illustrates this with the `PlayerData` example: a static variable like `playerCount` is stored as part of the class in memory, while instance variables like `name` exist separately in each object (Section 5.1.1). Every time any student is enrolled in any course, this counter increments.
+This variable belongs to the **class itself**, not to any individual course object. There is exactly one copy in memory, shared across all `EnrollmentCourse` instances. Eck (2022) illustrates this with the `PlayerData` example: a static variable like `playerCount` is stored as part of the class in memory, while instance variables like `name` exist separately in each object (Section 5.1.1). Every time any student is enrolled in any course, this counter increments.
 
 ### Getter Methods
 ```java
@@ -149,17 +149,17 @@ All getter methods are `public` to allow read access while keeping the underlyin
 
 **`hasSpace()`** — returns `true` if `currentEnrollment < maxCapacity`. Used before enrolling a student to prevent exceeding capacity.
 
-**`incrementEnrollment()`** — increments both `currentEnrollment` (instance variable) and `totalEnrolledStudents` (static variable). Called by `CourseManagement.enrollStudent()` after a successful enrollment.
+**`incrementEnrollment()`** — increments both `currentEnrollment` (instance variable) and `totalEnrolledStudents` (static variable). Called by `EnrollmentSystem.enrollStudent()` after a successful enrollment.
 
 ### Static Method
 ```java
 public static int getTotalEnrolledStudents()
 ```
-Returns the class-level total. Called as `Course.getTotalEnrolledStudents()`. Eck (2022) notes that static methods are members of the class itself and can be called using the class name rather than an object reference (Section 4.2).
+Returns the class-level total. Called as `EnrollmentCourse.getTotalEnrolledStudents()`. Eck (2022) notes that static methods are members of the class itself and can be called using the class name rather than an object reference (Section 4.2).
 
 ---
 
-## 5. CourseManagement Class — Documentation
+## 5. EnrollmentSystem Class — Documentation
 
 ### Purpose
 The central management layer. Stores the system's data in private static variables and provides static methods for all administrative operations. Contains the `main()` method with the interactive administrator interface. Eck (2022) describes this pattern as using a class to group together related subroutines and variables, which is one of the primary purposes of classes in Java (Section 4.2).
@@ -167,8 +167,8 @@ The central management layer. Stores the system's data in private static variabl
 ### Private Static Variables
 
 ```java
-private static ArrayList<Course>  courses  = new ArrayList<>();
-private static ArrayList<Student> students = new ArrayList<>();
+private static ArrayList<EnrollmentCourse>  courses  = new ArrayList<>();
+private static ArrayList<EnrollmentStudent> students = new ArrayList<>();
 ```
 
 These are `static` because the course and student lists belong to the system as a whole — not to any particular instance. They are `private` to prevent external code from directly modifying the lists, enforcing encapsulation (Eck, 2022, Section 5.1.3). `ArrayList` is used rather than a fixed array because the number of courses and students is not known in advance — ArrayList's dynamic resizing handles this automatically (Eck, 2022, Section 7.3).
@@ -176,46 +176,46 @@ These are `static` because the course and student lists belong to the system as 
 ### Static Methods
 
 **`addCourse(String courseCode, String courseName, int maxCapacity)`**
-Creates a new `Course` object using the `new` operator and adds it to the `courses` list. Checks for duplicate course codes. Eck (2022) explains that the `new` operator allocates memory for the object, initializes its instance variables, and returns a reference to the newly created object (Section 5.2.2).
+Creates a new `EnrollmentCourse` object using the `new` operator and adds it to the `courses` list. Checks for duplicate course codes. Eck (2022) explains that the `new` operator allocates memory for the object, initializes its instance variables, and returns a reference to the newly created object (Section 5.2.2).
 
 **`addStudent(String name, int studentId)`**
-Creates a new `Student` object and adds it to the `students` list. Checks for duplicate student IDs.
+Creates a new `EnrollmentStudent` object and adds it to the `students` list. Checks for duplicate student IDs.
 
-**`enrollStudent(Student student, Course course)`**
-Validates that the student is not already enrolled and the course has space, then calls `student.enrollCourse(course)` and `course.incrementEnrollment()`. This demonstrates how `CourseManagement` delegates to instance methods on the `Student` and `Course` objects — a key aspect of OOP where behavior is defined within the objects that own the data (Eck, 2022, Section 5.1).
+**`enrollStudent(EnrollmentStudent student, EnrollmentCourse course)`**
+Validates that the student is not already enrolled and the course has space, then calls `student.enrollCourse(course)` and `course.incrementEnrollment()`. This demonstrates how `EnrollmentSystem` delegates to instance methods on the `EnrollmentStudent` and `EnrollmentCourse` objects — a key aspect of OOP where behavior is defined within the objects that own the data (Eck, 2022, Section 5.1).
 
-**`assignGrade(Student student, Course course, double grade)`**
+**`assignGrade(EnrollmentStudent student, EnrollmentCourse course, double grade)`**
 Validates enrollment and grade range, then calls `student.assignGrade(course, grade)`.
 
-**`calculateOverallGrade(Student student)`**
+**`calculateOverallGrade(EnrollmentStudent student)`**
 Iterates over the student's grades HashMap, computes the average, and converts to a letter grade. Liang (2020) notes that computing averages from stored data is a common pattern that demonstrates the practical value of encapsulated data structures (p. 385).
 
 ### How Static Methods and Variables Track Enrollment
 
-The `CourseManagement` class uses static variables (`courses`, `students`) to maintain the system state across the entire program. The `Course` class uses a static variable (`totalEnrolledStudents`) to count all enrollments across all course instances. Because static variables belong to the class rather than any object, they persist and accumulate data regardless of how many objects are created or destroyed. Eck (2022) explains this distinction clearly: static variables are stored as part of the class representation in memory and exist as long as the program runs, while instance variables exist only as long as the object that contains them (Section 5.1.1). This is the key advantage of static variables for system-wide tracking.
+The `EnrollmentSystem` class uses static variables (`courses`, `students`) to maintain the system state across the entire program. The `EnrollmentCourse` class uses a static variable (`totalEnrolledStudents`) to count all enrollments across all course instances. Because static variables belong to the class rather than any object, they persist and accumulate data regardless of how many objects are created or destroyed. Eck (2022) explains this distinction clearly: static variables are stored as part of the class representation in memory and exist as long as the program runs, while instance variables exist only as long as the object that contains them (Section 5.1.1). This is the key advantage of static variables for system-wide tracking.
 
 ---
 
 ## 6. Full Program Code
 
-### Student.java
+### EnrollmentStudent.java
 
 ```java
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Student.java
+ * EnrollmentStudent.java
  * Represents a university student with encapsulated data and instance methods.
  */
-public class Student {
+public class EnrollmentStudent {
 
     private String name;
     private int studentId;
-    private ArrayList<Course> enrolledCourses;
+    private ArrayList<EnrollmentCourse> enrolledCourses;
     private HashMap<String, Double> grades;
 
-    public Student(String name, int studentId) {
+    public EnrollmentStudent(String name, int studentId) {
         this.name = name;
         this.studentId = studentId;
         this.enrolledCourses = new ArrayList<>();
@@ -225,7 +225,7 @@ public class Student {
     // Getters
     public String getName()                        { return name; }
     public int getStudentId()                      { return studentId; }
-    public ArrayList<Course> getEnrolledCourses()  { return enrolledCourses; }
+    public ArrayList<EnrollmentCourse> getEnrolledCourses()  { return enrolledCourses; }
     public HashMap<String, Double> getGrades()     { return grades; }
 
     // Setters with validation
@@ -237,48 +237,48 @@ public class Student {
     }
 
     // Enroll in a course — instance method that modifies object state
-    public void enrollCourse(Course course) {
+    public void enrollCourse(EnrollmentCourse course) {
         if (!enrolledCourses.contains(course)) enrolledCourses.add(course);
     }
 
     // Assign a grade — validates enrollment and grade range
-    public void assignGrade(Course course, double grade) {
+    public void assignGrade(EnrollmentCourse course, double grade) {
         if (enrolledCourses.contains(course) && grade >= 0.0 && grade <= 100.0)
             grades.put(course.getCourseCode(), grade);
     }
 
     // Check enrollment status
-    public boolean isEnrolledIn(Course course) {
+    public boolean isEnrolledIn(EnrollmentCourse course) {
         return enrolledCourses.contains(course);
     }
 
     @Override
     public String toString() {
-        return "Student[ID=" + studentId + ", Name=" + name +
+        return "EnrollmentStudent[ID=" + studentId + ", Name=" + name +
                ", Courses=" + enrolledCourses.size() + "]";
     }
 }
 ```
 
-### Course.java
+### EnrollmentCourse.java
 
 ```java
 /**
- * Course.java
+ * EnrollmentCourse.java
  * Represents a university course. Uses a static variable to track
- * total enrollments across all Course instances.
+ * total enrollments across all EnrollmentCourse instances.
  */
-public class Course {
+public class EnrollmentCourse {
 
     private String courseCode;
     private String courseName;
     private int maxCapacity;
     private int currentEnrollment;
 
-    // Static variable — ONE copy shared across ALL Course instances
+    // Static variable — ONE copy shared across ALL EnrollmentCourse instances
     private static int totalEnrolledStudents = 0;
 
-    public Course(String courseCode, String courseName, int maxCapacity) {
+    public EnrollmentCourse(String courseCode, String courseName, int maxCapacity) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.maxCapacity = maxCapacity;
@@ -313,50 +313,50 @@ public class Course {
 }
 ```
 
-### CourseManagement.java
+### EnrollmentSystem.java
 
 ```java
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * CourseManagement.java
+ * EnrollmentSystem.java
  * Central management class. Uses private static variables for system data
  * and static methods for all administrative operations.
  * Contains the main() method with the administrator interface.
  */
-public class CourseManagement {
+public class EnrollmentSystem {
 
     // Private static variables — system-wide data
-    private static ArrayList<Course>  courses  = new ArrayList<>();
-    private static ArrayList<Student> students = new ArrayList<>();
+    private static ArrayList<EnrollmentCourse>  courses  = new ArrayList<>();
+    private static ArrayList<EnrollmentStudent> students = new ArrayList<>();
 
     // Add a new course to the system
     public static void addCourse(String courseCode, String courseName, int maxCapacity) {
-        for (Course c : courses) {
+        for (EnrollmentCourse c : courses) {
             if (c.getCourseCode().equalsIgnoreCase(courseCode)) {
-                System.out.println("Error: Course code '" + courseCode + "' already exists.");
+                System.out.println("Error: EnrollmentCourse code '" + courseCode + "' already exists.");
                 return;
             }
         }
-        courses.add(new Course(courseCode, courseName, maxCapacity));
-        System.out.println("Course added: " + courses.get(courses.size() - 1));
+        courses.add(new EnrollmentCourse(courseCode, courseName, maxCapacity));
+        System.out.println("EnrollmentCourse added: " + courses.get(courses.size() - 1));
     }
 
     // Add a new student to the system
     public static void addStudent(String name, int studentId) {
-        for (Student s : students) {
+        for (EnrollmentStudent s : students) {
             if (s.getStudentId() == studentId) {
-                System.out.println("Error: Student ID " + studentId + " already exists.");
+                System.out.println("Error: EnrollmentStudent ID " + studentId + " already exists.");
                 return;
             }
         }
-        students.add(new Student(name, studentId));
-        System.out.println("Student added: " + students.get(students.size() - 1));
+        students.add(new EnrollmentStudent(name, studentId));
+        System.out.println("EnrollmentStudent added: " + students.get(students.size() - 1));
     }
 
-    // Enroll a student in a course — delegates to Student and Course instance methods
-    public static void enrollStudent(Student student, Course course) {
+    // Enroll a student in a course — delegates to EnrollmentStudent and EnrollmentCourse instance methods
+    public static void enrollStudent(EnrollmentStudent student, EnrollmentCourse course) {
         if (student.isEnrolledIn(course)) {
             System.out.println("Error: " + student.getName() +
                                " is already enrolled in " + course.getCourseCode());
@@ -373,8 +373,8 @@ public class CourseManagement {
         System.out.println("Enrolled: " + student.getName() + " in " + course.getCourseCode());
     }
 
-    // Assign a grade — delegates to Student instance method
-    public static void assignGrade(Student student, Course course, double grade) {
+    // Assign a grade — delegates to EnrollmentStudent instance method
+    public static void assignGrade(EnrollmentStudent student, EnrollmentCourse course, double grade) {
         if (!student.isEnrolledIn(course)) {
             System.out.println("Error: " + student.getName() +
                                " is not enrolled in " + course.getCourseCode());
@@ -390,7 +390,7 @@ public class CourseManagement {
     }
 
     // Calculate and display overall grade for a student
-    public static void calculateOverallGrade(Student student) {
+    public static void calculateOverallGrade(EnrollmentStudent student) {
         if (student.getGrades().isEmpty()) {
             System.out.println(student.getName() + " has no grades recorded.");
             return;
@@ -417,14 +417,14 @@ public class CourseManagement {
         return "F";
     }
 
-    private static Course findCourse(String code) {
-        for (Course c : courses)
+    private static EnrollmentCourse findCourse(String code) {
+        for (EnrollmentCourse c : courses)
             if (c.getCourseCode().equalsIgnoreCase(code)) return c;
         return null;
     }
 
-    private static Student findStudent(int id) {
-        for (Student s : students)
+    private static EnrollmentStudent findStudent(int id) {
+        for (EnrollmentStudent s : students)
             if (s.getStudentId() == id) return s;
         return null;
     }
@@ -432,13 +432,13 @@ public class CourseManagement {
     private static void displayCourses() {
         if (courses.isEmpty()) { System.out.println("No courses available."); return; }
         System.out.println("\nAvailable Courses:");
-        for (Course c : courses) System.out.println("  " + c);
+        for (EnrollmentCourse c : courses) System.out.println("  " + c);
     }
 
     private static void displayStudents() {
         if (students.isEmpty()) { System.out.println("No students registered."); return; }
         System.out.println("\nRegistered Students:");
-        for (Student s : students) System.out.println("  " + s);
+        for (EnrollmentStudent s : students) System.out.println("  " + s);
     }
 
     // Administrator Interface
@@ -447,7 +447,7 @@ public class CourseManagement {
         boolean running = true;
 
         System.out.println("==============================================");
-        System.out.println("  Course Enrollment & Grade Management System");
+        System.out.println("  EnrollmentCourse Enrollment & Grade Management System");
         System.out.println("==============================================");
 
         while (running) {
@@ -473,9 +473,9 @@ public class CourseManagement {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Course code: ");
+                    System.out.print("EnrollmentCourse code: ");
                     String code = sc.nextLine().trim();
-                    System.out.print("Course name: ");
+                    System.out.print("EnrollmentCourse name: ");
                     String cname = sc.nextLine().trim();
                     System.out.print("Max capacity: ");
                     try {
@@ -488,9 +488,9 @@ public class CourseManagement {
                     break;
 
                 case 2:
-                    System.out.print("Student name: ");
+                    System.out.print("EnrollmentStudent name: ");
                     String sName = sc.nextLine().trim();
-                    System.out.print("Student ID: ");
+                    System.out.print("EnrollmentStudent ID: ");
                     try {
                         int id = Integer.parseInt(sc.nextLine().trim());
                         if (id <= 0) { System.out.println("ID must be positive."); break; }
@@ -507,10 +507,10 @@ public class CourseManagement {
                         int sid = Integer.parseInt(sc.nextLine().trim());
                         System.out.print("Enter course code: ");
                         String ccode = sc.nextLine().trim();
-                        Student st = findStudent(sid);
-                        Course co = findCourse(ccode);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
-                        if (co == null) { System.out.println("Course code not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        EnrollmentCourse co = findCourse(ccode);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
+                        if (co == null) { System.out.println("EnrollmentCourse code not found."); break; }
                         enrollStudent(st, co);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid student ID.");
@@ -526,10 +526,10 @@ public class CourseManagement {
                         String ccode = sc.nextLine().trim();
                         System.out.print("Enter grade (0.0 - 100.0): ");
                         double grade = Double.parseDouble(sc.nextLine().trim());
-                        Student st = findStudent(sid);
-                        Course co = findCourse(ccode);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
-                        if (co == null) { System.out.println("Course code not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        EnrollmentCourse co = findCourse(ccode);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
+                        if (co == null) { System.out.println("EnrollmentCourse code not found."); break; }
                         assignGrade(st, co, grade);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid input.");
@@ -541,8 +541,8 @@ public class CourseManagement {
                     System.out.print("Enter student ID: ");
                     try {
                         int sid = Integer.parseInt(sc.nextLine().trim());
-                        Student st = findStudent(sid);
-                        if (st == null) { System.out.println("Student ID not found."); break; }
+                        EnrollmentStudent st = findStudent(sid);
+                        if (st == null) { System.out.println("EnrollmentStudent ID not found."); break; }
                         calculateOverallGrade(st);
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid student ID.");
@@ -553,7 +553,7 @@ public class CourseManagement {
                 case 7: displayStudents(); break;
                 case 8:
                     System.out.println("Total enrollments: " +
-                                       Course.getTotalEnrolledStudents());
+                                       EnrollmentCourse.getTotalEnrolledStudents());
                     break;
                 case 9:
                     System.out.println("Exiting system. Goodbye!");
@@ -575,14 +575,14 @@ public class CourseManagement {
 *Open all three Java files in IntelliJ IDEA and insert screenshots below.*
 
 ### Screenshot 1 — IDE Screenshot
-*[INSERT: IntelliJ editor showing CourseManagement.java with the project panel on the left showing Student.java, Course.java, and CourseManagement.java]*
+*[INSERT: IntelliJ editor showing EnrollmentSystem.java with the project panel on the left showing EnrollmentStudent.java, EnrollmentCourse.java, and EnrollmentSystem.java]*
 
 ### Screenshot 2 — Console Output: Add Courses and Students, Enroll, Assign Grades
 *[INSERT: Console showing:*
-- *Course added: CS1102 — Programming 1 (0/30 enrolled)*
-- *Course added: MATH101 — Calculus (0/25 enrolled)*
-- *Student added: Student[ID=1001, Name=Alice Smith, Courses=0]*
-- *Student added: Student[ID=1002, Name=Bob Jones, Courses=0]*
+- *EnrollmentCourse added: CS1102 — Programming 1 (0/30 enrolled)*
+- *EnrollmentCourse added: MATH101 — Calculus (0/25 enrolled)*
+- *EnrollmentStudent added: EnrollmentStudent[ID=1001, Name=Alice Smith, Courses=0]*
+- *EnrollmentStudent added: EnrollmentStudent[ID=1002, Name=Bob Jones, Courses=0]*
 - *Enrolled: Alice Smith in CS1102*
 - *Enrolled: Alice Smith in MATH101*
 - *Grade assigned: Alice Smith — CS1102 — 92.5*
