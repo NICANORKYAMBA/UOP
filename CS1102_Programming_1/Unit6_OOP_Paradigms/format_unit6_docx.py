@@ -35,6 +35,12 @@ def add_heading_no_bookmark(doc, text, level=1):
     run.font.name = 'Times New Roman'
     heading.paragraph_format.line_spacing = 1.5
     heading.paragraph_format.space_after = Pt(6)
+    # Remove any auto-generated bookmarks from the heading
+    from docx.oxml.ns import qn
+    for bookmark_start in heading._element.findall(qn('w:bookmarkStart')):
+        heading._element.remove(bookmark_start)
+    for bookmark_end in heading._element.findall(qn('w:bookmarkEnd')):
+        heading._element.remove(bookmark_end)
     return heading
 
 
