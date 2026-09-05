@@ -20,6 +20,8 @@ CODE_FONT = "Courier New"
 
 REF_NDJOUNTCHE = ("Ndjountche, T. (2016). *Digital electronics 1: Combinational logic "
                   "circuits*. John Wiley & Sons. https://ebookcentral.proquest.com/")
+REF_HARRIS = ("Harris, D. M., & Harris, S. L. (2012). *Digital design and computer "
+              "architecture* (2nd ed.). Morgan Kaufmann.")
 
 
 def base_style(doc):
@@ -272,14 +274,16 @@ def build_assignment():
     mono(doc, "4.  L = S              (Identity law: S + 0 = S)")
     para(doc, "")
     para(doc, "The result reduces to L = S, the identity law in its simplest form: a "
-              "variable passed through unchanged equals itself. I can also verify there is "
-              "no hidden redundancy using the complement law (S + S\u2032 = 1 and "
-              "S\u00b7S\u2032 = 0), which shows the output depends on S alone and never on "
-              "its inverse. Because the output must always equal the input, no AND, OR, or "
-              "NOT operation is needed; any added gate would only introduce cost and delay "
-              "without changing the logic. This is the most efficient result: L = S uses the "
-              "fewest gates, which is zero logic gates, since the switch drives the bulb "
-              "directly.")
+              "variable passed through unchanged equals itself. Harris and Harris (2012) "
+              "note that Boolean algebra lets designers reduce an expression to the smallest "
+              "number of gates before implementation, which is exactly the simplification "
+              "performed here. I can also verify there is no hidden redundancy using the "
+              "complement law (S + S\u2032 = 1 and S\u00b7S\u2032 = 0), which shows the "
+              "output depends on S alone and never on its inverse. Because the output must "
+              "always equal the input, no AND, OR, or NOT operation is needed; any added "
+              "gate would only introduce cost and delay without changing the logic. This is "
+              "the most efficient result: L = S uses the fewest gates, which is zero logic "
+              "gates, since the switch drives the bulb directly.")
     para(doc, "If the design requires an actual gate (for example, to buffer or isolate the "
               "signal), the correct minimal choice is a single buffer gate, whose output "
               "equals its input (L = S). I would avoid two inverters in series, because "
@@ -287,27 +291,38 @@ def build_assignment():
               "what one buffer, or no gate at all, already does.")
 
     heading(doc, "Step 3: Depiction of the Final Circuit")
-    para(doc, "The final circuit is a direct connection from the switch to the bulb, "
-              "optionally through a single buffer:")
-    mono(doc, "S (switch) ----------------> L (bulb)      [minimal: direct, 0 gates]")
-    mono(doc, "S (switch) ----|>----------> L (bulb)      [if a gate is required: 1 buffer]")
+    para(doc, "Because the assignment asks me to clearly depict the logic gate used, my "
+              "final design implements L = S with a single buffer gate. The switch S "
+              "connects to the buffer's input, and the buffer's output drives the bulb L:")
+    mono(doc, "S (switch) ----|>----------> L (bulb)      [1 buffer gate]")
     para(doc, "")
-    para(doc, "When S = 1 (switch closed), the logic 1 passes to L and the bulb turns on. "
-              "When S = 0 (switch open), the logic 0 passes to L and the bulb stays off.")
+    para(doc, "The buffer is the single most efficient gate for this task: its output "
+              "always equals its input (L = S), so it satisfies the required behavior with "
+              "just one gate while keeping the signal clean. In the strictest sense, the "
+              "logic L = S needs zero gates (a direct wire), but using one buffer gives a "
+              "visible, self-contained logic component that matches the assignment's request "
+              "to depict a gate.")
+    para(doc, "When S = 1 (switch closed), the buffer passes logic 1 to L and the bulb turns "
+              "on. When S = 0 (switch open), the buffer passes logic 0 to L and the bulb "
+              "stays off. The Logisim screenshot below shows this circuit in operation, with "
+              "the switch closed (S = 1) and the bulb lit.")
     placeholder(doc, "[ Insert Logisim circuit screenshot here ]")
 
     heading(doc, "Reasoning Behind the Gate Choice")
     para(doc, "The scenario asks for the fewest gates for simplicity and efficiency. Boolean "
-              "simplification shows the function is L = S, so the ideal implementation needs "
-              "no logic gate at all; the switch controls the bulb directly. Where a physical "
-              "design calls for buffering, one buffer is minimal and appropriate because it "
-              "preserves the logic value while strengthening the signal. Choosing more, such "
-              "as an AND gate with both inputs tied to S (S \u00b7 S = S) or a double "
-              "inverter, would satisfy the truth table but waste gates, contradicting the "
-              "efficiency requirement (Ndjountche, 2016).")
+              "simplification shows the function is L = S, so a single buffer gate is the "
+              "minimal component that both implements the logic and gives a clear gate to "
+              "depict. A buffer is ideal because its output equals its input, preserving the "
+              "logic value while keeping the signal clean. Choosing more, such as an AND gate "
+              "with both inputs tied to S (S \u00b7 S = S) or two inverters in series "
+              "((S\u2032)\u2032 = S), would satisfy the truth table but waste gates, "
+              "contradicting the efficiency requirement (Ndjountche, 2016). Harris and "
+              "Harris (2012) likewise emphasize using the simplest gate arrangement that "
+              "meets the specification.")
 
     doc.add_page_break()
     heading(doc, "References", level=1, center=True)
+    reference(doc, REF_HARRIS)
     reference(doc, REF_NDJOUNTCHE)
 
     doc.save("Unit1_Assignment_Activity.docx")

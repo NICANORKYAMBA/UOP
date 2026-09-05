@@ -51,9 +51,11 @@ Applying the laws step by step:
 4. **L = S**          — Identity law: S + 0 = S
 
 The result reduces to **L = S**, the **identity law** in its simplest form: a variable
-passed through unchanged equals itself. I can also verify there is no hidden redundancy
-using the complement law (S + S′ = 1 and S·S′ = 0), which shows the output depends on S
-alone and never on its inverse. Because the output must always equal the input, no AND, OR,
+passed through unchanged equals itself. Harris and Harris (2012) note that Boolean algebra
+lets designers reduce an expression to the smallest number of gates before implementation,
+which is exactly the simplification performed here. I can also verify there is no hidden
+redundancy using the complement law (S + S′ = 1 and S·S′ = 0), which shows the output
+depends on S alone and never on its inverse. Because the output must always equal the input, no AND, OR,
 or NOT operation is needed — any added gate would only introduce cost, delay, and complexity
 without changing the logic. This is the most efficient result: the function L = S already
 uses the fewest gates, which is **zero logic gates**, since the switch drives the bulb
@@ -68,21 +70,26 @@ accomplish what one buffer, or no gate at all, already does.
 
 ## Step 3: Depiction of the Final Circuit
 
-The final circuit is a direct connection from the switch to the bulb, optionally through a
-single buffer:
+Because the assignment asks me to clearly depict the logic gate used, my final design
+implements L = S with a **single buffer gate**. The switch S connects to the buffer's input,
+and the buffer's output drives the bulb L:
 
 ```
-   S (switch) ─────────────▶ L (bulb)         [minimal: direct connection, 0 gates]
-
-   S (switch) ────▷────────▶ L (bulb)         [if a gate is required: 1 buffer]
+   S (switch) ────▷────────▶ L (bulb)
                  buffer
 ```
 
-- When S = 1 (switch closed), the logic 1 passes to L and the bulb turns on.
-- When S = 0 (switch open), the logic 0 passes to L and the bulb stays off.
+The buffer is the single most efficient gate for this task: its output always equals its
+input (L = S), so it satisfies the required behavior with just one gate while keeping the
+signal clean. (In the strictest sense, the logic L = S needs zero gates — a direct wire —
+but using one buffer gives a visible, self-contained logic component that matches the
+assignment's request to depict a gate.)
 
-*(A Logisim screenshot of the circuit — an input pin wired to an output pin, optionally
-through a buffer — is inserted below.)*
+- When S = 1 (switch closed), the buffer passes logic 1 to L and the bulb turns on.
+- When S = 0 (switch open), the buffer passes logic 0 to L and the bulb stays off.
+
+The Logisim screenshot below shows this circuit in operation, with the switch closed
+(S = 1) and the bulb lit.
 
 **[ Insert Logisim circuit screenshot here ]**
 
@@ -97,6 +104,9 @@ with both inputs tied to S (which also yields S · S = S) or a double inverter, 
 the truth table but waste gates, contradicting the efficiency requirement (Ndjountche, 2016).
 
 ## References
+
+Harris, D. M., & Harris, S. L. (2012). *Digital design and computer architecture* (2nd ed.).
+Morgan Kaufmann.
 
 Ndjountche, T. (2016). *Digital electronics 1: Combinational logic circuits*. John Wiley &
 Sons. https://ebookcentral.proquest.com/
