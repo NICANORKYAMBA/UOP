@@ -11,6 +11,8 @@ Thumbs.db
 # Editor Files
 .vscode/
 .idea/
+*.iml
+out/
 *.swp
 *.swo
 *.swn

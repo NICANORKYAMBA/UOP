@@ -4,6 +4,7 @@
 **Term**: AY2027-T1 (Ends January 31, 2027)
 **Credits**: 3
 **Prerequisites**: None
+**Instructor**: Muhammad Aligohar Bilal
 
 ---
 
