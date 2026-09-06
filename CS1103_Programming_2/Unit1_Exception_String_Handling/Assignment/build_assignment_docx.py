@@ -85,8 +85,8 @@ def add_page_number(doc):
     run.font.size = Pt(12)
 
 
-def para(doc, text="", bold=False, align=None, size=12, space_after=6):
-    """Block paragraph: 1.5 spacing, NO first-line indent, small gap after."""
+def para(doc, text="", bold=False, align=None, size=12, space_after=10):
+    """Block paragraph: 1.5 spacing, NO first-line indent, clear gap after."""
     p = doc.add_paragraph()
     p.paragraph_format.line_spacing = 1.5
     p.paragraph_format.first_line_indent = Inches(0)

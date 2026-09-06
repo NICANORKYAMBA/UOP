@@ -60,10 +60,10 @@ def heading(doc, text, level=2, center=False):
     return p
 
 
-def para(doc, text="", bold=False, align=None, space_after=6):
+def para(doc, text="", bold=False, align=None, space_after=10):
     p = doc.add_paragraph()
     p.paragraph_format.line_spacing = 1.5
-    p.paragraph_format.first_line_indent = Inches(0)
+    p.paragraph_format.first_line_indent = Inches(0)  # block style, flush left
     p.paragraph_format.space_after = Pt(space_after)
     if align is not None:
         p.alignment = align
