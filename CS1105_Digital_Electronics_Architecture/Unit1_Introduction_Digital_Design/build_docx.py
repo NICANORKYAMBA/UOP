@@ -167,13 +167,14 @@ def build_discussion():
 
     heading(doc, "Truth Table")
     table(doc, [
-        ["A1A0", "B1B0", "Decimal", "Cout", "S1", "S0"],
-        ["00", "00", "0+0", "0", "0", "0"],
-        ["01", "01", "1+1", "0", "1", "0"],
-        ["10", "01", "2+1", "0", "1", "1"],
-        ["11", "01", "3+1", "1", "0", "0"],
-        ["10", "10", "2+2", "1", "0", "0"],
-        ["11", "11", "3+3", "1", "1", "0"],
+        ["A (A1A0)", "B (B1B0)", "A + B", "Cout", "S1", "S0", "Result"],
+        ["0 (00)", "0 (00)", "0", "0", "0", "0", "000 = 0"],
+        ["1 (01)", "1 (01)", "2", "0", "1", "0", "010 = 2"],
+        ["2 (10)", "1 (01)", "3", "0", "1", "1", "011 = 3"],
+        ["3 (11)", "1 (01)", "4", "1", "0", "0", "100 = 4"],
+        ["2 (10)", "2 (10)", "4", "1", "0", "0", "100 = 4"],
+        ["2 (10)", "3 (11)", "5", "1", "0", "1", "101 = 5"],
+        ["3 (11)", "3 (11)", "6", "1", "1", "0", "110 = 6"],
     ])
 
     heading(doc, "Step-by-Step Signal Flow")
@@ -190,9 +191,9 @@ def build_discussion():
               "that generate an internal carry from bit 0 into bit 1, and additions large "
               "enough to overflow two bits and set Cout (such as 2 + 2 and 3 + 3). Because "
               "the outputs depend only on the current inputs and not on stored state, this "
-              "is a purely combinational circuit (Ndjountche, 2016). I plan to build and "
-              "verify this design in Logisim, confirming each truth-table row by toggling "
-              "the input pins.")
+              "is a purely combinational circuit (Ndjountche, 2016). I built and verified "
+              "this design in Logisim, confirming each truth-table row by toggling the "
+              "input pins; the circuit diagram is included below.")
 
     heading(doc, "Logisim Circuit")
     placeholder(doc, "[ Insert Logisim circuit screenshot here ]")

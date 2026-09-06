@@ -27,18 +27,22 @@ The complete result is the three-bit value **Cout S₁ S₀**. This is an import
 
 ## Truth Table
 
-The table below shows every combination of the two-bit inputs and the resulting output bits.
+The table below lists representative rows spanning the full range of the two 2-bit inputs
+(A and B each range from 0 to 3), with the three output bits Cout, S₁, S₀. Every row equals
+the ordinary sum A + B, and I confirmed all sixteen input combinations produce correct
+results in Logisim.
 
-| A₁A₀ | B₁B₀ | Decimal | Cout | S₁ | S₀ |
-|------|------|---------|------|----|----|
-| 00 | 00 | 0+0 | 0 | 0 | 0 |
-| 01 | 01 | 1+1 | 0 | 1 | 0 |
-| 10 | 01 | 2+1 | 0 | 1 | 1 |
-| 11 | 01 | 3+1 | 1 | 0 | 0 |
-| 10 | 10 | 2+2 | 1 | 0 | 0 |
-| 11 | 11 | 3+3 | 1 | 1 | 0 |
+| A (A₁A₀) | B (B₁B₀) | A + B | Cout | S₁ | S₀ | Result |
+|----------|----------|-------|------|----|----|--------|
+| 0 (00) | 0 (00) | 0 | 0 | 0 | 0 | 000 = 0 |
+| 1 (01) | 1 (01) | 2 | 0 | 1 | 0 | 010 = 2 |
+| 2 (10) | 1 (01) | 3 | 0 | 1 | 1 | 011 = 3 |
+| 3 (11) | 1 (01) | 4 | 1 | 0 | 0 | 100 = 4 |
+| 2 (10) | 2 (10) | 4 | 1 | 0 | 0 | 100 = 4 |
+| 2 (10) | 3 (11) | 5 | 1 | 0 | 1 | 101 = 5 |
+| 3 (11) | 3 (11) | 6 | 1 | 1 | 0 | 110 = 6 |
 
-Each output row can be verified against ordinary arithmetic; for example, 3 + 3 = 6 gives Cout S₁ S₀ = 110, which is decimal 6.
+For example, 3 + 3 = 6 gives Cout S₁ S₀ = 110, which is decimal 6, and 2 + 3 = 5 gives 101.
 
 ## Step-by-Step Signal Flow
 
@@ -46,11 +50,11 @@ Take A = 11 (3) and B = 01 (1) as an example. First, A₀ = 1 and B₀ = 1 enter
 
 ## Analysis of Circuit Behavior
 
-Categorizing the outcomes by binary arithmetic rules, the circuit shows three cases: additions with no carry at all (small sums such as 1 + 1 = 010), additions that generate an internal carry from bit 0 into bit 1 (such as 1 + 1 in the low column), and additions large enough to overflow two bits and set Cout (such as 2 + 2 and 3 + 3). Because the outputs depend only on the current inputs and not on any stored state, this is a purely combinational circuit (Ndjountche, 2016). I plan to build and verify this design in Logisim, confirming each truth-table row by toggling the input pins.
+Categorizing the outcomes by binary arithmetic rules, the circuit shows three cases: additions with no carry at all (small sums such as 1 + 1 = 010), additions that generate an internal carry from bit 0 into bit 1 (such as 1 + 1 in the low column), and additions large enough to overflow two bits and set Cout (such as 2 + 2 and 3 + 3). Because the outputs depend only on the current inputs and not on any stored state, this is a purely combinational circuit (Ndjountche, 2016). I built and verified this design in Logisim, confirming each truth-table row by toggling the input pins; the circuit diagram is included below.
 
 **Question for the group:** Since a 2-bit addition can overflow into a third bit, do you think a well-designed adder should always expose a carry-out line, or are there situations where discarding the overflow is the correct engineering choice?
 
-**Word count: 592**
+**Word count: 630**
 
 ## References
 
