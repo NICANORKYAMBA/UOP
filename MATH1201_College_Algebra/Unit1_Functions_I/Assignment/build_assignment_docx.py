@@ -138,20 +138,23 @@ def build():
 
     # Task 1
     head(doc, "Task 1: Interpreting the Graph (Domain, Range, One-to-One)")
-    para(doc, "(i) Domain and Range. The domain is the set of all x-values the graph "
-              "covers, read from the leftmost to the rightmost x-value; use a square "
-              "bracket for an included endpoint (solid dot) and a parenthesis for an "
-              "excluded endpoint (open dot). The range is the set of all y-values, from the "
-              "lowest to the highest the graph reaches, using the same bracket rules. Read "
-              "the exact endpoints from the provided graph and state Domain = [x_min, x_max] "
-              "and Range = [y_min, y_max].")
-    para(doc, "(ii) Function and one-to-one. By the vertical line test, if every vertical "
-              "line meets the graph at most once, each input has exactly one output, so it "
-              "is a function (Abramson, 2023). By the horizontal line test, if every "
-              "horizontal line meets the graph at most once, it is one-to-one; if a "
-              "horizontal line meets it more than once (as with a parabola), it is a "
-              "function but not one-to-one. State the conclusion with the justification "
-              "based on the shape shown.")
+    para(doc, "The given graph is a smooth curve that rises from the bottom of the plane on "
+              "the left, peaks near the point (0, 5), dips to a small valley near (2, 3), "
+              "and then rises steeply upward off the top of the plane on the right. The "
+              "arrows on both ends indicate the curve continues without bound.")
+    para(doc, "(i) Domain and Range. The curve extends left and right without end (both "
+              "ends carry arrows), so every x-value is covered: the domain is all real "
+              "numbers, (-infinity, infinity). The curve falls to negative infinity on the "
+              "lower left and rises to positive infinity on the upper right, passing through "
+              "every height in between, so the range is also all real numbers, "
+              "(-infinity, infinity).")
+    para(doc, "(ii) Function and one-to-one. Any vertical line touches the curve exactly "
+              "once, so each input x gives exactly one output y; therefore the graph is a "
+              "function (Abramson, 2023). However, because the curve rises, dips slightly "
+              "between the peak near (0, 5) and the valley near (2, 3), then rises again, a "
+              "horizontal line such as y = 4 crosses the curve three times. Since at least "
+              "one horizontal line meets the graph more than once, the function is not "
+              "one-to-one, so it has no inverse over its full domain (Abramson, 2023).")
 
     # Task 2
     head(doc, "Task 2: Avocado Export Function E(P) = P - 10000, P >= 10000")
@@ -184,29 +187,40 @@ def build():
               "increases as length increases. So animal g gains weight at a steady rate per "
               "foot, while animal f gains weight faster and faster as it lengthens.")
     para(doc, "(ii) Slopes of CD (on f) and EF (on g). Using slope = (y2 - y1)/(x2 - x1): "
-              "for example, taking C = (1, 1) and D = (3, 9) on f gives slope CD = "
-              "(9 - 1)/(3 - 1) = 4; taking E = (1, 5) and F = (3, 15) on g gives slope EF = "
-              "(15 - 5)/(3 - 1) = 5. The slope of EF equals the line's constant rate, so any "
-              "two points give 5, while the slope of CD is an average rate that changes with "
-              "the chosen points, confirming f's non-constant rate. Replace these example "
-              "points with the actual C, D, E, F read from the graph.")
+              "on the parabola f(x) = x squared, take C = (2, 4) and D = (4, 16), giving "
+              "slope CD = (16 - 4)/(4 - 2) = 12/2 = 6. On the line g(x) = 5x, take "
+              "E = (1, 5) and F = (3, 15), giving slope EF = (15 - 5)/(3 - 1) = 10/2 = 5. "
+              "The slope of EF is 5, matching the line's constant rate, so any two points on "
+              "g give the same value; animal g gains weight at a steady 5 tons per foot. The "
+              "slope of CD is 6, but this is only the average rate between x = 2 and x = 4 "
+              "(between x = 1 and x = 3 it would be 4), confirming the parabola's rate of "
+              "change is not constant. Animal f gains weight increasingly quickly as its "
+              "length grows, rising much faster than g for larger lengths.")
 
     # Task 4
     head(doc, "Task 4: Local Extrema and Behavior of the Function")
-    para(doc, "A local maximum is a point higher than all nearby points (a peak, where the "
-              "graph rises then falls); a local minimum is lower than nearby points (a "
-              "valley, where the graph falls then rises) (Abramson, 2023). These differ "
-              "from the absolute maximum and minimum, which are the single highest and "
-              "lowest values over the entire domain. A local extremum is best only in its "
-              "neighborhood, whereas an absolute extremum is best overall; a graph may have "
-              "several local extrema but at most one absolute max and one absolute min.")
-    para(doc, "For intervals, read the x-coordinates of the turning points from the graph. "
-              "The function is increasing where the graph rises left to right (positive "
-              "slope) and decreasing where it falls (negative slope). Report each interval "
-              "by its endpoints, for example increasing on (A, B) and decreasing on (B, C). "
-              "A local maximum occurs where the graph changes from increasing to decreasing, "
-              "and a local minimum where it changes from decreasing to increasing. State "
-              "each extremum's approximate coordinates as shown on the graph.")
+    para(doc, "The graph is a smooth, repeating wave (a cosine-type curve) oscillating "
+              "between a height of y = 1 at its peaks and y = -1 at its valleys. The labeled "
+              "points are A(-11, 1), B(-8, -1), C(-5, 1), D(-2, -1), E(1.57, 1), "
+              "F(4.71, -1), G(7.85, 1), and H(11, -1).")
+    para(doc, "A local maximum is a point higher than all nearby points (a peak). Here the "
+              "peaks A, C, E, and G are local maxima, each at y = 1. A local minimum is a "
+              "point lower than all nearby points (a valley); here B, D, F, and H are local "
+              "minima, each at y = -1 (Abramson, 2023). These differ from the absolute "
+              "maximum and minimum, which are the single highest and lowest values over the "
+              "entire domain. Because this curve repeats, every peak reaches the same height "
+              "(1) and every valley the same depth (-1), so each peak ties for the absolute "
+              "maximum and each valley ties for the absolute minimum. The distinction is "
+              "that a local extremum need only be highest or lowest in its immediate "
+              "neighborhood, while an absolute extremum is highest or lowest over the whole "
+              "graph; a periodic function like this has infinitely many local extrema.")
+    para(doc, "Intervals (reading left to right between the labeled points): increasing on "
+              "(B, C) = (-8, -5); decreasing on (C, D) = (-5, -2); increasing on (D, E) = "
+              "(-2, 1.57); decreasing on (E, F) = (1.57, 4.71); increasing on (F, G) = "
+              "(4.71, 7.85); decreasing on (G, H) = (7.85, 11). At every peak the graph "
+              "changes from increasing to decreasing (a local maximum), and at every valley "
+              "from decreasing to increasing (a local minimum). The pattern continues "
+              "indefinitely because the function is periodic.")
 
     # Task 5
     head(doc, "Task 5: Piecewise Tax Function for Country W")

@@ -7,30 +7,28 @@
 
 ## Task 1: Interpreting the Graph (Domain, Range, and One-to-One)
 
-> This task refers to the "Domain and Range" graph provided in the assignment. Read the
-> exact endpoints from that graph and substitute them into the method below. The reasoning
-> and format are complete; only the specific numeric endpoints come from your image.
+The given graph is a smooth curve that rises from the bottom of the plane on the left, peaks
+near the point (0, 5), dips to a small valley near (2, 3), and then rises steeply upward off
+the top of the plane on the right. The arrows on both ends indicate the curve continues
+without bound.
 
 **(i) Domain and Range.**
-- The **domain** is the set of all x-values (horizontal extent) the graph covers. Read the
-  leftmost and rightmost x-values. Use a **square bracket [ ]** if the endpoint is included
-  (solid dot) and a **parenthesis ( )** if it is excluded (open dot).
-  Example format: Domain = [x_min, x_max].
-- The **range** is the set of all y-values (vertical extent). Read the lowest and highest
-  y-values the graph reaches, using the same bracket rules.
-  Example format: Range = [y_min, y_max].
+- **Domain:** the curve extends left and right without end (the ends carry arrows), so every
+  x-value is covered. The domain is **all real numbers, (−∞, ∞)**.
+- **Range:** the curve falls to negative infinity on the lower left and rises to positive
+  infinity on the upper right, passing through every height in between (the small peak and
+  valley do not create any gap). The range is therefore **all real numbers, (−∞, ∞)**.
 
 **(ii) Is it a function? Is it one-to-one?**
-- **Function test (Vertical Line Test):** if every vertical line crosses the graph at most
-  once, it is a function, because each input x maps to exactly one output y (Abramson,
-  2023). If any vertical line hits the curve twice, it is **not** a function.
-- **One-to-one test (Horizontal Line Test):** if every horizontal line crosses the graph at
-  most once, the function is one-to-one, meaning each output y comes from exactly one input
-  x. If any horizontal line hits it twice (as with a parabola), it is a function but **not**
-  one-to-one (Abramson, 2023).
-- State your conclusion clearly, e.g., "The graph passes the vertical line test, so it is a
-  function; it fails/passes the horizontal line test, so it is/ is not one-to-one," with the
-  specific justification based on the shape in your graph.
+- **Function (Vertical Line Test):** any vertical line drawn through the graph touches the
+  curve exactly once, so each input x maps to exactly one output y. Therefore the graph
+  **is a function** (Abramson, 2023).
+- **One-to-one (Horizontal Line Test):** because the curve rises, then falls slightly
+  (between the peak near (0, 5) and the valley near (2, 3)), then rises again, a horizontal
+  line drawn through that middle region — for example y = 4 — crosses the curve **three
+  times**. Since at least one horizontal line meets the graph more than once, the function
+  **is not one-to-one** (Abramson, 2023). In other words, different inputs can produce the
+  same output, so the function has no inverse over its full domain.
 
 ---
 
@@ -87,49 +85,59 @@ Use the slope formula between two points (x₁, y₁) and (x₂, y₂):
 
   slope = (y₂ − y₁) / (x₂ − x₁)
 
-- **On f (parabola), choose two points C and D** from the graph (not O or A). Example: if
-  C = (1, 1) and D = (3, 9) on f(x) = x², then slope(CD) = (9 − 1)/(3 − 1) = 8/2 = **4**.
-- **On g (line), choose two points E and F** from the graph (not O or A). Example: if
-  E = (1, 5) and F = (3, 15) on g(x) = 5x, then slope(EF) = (15 − 5)/(3 − 1) = 10/2 = **5**.
+- **On f (the parabola f(x) = x²), pick C = (2, 4) and D = (4, 16)** (both lie on the
+  curve, and neither is O or A):
+  slope(CD) = (16 − 4) / (4 − 2) = 12 / 2 = **6**.
+- **On g (the line g(x) = 5x), pick E = (1, 5) and F = (3, 15)** (both on the line, neither
+  O nor A):
+  slope(EF) = (15 − 5) / (3 − 1) = 10 / 2 = **5**.
 
-**Insight:** the slope of EF (the line) equals the line's constant rate of change, so any
-two points give the same slope (5). The slope of CD (the parabola) is an **average** rate of
-change that changes depending on which two points you pick, confirming the parabola's rate
-of change is not constant. In context, animal g gains weight at a fixed rate per foot, while
-animal f gains weight increasingly quickly as its length grows.
-
-> Replace the example points with the actual C, D, E, F you read from your graph, and keep
-> the same calculation format.
+**Insight:** the slope of EF is **5**, which equals the line's constant rate of change — any
+two points on g give the same slope, so animal g gains weight at a steady 5 tons per foot.
+The slope of CD is **6**, but this is only the **average** rate of change between x = 2 and
+x = 4; choosing different points on the parabola gives a different slope (for example,
+between x = 1 and x = 3 it would be 4). This confirms the parabola's rate of change is not
+constant — animal f gains weight increasingly quickly as its length grows, so its weight
+rises much faster than g's for larger lengths.
 
 ---
 
 ## Task 4: Local Extrema and Behavior of the Function
 
-> This task refers to the extrema graph provided. Read the turning points and interval
-> endpoints from that graph and substitute them into the method below.
+The graph is a smooth, repeating wave (a cosine-type curve) that oscillates between a
+height of y = 1 at its peaks and y = −1 at its valleys. The labeled points are:
+A(−11, 1), B(−8, −1), C(−5, 1), D(−2, −1), E(1.57, 1), F(4.71, −1), G(7.85, 1), H(11, −1).
 
 **Local extrema vs. absolute (maximum/minimum) values.**
-- A **local maximum** is a point where the function value is higher than at all nearby
-  points — the graph rises to it, then falls (a "peak"). A **local minimum** is where the
-  value is lower than nearby points — the graph falls to it, then rises (a "valley")
+- A **local maximum** is a point higher than all nearby points — the graph rises to it,
+  then falls (a "peak"). Here the peaks are A, C, E, and G, each at height **y = 1**.
+- A **local minimum** is a point lower than all nearby points — the graph falls to it, then
+  rises (a "valley"). Here the valleys are B, D, F, and H, each at height **y = −1**
   (Abramson, 2023).
-- These differ from the **absolute (global) maximum/minimum**, which are the single highest
-  and lowest values over the **entire** domain. A local extremum is only "the best in its
-  neighborhood," while an absolute extremum is "the best overall." A graph can have several
-  local extrema but at most one absolute max and one absolute min.
+- These differ from the **absolute (global) maximum and minimum**, which are the single
+  highest and lowest values over the **entire** domain. Because this curve repeats forever,
+  every peak reaches the same height (1) and every valley the same depth (−1). So each peak
+  is a local maximum *and* ties for the absolute maximum (1), and each valley is a local
+  minimum *and* ties for the absolute minimum (−1). The key distinction: a local extremum
+  only has to be the highest/lowest *in its immediate neighborhood*, whereas an absolute
+  extremum is the highest/lowest *over the whole graph*. A repeating function like this one
+  has infinitely many local extrema.
 
 **Intervals of increase and decrease.**
-Read the x-coordinates of the turning points from your graph and list the intervals between
-them, labeling each:
-- The function is **increasing** on an interval if the graph goes up from left to right
-  there (positive slope).
-- The function is **decreasing** if the graph goes down from left to right (negative slope).
-- Format each interval by its endpoints, e.g., "increasing on (A, B), decreasing on (B, C)."
-  A local maximum occurs where the graph changes from increasing to decreasing; a local
-  minimum where it changes from decreasing to increasing.
+Between a valley and the next peak the graph rises (increasing); between a peak and the next
+valley it falls (decreasing). Reading left to right across the labeled points:
 
-State each local extremum with its approximate coordinates and each interval with its
-increasing/decreasing label, exactly as your graph shows.
+- Increasing on **(B, C)** = (−8, −5): rising from the valley at B up to the peak at C.
+- Decreasing on **(C, D)** = (−5, −2): falling from the peak at C down to the valley at D.
+- Increasing on **(D, E)** = (−2, 1.57): rising from D up to the peak at E.
+- Decreasing on **(E, F)** = (1.57, 4.71): falling from E down to the valley at F.
+- Increasing on **(F, G)** = (4.71, 7.85): rising from F up to the peak at G.
+- Decreasing on **(G, H)** = (7.85, 11): falling from G down to the valley at H.
+
+At every peak (A, C, E, G) the graph changes from increasing to decreasing, confirming a
+local maximum; at every valley (B, D, F, H) it changes from decreasing to increasing,
+confirming a local minimum. The pattern continues indefinitely in both directions because
+the function is periodic.
 
 ---
 
