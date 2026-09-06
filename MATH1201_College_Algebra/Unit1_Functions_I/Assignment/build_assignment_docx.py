@@ -22,7 +22,7 @@ TITLE = "Written Assignment Unit 1: Functions - I"
 AUTHOR = "Nicanor Kyamba"
 AFFIL = "Department of Mathematics, University of the People"
 COURSE = "MATH 1201: College Algebra"
-INSTRUCTOR = "Instructor: [Instructor Name]"
+INSTRUCTOR = "Instructor: Chibuike Agu"
 DUE = "September 9, 2026"
 
 REFS = [
@@ -73,6 +73,8 @@ def para(doc, text="", bold=False, align=None):
 
 
 def head(doc, text, level=2, center=False):
+    # Uses the built-in Word "Heading 1"/"Heading 2" styles so the document
+    # outline / Navigation pane recognizes them as native headings.
     p = doc.add_heading(level=level)
     if center:
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -81,6 +83,19 @@ def head(doc, text, level=2, center=False):
     r.bold = True
     r.font.name = FONT
     r.font.size = Pt(12)
+    r.font.color.rgb = RGBColor(0, 0, 0)
+    return p
+
+
+def title_style(doc, text):
+    # Uses the built-in Word "Title" style (native), centered per APA.
+    p = doc.add_paragraph(style="Title")
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.line_spacing = 2.0
+    r = p.add_run(text)
+    r.bold = True
+    r.font.name = FONT
+    r.font.size = Pt(14)
     r.font.color.rgb = RGBColor(0, 0, 0)
     return p
 
@@ -122,10 +137,10 @@ def build():
     doc = Document()
     base(doc)
 
-    # Title page
+    # Title page (APA student title page, uses native Title style for the title)
     for _ in range(4):
         para(doc, "")
-    para(doc, TITLE, bold=True, align=WD_ALIGN_PARAGRAPH.CENTER)
+    title_style(doc, TITLE)
     para(doc, "")
     para(doc, AUTHOR, align=WD_ALIGN_PARAGRAPH.CENTER)
     para(doc, AFFIL, align=WD_ALIGN_PARAGRAPH.CENTER)
