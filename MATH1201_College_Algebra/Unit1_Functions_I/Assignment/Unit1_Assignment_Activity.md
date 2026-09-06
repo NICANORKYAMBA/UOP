@@ -65,12 +65,9 @@ Since values are in thousands, P = 70 thousand = 70000 and P = 20 thousand = 200
 ## Task 3: Rate of Change — Weights and Lengths of Two Animals
 
 The graph shows a parabola (f) and a straight line (g) intersecting at **A(5, 25)**, with x
-= length (feet) and y = weight (tons).
-
-> Note on identifying the two curves from the given point: a straight line through the
-> origin and A(5, 25) has equation **g(x) = 5x** (since 25 ÷ 5 = 5). A parabola through the
-> origin and A(5, 25) is **f(x) = x²** (since 5² = 25). Read your own C, D, E, F points from
-> the graph; the method below applies to whatever points you select.
+= length (feet) and y = weight (tons). From the graph, the straight line through the origin
+and A(5, 25) is **g(x) = 5x** (since 25 ÷ 5 = 5), and the parabola through the origin and
+A(5, 25) is **f(x) = x²** (since 5² = 25).
 
 **(i) Rate of change at the intersection.**
 The rate of change of weight with respect to length is the slope, slope = Δy / Δx = (change

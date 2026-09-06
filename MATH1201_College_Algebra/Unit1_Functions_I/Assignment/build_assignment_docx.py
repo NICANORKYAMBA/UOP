@@ -59,10 +59,12 @@ def base(doc):
         sec.left_margin = sec.right_margin = Inches(1)
 
 
-def para(doc, text="", bold=False, align=None):
+def para(doc, text="", bold=False, align=None, block=True):
     p = doc.add_paragraph()
     p.paragraph_format.line_spacing = 2.0
-    p.paragraph_format.first_line_indent = Inches(0)
+    p.paragraph_format.first_line_indent = Inches(0)  # block style: flush left
+    # Block paragraphs need visible separation between them.
+    p.paragraph_format.space_after = Pt(12) if block else Pt(0)
     if align is not None:
         p.alignment = align
     r = p.add_run(text)
@@ -139,14 +141,14 @@ def build():
 
     # Title page (APA student title page, uses native Title style for the title)
     for _ in range(4):
-        para(doc, "")
+        para(doc, "", block=False)
     title_style(doc, TITLE)
-    para(doc, "")
-    para(doc, AUTHOR, align=WD_ALIGN_PARAGRAPH.CENTER)
-    para(doc, AFFIL, align=WD_ALIGN_PARAGRAPH.CENTER)
-    para(doc, COURSE, align=WD_ALIGN_PARAGRAPH.CENTER)
-    para(doc, INSTRUCTOR, align=WD_ALIGN_PARAGRAPH.CENTER)
-    para(doc, DUE, align=WD_ALIGN_PARAGRAPH.CENTER)
+    para(doc, "", block=False)
+    para(doc, AUTHOR, align=WD_ALIGN_PARAGRAPH.CENTER, block=False)
+    para(doc, AFFIL, align=WD_ALIGN_PARAGRAPH.CENTER, block=False)
+    para(doc, COURSE, align=WD_ALIGN_PARAGRAPH.CENTER, block=False)
+    para(doc, INSTRUCTOR, align=WD_ALIGN_PARAGRAPH.CENTER, block=False)
+    para(doc, DUE, align=WD_ALIGN_PARAGRAPH.CENTER, block=False)
     doc.add_page_break()
 
     head(doc, TITLE, level=1, center=True)
