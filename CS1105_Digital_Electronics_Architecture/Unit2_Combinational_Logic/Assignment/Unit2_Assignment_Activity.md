@@ -57,9 +57,18 @@ entered code + stored code ---> XNOR per bit ---> AND ---> GRANT signal
 GRANT + select bits ----------> DECODER/DEMUX ---> unlock only the selected room
 ```
 
-*(A Logisim implementation of this circuit is inserted below.)*
+A Logisim implementation of the core of this design is shown in Figures 1 and 2. The circuit
+realizes the two-bit code comparator (XNOR per bit feeding an AND gate to produce the GRANT
+signal) together with a two-to-four decoder built from AND and NOT gates, so the single GRANT
+signal is routed to unlock exactly one of four rooms selected by the room-select bits R1R0.
 
-**[ Insert Logisim circuit screenshot here ]**
+**[ Insert Figure 1: Logisim screenshot — ACCESS GRANTED (code matches, one room unlocks) ]**
+
+*Figure 1. Comparator asserts GRANT and the decoder unlocks only the selected room.*
+
+**[ Insert Figure 2: Logisim screenshot — ACCESS DENIED (wrong code, no room unlocks) ]**
+
+*Figure 2. With a mismatched code, GRANT is 0 and no room unlocks.*
 
 ## (b) Integration of Components and How They Work Together
 

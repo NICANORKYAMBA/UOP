@@ -191,8 +191,23 @@ def build():
     for line in DIAGRAM:
         mono(doc, line)
     para(doc, "")
-    para(doc, "A Logisim implementation of this circuit is inserted below.")
-    placeholder(doc, "[ Insert Logisim circuit screenshot here ]")
+    para(doc, "A Logisim implementation of the core of this design is shown in Figures 1 and "
+              "2. The circuit realizes the two-bit code comparator (XNOR per bit feeding an "
+              "AND gate to produce the GRANT signal) together with a two-to-four decoder built "
+              "from AND and NOT gates, so that the single GRANT signal is routed to unlock "
+              "exactly one of four rooms selected by the room-select bits R1R0. Figure 1 shows "
+              "an authorized attempt (entered code equals the stored code) in which GRANT is "
+              "asserted and only the selected room unlocks. Figure 2 shows an unauthorized "
+              "attempt (entered code differs from the stored code) in which GRANT is 0 and no "
+              "room unlocks, demonstrating that the comparator gates the entire system.")
+    placeholder(doc, "[ Insert Figure 1: Logisim screenshot - ACCESS GRANTED "
+                     "(code matches, one room unlocks) ]")
+    para(doc, "Figure 1. Comparator asserts GRANT and the decoder unlocks only the selected "
+              "room.", align=WD_ALIGN_PARAGRAPH.CENTER)
+    placeholder(doc, "[ Insert Figure 2: Logisim screenshot - ACCESS DENIED "
+                     "(wrong code, no room unlocks) ]")
+    para(doc, "Figure 2. With a mismatched code, GRANT is 0 and no room unlocks.",
+         align=WD_ALIGN_PARAGRAPH.CENTER)
 
     head(doc, "(b) Integration of Components and How They Work Together")
     para(doc, "Encoder. The encoder is the entry point. Without it, every key or card line "
