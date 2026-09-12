@@ -40,10 +40,10 @@ SOURCE_FILES = [
 SAMPLE_OUTPUT = """===== Welcome to the Online Store =====
 
 Available products:
-  [ID 101] Wireless Mouse - $15.99
-  [ID 102] Mechanical Keyboard - $49.50
-  [ID 103] USB-C Cable - $8.75
-  [ID 104] Laptop Stand - $27.00
+  1. [ID 101] Wireless Mouse - $15.99
+  2. [ID 102] Mechanical Keyboard - $49.50
+  3. [ID 103] USB-C Cable - $8.75
+  4. [ID 104] Laptop Stand - $27.00
 
 Customer [ID 1]: Nicanor
 
@@ -52,10 +52,18 @@ Nicanor added Mechanical Keyboard to the cart.
 Nicanor added USB-C Cable to the cart.
 Nicanor removed USB-C Cable from the cart.
 
+Enter the number (1-4) of another product to add: abc
+Invalid input: please enter a whole number.
+Enter the number (1-4) of another product to add: 9
+Please enter a number between 1 and 4.
+Enter the number (1-4) of another product to add: 4
+Nicanor added Laptop Stand to the cart.
+
 Current cart for Nicanor:
   [ID 101] Wireless Mouse - $15.99
   [ID 102] Mechanical Keyboard - $49.50
-Cart total: $65.49
+  [ID 104] Laptop Stand - $27.00
+Cart total: $92.49
 
 ===== Order Summary =====
 Order ID: 5001
@@ -63,7 +71,8 @@ Customer [ID 1]: Nicanor
 Products:
   - [ID 101] Wireless Mouse - $15.99
   - [ID 102] Mechanical Keyboard - $49.50
-Order Total: $65.49
+  - [ID 104] Laptop Stand - $27.00
+Order Total: $92.49
 Status: PLACED
 =========================
 
@@ -236,9 +245,11 @@ def build():
 
     head(doc, "Sample Run and Output")
     para(doc, "The program was compiled with javac -Xlint:all (no errors or warnings) and "
-              "produced the following output. The cart total of $65.49 equals $15.99 + "
-              "$49.50 after the USB-C Cable was removed, and the empty-cart order is "
-              "correctly rejected by input validation.")
+              "produced the following output. It validates the user's menu input: the "
+              "non-numeric entry \"abc\" and the out-of-range entry \"9\" are both rejected "
+              "before the valid entry \"4\" is accepted. The final cart total of $92.49 "
+              "equals $15.99 + $49.50 + $27.00, and the empty-cart order is correctly "
+              "rejected by validation.")
     code_block(doc, SAMPLE_OUTPUT)
     para(doc, "")
 
