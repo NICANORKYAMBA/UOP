@@ -6,14 +6,20 @@
 ## Overview
 
 This program implements a simple e-commerce system in Java, organized with packages for
-clean encapsulation. Products and customers live in the `com.ecommerce` package, and orders
-live in the `com.ecommerce.orders` package, which imports the `Product` and `Customer`
-classes to demonstrate cross-package use of the `import` statement. A separate `Main` class
-(outside the packages) imports all three classes and demonstrates the full workflow: browsing
-a product catalog, adding and removing items from a shopping cart, calculating the cart total,
-reading and validating user input, placing an order, generating an order summary, and updating
-the order status. All fields are private with getters and setters for encapsulation, and
-constructors validate their inputs so invalid data is rejected.
+clean encapsulation. A package groups related classes into a single namespace, which avoids
+naming conflicts and keeps larger programs organized (Eck, 2022). Products and customers live
+in the `com.ecommerce` package, and orders live in the `com.ecommerce.orders` package, which
+imports the `Product` and `Customer` classes to demonstrate cross-package use of the `import`
+statement; the import statement lets one package use the public classes of another (Samoylov,
+2018). A separate `Main` class (outside the packages) imports all three classes and
+demonstrates the full workflow: browsing a product catalog, adding and removing items from a
+shopping cart, calculating the cart total, reading and validating user input, placing an
+order, generating an order summary, and updating the order status. All fields are declared
+private with public getters and setters, which enforces encapsulation and data hiding (Eck,
+2022), and the constructors validate their inputs so invalid data is rejected.
+
+**Academic integrity:** This assignment is my own original work; all source code and
+explanations were written by me, with ideas from the course readings cited in APA style.
 
 ## Package Structure
 

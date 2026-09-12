@@ -208,15 +208,19 @@ def build():
 
     head(doc, "Overview")
     para(doc, "This program implements a simple e-commerce system in Java, organized with "
-              "packages for clean encapsulation. Products and customers live in the "
-              "com.ecommerce package, and orders live in the com.ecommerce.orders package, "
-              "which imports the Product and Customer classes to show cross-package use of "
-              "the import statement. A separate Main class (outside the packages) imports "
-              "all three classes and demonstrates the full workflow: browsing a product "
-              "catalog, adding and removing items from a shopping cart, calculating the cart "
-              "total, placing an order, generating an order summary, and updating the order "
-              "status. All fields are private with getters and setters for encapsulation, "
-              "and constructors validate their inputs so invalid data is rejected.")
+              "packages for clean encapsulation. A package groups related classes into a "
+              "single namespace, which avoids naming conflicts and keeps larger programs "
+              "organized (Eck, 2022). Products and customers live in the com.ecommerce "
+              "package, and orders live in the com.ecommerce.orders package, which imports "
+              "the Product and Customer classes to show cross-package use of the import "
+              "statement; the import statement lets one package use the public classes of "
+              "another (Samoylov, 2018). A separate Main class (outside the packages) "
+              "imports all three classes and demonstrates the full workflow: browsing a "
+              "product catalog, adding and removing items from a shopping cart, calculating "
+              "the cart total, placing an order, generating an order summary, and updating "
+              "the order status. All fields are declared private with public getters and "
+              "setters, which enforces encapsulation and data hiding (Eck, 2022), and the "
+              "constructors validate their inputs so invalid data is rejected.")
 
     head(doc, "Package Structure")
     code_block(doc,
@@ -259,6 +263,12 @@ def build():
     para(doc, "")
     para(doc, "Screenshot 2 - Input validation (empty-cart order rejected):", bold=True)
     placeholder(doc, "[ Insert Screenshot 2 here ]")
+
+    head(doc, "Academic Integrity Statement")
+    para(doc, "This assignment is my own original work. I designed and wrote all of the Java "
+              "source code and the accompanying explanations myself for this task. Ideas "
+              "drawn from the course readings are cited in APA style, and the sources are "
+              "listed in the References section below.")
 
     doc.add_page_break()
     head(doc, "References", level=1, center=True)
