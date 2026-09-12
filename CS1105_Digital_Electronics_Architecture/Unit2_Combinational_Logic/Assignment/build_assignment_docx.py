@@ -33,6 +33,8 @@ DIAGRAM = [
 REFS = [
     "Harris, D. M., & Harris, S. L. (2012). *Digital design and computer architecture* "
     "(2nd ed.). Morgan Kaufmann.",
+    "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an introduction to the "
+    "Verilog HDL, VHDL, and SystemVerilog* (6th ed.). Pearson.",
     "Ndjountche, T. (2016). *Digital electronics 1: Combinational logic circuits*. John "
     "Wiley & Sons. https://ebookcentral.proquest.com/",
 ]
@@ -173,10 +175,15 @@ def build():
               "chooses which room's rule applies right now.")
     para(doc, "3. Authorization decision with logic gates. A comparator built from XNOR and "
               "AND gates checks whether the entered code matches the stored code for the "
-              "selected room. Each bit pair is compared with an XNOR gate (which outputs 1 "
-              "when two bits are equal), and all XNOR outputs feed an AND gate that outputs 1 "
-              "(ACCESS GRANTED) only when every bit matches. A keycard-present signal can be "
-              "combined in for higher-security rooms.")
+              "selected room. Each bit pair is compared with an XNOR gate, which outputs 1 "
+              "only when its two bits are equal; this equality behavior is the standard "
+              "building block of a digital comparator (Mano & Ciletti, 2018). The XNOR "
+              "outputs feed a single AND gate that outputs 1 (ACCESS GRANTED) only when every "
+              "bit matches. For a 4-bit code the grant expression is: Grant = (A0 XNOR S0) "
+              "AND (A1 XNOR S1) AND (A2 XNOR S2) AND (A3 XNOR S3), where A is the entered code "
+              "and S is the stored code. A keycard-present signal can be AND-ed in for "
+              "high-security rooms or OR-ed in for convenience doors, and a NOT gate on a "
+              "tamper or door-open sensor can force Grant to 0 under unsafe conditions.")
     para(doc, "4. Room activation with a decoder/demultiplexer. Once access is granted, a "
               "decoder takes the room-select bits and activates exactly one output line, "
               "unlocking the corresponding door, so the grant reaches only the intended room.")
@@ -231,6 +238,11 @@ def build():
               "the single decision to the right door on the way out. Adding more rooms simply "
               "requires wider select lines (n select lines support 2^n rooms) rather than "
               "duplicating logic, keeping the design compact and scalable.")
+
+    head(doc, "Academic Integrity Statement")
+    para(doc, "This assignment is my own original work. The system design and all "
+              "explanations were written by me, and ideas drawn from the course readings are "
+              "cited in APA style in the References section below.")
 
     doc.add_page_break()
     head(doc, "References", level=1, center=True)

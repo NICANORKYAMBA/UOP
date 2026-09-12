@@ -31,11 +31,18 @@ The system has four functional stages that flow from input to action:
 
 3. **Authorization decision with logic gates.** A comparator built from **XNOR and AND
    gates** checks whether the entered binary code matches the stored code for the selected
-   room. Each bit pair is compared with an XNOR gate (which outputs 1 when the two bits are
-   equal), and all the XNOR outputs are combined with an AND gate. The AND gate outputs 1
-   (ACCESS GRANTED) only when every bit matches. A keycard-present signal can be OR-ed or
-   AND-ed in as an additional condition (for example, requiring both a valid card and a valid
-   code for high-security rooms).
+   room. Each bit pair is compared with an XNOR gate, which outputs 1 only when its two bits
+   are equal; this equality behavior is the standard building block of a digital magnitude/
+   equality comparator (Mano & Ciletti, 2018). The XNOR outputs are then combined with a
+   single AND gate, so the AND output is 1 (ACCESS GRANTED) only when **every** bit matches.
+   For a 4-bit code, the grant expression is:
+
+   **Grant = (A₀ XNOR S₀) AND (A₁ XNOR S₁) AND (A₂ XNOR S₂) AND (A₃ XNOR S₃)**
+
+   where A is the entered code and S is the stored code. A keycard-present signal can be
+   AND-ed in for high-security rooms (requiring both a valid card and a valid code) or OR-ed
+   in for convenience doors (a valid card **or** a valid code), and a NOT gate on a tamper or
+   door-open sensor can force Grant to 0 under unsafe conditions.
 
 4. **Room activation with a decoder/demultiplexer.** Once access is granted, a **decoder**
    takes the room-select bits and activates exactly one of its output lines, which unlocks the
@@ -101,10 +108,17 @@ code to check on the way in, and the DEMUX distributes the single decision to th
 on the way out. Adding more rooms simply requires more select-line width (n select lines
 support 2^n rooms) rather than duplicating logic, keeping the design compact and scalable.
 
-## References
+**Academic integrity:** This assignment is my own original work. The system design and all
+explanations were written by me, and ideas drawn from the course readings are cited in APA
+style below.
 
-Ndjountche, T. (2016). *Digital electronics 1: Combinational logic circuits*. John Wiley &
-Sons. https://ebookcentral.proquest.com/
+## References
 
 Harris, D. M., & Harris, S. L. (2012). *Digital design and computer architecture* (2nd ed.).
 Morgan Kaufmann.
+
+Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an introduction to the Verilog
+HDL, VHDL, and SystemVerilog* (6th ed.). Pearson.
+
+Ndjountche, T. (2016). *Digital electronics 1: Combinational logic circuits*. John Wiley &
+Sons. https://ebookcentral.proquest.com/
