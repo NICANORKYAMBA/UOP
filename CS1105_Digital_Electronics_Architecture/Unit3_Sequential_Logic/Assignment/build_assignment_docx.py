@@ -38,16 +38,15 @@ DIAGRAM = [
 
 REFS = [
     "Down to the Wires. (2020, October 4). *Registers and counters* [Video]. "
-    "YouTube. [Paste the exact video URL from the Unit 3 reading list here]",
+    "YouTube. https://youtu.be/ikrNRrIRyMk",
     "Harris, D. M., & Harris, S. L. (2012). *Digital design and computer "
     "architecture* (2nd ed.). Morgan Kaufmann.",
     "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
     "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
     "Pearson.",
     "Ndjountche, T. (2016). *Digital electronics 2: Sequential and arithmetic "
-    "logic circuits*. ISTE Ltd/John Wiley & Sons. Retrieved from ProQuest "
-    "Ebook Central via the UoPeople LIRN Library. "
-    "https://ebookcentral.proquest.com/lib/univ-people-ebooks/",
+    "logic circuits*. ISTE Ltd/John Wiley & Sons. "
+    "https://doi.org/10.1002/9781119318613",
 ]
 
 
