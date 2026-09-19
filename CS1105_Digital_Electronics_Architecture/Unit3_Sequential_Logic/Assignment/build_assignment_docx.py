@@ -37,15 +37,17 @@ DIAGRAM = [
 ]
 
 REFS = [
+    "Down to the Wires. (2020, October 4). *Registers and counters* [Video]. "
+    "YouTube. [Paste the exact video URL from the Unit 3 reading list here]",
+    "Harris, D. M., & Harris, S. L. (2012). *Digital design and computer "
+    "architecture* (2nd ed.). Morgan Kaufmann.",
+    "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
+    "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
+    "Pearson.",
     "Ndjountche, T. (2016). *Digital electronics 2: Sequential and arithmetic "
     "logic circuits*. ISTE Ltd/John Wiley & Sons. Retrieved from ProQuest "
     "Ebook Central via the UoPeople LIRN Library. "
     "https://ebookcentral.proquest.com/lib/univ-people-ebooks/",
-    "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
-    "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
-    "Pearson.",
-    "Harris, D. M., & Harris, S. L. (2012). *Digital design and computer "
-    "architecture* (2nd ed.). Morgan Kaufmann.",
 ]
 
 
@@ -223,7 +225,8 @@ def build():
     para(doc, "The counter and the register perform complementary jobs, and the design needs "
               "both. A counter is a sequential circuit that advances through a fixed sequence "
               "of states on each clock pulse; it is the component that actually tallies the "
-              "score and, being modulo-16, wraps back to zero after 15 (Ndjountche, 2016). A "
+              "score and, being modulo-16, wraps back to zero after 15 (Ndjountche, 2016; "
+              "Down to the Wires, 2020). A "
               "register, by contrast, does not count: it stores a word of data and holds it "
               "until told to load a new one. Placing a register after the counter separates "
               "counting from displaying. Without the register, the display would be tied "

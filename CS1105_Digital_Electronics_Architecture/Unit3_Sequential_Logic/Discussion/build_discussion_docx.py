@@ -23,13 +23,18 @@ INSTRUCTOR = "Instructor: Muhammad Aligohar Bilal"
 DUE = "September 23, 2026"
 
 REFS = [
+    "Computer Science. (2016, July 29). *Latches and flip-flops 1 - the SR "
+    "latch* [Video]. YouTube. [Paste the exact video URL from the Unit 3 "
+    "reading list here]",
+    "Down to the Wires. (2020, October 4). *Registers and counters* [Video]. "
+    "YouTube. [Paste the exact video URL from the Unit 3 reading list here]",
+    "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
+    "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
+    "Pearson.",
     "Ndjountche, T. (2016). *Digital electronics 2: Sequential and arithmetic "
     "logic circuits*. ISTE Ltd/John Wiley & Sons. Retrieved from ProQuest "
     "Ebook Central via the UoPeople LIRN Library. "
     "https://ebookcentral.proquest.com/lib/univ-people-ebooks/",
-    "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
-    "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
-    "Pearson.",
 ]
 
 
@@ -128,8 +133,9 @@ def build():
               "combinational circuits, sequential circuits use memory elements (flip-flops) "
               "whose outputs depend on both the current inputs and the stored past state, "
               "driven by a clock (Ndjountche, 2016). The score must be remembered and "
-              "updated, and the lights and sound must toggle on events, so flip-flops are "
-              "the right components.")
+              "updated, and the lights and sound must toggle on events, so flip-flops - the "
+              "bistable memory elements shown in the SR latch video (Computer Science, 2016) "
+              "- are the right components.")
 
     head(doc, "Connecting D Flip-Flops to Build the Score Counter")
     para(doc, "A binary counter for the player's score can be built from D flip-flops, one "
@@ -143,22 +149,21 @@ def build():
               "flip-flop stores one bit: Q0 the least-significant bit (value 1), Q1 the next "
               "(value 2), Q2 the next (value 4), and so on. Four D "
               "flip-flops store scores 0000 to 1111 (0 to 15), and adding flip-flops widens "
-              "the range. So the information in each D flip-flop is one weighted binary digit "
-              "of the current score, and together they store the whole score as a binary "
+              "the range. So each D flip-flop holds one weighted binary digit of the current "
+              "score, and together they store the whole score as a binary "
               "number that, because the flip-flops are edge-triggered, stays stable between "
-              "clock pulses (Ndjountche, 2016).")
+              "clock pulses (Ndjountche, 2016; Down to the Wires, 2020).")
 
     head(doc, "Where T Flip-Flops Control Lights and Sound")
     para(doc, "T (toggle) flip-flops are the natural choice for the flashing lights and "
-              "sound effects, because a T flip-flop with T held at 1 flips its output on "
-              "every clock pulse, producing a steady on-off pattern (Ndjountche, 2016). I "
-              "would use one T flip-flop per light that needs to blink: tying T high and "
-              "clocking it from a slow pulse makes the light flash at a regular rate. For an "
-              "event-driven effect, T becomes the control - setting T = 1 only when a game "
-              "event occurs (say, a bonus is hit) lets that event toggle a light or a "
-              "sound-enable line, while T = 0 holds the current state. T flip-flops thus fit "
-              "any \"flip this on or off each time something happens\" behavior, which is "
-              "exactly what blinking indicators and toggled sound effects need.")
+              "sound, because a T flip-flop with T held at 1 flips its output on every clock "
+              "pulse, giving a steady on-off pattern (Ndjountche, 2016). I would use one T "
+              "flip-flop per blinking light: tie T high and clock it from a slow pulse to "
+              "flash at a regular rate. For an event-driven effect, T becomes the control - "
+              "setting T = 1 only when a game event occurs (say, a bonus is hit) toggles a "
+              "light or sound-enable line, while T = 0 holds state. T flip-flops thus fit "
+              "any \"flip on or off each time something happens\" behavior, exactly what "
+              "blinking indicators and toggled sound effects need.")
 
     head(doc, "Using JK Flip-Flops Instead of T Flip-Flops")
     para(doc, "A JK flip-flop is the most flexible of the three: with inputs J and K it can "
