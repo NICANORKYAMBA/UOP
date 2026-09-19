@@ -68,8 +68,8 @@ Current time: 07:30:45 19-09-2026
 Clock application stopped.
 ```
 
-In the live console the time refreshes on a single line (via a carriage return), so it reads
-like a real ticking clock. The header confirms the display thread (priority 10) outranks the
+Each successive line shows the time advancing by one second, demonstrating that the clock
+updates continuously. The header confirms the display thread (priority 10) outranks the
 background updater (priority 1).
 
 ## Screenshots of Output

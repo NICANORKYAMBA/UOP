@@ -55,14 +55,14 @@ public class Clock {
     }
 
     /**
-     * Prints the current formatted time to the console on a single line.
+     * Prints the current formatted time to the console on its own line.
      *
      * <p>This method is intended to be called repeatedly by the display thread.
-     * The carriage return keeps the clock updating on the same line so the
-     * output reads like a live clock rather than a long scrolling list.</p>
+     * Each call prints the latest time on a new line so that a screenshot of
+     * the console clearly shows the clock advancing from one second to the
+     * next, demonstrating that it updates continuously.</p>
      */
     public void displayTime() {
-        System.out.print("\rCurrent time: " + getFormattedTime());
-        System.out.flush();
+        System.out.println("Current time: " + getFormattedTime());
     }
 }

@@ -239,9 +239,8 @@ def build():
               "produced the output below. The header confirms the two thread priorities "
               "(updater 1, display 10), and the clock then updates once per second in the "
               "required HH:mm:ss dd-MM-yyyy format until it stops cleanly after the demo "
-              "period. In the live console the time refreshes on a single line, so the "
-              "clock reads like a real ticking clock; the lines below show successive "
-              "updates.")
+              "period. Each successive line shows the time advancing by one second, which "
+              "demonstrates that the clock updates continuously.")
     code_block(doc, SAMPLE_OUTPUT)
     para(doc, "")
 
