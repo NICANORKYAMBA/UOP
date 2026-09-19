@@ -124,14 +124,12 @@ def build():
 
     head(doc, TITLE, level=1, center=True)
 
-    para(doc, "Designing the arcade game's control circuit is a good use of sequential "
-              "logic, because unlike combinational circuits, sequential circuits use "
-              "memory elements (flip-flops) whose outputs depend on both the current inputs "
-              "and the stored past state, driven by a clock (Ndjountche, 2016). The score "
-              "must be remembered and updated, and the lights and sound must toggle on game "
-              "events, so flip-flops are the right building blocks. Below I address the "
-              "score counter, the lights and sound control, and how the design would change "
-              "with JK flip-flops.")
+    para(doc, "The arcade game's control circuit is a good use of sequential logic: unlike "
+              "combinational circuits, sequential circuits use memory elements (flip-flops) "
+              "whose outputs depend on both the current inputs and the stored past state, "
+              "driven by a clock (Ndjountche, 2016). The score must be remembered and "
+              "updated, and the lights and sound must toggle on events, so flip-flops are "
+              "the right components.")
 
     head(doc, "Connecting D Flip-Flops to Build the Score Counter")
     para(doc, "A binary counter for the player's score can be built from D flip-flops, one "
@@ -141,51 +139,55 @@ def build():
               "in a simple ripple counter the first flip-flop is fed its own inverted output "
               "(D0 = NOT Q0) so it flips every clock pulse, and each following stage is "
               "clocked by the previous stage's output, so it toggles only when the lower "
-              "bits roll over. Together the outputs Q0, Q1, Q2, ... form the binary score. "
-              "Each D flip-flop stores exactly one bit: Q0 is the least-significant bit "
-              "(value 1), Q1 the next (value 2), Q2 the next (value 4), and so on. Four D "
+              "bits roll over. The outputs Q0, Q1, Q2, ... form the binary score, and each "
+              "flip-flop stores one bit: Q0 the least-significant bit (value 1), Q1 the next "
+              "(value 2), Q2 the next (value 4), and so on. Four D "
               "flip-flops store scores 0000 to 1111 (0 to 15), and adding flip-flops widens "
-              "the range. Each flip-flop stores a single binary digit, and together they "
-              "hold the whole score value that persists between clock pulses.")
+              "the range. So the information in each D flip-flop is one weighted binary digit "
+              "of the current score, and together they store the whole score as a binary "
+              "number that, because the flip-flops are edge-triggered, stays stable between "
+              "clock pulses (Ndjountche, 2016).")
 
     head(doc, "Where T Flip-Flops Control Lights and Sound")
     para(doc, "T (toggle) flip-flops are the natural choice for the flashing lights and "
               "sound effects, because a T flip-flop with T held at 1 flips its output on "
-              "every clock pulse, producing a steady on-off-on-off pattern (Ndjountche, "
-              "2016). I would use a T flip-flop for each light that needs to blink: tying T "
-              "high and clocking it from a slow pulse makes the light flash at a regular "
-              "rate. For an event-driven effect, T becomes the control: setting T = 1 only "
-              "when a game event occurs (for example, a bonus is hit) lets that event toggle "
-              "a light or a sound-enable line, while T = 0 holds the current state. T "
-              "flip-flops are therefore well suited to \"switch this on or off each time "
-              "something happens,\" which is exactly the behavior wanted for blinking "
-              "indicators and toggled sound effects.")
+              "every clock pulse, producing a steady on-off pattern (Ndjountche, 2016). I "
+              "would use one T flip-flop per light that needs to blink: tying T high and "
+              "clocking it from a slow pulse makes the light flash at a regular rate. For an "
+              "event-driven effect, T becomes the control - setting T = 1 only when a game "
+              "event occurs (say, a bonus is hit) lets that event toggle a light or a "
+              "sound-enable line, while T = 0 holds the current state. T flip-flops thus fit "
+              "any \"flip this on or off each time something happens\" behavior, which is "
+              "exactly what blinking indicators and toggled sound effects need.")
 
     head(doc, "Using JK Flip-Flops Instead of T Flip-Flops")
     para(doc, "A JK flip-flop is the most flexible of the three: with inputs J and K it can "
               "set (J = 1, K = 0), reset (J = 0, K = 1), hold (J = K = 0), or toggle "
-              "(J = K = 1) on the clock edge (Mano & Ciletti, 2018). The key difference is "
-              "that a T flip-flop has a single input and can only toggle or hold, whereas a "
-              "JK flip-flop can also independently force the output on or off. Using JK "
-              "flip-flops for the lights and sound would add that control but require two "
-              "inputs instead of one. To reproduce a T flip-flop's toggling, I would tie J "
-              "and K together (J = K = T), since J = K = 1 toggles and J = K = 0 holds, so a "
-              "JK flip-flop with joined inputs behaves as a T flip-flop (Ndjountche, 2016). "
-              "The main change is the extra input line and its control logic, which also "
-              "enables using set/reset to force all effect lights off instantly at game over "
-              "(J = 0, K = 1) rather than waiting for a toggle.")
+              "(J = K = 1) on the clock edge (Mano & Ciletti, 2018). The key behavioral "
+              "difference is that a T flip-flop has one input and can only toggle or hold, "
+              "so a single pulse merely inverts its current state, whereas a JK can also "
+              "deterministically force the output on or off. In effect the JK is a superset "
+              "of the T. To reproduce pure toggling I would tie J = K = T, since J = K = 1 "
+              "toggles and J = K = 0 holds, so a JK with joined inputs acts as a T flip-flop "
+              "(Ndjountche, 2016). Two circuit changes follow. First, each effect flip-flop "
+              "now needs two control lines instead of one, so I would add a little "
+              "combinational logic to drive J and K from the game-event signals. Second, I "
+              "could use that control for exact states rather than toggles - for example, "
+              "J = 1, K = 0 to force a warning light on when time is low, and J = 0, K = 1 "
+              "to force all lights off at game over, instead of hoping a toggle lands right "
+              "(Mano & Ciletti, 2018). The trade-off is more wiring for finer control.")
 
     head(doc, "Conclusion and Question")
     para(doc, "In short, D flip-flops build the score counter (one bit each), T flip-flops "
-              "efficiently toggle the lights and sound, and JK flip-flops offer the same "
-              "toggling plus independent set/reset at the price of an extra input. The right "
-              "choice depends on how much control each part of the game needs.")
+              "toggle the lights and sound, and JK flip-flops add independent set/reset at "
+              "the cost of an extra input, so the choice depends on how much control each "
+              "part needs.")
     para(doc, "Question for the class: When a counter or effect must reset instantly at game "
               "over, is it better to use a flip-flop's asynchronous clear input or to build "
               "the reset into the synchronous logic, and what are the timing risks of each "
               "approach?")
 
-    para(doc, "Word count: 725", block=False)
+    para(doc, "Word count: 749", block=False)
 
     doc.add_page_break()
     head(doc, "References", level=1, center=True)
