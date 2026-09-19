@@ -38,7 +38,9 @@ DIAGRAM = [
 
 REFS = [
     "Ndjountche, T. (2016). *Digital electronics 2: Sequential and arithmetic "
-    "logic circuits*. John Wiley & Sons. https://ebookcentral.proquest.com/",
+    "logic circuits*. ISTE Ltd/John Wiley & Sons. Retrieved from ProQuest "
+    "Ebook Central via the UoPeople LIRN Library. "
+    "https://ebookcentral.proquest.com/lib/univ-people-ebooks/",
     "Mano, M. M., & Ciletti, M. D. (2018). *Digital design: With an "
     "introduction to the Verilog HDL, VHDL, and SystemVerilog* (6th ed.). "
     "Pearson.",
