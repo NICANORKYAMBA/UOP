@@ -106,7 +106,7 @@ def inline(p, text):
 
 
 def para(doc, text="", align=None, block=False, indent=False, hanging=False):
-    """APA 7 body text: double spaced, first line indented 0.5 in, no extra space."""
+    """Body text: double spaced; block=True adds space after (block style), indent=True indents."""
     p = doc.add_paragraph()
     pf = p.paragraph_format
     pf.line_spacing = 2.0
@@ -296,7 +296,7 @@ def build(src, out):
         elif data.startswith(("Word count", "**Question for the class")):
             para(doc, data)
         else:
-            para(doc, data, indent=True)
+            para(doc, data, block=True)  # block paragraphs, as in earlier units
 
     doc.save(HERE / out)
     print(f"Created {out}")
