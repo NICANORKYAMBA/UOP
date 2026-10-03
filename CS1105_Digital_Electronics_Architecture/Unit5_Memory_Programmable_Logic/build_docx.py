@@ -21,6 +21,7 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 FONT = "Times New Roman"
+SPACING = 1.5  # user preference: 1.5 line spacing, block paragraphs, left-aligned headings
 MONO = "Courier New"
 HERE = Path(__file__).resolve().parent
 
@@ -42,7 +43,7 @@ def base(doc):
     st = doc.styles["Normal"]
     st.font.name = FONT
     st.font.size = Pt(12)
-    st.paragraph_format.line_spacing = 2.0
+    st.paragraph_format.line_spacing = SPACING
     st.paragraph_format.space_after = Pt(0)
     for h, sz in (("Title", 16), ("Heading 1", 13), ("Heading 2", 12), ("Heading 3", 12)):
         s = doc.styles[h]
@@ -50,7 +51,7 @@ def base(doc):
         s.font.size = Pt(sz)
         s.font.bold = True
         s.font.color.rgb = RGBColor(0, 0, 0)
-        s.paragraph_format.line_spacing = 2.0
+        s.paragraph_format.line_spacing = SPACING
         s.paragraph_format.space_before = Pt(0)
         s.paragraph_format.space_after = Pt(0)
     for sec in doc.sections:
@@ -109,7 +110,7 @@ def para(doc, text="", align=None, block=False, indent=False, hanging=False):
     """Body text: double spaced; block=True adds space after (block style), indent=True indents."""
     p = doc.add_paragraph()
     pf = p.paragraph_format
-    pf.line_spacing = 2.0
+    pf.line_spacing = SPACING
     pf.space_after = Pt(10) if block else Pt(0)
     if indent:
         pf.first_line_indent = Inches(0.5)
@@ -143,8 +144,7 @@ def page_numbers(doc):
 
 def head(doc, text, level=2, center=False):
     p = doc.add_heading(level=level)
-    if center:
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT  # headings are always flush left
     r = p.add_run(text)
     r.bold = True
     r.font.name = FONT
@@ -193,7 +193,7 @@ def figure(doc, rel):
 
 def bullet(doc, text):
     p = doc.add_paragraph()
-    p.paragraph_format.line_spacing = 2.0
+    p.paragraph_format.line_spacing = SPACING
     p.paragraph_format.left_indent = Inches(0.5)
     p.paragraph_format.first_line_indent = Inches(-0.25)
     p.paragraph_format.space_after = Pt(0)
@@ -204,7 +204,7 @@ def bullet(doc, text):
 def reference(doc, text):
     p = doc.add_paragraph()
     pf = p.paragraph_format
-    pf.line_spacing = 2.0
+    pf.line_spacing = SPACING
     pf.left_indent = Inches(0.5)
     pf.first_line_indent = Inches(-0.5)
     pf.space_after = Pt(0)
