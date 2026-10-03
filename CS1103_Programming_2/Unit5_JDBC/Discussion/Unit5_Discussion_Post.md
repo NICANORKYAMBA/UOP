@@ -56,22 +56,25 @@ Hock-Chuan (2024) recommends, so a busy server does not run out of connections.
 
 ## Key Considerations When Implementing CRUD
 
-Create, Read, Update, and Delete look simple, but each needs care (Samoylov, 2018):
+Each CRUD operation maps to one SQL command and one JDBC method, and each has its own risk
+(Samoylov, 2018):
 
-- **Data integrity.** Validate input in Java before it reaches the database, and let the database
-  enforce rules too, with primary keys, NOT NULL, and foreign keys. Group related changes, such as
-  creating an order and reducing stock, in one transaction.
-- **Security.** Use PreparedStatement for every query that includes user input, connect with a
-  database account that has only the permissions the application needs, and keep passwords out of
-  the source code by reading them from configuration or environment variables.
-- **Efficiency.** In Read operations, select only the columns needed instead of SELECT *, add
-  indexes on columns used in WHERE clauses, and page through large results instead of loading them
-  all at once. Opening a connection is expensive, so production systems reuse connections from a
-  pool rather than opening a new one for every request.
-- **Error handling.** Every JDBC call can throw SQLException. Catch it, roll back any open
-  transaction, log the details, and show the user a clear message rather than a stack trace.
-- **Deletes.** A hard DELETE can break orders that reference a product, so many systems use a "soft
-  delete", marking a row as inactive so its history is kept.
+| Operation | SQL and JDBC | Key consideration |
+|---|---|---|
+| Create | INSERT, executeUpdate() | Validate input first; let PRIMARY KEY and NOT NULL constraints reject bad rows; batch bulk inserts |
+| Read | SELECT, executeQuery() returning a ResultSet | Select only needed columns, index WHERE columns, page through large results |
+| Update | UPDATE, executeUpdate() | Always include a WHERE clause and check the rows-affected count; group related changes in a transaction |
+| Delete | DELETE, executeUpdate() | Foreign keys may block it; a "soft delete" that marks a row inactive keeps order history |
+
+Three concerns apply to all four:
+
+- **Security.** Use PreparedStatement for any query containing user input, give the application a
+  database account with only the permissions it needs, and read passwords from configuration
+  rather than hard-coding them.
+- **Error handling.** Every JDBC call can throw SQLException, so catch it, roll back any open
+  transaction, and show the user a clear message instead of a stack trace.
+- **Connections.** Opening a connection is expensive, so production systems reuse connections from
+  a pool instead of opening one per request.
 
 As Telusko (2023) demonstrates, the basic JDBC steps are short: load the driver, connect, run a
 statement, process the results, and close. The real skill is applying those steps with integrity,
@@ -82,7 +85,7 @@ users on separate threads, is it safe to share one Connection object through a S
 should each thread get its own connection from a pool? What problems could the shared connection
 cause?
 
-Word count: 733
+Word count: 710
 
 ## References
 
