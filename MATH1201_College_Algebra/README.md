@@ -34,7 +34,7 @@ logarithmic functions and circles, and systems of linear equations.
 | 3 | Polynomials - I (Linear & Quadratic Functions) | Assignment, Self-Quiz, **Graded Quiz** |
 | 4 | Polynomials - II (Higher-Order & Rational Functions) | Assignment, Self-Quiz |
 | 5 | Exponential and Logarithmic Functions | Discussion, Assignment, Self-Quiz |
-| 6 | Trigonometry - I (Foundations of Trigonometry) | Assignment, Self-Quiz, **Graded Quiz** |
+| 6 | Trigonometry - I (Foundations of Trigonometry) | Assignment, Self-Quiz |
 | 7 | Trigonometry - II (Additional Trigonometric Concepts) | Assignment, Self-Quiz |
 | 8 | Systems of Equations | Discussion, Assignment, Self-Quiz |
 | 9 | Final Exam | **Proctored Final Exam (Rosalyn)** |

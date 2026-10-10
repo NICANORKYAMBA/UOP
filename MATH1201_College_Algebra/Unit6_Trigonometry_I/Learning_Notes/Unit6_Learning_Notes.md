@@ -4,7 +4,7 @@ Course: MATH 1201 College Algebra
 Reading: Abramson (2021), *Algebra and Trigonometry 2e*, Sections 7.1 to 7.4 and 8.1 to 8.3
 Videos: Mathispower4u (trig ratios, unit circle values, graphing sine and cosine, inverse trig)
 
-Due October 14, 2026: Assignment Activity (4 tasks) and the **Graded Quiz**.
+Due October 14, 2026: Assignment Activity (4 tasks) and the Self-Quiz.
 
 ---
 
@@ -33,12 +33,25 @@ QIII tan, QIV cos ("All Students Take Calculus").
 | arccos | [-1, 1] | [0, π] |
 | arctan | all reals | (-π/2, π/2) |
 
-## 6. Graded Quiz preparation
-The 15-question Graded Quiz counts toward your grade, so these notes do not mark answers. It
-reviews Units 3 to 6: polynomial definitions, degree, intercepts and turning points (Unit 4
-notes), log domains and transformations, compound interest A = P(1 + r)^t and solving with logs
-(Unit 5 notes), phase shift C/B, degree and radian conversion, angles of elevation, the unit
-circle, and horizontal asymptotes (compare the degrees of top and bottom, Unit 4 notes).
+## 6. Self-Quiz answers (ungraded practice, reviews Units 3 to 6)
+
+| # | Answer | Why |
+|---|---|---|
+| 1 | f(x) = 3x² - 5x + 2 | only option with whole-number powers of x |
+| 2 | -3/7 | 7x + 3 = 7(x + 3/7), shift 3/7 left |
+| 3 | 401° | 7 × 180/π ≈ 401.07° |
+| 4 | $31492.8 | 25000 × 1.08³ |
+| 5 | 10, 9 | degree 10: up to 10 intercepts, up to 9 turning points |
+| 6 | (-5/4, ∞), (-∞, ∞) | 4x + 5 > 0 |
+| 7 | True | U-shaped curve like a parabola |
+| 8 | rate of growth or decay | 10 is the base (growth factor) |
+| 9 | $6,720 | 8000 ÷ 1.06³ ≈ 6716.95 |
+| 10 | -2.5849 | 2ˣ = 1/6, x = log₂(1/6) |
+| 11 | False | multiplying by 25 stretches, not compresses |
+| 12 | 11.54 meters | d = 20 / tan 60° = 20/√3 |
+| 13 | By drawing a right triangle in the circle | cos θ = x, sin θ = y |
+| 14 | Do not exist | numerator degree 3 > denominator degree 2 |
+| 15 | 2π/3 | 1560° - 4(360°) = 120° = 2π/3 |
 
 ## References
 
