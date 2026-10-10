@@ -1,0 +1,21 @@
+digraph IRQ {
+  graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.32];
+  node [fontname="Helvetica", fontsize=10, style="rounded,filled", fillcolor="#eef3fb", color="#3a5a8c", shape=box];
+  edge [fontname="Helvetica", fontsize=9];
+  end  [label="Current instruction finishes\n(interrupts are only checked here)", fillcolor="#e3f1e6", color="#3c7a4a"];
+  nmi  [label="/NMI active?", shape=diamond, fillcolor="#fff7d6", color="#a88a1c"];
+  int  [label="/INT active\nand IFF1 = 1?", shape=diamond, fillcolor="#fff7d6", color="#a88a1c"];
+  next [label="Fetch next instruction\nas normal"];
+  n1   [label="IFF2 <- IFF1, IFF1 <- 0\npush PC, jump to 0066h", fillcolor="#fbe9e9", color="#a33b3b"];
+  ack  [label="Acknowledge cycle\n(M1 + /IORQ, 2 extra wait states)\nIFF1 = IFF2 = 0, push PC"];
+  mode [label="Interrupt mode?", shape=diamond, fillcolor="#fff7d6", color="#a88a1c"];
+  m0   [label="IM 0: execute the instruction\nthe device puts on the data bus\n(usually RST n)"];
+  m1   [label="IM 1: jump to 0038h"];
+  m2   [label="IM 2: address = (I x 256) + vector byte\nread ISR address from that table entry"];
+  isr  [label="Interrupt service routine\nsave registers, handle device, restore", fillcolor="#e3f1e6", color="#3c7a4a"];
+  ret  [label="EI then RETI (maskable)\nor RETN (NMI): pop PC, resume"];
+  end -> nmi; nmi -> n1 [label="yes"]; nmi -> int [label="no"];
+  int -> ack [label="yes"]; int -> next [label="no"];
+  ack -> mode; mode -> m0 [label="0"]; mode -> m1 [label="1"]; mode -> m2 [label="2"];
+  n1 -> isr; m0 -> isr; m1 -> isr; m2 -> isr; isr -> ret;
+}

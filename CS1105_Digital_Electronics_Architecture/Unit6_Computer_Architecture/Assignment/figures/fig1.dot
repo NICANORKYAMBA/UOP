@@ -1,0 +1,22 @@
+digraph Z80 {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=12, nodesep=0.35, ranksep=0.6];
+  node  [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#eef3fb", color="#3a5a8c"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555"];
+  mem  [label="Memory\n(program + data)\n64 KB", fillcolor="#fdf2e3", color="#b5762a"];
+  io   [label="I/O devices\n(keyboard, UART...)", fillcolor="#fdf2e3", color="#b5762a"];
+  subgraph cluster_cpu {
+    label="Z80 CPU"; fontname="Helvetica-Bold"; color="#3a5a8c"; style="rounded";
+    ir   [label="Instruction register\n+ decoder"];
+    cu   [label="Control unit\n(timing: M-cycles, T-states)", fillcolor="#e3f1e6", color="#3c7a4a"];
+    alu  [label="ALU\n(add, logic, compare)\nsets flags in F"];
+    regs [label="Registers\nA F | B C | D E | H L\nalternate set A' F' ... H' L'\nIX  IY  SP  PC  I  R", shape=box];
+    iff  [label="Interrupt logic\nIFF1, IFF2, mode IM 0/1/2", fillcolor="#fbe9e9", color="#a33b3b"];
+  }
+  regs -> mem [label="address bus A0-A15\n(PC during fetch)"];
+  mem  -> ir  [label="data bus D0-D7\n(opcode)"];
+  ir -> cu;  cu -> alu [label="control"]; cu -> regs [label="control"];
+  alu -> regs [dir=both, label="operands / results"];
+  regs -> io [dir=both, label="IN / OUT"];
+  io -> iff [label="/INT, /NMI", color="#a33b3b", fontcolor="#a33b3b"];
+  iff -> cu [label="interrupt request", color="#a33b3b", fontcolor="#a33b3b"];
+}

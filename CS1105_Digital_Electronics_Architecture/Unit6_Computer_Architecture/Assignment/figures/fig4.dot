@@ -1,0 +1,11 @@
+digraph IM2 {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=12, nodesep=0.4];
+  node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#eef3fb", color="#3a5a8c"];
+  i   [label="I register\n90h\n(high byte)"];
+  v   [label="Device's vector byte\n20h\n(low byte, bit 0 = 0)", fillcolor="#fdf2e3", color="#b5762a"];
+  p   [label="Pointer\n9020h", shape=ellipse, fillcolor="#fff7d6", color="#a88a1c"];
+  t   [label="{Vector table in memory|9020h: 00h  (low)|9021h: 02h  (high)}", shape=record, style=filled];
+  s   [label="Service routine\nat 0200h", fillcolor="#e3f1e6", color="#3c7a4a"];
+  edge [fontname="Helvetica", fontsize=10];
+  i -> p; v -> p; p -> t [label="read 2 bytes"]; t -> s [label="jump"];
+}
