@@ -59,3 +59,13 @@ Programming Assignment (Generic Library Catalog), and the quiz.
 | 13 | QueryStatement | does not exist |
 | 14 | It generates a compile-time error | use Integer instead of int |
 | 15 | To specify an upper bound for a type parameter | <T extends Number> |
+
+**Self-Quiz, remaining questions:**
+
+| # | Answer | Why |
+|---|---|---|
+| 1 | List | Set, List, Map and Iterable are all generic; List is the expected answer (try Map if marked wrong) |
+| 2 | class | `class Box<T>` |
+| 3 | Generics allow you to write type-safe code | the other options are false |
+| 4 | <T> | `static <T> T first(List<T> list)` |
+| 5 | Producer, Extends, Consumer, Super | PECS: `? extends` to read, `? super` to write |
