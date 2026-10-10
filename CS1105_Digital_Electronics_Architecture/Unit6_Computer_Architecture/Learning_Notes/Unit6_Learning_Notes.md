@@ -79,6 +79,21 @@ question is covered by one of the sections above:
 Tip: for each question, eliminate the options that clearly describe a different component, then
 check the one that matches the definition in these notes.
 
+## Self-Quiz answers (ungraded practice)
+
+| # | Question | Answer |
+|---|---|---|
+| 1 | Language using human-readable mnemonics | **Assembly language** |
+| 2 | Machine language is written in | **Binary code** |
+| 3 | Binary version of a program | **Program expressed in 0s and 1s** |
+| 4 | Signal that pauses a program for another task | **Interrupt** |
+| 5 | Language directly understood by hardware | **Machine language** |
+| 6 | Role of the control unit | **Instruction interpretation and execution** |
+| 7 | Component for arithmetic and logic | **Arithmetic Logic Unit (ALU)** |
+| 8 | Component that executes instructions and calculates | **CPU** |
+| 9 | Primary purpose of computer architecture | **To specify the interface between the hardware and software** |
+| 10 | Z80 is known for use in | **Embedded systems** (it also powered early home computers) |
+
 ## References
 
 Both, D. (2020, July 7). *The central processing unit (CPU): Its components and functionality*.
