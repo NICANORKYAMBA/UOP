@@ -40,6 +40,22 @@ Programming Assignment (Generic Library Catalog), and the quiz.
 | LinkedHashMap<K,V> | key-value, insertion order (used in the catalog) |
 | PriorityQueue<E> | removes the smallest (highest-priority) element first |
 
-## Quiz
-Send a screenshot of the quiz title. If it is a Self-Quiz, I will add worked answers here. If it
-is the Graded Quiz, use sections 1 to 4 above plus the Unit 4 (I/O) and Unit 5 (JDBC) notes.
+## Self-Quiz answers (ungraded practice, reviews Units 4 to 6)
+
+| # | Answer | Why |
+|---|---|---|
+| 1 | The result of a SQL query | executeQuery() returns a ResultSet |
+| 2 | Statement | base interface for SQL statements |
+| 3 | Identifying the database | jdbc:mysql://host:3306/dbname |
+| 4 | By using generic types | the compiler checks every element |
+| 5 | To represent any data type | T is filled in when the class is used |
+| 6 | PrintWriter | print, println, printf for formatted text |
+| 7 | registerDriver() | DriverManager.registerDriver() |
+| 8 | To execute parameterized SQL queries | closest option (strictly PreparedStatement adds parameters) |
+| 9 | TreeMap | keeps keys sorted |
+| 10 | Connection | returned by DriverManager.getConnection() |
+| 11 | Writing characters to a char array | CharArrayWriter writes into memory |
+| 12 | To execute parameterized SQL queries | ? placeholders |
+| 13 | QueryStatement | does not exist |
+| 14 | It generates a compile-time error | use Integer instead of int |
+| 15 | To specify an upper bound for a type parameter | <T extends Number> |
