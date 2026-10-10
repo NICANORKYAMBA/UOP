@@ -53,6 +53,16 @@ QIII tan, QIV cos ("All Students Take Calculus").
 | 14 | Do not exist | numerator degree 3 > denominator degree 2 |
 | 15 | 2π/3 | 1560° - 4(360°) = 120° = 2π/3 |
 
+**Self-Quiz, more questions (trigonometry):**
+
+| # | Answer | Why |
+|---|---|---|
+| 1 | Terminal side is on an axis | quadrantal angles: 0°, 90°, 180°, 270° |
+| 2 | 4/5 | sin²t = 1 - 9/25 = 16/25; sine positive in QII |
+| 3 | 105 cm² | (30/360) × π × 20² ≈ 104.7 |
+| 4 | Amplitude 10, midline -7 | amplitude = absolute value of -10 |
+| 5 | 0 | 450° is coterminal with 90°; cos 90° = 0 |
+
 ## References
 
 Abramson, J. (2021). *Algebra and trigonometry* (2nd ed.). OpenStax.
