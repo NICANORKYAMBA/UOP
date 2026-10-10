@@ -1,0 +1,94 @@
+=== Generic Library Catalog ===
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Current catalog (3 items)
+  1. [B001] "Introduction to Programming Using Java" by David J. Eck | Book, 640 pages, ISBN 978-1-0000-0001-1
+  2. [D001] "The Imitation Game" by Morten Tyldum | DVD, 114 min, rated PG-13
+  3. [M001] "National Geographic" by National Geographic Society | Magazine, issue 245 (October 2026)
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Item type: 1 = Book, 2 = DVD, 3 = Magazine
+Type: Item ID: Title: Author: Pages: ISBN: Added: [B002] "Effective Java" by Joshua Bloch | Book, 412 pages, ISBN 978-0-13-468599-1
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Item type: 1 = Book, 2 = DVD, 3 = Magazine
+Type: Item ID: Title: Author: Runtime (minutes): Rating: Error: An item with ID "D001" already exists in the catalog.
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Please enter a whole number.
+Choose an option: Please choose a number from the menu.
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: ID of the item to view: Item ID : B002
+Title   : Effective Java
+Author  : Joshua Bloch
+Details : Book, 412 pages, ISBN 978-0-13-468599-1
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: ID of the item to remove: Error: No item with ID "X999" exists in the catalog.
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: ID of the item to remove: Removed: [D001] "The Imitation Game" by Morten Tyldum | DVD, 114 min, rated PG-13
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Author name (or part of it): Search results (1 item)
+  1. [B002] "Effective Java" by Joshua Bloch | Book, 412 pages, ISBN 978-0-13-468599-1
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Current catalog (3 items)
+  1. [B001] "Introduction to Programming Using Java" by David J. Eck | Book, 640 pages, ISBN 978-1-0000-0001-1
+  2. [M001] "National Geographic" by National Geographic Society | Magazine, issue 245 (October 2026)
+  3. [B002] "Effective Java" by Joshua Bloch | Book, 412 pages, ISBN 978-0-13-468599-1
+
+1. Add a new item
+2. Remove an item
+3. View item details
+4. View the current catalog
+5. Search by author
+0. Exit
+Choose an option: Goodbye!
