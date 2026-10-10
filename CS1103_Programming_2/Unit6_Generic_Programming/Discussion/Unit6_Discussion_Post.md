@@ -23,8 +23,8 @@ restrict a type parameter while keeping full type checking.
 
 **3. Use wildcards in method parameters so callers have more freedom.** A search method that
 takes Predicate<? super T> accepts a condition written for any supertype of T, so one
-condition can be reused across catalogs. Kumar (2023) explains how upper-bounded (extends) and
-lower-bounded (super) wildcards widen what a method accepts.
+condition can be reused across catalogs. Kumar (2023) and Coding with John (2021) explain how
+upper-bounded (extends) and lower-bounded (super) wildcards widen what a method accepts.
 
 **4. Never fall back to raw types.** A raw ArrayList with no type in angle brackets compiles, but
 only with an "unchecked" warning, and it gives away all the safety generics provide (Divertitto,
@@ -60,18 +60,20 @@ run time.
 LibraryItem<int> is illegal (Oracle, n.d.). Using records with int fields inside the details class,
 or wrapper types such as Integer, solved this. I also learned that a static method cannot use the
 class's T, so my static printItems method declares its own type parameter,
-<E extends LibraryItem<?>>, as Coding with John (2021) demonstrates for generic methods.
+<E extends LibraryItem<?>>, as Bro Code (2020) demonstrates for generic methods.
 
-Testing confirmed that each fix worked: fifteen automated checks covering every item type and
+Testing confirmed that each fix worked: sixteen automated checks covering every item type and
 every error case all pass.
 
 **Question for the class:** When writing a generic method, how do you decide between a bounded
 type parameter, such as <T extends Number> void process(List<T> list), and a wildcard, such as
 void process(List<? extends Number> list)? Is there a case where only one of them works?
 
-Word count: 644
+Word count: 648
 
 ## References
+
+Bro Code. (2020, July 27). *Java generics* [Video]. YouTube. https://www.youtube.com/watch?v=jUcAyZ5OUm0
 
 Coding with John. (2021, December 20). *Generics in Java - Full simple tutorial* [Video]. YouTube.
 https://www.youtube.com/watch?v=K1iu1kXkVoA

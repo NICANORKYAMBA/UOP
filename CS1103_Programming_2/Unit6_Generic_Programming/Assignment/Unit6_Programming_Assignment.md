@@ -26,11 +26,11 @@ The program is made of seven small classes, each with one job.
 |---|---|---|
 | LibraryItem<T> | generic class | One item: itemID, title, author, and type-specific details of type T |
 | BookDetails, DvdDetails, MagazineDetails | records | The type-specific details (pages and ISBN; runtime and rating; issue and month) |
-| Catalog<T extends LibraryItem<?>> | generic class | Stores items and provides add, remove, retrieve, list, and search operations |
+| Catalog<T extends LibraryItem<?>> | generic class | Stores items and provides add, remove, retrieve, list, search, and map operations |
 | ItemNotFoundException | checked exception | Thrown when an ID is not in the catalog |
 | DuplicateItemException | checked exception | Thrown when an ID is already used |
 | LibraryApp | main program | The command-line menu |
-| CatalogTest | test program | 15 automated checks of the catalog and items |
+| CatalogTest | test program | 16 automated checks of the catalog and items |
 
 ```
                   +--------------------------------------+
@@ -38,6 +38,7 @@ The program is made of seven small classes, each with one job.
                   |  addItem(T)        removeItem(id)    |
                   |  getItem(id)       getAllItems()     |
                   |  findItems(Predicate<? super T>)     |
+                  |  <R> mapItems(Function<..., R>)      |
                   |  <E> printItems(label, List<E>)      |
                   +------------------+-------------------+
                                      | stores many
@@ -65,10 +66,13 @@ The program is made of seven small classes, each with one job.
 3. **Wildcards for flexible methods.** findItems takes a Predicate<? super T>, so a search
    condition written for the general type LibraryItem<?> can be reused on a catalog of books. A
    lower-bounded wildcard, written with super, accepts the named type or any of its supertypes,
-   which is exactly what a reusable condition needs (Kumar, 2023).
-4. **A generic method.** The static method <E extends LibraryItem<?>> printItems(String, List<E>)
-   prints any list of library items, so the same code displays the full catalog and the search
-   results.
+   which is exactly what a reusable condition needs (Coding with John, 2021; Kumar, 2023).
+4. **Generic methods.** A generic method declares its own type parameter before its return type
+   (Bro Code, 2020; Eck, 2022). The catalog has two. The static method
+   <E extends LibraryItem<?>> printItems(String, List<E>) prints any list of library items, so the
+   same code displays the full catalog and the search results. The instance method
+   <R> List<R> mapItems(Function<? super T, ? extends R>) turns every item into a value of
+   whatever type R the caller chooses, for example a list of titles (List<String>).
 5. **A type-safe collection inside.** The catalog stores items in a LinkedHashMap<String, T>, part
    of the Java Collection Framework, keyed by the upper-case ID. Lookups by ID are fast, IDs are
    case-insensitive, and items are listed in the order they were added (Eck, 2022).
@@ -107,7 +111,7 @@ forces every caller of removeItem, getItem, and addItem to handle them.
 | Add, remove, and retrieve item details | addItem, removeItem, getItem (plus getAllItems and findItems) |
 | Error handling for removing a non-existent item | ItemNotFoundException with a clear message |
 | Command-line interface: add, remove, view catalog | LibraryApp menu options 1 to 5 |
-| Comprehensive testing with various item types | CatalogTest: 15 checks covering books, DVDs, magazines, and mixed catalogs |
+| Comprehensive testing with various item types | CatalogTest: 16 checks covering books, DVDs, magazines, and mixed catalogs |
 
 ## Compile and Run
 
@@ -125,8 +129,8 @@ The code compiles with javac -Xlint:all with no errors and no warnings.
 
 ### Automated Tests
 
-CatalogTest checks the catalog with every item type, a mixed catalog, and every error case. All
-15 checks pass:
+CatalogTest checks the catalog with every item type, a mixed catalog, both generic methods, and every
+error case. All 16 checks pass:
 
 ```
 PASS  add then retrieve returns the same item
@@ -144,8 +148,9 @@ PASS  adding a duplicate ID throws DuplicateItemException
 PASS  a blank title is rejected
 PASS  zero pages is rejected
 PASS  search by author finds the matching item
+PASS  generic mapItems returns each item's title
 
-Tests passed: 15, failed: 0
+Tests passed: 16, failed: 0
 ```
 
 ### Menu Program Test Run
@@ -173,7 +178,7 @@ message.
 
 **Figure 1**
 
-*Automated Tests: All 15 Checks Pass*
+*Automated Tests: All 16 Checks Pass*
 
 [FIGURE figures/fig1_tests.png]
 
@@ -210,6 +215,11 @@ message.
 [CODE src/CatalogTest.java]
 
 ## References
+
+Bro Code. (2020, July 27). *Java generics* [Video]. YouTube. https://www.youtube.com/watch?v=jUcAyZ5OUm0
+
+Coding with John. (2021, December 20). *Generics in Java - Full simple tutorial* [Video]. YouTube.
+https://www.youtube.com/watch?v=K1iu1kXkVoA
 
 Divertitto, A. (2022, August 18). *Java generics: How to use angled brackets in practice*. CodeGym.
 https://codegym.cc/groups/posts/generics-in-java

@@ -19,6 +19,7 @@ public class CatalogTest {
         testDuplicateId();
         testInvalidItems();
         testSearch();
+        testMapItems();
         System.out.printf("%nTests passed: %d, failed: %d%n", passed, failed);
         if (failed > 0) {
             System.exit(1);
@@ -137,5 +138,13 @@ public class CatalogTest {
         List<LibraryItem<?>> found = mixed.findItems(item -> item.getAuthor().contains("Ada"));
         check("search by author finds the matching item", found.size() == 1
                 && found.get(0).getItemID().equals("B1"));
+    }
+
+    private static void testMapItems() throws Exception {
+        Catalog<LibraryItem<?>> mixed = new Catalog<>();
+        mixed.addItem(book("B1"));
+        mixed.addItem(new LibraryItem<>("D1", "Up", "Pete Docter", new DvdDetails(96, "PG")));
+        List<String> titles = mixed.mapItems(LibraryItem::getTitle);
+        check("generic mapItems returns each item's title", titles.equals(List.of("Java Basics", "Up")));
     }
 }

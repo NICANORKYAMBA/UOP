@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -88,6 +89,23 @@ public class Catalog<T extends LibraryItem<?>> {
             }
         }
         return matches;
+    }
+
+    /**
+     * Generic method that converts every item into a value of another type, for example
+     * each item's title (a String) or its ID. The method's own type parameter {@code R}
+     * is chosen by the caller, so one method serves many purposes.
+     *
+     * @param <R>    the type of value produced for each item
+     * @param mapper the conversion applied to each item
+     * @return the converted values, in the order the items were added
+     */
+    public <R> List<R> mapItems(Function<? super T, ? extends R> mapper) {
+        List<R> results = new ArrayList<>();
+        for (T item : items.values()) {
+            results.add(mapper.apply(item));
+        }
+        return results;
     }
 
     /** Returns the number of items in the catalog. */

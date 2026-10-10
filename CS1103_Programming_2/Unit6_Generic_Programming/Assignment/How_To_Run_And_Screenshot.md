@@ -5,7 +5,7 @@ The program is in `Assignment/src`. It needs Java 17 or newer (you have Java 21)
 ## Option A: IntelliJ
 1. Open the `Unit6_Generic_Programming/Assignment/src` folder (or mark it as a Sources Root).
 2. Right-click `CatalogTest.java` → **Run**. Take **Screenshot 1** of the PASS lines and the
-   "Tests passed: 15, failed: 0" summary.
+   "Tests passed: 16, failed: 0" summary.
 3. Right-click `LibraryApp.java` → **Run**, then follow the steps below in the Run window.
 
 ## Option B: Terminal
