@@ -88,7 +88,7 @@ Every error is caught and turned into a clear message, so the program never cras
 | Situation | Handling | Message shown |
 |---|---|---|
 | Removing or viewing an ID that does not exist | ItemNotFoundException | No item with ID "X999" exists in the catalog. |
-| Adding an ID that is already used | DuplicateItemException | An item with ID "D001" already exists in the catalog. |
+| Adding an ID that is already used | DuplicateItemException | An item with ID "B001" already exists in the catalog. |
 | A blank title, author, or ID | IllegalArgumentException from the constructor | Title cannot be empty. |
 | Zero or negative pages, runtime, or issue | IllegalArgumentException from the record | Pages must be greater than zero. |
 | Letters typed where a number is expected | NumberFormatException, caught; the prompt repeats | Please enter a whole number. |
@@ -166,7 +166,7 @@ message.
 |---|---|---|
 | 1 | View the catalog | Shows the 3 sample items (a book, a DVD, a magazine) |
 | 2 | Add book B002, "Effective Java" by Joshua Bloch | Added: [B002] "Effective Java" by Joshua Bloch, 412 pages |
-| 3 | Add a DVD with the existing ID D001 | Error: an item with ID "D001" already exists |
+| 3 | Add a DVD that reuses the existing ID B001 | Error: an item with ID "B001" already exists |
 | 4 | Type "abc", then 9, at the menu | "Please enter a whole number", then "Please choose a number from the menu" |
 | 5 | View details of B002 | Shows its ID, title, author, and book details |
 | 6 | Remove X999 | Error: no item with ID "X999" exists |
