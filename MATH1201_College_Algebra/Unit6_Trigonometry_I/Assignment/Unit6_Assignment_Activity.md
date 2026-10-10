@@ -19,7 +19,7 @@ line (the positive x-axis).
 ### (i) All Six Trigonometric Values
 
 On the unit circle the radius is r = 1, so for a point (x, y) the six functions are defined as
-follows (Abramson, 2021, Sections 7.3 and 7.4):
+follows (Abramson, 2021, Sections 7.3 and 7.4; Mathispower4u, 2011c):
 
 | Function | Formula | Value |
 |---|---|---|
@@ -59,7 +59,7 @@ Section 7.3):
 
 Because the point is reached after completing one revolution, the total rotation measured from the
 initial line is 360° + 150° = **510°** (or 17π/6 radians). An angle of 510° is coterminal with 150°,
-since they differ by a full turn of 360°, so it ends at the same point A and has the same six
+since they differ by a full turn of 360° (Abramson, 2021, Section 7.1), so it ends at the same point A and has the same six
 function values and the same **30° reference angle**. Figure 1 shows the point, the angle, and the
 reference angle.
 
@@ -86,7 +86,7 @@ be at ground level.
 ### (i) The Angles at A and B
 
 The formula linking the opposite and adjacent sides is the tangent ratio (Abramson, 2021,
-Section 7.2):
+Section 7.2; Mathispower4u, 2011a):
 
 tan θ = opposite / adjacent, so θ = tan⁻¹(opposite / adjacent)
 
@@ -124,7 +124,7 @@ from point A and about 6.32 m from point B.
 
 ## Task 3: Sinusoidal and Tangent Functions
 
-The general forms used here are (Abramson, 2021, Sections 8.1 and 8.2):
+The general forms used here are (Abramson, 2021, Sections 8.1 and 8.2; Mathispower4u, 2010):
 
 - y = A sin(Bx - C) + D and y = A cos(Bx - C) + D, where |A| is the amplitude, the period is
   2π / |B|, the phase shift is C / B, and y = D is the midline.
@@ -193,7 +193,7 @@ cos(-135°) = cos(135°), and d and f are symmetric about the minimum at e.
 ### (i) The Table
 
 I chose **Y = f(X) = cos X**, with inverse **f⁻¹(Y) = cos⁻¹(Y) = arccos(Y)**. The inverse cosine
-returns the angle in [0, π] whose cosine is Y (Abramson, 2021, Section 8.3).
+returns the angle in [0, π] whose cosine is Y (Abramson, 2021, Section 8.3; Mathispower4u, 2011b).
 
 | X | 0 | π/3 | 2π/3 | π/2 | π | 4π/3 | 2π |
 |---|---|---|---|---|---|---|---|
@@ -237,7 +237,7 @@ The domain of arccos is the range of cosine, and the range of arccos is the rest
 
 **(c) Even, odd, or neither.** A function is even if f(-X) = f(X) and odd if f(-X) = -f(X). Cosine
 satisfies cos(-X) = cos X; for example cos(-π/3) = 1/2 = cos(π/3). So **f(X) = cos X is an even
-function**, and its graph is symmetric about the y-axis, as the points b and d in Task 3 also show.
+function** (Abramson, 2021, Section 7.4), and its graph is symmetric about the y-axis, as the points b and d in Task 3 also show.
 (By contrast, arccos is neither even nor odd, because arccos(-Y) = π - arccos(Y).)
 
 ## Conclusion
@@ -253,3 +253,15 @@ needs a restricted domain.
 
 Abramson, J. (2021). *Algebra and trigonometry* (2nd ed.). OpenStax.
 https://openstax.org/details/books/algebra-and-trigonometry-2e
+
+Mathispower4u. (2010, May 11). *Graphing sine and cosine with transformations* [Video]. YouTube.
+https://www.youtube.com/watch?v=wUzARNIkH-g
+
+Mathispower4u. (2011a, May 24). *Example: Determine what trig function relates specific sides of a
+right triangle* [Video]. YouTube. https://www.youtube.com/watch?v=QfQYY6FsPss
+
+Mathispower4u. (2011b, June 3). *Examples: Evaluate expression involving inverse trig functions
+(Part 1)* [Video]. YouTube. https://www.youtube.com/watch?v=4qO0qUqBQEU
+
+Mathispower4u. (2011c, May 26). *More examples: Determining trig function values using the unit
+circle* [Video]. YouTube. https://www.youtube.com/watch?v=BFtqhHgXSMk
