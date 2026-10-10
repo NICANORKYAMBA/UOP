@@ -32,8 +32,8 @@ more than peak speed, because it decides battery life and electricity bills. Sim
 such as ARM and RISC-V usually do well here.
 
 **4. Cost and licensing.** Cost includes the chip, the licence, and the long-term running cost. x86
-is controlled by two companies, ARM designs are licensed, and RISC-V is an open standard that anyone
-can implement without royalties.
+is controlled by two companies, ARM designs are licensed, and RISC-V is an open, royalty-free
+standard that anyone can implement (RISC-V International, n.d.).
 
 **5. Real-time and I/O needs.** Embedded systems care about predictable response to hardware
 events. This week's Z80 readings show how much the interrupt design matters: a simple system can
@@ -54,7 +54,8 @@ of core, a single chip will combine fast cores, efficient cores, a GPU, and AI a
 software will send each task to the unit that handles it best. Second, **chiplets**: designers will
 build processors from smaller dies joined in one package, which improves manufacturing yield and
 lets companies mix parts. Third, **open ISAs such as RISC-V** will keep growing, because companies
-can design custom processors without paying licence fees.
+can build custom processors on a shared standard without paying licence fees (RISC-V International,
+n.d.).
 
 The impact on the industry will be large. Competition will lower costs and weaken the old x86
 dominance, especially in servers. Energy efficiency will become a selling point as AI data centres
@@ -76,7 +77,7 @@ software support, and large savings in power and cost.
 eventually replace ARM in phones and embedded devices, or will ARM's mature software ecosystem keep
 it ahead? What would a company need to consider before switching?
 
-Word count: 732
+Word count: 741
 
 ## References
 
@@ -90,6 +91,8 @@ https://www.computerhope.com/jargon/m/machlang.htm
 
 Cook, M. (2015, April 15). *Z80 interrupts*. Z80 Journal.
 https://z80journal.wordpress.com/2015/04/15/z80-interrupts/
+
+RISC-V International. (n.d.). *About RISC-V International*. https://riscv.org/about/
 
 Wu, H.-W. (2023, June 22). *Computer architecture explained: The bridge between software and
 hardware*. DataSci Ocean. https://datasciocean.com/en/other/what-is-computer-architecture/

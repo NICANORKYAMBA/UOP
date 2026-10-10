@@ -5,7 +5,7 @@
 **Instructor:** Muhammad Aligohar Bilal
 **Due:** October 14, 2026
 
-The Zilog Z80 is an 8-bit microprocessor introduced in 1976 that powered early personal computers
+The Zilog Z80 is an 8-bit microprocessor from the 1970s that powered early personal computers
 and is still found in embedded systems. It is a good processor to study because it is simple
 enough to follow one clock cycle at a time, yet it has a complete interrupt system with three
 modes. This paper explains how the Z80 fetches, decodes, and executes instructions, how it
@@ -155,7 +155,7 @@ a reset (Zilog, 2016, p. 19).
 | Mode 2 | IM 2 (ED 5E) | Builds a pointer from the I register (high byte) and a byte from the device (low byte), then reads the service routine's address from that table entry | Systems with several devices, each with its own routine |
 | NMI | (always on) | Always calls address 0066h | Emergencies such as power failure |
 
-Cook (2015) points out that most general peripherals cannot supply the bytes that Modes 0 and 2
+Cook (2015a) points out that most general peripherals cannot supply the bytes that Modes 0 and 2
 need, so he recommends Mode 1 for simple home-built systems, where one routine at 0038h checks
 which device needs attention. Mode 2 is the most powerful, because each device can point
 directly to its own routine; Zilog's own peripheral chips are designed to supply the vector byte
@@ -219,8 +219,10 @@ to see whether it needs attention. Polling wastes most of the processor's time, 
 usually idle, and it can still miss an event that happens between two checks. Interrupts reverse
 the relationship: the CPU gets on with useful work, or halts to save power, and each device asks
 for attention only when something actually happens. This is why the example program can simply
-HALT until a key is pressed. Home computers built on the Z80, such as the ZX Spectrum, used a
-regular timer interrupt in Mode 1 to scan the keyboard and keep time while the main program ran.
+HALT until a key is pressed. Cook (2015b) shows the same benefit in a real Z80 project: he
+connected a UART (serial port chip) to the /INT pin and used Mode 1, so that a key pressed on the
+terminal interrupts the Z80, which then jumps to 0038h to read it. As he explains, this frees the
+system from polling so that it can dedicate its processing time to other tasks.
 
 Interrupts also give the Z80 **priorities**. The non-maskable interrupt always wins, which
 guarantees that an emergency such as a power failure is handled even if software has disabled
@@ -276,8 +278,11 @@ Red Hat. https://www.redhat.com/en/blog/cpu-components-functionality
 Computer Hope. (2019, June 30). *Machine language*.
 https://www.computerhope.com/jargon/m/machlang.htm
 
-Cook, M. (2015, April 15). *Z80 interrupts*. Z80 Journal.
+Cook, M. (2015a, April 15). *Z80 interrupts*. Z80 Journal.
 https://z80journal.wordpress.com/2015/04/15/z80-interrupts/
+
+Cook, M. (2015b, April 29). *Z80 interrupts and strings*. Z80 Computer Project.
+https://z80project.wordpress.com/2015/04/29/z80-interrupts-and-strings/
 
 Futurology. (2017, December 7). *How a CPU works | The CPU explained* [Video]. YouTube.
 https://www.youtube.com/watch?v=XQq_1yaVDpM
