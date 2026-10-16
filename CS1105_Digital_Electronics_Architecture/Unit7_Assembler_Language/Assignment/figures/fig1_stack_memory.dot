@@ -1,0 +1,23 @@
+digraph G {
+  rankdir=LR; nodesep=0.35; ranksep=0.9;
+  node [fontname="Helvetica", fontsize=12];
+  edge [fontname="Helvetica", fontsize=10];
+  label="State after reading \"{[(\": three opening brackets have been pushed"; labelloc=b; fontname="Helvetica"; fontsize=12;
+  data [shape=plaintext, label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD COLSPAN="2" BGCOLOR="#dae8fc"><B>stack_data</B>  (resb 64, in .bss)</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">[63]</TD><TD PORT="i63">free</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">...</TD><TD>...</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">[3]</TD><TD PORT="i3">free</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">[2]</TD><TD PORT="i2" BGCOLOR="#fff2cc">'('   top item</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">[1]</TD><TD PORT="i1" BGCOLOR="#fff2cc">'['</TD></TR>
+      <TR><TD BGCOLOR="#eeeeee">[0]</TD><TD PORT="i0" BGCOLOR="#fff2cc">'{'   bottom</TD></TR>
+    </TABLE>>];
+  top  [shape=box, style="rounded,filled", fillcolor="#fff2cc", label="stack_top  (resd 1) = 3\nnumber of items, and the\nindex of the next free slot"];
+  push [shape=box, style=filled, fillcolor="#d5e8d4", label="stack_push (AL)\lif stack_top = 64:  CF = 1  (overflow)\lelse:  stack_data[stack_top] = AL\l          stack_top = stack_top + 1,  CF = 0\l"];
+  pop  [shape=box, style=filled, fillcolor="#f8cecc", label="stack_pop  -> AL\lif stack_top = 0:  CF = 1  (underflow)\lelse:  stack_top = stack_top - 1\l          AL = stack_data[stack_top],  CF = 0\l"];
+  data:i3:e -> push:w [dir=back, label="next push writes here"];
+  data:i3:e -> top:w  [dir=back, style=dashed, label="points to"];
+  data:i2:e -> pop:w  [dir=back, label="next pop reads here"];
+  {rank=same; push; top; pop}
+}
