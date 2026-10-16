@@ -1,0 +1,30 @@
+digraph G {
+  rankdir=LR; nodesep=0.3; ranksep=0.9; newrank=true;
+  node [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled"];
+  edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_clients {
+    label="Clients (ChatClient)"; fontname="Helvetica"; fontsize=11; style="rounded,dashed";
+    c1 [fillcolor="#dae8fc", label="Alice\nmain thread: keyboard -> socket\nlistener thread: socket -> screen"];
+    c2 [fillcolor="#dae8fc", label="Bob\nmain thread: keyboard -> socket\nlistener thread: socket -> screen"];
+    c3 [fillcolor="#dae8fc", label="Carol\nmain thread: keyboard -> socket\nlistener thread: socket -> screen"];
+  }
+  subgraph cluster_server {
+    label="ChatServer process"; fontname="Helvetica"; fontsize=11; style="rounded,dashed";
+    ss  [fillcolor="#fff2cc", label="ServerSocket, port 5000\naccept() loop gives each\nconnection the next user ID"];
+    h1  [fillcolor="#d5e8d4", label="ClientHandler, ID 1\n(own thread)"];
+    h2  [fillcolor="#d5e8d4", label="ClientHandler, ID 2\n(own thread)"];
+    h3  [fillcolor="#d5e8d4", label="ClientHandler, ID 3\n(own thread)"];
+    users [fillcolor="#f8cecc", label="connectedUsers\n(ConcurrentHashMap)\nbroadcast() sends to\nevery handler"];
+  }
+  {rank=same; c1; c2; c3}
+  {rank=same; ss; h1; h2; h3}
+  c3 -> c2 -> c1 [style=invis];
+  h3 -> h2 -> h1 -> ss [style=invis];
+  ss -> h1 [style=dashed, constraint=false, label="creates handler\n+ unique ID"];
+  ss -> h2 [style=dashed, constraint=false];
+  ss -> h3 [style=dashed, constraint=false];
+  c1 -> h1 [dir=both, label="TCP socket, text lines"];
+  c2 -> h2 [dir=both, label="TCP socket"];
+  c3 -> h3 [dir=both, label="TCP socket"];
+  h1 -> users; h2 -> users [label="addUser, removeUser,\nbroadcast"]; h3 -> users;
+}
