@@ -19,10 +19,15 @@ import java.nio.charset.StandardCharsets;
  */
 public class ChatClient {
 
+    /** Host name or IP address of the server. */
     private final String host;
+    /** Port the server listens on. */
     private final int port;
+    /** Where the user's typing is read from. */
     private final BufferedReader keyboard;
+    /** Where messages are displayed. */
     private final PrintStream screen;
+    /** Set when the user types /quit, so a closed connection is not reported as an error. */
     private volatile boolean quitting;
 
     /**

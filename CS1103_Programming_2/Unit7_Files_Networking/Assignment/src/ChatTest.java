@@ -21,18 +21,38 @@ import java.nio.charset.StandardCharsets;
  */
 public class ChatTest {
 
+    /** How long a test client waits for an expected line before the check fails. */
     private static final int TIMEOUT_MS = 3000;
+
+    /** Number of checks that passed. */
     private static int passed;
+
+    /** Number of checks that failed. */
     private static int failed;
+
+    /** Utility class: not meant to be instantiated. */
+    private ChatTest() {
+    }
 
     /**
      * A minimal client that talks to the server directly through a socket.
      */
     private static final class TestClient implements AutoCloseable {
+        /** The connection to the server. */
         private final Socket socket;
+
+        /** Lines coming from the server. */
         private final BufferedReader in;
+
+        /** Lines going to the server. */
         private final PrintWriter out;
 
+        /**
+         * Connects to the server on this computer.
+         *
+         * @param port the server's port
+         * @throws IOException if the connection fails
+         */
         TestClient(int port) throws IOException {
             socket = new Socket("localhost", port);
             socket.setSoTimeout(TIMEOUT_MS);
@@ -42,11 +62,23 @@ public class ChatTest {
                     new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
         }
 
+        /**
+         * Sends one line to the server.
+         *
+         * @param line the text to send
+         */
         void send(String line) {
             out.println(line);
         }
 
-        /** Reads lines until one contains the text; returns it, or null if none arrives. */
+        /**
+         * Reads lines from the server until one contains the given text.
+         *
+         * @param text the text to wait for
+         * @return the first line containing the text, or null if the connection closes or
+         *         nothing matching arrives before the timeout
+         * @throws IOException if reading fails for another reason
+         */
         String readUntil(String text) throws IOException {
             try {
                 String line;
@@ -56,12 +88,20 @@ public class ChatTest {
                     }
                 }
             } catch (SocketTimeoutException e) {
-                return null;
+                // nothing matching arrived in time: fall through and report null
             }
             return null;
         }
 
-        /** Connects, reads the welcome line, sends a name, and waits for the greeting. */
+        /**
+         * Connects, reads the welcome line, sends a name, and waits for the greeting.
+         *
+         * @param port    the server's port
+         * @param name    the name to join with
+         * @param welcome receives the welcome line, so the test can check the user ID
+         * @return the connected client
+         * @throws IOException if the connection fails
+         */
         static TestClient join(int port, String name, StringBuilder welcome) throws IOException {
             TestClient client = new TestClient(port);
             welcome.append(client.readUntil("Your user ID is"));
@@ -70,17 +110,32 @@ public class ChatTest {
             return client;
         }
 
-        /** Drops the connection without /quit, like a crash or a closed window. */
+        /**
+         * Drops the connection without /quit, like a crash or a closed window.
+         *
+         * @throws IOException if closing fails
+         */
         void disconnect() throws IOException {
             socket.close();
         }
 
+        /**
+         * Closes the connection when the try-with-resources block ends.
+         *
+         * @throws IOException if closing fails
+         */
         @Override
         public void close() throws IOException {
             disconnect();
         }
     }
 
+    /**
+     * Runs every check against a real server and prints the results.
+     *
+     * @param args not used
+     * @throws Exception if the server cannot be started
+     */
     public static void main(String[] args) throws Exception {
         PrintStream console = System.out;
         System.setOut(new PrintStream(OutputStream.nullOutputStream())); // hide server log
@@ -165,7 +220,14 @@ public class ChatTest {
         console.println("Tests passed: " + passed + ", failed: " + failed);
     }
 
-    /** Runs the real ChatClient class with scripted keyboard input. */
+    /**
+     * Runs the real ChatClient class with scripted keyboard input.
+     *
+     * @param console where results are printed
+     * @param port    the running server's port
+     * @param alice   a connected user who should receive the client's message
+     * @throws Exception if the client cannot be run
+     */
     private static void testChatClient(PrintStream console, int port, TestClient alice)
             throws Exception {
         String typed = "Erin\nHello from ChatClient\n/quit\n";
@@ -185,7 +247,13 @@ public class ChatTest {
                 shown.contains("Goodbye, Erin!"));
     }
 
-    /** A client started while no server is running must explain the problem, not crash. */
+    /**
+     * Checks that a client started while no server is running explains the problem instead of
+     * crashing.
+     *
+     * @param console where results are printed
+     * @throws IOException if a free port cannot be found
+     */
     private static void testClientWithoutServer(PrintStream console) throws IOException {
         int unusedPort;
         try (ServerSocket probe = new ServerSocket(0)) {
@@ -198,6 +266,13 @@ public class ChatTest {
                 screen.toString(StandardCharsets.UTF_8).contains("Is ChatServer running?"));
     }
 
+    /**
+     * Records one check and prints PASS or FAIL.
+     *
+     * @param console     where results are printed
+     * @param description what the check verifies
+     * @param condition   true if the check passed
+     */
     private static void check(PrintStream console, String description, boolean condition) {
         if (condition) {
             passed++;

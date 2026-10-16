@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * Serves one connected client on its own thread.
@@ -21,13 +22,19 @@ public class ClientHandler implements Runnable {
     /** Longest user name, in characters. Longer names are shortened. */
     static final int MAX_NAME_LENGTH = 20;
 
+    /** The list of commands shown by /help and after joining. */
     private static final String HELP =
             "Commands: /users (who is online), /help (this list), /quit (leave)";
 
+    /** The server that owns this client. */
     private final ChatServer server;
+    /** The connection to this client. */
     private final Socket socket;
+    /** Unique ID assigned by the server. */
     private final int userId;
+    /** Text output to this client; created when the handler starts running. */
     private PrintWriter out;
+    /** The name the user chose, after cleaning. */
     private String name;
 
     /**
@@ -90,8 +97,8 @@ public class ClientHandler implements Runnable {
                 return false;
             }
             case "/users" -> {
-                send("Users online (" + server.getUserList().size() + "): "
-                        + String.join(", ", server.getUserList()));
+                List<String> users = server.getUserList();
+                send("Users online (" + users.size() + "): " + String.join(", ", users));
                 return true;
             }
             case "/help" -> {

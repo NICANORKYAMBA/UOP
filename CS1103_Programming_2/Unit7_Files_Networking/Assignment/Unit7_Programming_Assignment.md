@@ -84,6 +84,24 @@ the server's goodbye, and exits. If the server goes away, the listener reports t
 closed the connection. If no server is running at all, the client prints a clear message
 instead of a stack trace.
 
+### How One Message Travels
+
+The steps below follow a single message from Alice's keyboard to every screen, naming the method
+that does each step.
+
+1. Alice types "Hello" and presses Enter. The main thread of her ChatClient reads the line from
+the keyboard and writes it to the socket with toServer.println().
+2. On the server, Alice's ClientHandler thread is waiting in in.readLine(). It receives "Hello"
+and passes it to handleLine(), which sees that it is not a command.
+3. handleLine() calls server.broadcast() with the text "[10:01:30] Alice#1: Hello".
+4. broadcast() loops over every ClientHandler in connectedUsers and calls send() on each, which
+writes the line to that user's socket.
+5. In every client, including Alice's, the listener thread is waiting in fromServer.readLine(). It
+receives the line and prints it on the screen.
+
+Because the server reads from each client on that client's own thread, Bob can be sending a
+message at the same moment, and both messages are delivered.
+
 ### The Text-Based User Interface and Protocol
 
 The protocol is plain text, one message per line. The server greets each client with its user ID,
@@ -134,7 +152,7 @@ shown with a time stamp and the sender's name and ID.
 | Send messages to the server, which broadcasts them | ChatClient main thread, then ChatServer.broadcast |
 | Receive messages from other users | ChatClient listener thread |
 | Simple text-based user interface | Prompts, commands, time stamps, join and leave notices (Figures 3 and 4) |
-| Well-commented source code | Javadoc on every class and method |
+| Well-commented source code | Javadoc on every class, method, and field; javac -Xdoclint:all reports zero warnings |
 | README file | README.md and README.txt in the Assignment folder (also summarized below) |
 
 ## Testing

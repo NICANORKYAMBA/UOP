@@ -3,6 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,13 +24,20 @@ public class ChatServer {
     /** Port used when none is given on the command line. */
     public static final int DEFAULT_PORT = 5000;
 
+    /** Format of the time stamps in chat messages and log lines. */
     private static final DateTimeFormatter CLOCK = DateTimeFormatter.ofPattern("HH:mm:ss");
 
+    /** Port to listen on; 0 lets the operating system choose a free one. */
     private final int port;
+    /** Source of unique user IDs; thread-safe, and IDs are never reused. */
     private final AtomicInteger nextUserId = new AtomicInteger(1);
+    /** Everyone who is online, keyed by user ID; safe to use from many threads. */
     private final Map<Integer, ClientHandler> connectedUsers = new ConcurrentHashMap<>();
+    /** Thread pool that runs one ClientHandler per connected client. */
     private final ExecutorService clientThreads = Executors.newCachedThreadPool();
+    /** The listening socket, created by {@link #open()}. */
     private ServerSocket serverSocket;
+    /** True while the server accepts clients; volatile so stop() is seen by serve(). */
     private volatile boolean running;
 
     /**
@@ -120,7 +128,7 @@ public class ChatServer {
      */
     List<String> getUserList() {
         return connectedUsers.values().stream()
-                .sorted((a, b) -> Integer.compare(a.getUserId(), b.getUserId()))
+                .sorted(Comparator.comparingInt(ClientHandler::getUserId))
                 .map(ClientHandler::getDisplayName)
                 .toList();
     }
