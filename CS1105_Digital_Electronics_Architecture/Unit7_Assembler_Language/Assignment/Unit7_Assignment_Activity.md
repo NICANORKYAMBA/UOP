@@ -319,8 +319,8 @@ counts.
 function-call overhead beyond call and ret, and its running time is the same every time. Assembly
 is still used where timing is critical, such as device drivers, interrupt handlers, and real-time
 systems, where an interrupt may fire thousands of times per second and must finish in as few cycles
-as possible (Assembly language, 2021). Thakkar (2022) also notes that some programmers choose
-assembly when a short program is needed and execution time matters.
+as possible (Assembly language, 2021). Thakkar (2022) also points out that a few programmers
+still pick assembly for short programs where every bit of execution speed counts.
 
 **3. Smaller code.** My hand-written stack_push is 31 bytes of machine code. The same logic written
 in C and compiled by GCC with -O2 came to 40 bytes, mostly because the compiler has to pass the
