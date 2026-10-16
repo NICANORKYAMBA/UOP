@@ -14,7 +14,7 @@ memory addresses, and instructions. For this assignment I built a stack by hand 
 language and used it to solve three classic problems: reversing a string, testing whether a string
 is a palindrome, and checking that the brackets ( ), [ ], and { } in a line of text are balanced.
 The program was written for NASM, the assembler used in the asmtutor.com tutorials from this
-unit's readings, and runs as a 32-bit Linux program (NASM Assembly Language Tutorials, n.d.).
+unit's readings, and runs as a 32-bit Linux program (*NASM Assembly Language Tutorials*, n.d.).
 
 This paper covers the three parts of the assignment in order. The first part shows the program and
 the data structure. The second part explains the design and development process and what it
@@ -167,6 +167,20 @@ Table 3 traces the stack while checking the balanced string "{[()()]}".
 For "([)]" the same steps push "(" and "[", but at position 3 the ")" pops "[" instead of "(",
 so the program prints: NOT balanced: ')' at position 3 does not match '['.
 
+### Efficiency of the Design
+
+- **Time.** Each character is read exactly once, and every push and pop takes constant time. On
+the success path, stack_push and stack_pop each execute exactly 10 instructions (7 when they report
+an error), which I confirmed by disassembling the program with objdump. All three problems
+therefore run in linear time, O(n), in the length of the string.
+- **Memory.** The stack uses a fixed 68 bytes and the reversed copy a fixed 65 bytes. There is no
+heap allocation, and the input string is never copied.
+- **Small choices that add up.** Loop variables stay in registers (ESI for the string pointer, ECX
+for the position) instead of memory. Errors are reported in the carry flag, so checking one costs
+a single jc instruction. The palindrome test reuses the reversed copy instead of running the stack
+a second time, and check_brackets stops at the first error instead of scanning the rest of the
+string.
+
 ## Part 2: Design and Development Process
 
 ### Step 1: Defining the Problem and Choosing the Structure
@@ -181,8 +195,8 @@ structures that an assembly programmer builds directly in memory, and that is th
 
 I chose NASM on 32-bit x86 Linux because it matches the asmtutor.com lessons in our reading list,
 which use the same build commands (nasm -f elf, then ld -m elf_i386) and the same int 80h system
-calls for output and exit (NASM Assembly Language Tutorials, n.d.). The assembler translates each
-mnemonic, such as mov or cmp, into machine code (Assembly language, 2021), and the linker then
+calls for output and exit (*NASM Assembly Language Tutorials*, n.d.). The assembler translates each
+mnemonic, such as mov or cmp, into machine code ("Assembly Language," 2021), and the linker then
 turns that object file into a program the operating system can run.
 
 ### Step 3: Designing the Data Layout and the Interfaces
@@ -298,7 +312,7 @@ Writing both side by side made the hardware stack easy to understand, because it
 same LIFO rule as mine.
 - **Programs talk to the operating system through system calls.** Printing one line means
 loading a system call number into EAX, the arguments into EBX, ECX, and EDX, and executing int 80h
-(NASM Assembly Language Tutorials, n.d.).
+(*NASM Assembly Language Tutorials*, n.d.).
 - **Program translation became concrete.** I wrote the same push operation in C and asked GCC to
 translate it with optimization turned on (gcc -m32 -O2 -S). The compiler produced almost the same
 compare, store, and increment. This matches the code generation phase, where a compiler maps its
@@ -312,14 +326,14 @@ carry flag.
 **1. Complete control over memory.** In assembly I decide exactly where every byte lives and how
 big the structure is: 64 bytes of items and a 4-byte counter, with no object headers and no hidden
 allocation. This matters most on small embedded devices. Mahout (2012) teaches these structures on
-the ARM Cortex-M3, a microcontroller core, where memory is measured in kilobytes and every byte
-counts.
+the ARM Cortex-M3, a processor core built for microcontrollers, where memory is small and has to
+be planned byte by byte.
 
 **2. Speed and predictable timing.** A push in my program is about ten instructions with no
 function-call overhead beyond call and ret, and its running time is the same every time. Assembly
 is still used where timing is critical, such as device drivers, interrupt handlers, and real-time
 systems, where an interrupt may fire thousands of times per second and must finish in as few cycles
-as possible (Assembly language, 2021). Thakkar (2022) also points out that a few programmers
+as possible ("Assembly Language," 2021). Thakkar (2022) also points out that a few programmers
 still pick assembly for short programs where every bit of execution speed counts.
 
 **3. Smaller code.** My hand-written stack_push is 31 bytes of machine code. The same logic written
@@ -327,14 +341,14 @@ in C and compiled by GCC with -O2 came to 40 bytes, mostly because the compiler 
 argument through memory to follow the calling convention. The gap is small, which shows how good
 modern compilers are, but in boot code or firmware stored in a small ROM those bytes add up.
 Assembly is still typically used for boot code that runs before the operating system starts
-(Assembly language, 2021).
+("Assembly Language," 2021).
 
 **4. Access to processor features that high-level languages hide.** I used the carry flag as a
 cheap error signal, which C or Java cannot do directly. Real systems use this kind of access too.
 The Linux kernel's memcpy, the routine that copies blocks of memory for the whole operating system,
 is written in x86 assembly so it can use the rep movsb string instruction directly (Linux kernel
 developers, n.d.). Encryption code is another example, because it relies on bit rotation
-instructions that many compilers do not expose (Assembly language, 2021).
+instructions that many compilers do not expose ("Assembly Language," 2021).
 
 **5. Understanding what high-level code really does.** Even if I never write production code in
 assembly, I now know what a Stack class, a function call, and an array index cost on real hardware.
@@ -367,7 +381,7 @@ kernels need, even though most software is now written in high-level languages.
 
 Assembly language. (2021, June 18). In *CodeDocs*. https://codedocs.org/what-is/assembly-language
 
-Bhumika. (2022, April 9). *What is the phases of compiler?* Goseeko. Archived at
+Bhumika. (2022, April 9). *What is the phases of compiler?* Goseeko.
 https://web.archive.org/web/20230331094608/https://www.goseeko.com/blog/what-is-the-phases-of-compiler/
 
 Kann, C. W., III. (2021, March 21). 2.5: Designing an assembly language. In *Implementing a
@@ -378,9 +392,9 @@ Linux kernel developers. (n.d.). *memcpy_64.S* [Source code]. GitHub.
 https://github.com/torvalds/linux/blob/master/arch/x86/lib/memcpy_64.S
 
 Mahout, V. (2012). Algorithmic and data structures. In *Assembly language programming: ARM
-Cortex-M3* (pp. 87-118). ISTE; John Wiley & Sons. https://doi.org/10.1002/9781118562123.ch6
+Cortex-M3* (pp. 87–118). ISTE; John Wiley & Sons. https://doi.org/10.1002/9781118562123.ch6
 
-NASM assembly language tutorials. (n.d.). asmtutor.com. https://asmtutor.com/
+*NASM assembly language tutorials*. (n.d.). asmtutor.com. https://asmtutor.com/
 
 Thakkar, M. (2022, May 3). *What is assembly language? A quick overview*. InfoSec Insights.
 https://sectigostore.com/blog/what-is-assembly-language/

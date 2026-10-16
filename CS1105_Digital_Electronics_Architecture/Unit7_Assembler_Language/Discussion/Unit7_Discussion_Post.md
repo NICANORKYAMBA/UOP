@@ -6,7 +6,7 @@
 
 For this training project, imagine translating a small Python program that reads student marks,
 calculates averages and grades, and prints a report into an equivalent Java program. Software that
-converts code from one high-level language into another is known as a transcompiler (Compiler,
+converts code from one high-level language into another is known as a transcompiler ("Compiler,"
 2021). Doing the job by hand shows that the hard part is keeping the meaning
 the same, not copying the syntax.
 
@@ -40,7 +40,7 @@ in Python 3.14 and Java 21:
 - **Integer division:** -7 // 2 is -4 in Python, which always rounds toward minus infinity (Python
 Software Foundation, n.d.-a), but -7 / 2 is -3 in Java, which rounds toward zero (Gosling et al.,
 2023, §15.17.2). A grade calculator with negative adjustments would quietly give different results.
-- **Overflow:** Python integers have unlimited precision, so 2**31 is simply 2147483648 (Python
+- **Overflow:** Python integers have unlimited precision, so 2\*\*31 is simply 2147483648 (Python
 Software Foundation, n.d.-a). In Java, Integer.MAX_VALUE + 1 wraps to -2147483648, because Java's
 integer operators "do not indicate overflow or underflow in any way" (Gosling et al., 2023,
 §4.2.2).
@@ -84,7 +84,7 @@ Word count: 741
 BGZDevTips. (2016, June 12). *Short lesson - The compilation/translation process* [Video]. YouTube.
 https://www.youtube.com/watch?v=5ErQnht_Ct0
 
-Bhumika. (2022, April 9). *What is the phases of compiler?* Goseeko. Archived at
+Bhumika. (2022, April 9). *What is the phases of compiler?* Goseeko.
 https://web.archive.org/web/20230331094608/https://www.goseeko.com/blog/what-is-the-phases-of-compiler/
 
 Compiler. (2021, June 18). In *CodeDocs*. https://codedocs.org/what-is/compiler

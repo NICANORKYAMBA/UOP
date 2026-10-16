@@ -84,11 +84,11 @@ stack_push:
     mov     [stack_data + ebx], al  ; store the item in the next free slot
     inc     ebx
     mov     [stack_top], ebx
-    clc
+    clc                             ; CF = 0: success
     pop     ebx
     ret
 .full:
-    stc
+    stc                             ; CF = 1: overflow
     pop     ebx
     ret
 
@@ -106,7 +106,7 @@ stack_pop:
     pop     ebx
     ret
 .empty:
-    stc
+    stc                             ; CF = 1: underflow
     pop     ebx
     ret
 

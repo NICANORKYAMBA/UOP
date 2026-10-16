@@ -60,7 +60,7 @@ def base(doc):
 
 
 def run(p, text, bold=False, italic=False):
-    r = p.add_run(text)
+    r = p.add_run(text.replace("\x00", "*"))
     r.bold, r.italic = bold, italic
     r.font.name = FONT
     r.font.size = Pt(12)
@@ -93,7 +93,8 @@ def hyperlink(p, url):
 
 
 def inline(p, text):
-    """Write text with **bold**, *italic*, and clickable URLs."""
+    """Write text with **bold**, *italic*, and clickable URLs. \\* is a literal asterisk."""
+    text = text.replace("\\*", "\x00")
     for chunk in re.split(r"(\*\*[^*]+\*\*)", text):
         if chunk.startswith("**") and chunk.endswith("**"):
             run(p, chunk[2:-2], bold=True)
