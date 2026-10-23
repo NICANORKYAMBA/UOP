@@ -1,0 +1,26 @@
+digraph G {
+  rankdir=LR; nodesep=0.3; ranksep=0.7;
+  node [fontname="Helvetica", fontsize=10.5, shape=box, style="rounded,filled"];
+  edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_view { label="View (Swing, event thread)"; fontname="Helvetica"; style="rounded,dashed";
+    app [fillcolor="#dae8fc", label="WeatherApp (JFrame)\nsearch bar, unit choices,\ncurrent weather, forecast row,\nhistory list, status bar"];
+    icon [fillcolor="#dae8fc", label="WeatherIcon\nJava 2D drawings"];
+    tod [fillcolor="#dae8fc", label="TimeOfDay\nbackground colours"];
+  }
+  subgraph cluster_model { label="Model"; fontname="Helvetica"; style="rounded,dashed";
+    rep [fillcolor="#fff2cc", label="WeatherReport\nLocation, CurrentWeather,\nList<DailyForecast>"];
+    hist [fillcolor="#fff2cc", label="SearchHistory\n10 newest entries\nwith timestamps"];
+    units [fillcolor="#fff2cc", label="TemperatureUnit\nWindSpeedUnit\n(conversions)"];
+    codes [fillcolor="#fff2cc", label="WeatherCodes\nWMO code -> words, icon"];
+  }
+  subgraph cluster_data { label="Data access (background thread)"; fontname="Helvetica"; style="rounded,dashed";
+    svc [fillcolor="#d5e8d4", label="WeatherService\nvalidate input, geocode,\nforecast request, cache,\noptional API key, errors"];
+    json [fillcolor="#d5e8d4", label="Json\nsmall parser"];
+    ex [fillcolor="#f8cecc", label="WeatherException\nmessage for the user"];
+  }
+  api [shape=cylinder, fillcolor="#eeeeee", label="Open-Meteo\nGeocoding API\nForecast API"];
+  app -> svc [label=" SwingWorker"];
+  svc -> api [label=" HTTPS GET"];
+  svc -> json; svc -> rep [label=" builds"]; svc -> ex [label=" throws", style=dashed];
+  app -> rep [label=" shows"]; app -> hist; app -> units; app -> icon; app -> tod; icon -> codes;
+}
