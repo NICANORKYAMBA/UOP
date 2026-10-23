@@ -66,6 +66,11 @@ solutions; it is **inconsistent** only when the work leads to a false statement 
 | Independent? | **No, it is dependent** | Equation (3) is 5 times equation (1), so only two equations are independent |
 | Number of solutions | **Infinitely many** | Two independent equations cannot fix three unknowns |
 
+In short, the task asks whether the system is consistent and independent: it **is consistent**
+but **is not independent**. An independent system with three unknowns needs three equations that
+each add new information, and here the third statement only repeats the first. That is why one
+toy's price can be found exactly while the other two can only be found as a total.
+
 ### (iii) The Cost of Each Toy
 
 Although the system is dependent, it still fixes the price of the special toy exactly.
@@ -188,9 +193,9 @@ Row 1:   x - y + z = 4  ->   x = 4 + y - z = 4 - 7/2 - 0 = 1/2
 **Check in all three original equations:**
 
 ```
- x - y +  z = 0.5 + 3.5 + 0        = 4   ✓
-5x - y +  z = 2.5 + 3.5 + 0        = 6   ✓
-3x - y + 5z = 1.5 + 3.5 + 0        = 5   ✓
+ x - y +  z = 0.5 + 3.5 + 0        = 4   correct
+5x - y +  z = 2.5 + 3.5 + 0        = 6   correct
+3x - y + 5z = 1.5 + 3.5 + 0        = 5   correct
 ```
 
 This system is consistent and independent, with exactly one solution, because elimination left a
@@ -254,8 +259,8 @@ x = -1/3:   y = 4 + 1/3   = 13/3     ->  point (-1/3, 13/3) ≈ (-0.333, 4.333)
 
 | Point | Equation (1): x + y | Equation (2): x² - 2xy - 3 |
 |---|---|---|
-| (3, 1) | 3 + 1 = 4 ✓ | 9 - 2(3)(1) - 3 = 9 - 6 - 3 = 0 ✓ |
-| (-1/3, 13/3) | -1/3 + 13/3 = 12/3 = 4 ✓ | 1/9 - 2(-1/3)(13/3) - 3 = 1/9 + 26/9 - 27/9 = 0 ✓ |
+| (3, 1) | 3 + 1 = 4 (correct) | 9 - 2(3)(1) - 3 = 9 - 6 - 3 = 0 (correct) |
+| (-1/3, 13/3) | -1/3 + 13/3 = 12/3 = 4 (correct) | 1/9 - 2(-1/3)(13/3) - 3 = 1/9 + 26/9 - 27/9 = 0 (correct) |
 
 Both points satisfy both equations, so they are exactly the points where the line meets the
 curve.

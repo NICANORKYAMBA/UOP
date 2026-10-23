@@ -9,7 +9,8 @@ A system of linear equations is classified by how many solutions it has, which i
 is how many points its lines share (Abramson, 2021, Section 11.1).
 
 **Consistent.** A consistent system has at least one solution: its lines meet somewhere.
-Every consistent system is either independent or dependent.
+Every consistent system is either independent or dependent, so both of the next two examples are
+consistent systems.
 
 **Independent (one solution).** The lines have different slopes and cross at exactly one point.
 
@@ -31,7 +32,7 @@ Elimination shows the type quickly (Mathispower4u, 2009): a single value for eac
 independent, a true statement such as 0 = 0 means dependent, and a false statement such as
 0 = 3 means inconsistent.
 
-Word count: 231
+Word count: 241
 
 ## References
 
