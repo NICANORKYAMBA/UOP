@@ -1,0 +1,18 @@
+digraph G {
+  rankdir=TB; nodesep=0.5; ranksep=0.28;
+  node [fontname="Helvetica", fontsize=10.5, shape=box, style="rounded,filled", fillcolor="#dae8fc"];
+  edge [fontname="Helvetica", fontsize=9];
+  src  [label="Source\nmain.asm, lib.asm\n(names: _start, done,\ncounter, print_msg)", fillcolor="#eeeeee"];
+  p1   [label="Assembler pass 1\nbuild SYMBOL TABLE\nlabel -> offset\n(done = 0x0E)"];
+  p2   [label="Assembler pass 2\nemit machine code\nlocal labels filled in\n(jmp done = EB 01)"];
+  obj  [label="Object files\ndefined: T _start\nundefined: U print_msg\n+ relocation entries", fillcolor="#fff2cc"];
+  ld   [label="Linker\n1. resolve: match each U\n    to one definition\n2. relocate: patch final\n    addresses (call -> E8 1B..)", fillcolor="#d5e8d4"];
+  exe  [label="Executable\nevery symbol has\nan absolute address\n(print_msg = 0x08049020)", fillcolor="#fff2cc"];
+  load [label="Loader\ncopies code and data\ninto memory, sets PC\nto _start", fillcolor="#d5e8d4"];
+  cpu  [label="CPU\nfetch: PC on address bus\ndecode: opcode bits\nselect the operation\nexecute", fillcolor="#f8cecc"];
+  src -> p1 -> p2 -> obj -> ld -> exe -> load -> cpu;
+  err1 [shape=note, fillcolor="#ffffff", label="no definition anywhere\n-> 'undefined reference'"];
+  err2 [shape=note, fillcolor="#ffffff", label="two global definitions\n-> 'multiple definition'\n(weak loses to strong)"];
+  ld -> err1 [style=dashed, arrowhead=none];
+  ld -> err2 [style=dashed, arrowhead=none];
+}
