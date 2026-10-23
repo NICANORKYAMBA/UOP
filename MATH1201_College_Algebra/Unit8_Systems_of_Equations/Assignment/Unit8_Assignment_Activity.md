@@ -198,7 +198,104 @@ nonzero number in every diagonal position.
 
 ## Task 3: A Nonlinear System
 
-[TASK 3 PENDING: waiting for the equations]
+Solve and verify the system:
+
+```
+x + y = 4                (1)   a straight line
+x² - 2xy - 3 = 0         (2)   a curve (a hyperbola)
+```
+
+### Algebraic Solution (Substitution)
+
+For a system with one linear equation, the substitution method works best: solve the linear
+equation for one variable, substitute it into the nonlinear equation, solve, and check both
+equations (Abramson, 2021, Section 11.3; Mathispower4u, 2012).
+
+**Step 1. Solve the line for y.**
+
+```
+x + y = 4   ->   y = 4 - x
+```
+
+**Step 2. Substitute into equation (2).**
+
+```
+x² - 2x(4 - x) - 3 = 0
+x² - 8x + 2x² - 3 = 0
+3x² - 8x - 3 = 0
+```
+
+**Step 3. Solve the quadratic by factoring.** Two numbers that multiply to 3 × (-3) = -9 and add
+to -8 are -9 and 1:
+
+```
+3x² - 9x + x - 3 = 0
+3x(x - 3) + 1(x - 3) = 0
+(3x + 1)(x - 3) = 0
+x = 3   or   x = -1/3
+```
+
+(The quadratic formula agrees: x = [8 ± √(64 + 36)] / 6 = (8 ± 10) / 6, so x = 3 or x = -1/3.)
+
+**Step 4. Find y for each x using y = 4 - x.**
+
+```
+x = 3:      y = 4 - 3     = 1        ->  point (3, 1)
+x = -1/3:   y = 4 + 1/3   = 13/3     ->  point (-1/3, 13/3) ≈ (-0.333, 4.333)
+```
+
+**Solution: (3, 1) and (-1/3, 13/3).**
+
+### Algebraic Verification
+
+**Table 2**
+
+*Checking Both Points in Both Equations*
+
+| Point | Equation (1): x + y | Equation (2): x² - 2xy - 3 |
+|---|---|---|
+| (3, 1) | 3 + 1 = 4 ✓ | 9 - 2(3)(1) - 3 = 9 - 6 - 3 = 0 ✓ |
+| (-1/3, 13/3) | -1/3 + 13/3 = 12/3 = 4 ✓ | 1/9 - 2(-1/3)(13/3) - 3 = 1/9 + 26/9 - 27/9 = 0 ✓ |
+
+Both points satisfy both equations, so they are exactly the points where the line meets the
+curve.
+
+### Graphical Verification
+
+Solving equation (2) for y shows what the curve looks like:
+
+```
+x² - 3 = 2xy   ->   y = (x² - 3) / (2x) = x/2 - 3/(2x)
+```
+
+This is a **hyperbola**. It is undefined at x = 0, so the y-axis is a vertical asymptote, and for
+large |x| the term 3/(2x) shrinks to 0, so the curve approaches the slanted line y = x/2. It has
+two branches, one on each side of the y-axis. The line x + y = 4 slopes downward and crosses each
+branch once, which is why there are exactly two intersection points, one on each branch.
+
+Figure 1 shows both graphs drawn in GeoGebra, with the intersection points found by GeoGebra's
+Intersect command: A = (3, 1) on the right branch and B ≈ (-0.33, 4.33) on the left branch. The
+graph agrees with the algebraic solution.
+
+**Figure 1**
+
+*The Line x + y = 4 and the Hyperbola x² - 2xy - 3 = 0, Meeting at A(3, 1) and B(-1/3, 13/3)*
+
+[FIGURE figures/fig1_task3.png]
+
+## Summary of Answers
+
+**Table 3**
+
+*Final Answers*
+
+| Task | Answer |
+|---|---|
+| 1 (i) | a + b + c = 25; c = 3(a + b) + 20; 5(a + b + c) = 125 |
+| 1 (ii) | Consistent, dependent (not independent), infinitely many solutions |
+| 1 (iii) | Special toy $23.75; the other two together $1.25 (individual prices not determined) |
+| 2 | x = 1/2, y = -7/2, z = 0 |
+| 3 | (3, 1) and (-1/3, 13/3), confirmed algebraically and on the GeoGebra graph |
 
 ## References
 
@@ -207,3 +304,6 @@ https://openstax.org/details/books/algebra-and-trigonometry-2e
 
 Mathispower4u. (2010, August 22). *Augmented matrices: Reduced row echelon form* [Video]. YouTube.
 https://www.youtube.com/watch?v=-aAucWVD--M
+
+Mathispower4u. (2012, September 10). *Ex 1: Solve a system of nonlinear equations (substitution)*
+[Video]. YouTube. https://www.youtube.com/watch?v=VI4V_X_ZZLc
