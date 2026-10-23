@@ -18,7 +18,9 @@ result. To see this, I built a small Logisim circuit where two inputs drive one 
 tunnels labelled bus. When both inputs were 0 or both were 1, the net resolved cleanly. When one
 was 0 and the other 1, the wire turned red and the output showed E, an error value, which
 Logisim's documentation explains as a conflict between components driving opposite values onto
-one wire (Burch, n.d.-a). A circuit whose symbols cannot be resolved cannot be trusted, because
+one wire (Burch, n.d.-a). Resolution is also what lets many parts share one bus: an output that is
+switched off "floats", and a floating value combined with a real 0 or 1 simply resolves to that 0
+or 1 (Burch, n.d.-b). A circuit whose symbols cannot be resolved cannot be trusted, because
 everything connected to that wire receives meaningless data.
 
 ## How Digital Language, Microprocessor Smarts, and Assembly Fit Together
@@ -38,8 +40,9 @@ every label in a symbol table during a first pass, then uses it to assemble the 
 second pass (*Assembly and Linking*, n.d.). The linker then combines all object files and resolves
 every memory reference into a final address (Bhargav, 2024).
 
-This layering is what makes computers both fast and smart. All the name-to-number work happens
-once, before the program runs, so the processor never wastes time looking anything up. In a
+This layering is what makes computers both fast and smart. In a statically linked program, all the
+name-to-number work happens once, before the program runs, so the processor never wastes time
+looking anything up. In a
 two-file assembly program I linked this week, the instruction call print_msg went from the
 placeholder bytes E8 FC FF FF FF in the object file to E8 1B 00 00 00 in the executable: the
 linker had computed the 0x1B-byte distance to print_msg. When the program runs, the processor
@@ -66,7 +69,7 @@ designed circuits into one picture that works.
 linking) or when it starts running (dynamic linking with shared libraries). Which would you
 choose for software on a small embedded microprocessor, and why?
 
-Word count: 685
+Word count: 727
 
 ## References
 

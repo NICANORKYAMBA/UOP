@@ -17,6 +17,28 @@ summarizes its key principles, and shows it working in practice with examples th
 ran myself: a Logisim circuit, a two-file assembly program, and a small C program. Every output
 shown below is real.
 
+### What Symbol Resolution Means
+
+**Symbol resolution is the process of matching every use of a name (a reference) to exactly one
+meaning (a definition), and then replacing the name with the value, address, or connection that
+the hardware actually uses.** It always answers the same two questions: which definition does this
+name refer to, and what number or wire does that definition stand for? Table 1 gives the terms
+used in the rest of this lesson.
+
+**Table 1**
+
+*Key Terms for Beginners*
+
+| Term | Meaning | Example from this paper |
+|---|---|---|
+| Symbol | A name for a location, value, or signal | counter, print_msg, the wire label bus |
+| Definition | The one place where a symbol is given its meaning | print_msg: in lib.asm |
+| Reference | A place where a symbol is used | call print_msg in main.asm |
+| Symbol table | The assembler's list of every symbol and its address | done = offset 0x0E |
+| Linker | The program that joins object files and resolves names across them | ld |
+| Relocation | Writing a symbol's final address into the machine code | call becomes E8 1B 00 00 00 |
+| Net | A set of connected points in a circuit that carries one value | all tunnels labelled bus |
+
 ## Part 1: Why Symbol Resolution Is Essential
 
 ### In Digital Systems
@@ -25,8 +47,8 @@ In digital logic, the most basic symbols are the values on a wire: 0, 1, and in 
 floating "nothing is driving this" value. Larger circuits also use names. Logisim's tunnel
 component, for example, connects every point that carries the same label, so a signal can reach
 a distant part of the circuit without a long wire (Burch, n.d.-b). The simulator must therefore
-resolve two things on every clock tick: which points belong to the same named net, and what single
-value that net carries when several components drive it. If two outputs place different values on
+resolve two things whenever a value in the circuit changes: which points belong to the same named
+net, and what single value that net carries when several components drive it. If two outputs place different values on
 the same wire, the value cannot be resolved, and Logisim shows the wire in red with an error value
 (Burch, n.d.-a). Correct resolution is what makes a wire
 carry exactly one meaningful value.
@@ -62,20 +84,20 @@ one working executable. Figure 1 shows the whole path a symbol travels.
 
 ## Part 2: Key Principles of Symbol Resolution
 
-**Table 1**
+**Table 2**
 
 *Key Principles of Symbol Resolution*
 
 | Principle | What it means | Where it applies |
 |---|---|---|
-| 1. A symbol stands for an address or value, not for the data itself | In LDR r1, =num, the label num means the address where 5 is stored, not 5 (Kann, 2021, Section 4.4) | Assembly, microprocessor |
+| 1. A label names a location, not what is stored there | In LDR r1, =num, the label num means the address where 5 is stored, not 5 itself (Kann, 2021, Section 4.4) | Assembly, microprocessor |
 | 2. Every reference needs exactly one definition | One definition: resolved. None: "undefined reference". Two global ones: "multiple definition" (Arun, 2016) | Linker |
 | 3. A symbol table records every name | The assembler stores each label and its address in a symbol table, and passes it on so the linker can connect definitions and references (*Assembly and Linking*, n.d.) | Assembler, linker |
 | 4. Two passes handle forward references | Pass 1 assigns an address to every label; pass 2 assembles the instructions using those addresses (*Assembly and Linking*, n.d.) | Assembler |
-| 5. Scope decides who can see a symbol | Local labels are resolved inside one file; global (exported) and extern (imported) symbols are resolved across files | Assembler, linker |
+| 5. Scope decides who can see a symbol | Local labels are resolved inside one file; EXTERN declares a symbol defined in another module, and the defining module must export it with GLOBAL (NASM Development Team, n.d., Sections 8.5 and 8.7) | Assembler, linker |
 | 6. Binding strength settles conflicts | A global definition silently overrides a weak one; two global definitions are a fatal error (Arun, 2016) | Linker |
 | 7. Resolution and relocation go together | Once each symbol is matched, the linker patches the final addresses into the machine code (Bhargav, 2024) | Linker |
-| 8. Errors must stop the build, not the running program | An unresolved name is reported before the program ever runs | Assembler, linker |
+| 8. Errors must stop the build, not the running program | An unresolved or duplicated name is reported before the program ever runs, as Examples 3 and 4 show | Assembler, linker |
 | 9. One value per net | A named wire must have one resolvable value; conflicting drivers produce an error value (Burch, n.d.-a) | Digital logic |
 
 A few of these principles need more explanation.
@@ -116,7 +138,7 @@ a third tunnel labelled bus feeds an output. No wire joins them directly; Logisi
 only because the labels match. I then ran the circuit from the command line for every input
 combination.
 
-**Table 2**
+**Table 3**
 
 *How Logisim Resolved the Value of the Wire Named bus*
 
@@ -198,7 +220,7 @@ $ echo $?
 **Resolution followed by relocation.** Comparing the machine code before and after linking shows
 the linker writing the resolved addresses into the instructions:
 
-**Table 3**
+**Table 4**
 
 *Machine Code Before and After Linking*
 
@@ -251,7 +273,7 @@ starts. Every step depends on symbol resolution having produced the right number
 resolves the opcode symbol into an operation, and the address bus carries the address that the
 linker resolved (WatElectronics, 2020).
 
-**Table 4**
+**Table 5**
 
 *Summary: Which Part of the System Resolves Which Symbols*
 
@@ -303,6 +325,9 @@ edition*. Open Educational Resources, 8. Gettysburg College. https://cupola.gett
 
 Lithmee. (2018, November 20). *What is the difference between single pass and multipass compiler*.
 Pediaa. https://pediaa.com/what-is-the-difference-between-single-pass-and-multipass-compiler/
+
+NASM Development Team. (n.d.). Chapter 8: Assembler directives. In *NASM: The Netwide Assembler*.
+https://www.nasm.us/doc/nasmdoc8.html
 
 WatElectronics. (2020, April 27). *Microprocessor: Architecture, types, examples and its
 applications*. https://www.watelectronics.com/what-is-a-microprocessor-architecture-types-its-applications/
