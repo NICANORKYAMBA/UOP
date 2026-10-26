@@ -160,7 +160,7 @@ The proctored final exam covers all eight units. Study Part 1 until you can writ
 | A parabola meets a line in at most two points | True | Substitution gives a quadratic |
 | Independent system | Unique solution, lines meet at a point | Definition |
 
-## Part 3: Practice Exam (48 Questions) and Graded Quiz Review
+## Part 3: Practice Exam (48 Questions) and Real Quiz Review
 
 Write your answers on paper, then check them in Part 4.
 
@@ -722,6 +722,127 @@ Write your answers on paper, then check them in Part 4.
 - C. 2π/3
 - D. 2π
 
+### Self-Quizzes Units 1 to 3 (real questions)
+
+**79.** Unit 1: If f(x) = 3x + 2 and g(x) = x - 4, what is (f/g)(4)?
+
+- A. (3, 2, 4)
+- B. undefined
+- C. none of these
+- D. 0
+- E. 14
+
+**80.** Unit 1: Find the range of f(x) = 2 - √(2 - x).
+
+- A. the empty set
+- B. [-2, ∞)
+- C. (-∞, 2]
+- D. [2, ∞)
+
+**81.** Unit 1: g(x) = (x - 1)². Find the average rate of change on [-1, 2].
+
+- A. -2
+- B. -1
+- C. 1
+- D. 2
+- E. None of the above
+
+**82.** Unit 1: If f(x) = 2x + 1, what is the domain?
+
+- A. (2, 1]
+- B. [-∞, ∞]
+- C. (1, 2)
+- D. (∞, -∞)
+- E. (-∞, ∞)
+
+**83.** Unit 1: Find the range of f(x) = -√(2 - x).
+
+- A. [2, ∞)
+- B. (-∞, 0]
+- C. [0, ∞)
+- D. [-2, ∞)
+- E. the empty set
+
+**84.** Unit 2: Let f(x) = x² - 4 for x < 0. What is f⁻¹?
+
+- A. -√(x - 4), x > 4
+- B. -√(x - 4)
+- C. -√(x + 4)
+- D. -√(x + 4), x > -4
+- E. None of these
+
+**85.** Unit 2: If f(x) = 2x + 3 and g(x) = x - 5, what is g ∘ f?
+
+- A. 2x - 1
+- B. 2x + 2
+- C. 2x - 2
+- D. None of these
+- E. 2x + 1
+
+**86.** Unit 2: For f(x) = √(x + 5) + 2, what is the domain of f⁻¹?
+
+- A. (-∞, ∞)
+- B. (0, ∞)
+- C. (-∞, 0)
+- D. None of these
+- E. [2, ∞)
+
+**87.** Unit 2: If f(x) = 2x + 3 and g(x) = x² + x, what is g ∘ f?
+
+- A. 2x² + 2x + 3
+- B. 4x² + 14x + 12
+- C. None of these
+- D. x² + 3x + 3
+- E. 4x² + 12x + 9
+
+**88.** Unit 2: If f(x) = 2x + 3 and g(x) = x - 5, what is f ∘ g?
+
+- A. 2x - 10
+- B. 2x - 7
+- C. 2x - 15
+- D. None of these
+- E. 2x - 5
+
+**89.** Unit 3: What are the x-intercepts of f(x) = x² - 6?
+
+- A. (0, -6)
+- B. {6, -6}
+- C. (√6, 0) and (-√6, 0)
+- D. There are no intercepts
+- E. (6, 0) and (-6, 0)
+
+**90.** Unit 3: Where does the line y = 6 meet the parabola y = x² + x for x > 0?
+
+- A. (-2, 6)
+- B. (-1, 6)
+- C. (1, 6)
+- D. (2, 6)
+- E. None of these
+
+**91.** Unit 3: What is the equation of the line through (-1, 4) and (-2, 7)?
+
+- A. y = 3x + 1
+- B. y = -3x + 1
+- C. y = -3x + 7
+- D. y = 3x + 7
+- E. None of these
+
+**92.** Unit 3: A frog's jump is modelled by f(x) = -x² + 2x and it lands after 2 seconds. Maximum height?
+
+- A. 2
+- B. 0
+- C. 1
+- D. None of these.
+- E. The frog jumps into outer space.
+
+**93.** Unit 3: f(x) is a quadratic with vertex (1, -2) that opens up. Which is f?
+
+- A. x² - 2x - 1
+- B. x² - 2x + 1
+- C. x² + 2x - 1
+- D. x² + 2x + 1
+- E. None of these
+
 ## Part 4: Answer Key With Worked Solutions
 
 **1. A** ({(1, 2), (2, 4), (3, 6)}). A function gives each input exactly one output. Only the first set never repeats an x-value.
@@ -880,6 +1001,36 @@ Write your answers on paper, then check them in Part 4.
 
 **78. C** (2π/3). Remove full turns: 1560° - 4 × 360° = 120°. Then 120 × π/180 = 2π/3.
 
+**79. B** (undefined). (f/g)(4) = f(4)/g(4) = 14/0. Division by zero is undefined, so 4 is not in the domain of f/g.
+
+**80. C** ((-∞, 2]). √(2 - x) takes every value from 0 upward, so 2 minus it takes every value from 2 downward: (-∞, 2].
+
+**81. B** (-1). [g(2) - g(-1)] / (2 - (-1)) = (1 - 4) / 3 = -1.
+
+**82. E** ((-∞, ∞)). A line accepts every real number: (-∞, ∞). Infinity always takes a ROUND bracket, so [-∞, ∞] is wrong.
+
+**83. B** ((-∞, 0]). √(2 - x) ≥ 0, and the minus sign flips it to ≤ 0: (-∞, 0].
+
+**84. D** (-√(x + 4), x > -4). Swap: x = y² - 4, so y² = x + 4 and y = ±√(x + 4). The original x-values were negative, so the inverse outputs must be negative: take the minus root. Its domain is the range of f, x > -4.
+
+**85. C** (2x - 2). YOU MISSED THIS ONE. g ∘ f means g(f(x)): put the WHOLE f(x) into g. g(2x + 3) = (2x + 3) - 5 = 2x - 2. The answer 2x + 2 comes from adding instead of subtracting. Always write g(   ) first, then fill the brackets with f(x).
+
+**86. E** ([2, ∞)). Domain of f⁻¹ = range of f. √(x + 5) ≥ 0, so √(x + 5) + 2 ≥ 2: [2, ∞).
+
+**87. B** (4x² + 14x + 12). g(2x + 3) = (2x + 3)² + (2x + 3) = 4x² + 12x + 9 + 2x + 3 = 4x² + 14x + 12.
+
+**88. B** (2x - 7). f(g(x)) = f(x - 5) = 2(x - 5) + 3 = 2x - 10 + 3 = 2x - 7. Compare with g ∘ f = 2x - 2: the order matters.
+
+**89. C** ((√6, 0) and (-√6, 0)). Set f(x) = 0: x² = 6, x = ±√6. Intercepts are points with y = 0. (0, -6) is the y-intercept.
+
+**90. D** ((2, 6)). x² + x = 6, so x² + x - 6 = 0, (x + 3)(x - 2) = 0. With x > 0, x = 2: the point (2, 6).
+
+**91. B** (y = -3x + 1). Slope = (7 - 4)/(-2 - (-1)) = 3/(-1) = -3. Point-slope: y - 4 = -3(x + 1), so y = -3x + 1.
+
+**92. C** (1). The vertex is halfway through the flight: x = -b/(2a) = -2/(-2) = 1, and f(1) = -1 + 2 = 1.
+
+**93. A** (x² - 2x - 1). Vertex form (x - 1)² - 2 = x² - 2x + 1 - 2 = x² - 2x - 1.
+
 
 ## Part 5: Exam-Day Checklist
 
@@ -891,6 +1042,10 @@ Write your answers on paper, then check them in Part 4.
   It takes seconds and catches sign errors.
 - **Use the options:** with multiple choice, you can test each option in the equation when
   solving directly is slow.
+- **Your focus area:** three of your four misses across all the quizzes were composition and
+  inverses (Graded Quiz 3 Q3 and Q8, Self-Quiz 2 Q2). For g ∘ f, write g(   ) first and put the whole
+  f(x) inside. For an inverse, swap x and y, then undo each step in reverse with the opposite
+  operation. The domain of f⁻¹ is the range of f.
 - **Standard vs general form:** in this course "standard form" of a quadratic is a(x - h)² + k.
 - **Inverses:** undo each step in reverse with the opposite operation (x⁴ + 50 becomes
   (x - 50)^(1/4)); the domain of f⁻¹ is the range of f, so a linear function's inverse takes all

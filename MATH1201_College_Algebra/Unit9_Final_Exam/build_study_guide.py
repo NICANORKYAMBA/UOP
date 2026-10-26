@@ -12,10 +12,10 @@ Output: Final_Exam_Study_Guide.md, practice_questions.json
 import json
 from pathlib import Path
 
-from question_bank import GRADED_QUIZ_3, GRADED_QUIZ_6, QUESTIONS, UNIT_NAMES
+from question_bank import GRADED_QUIZ_3, GRADED_QUIZ_6, QUESTIONS, SELF_QUIZZES_1_TO_3, UNIT_NAMES
 
 HERE = Path(__file__).resolve().parent
-LETTERS = "ABCD"
+LETTERS = "ABCDE"
 
 
 def balanced(questions):
@@ -195,6 +195,10 @@ TIPS = """
   It takes seconds and catches sign errors.
 - **Use the options:** with multiple choice, you can test each option in the equation when
   solving directly is slow.
+- **Your focus area:** three of your four misses across all the quizzes were composition and
+  inverses (Graded Quiz 3 Q3 and Q8, Self-Quiz 2 Q2). For g ∘ f, write g(   ) first and put the whole
+  f(x) inside. For an inverse, swap x and y, then undo each step in reverse with the opposite
+  operation. The domain of f⁻¹ is the range of f.
 - **Standard vs general form:** in this course "standard form" of a quadratic is a(x - h)² + k.
 - **Inverses:** undo each step in reverse with the opposite operation (x⁴ + 50 becomes
   (x - 50)^(1/4)); the domain of f⁻¹ is the range of f, so a linear function's inverse takes all
@@ -208,7 +212,7 @@ TIPS = """
 
 def main():
     questions = balanced(QUESTIONS) + [
-        {"unit": u, "q": t, "options": list(o), "answer": a, "why": w} for (u, t, o, a, w) in GRADED_QUIZ_3 + GRADED_QUIZ_6
+        {"unit": u, "q": t, "options": list(o), "answer": a, "why": w} for (u, t, o, a, w) in GRADED_QUIZ_3 + GRADED_QUIZ_6 + SELF_QUIZZES_1_TO_3
     ]
     (HERE / "practice_questions.json").write_text(json.dumps(questions, ensure_ascii=False, indent=1))
 
@@ -228,7 +232,7 @@ def main():
         "algebra tool. Mark any question you miss and reread that unit's formulas.",
         FORMULAS,
         SELF_QUIZ,
-        f"## Part 3: Practice Exam ({len(QUESTIONS)} Questions) and Graded Quiz Review",
+        f"## Part 3: Practice Exam ({len(QUESTIONS)} Questions) and Real Quiz Review",
         "",
         "Write your answers on paper, then check them in Part 4.",
         "",

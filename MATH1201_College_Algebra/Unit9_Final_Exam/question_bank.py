@@ -294,12 +294,65 @@ GRADED_QUIZ_6 = [
      "Remove full turns: 1560° - 4 × 360° = 120°. Then 120 × π/180 = 2π/3."),
 ]
 
+# Real questions from the Unit 1, 2, and 3 Self-Quizzes, kept in their original option order.
+SELF_QUIZZES_1_TO_3 = [
+    (11, "Unit 1: If f(x) = 3x + 2 and g(x) = x - 4, what is (f/g)(4)?",
+     ["(3, 2, 4)", "undefined", "none of these", "0", "14"], 1,
+     "(f/g)(4) = f(4)/g(4) = 14/0. Division by zero is undefined, so 4 is not in the domain of f/g."),
+    (11, "Unit 1: Find the range of f(x) = 2 - √(2 - x).",
+     ["the empty set", "[-2, ∞)", "(-∞, 2]", "[2, ∞)"], 2,
+     "√(2 - x) takes every value from 0 upward, so 2 minus it takes every value from 2 downward: (-∞, 2]."),
+    (11, "Unit 1: g(x) = (x - 1)². Find the average rate of change on [-1, 2].",
+     ["-2", "-1", "1", "2", "None of the above"], 1,
+     "[g(2) - g(-1)] / (2 - (-1)) = (1 - 4) / 3 = -1."),
+    (11, "Unit 1: If f(x) = 2x + 1, what is the domain?",
+     ["(2, 1]", "[-∞, ∞]", "(1, 2)", "(∞, -∞)", "(-∞, ∞)"], 4,
+     "A line accepts every real number: (-∞, ∞). Infinity always takes a ROUND bracket, so [-∞, ∞] is wrong."),
+    (11, "Unit 1: Find the range of f(x) = -√(2 - x).",
+     ["[2, ∞)", "(-∞, 0]", "[0, ∞)", "[-2, ∞)", "the empty set"], 1,
+     "√(2 - x) ≥ 0, and the minus sign flips it to ≤ 0: (-∞, 0]."),
+    (11, "Unit 2: Let f(x) = x² - 4 for x < 0. What is f⁻¹?",
+     ["-√(x - 4), x > 4", "-√(x - 4)", "-√(x + 4)", "-√(x + 4), x > -4", "None of these"], 3,
+     "Swap: x = y² - 4, so y² = x + 4 and y = ±√(x + 4). The original x-values were negative, so the inverse "
+     "outputs must be negative: take the minus root. Its domain is the range of f, x > -4."),
+    (11, "Unit 2: If f(x) = 2x + 3 and g(x) = x - 5, what is g ∘ f?",
+     ["2x - 1", "2x + 2", "2x - 2", "None of these", "2x + 1"], 2,
+     "YOU MISSED THIS ONE. g ∘ f means g(f(x)): put the WHOLE f(x) into g. g(2x + 3) = (2x + 3) - 5 = 2x - 2. "
+     "The answer 2x + 2 comes from adding instead of subtracting. Always write g(   ) first, then fill the "
+     "brackets with f(x)."),
+    (11, "Unit 2: For f(x) = √(x + 5) + 2, what is the domain of f⁻¹?",
+     ["(-∞, ∞)", "(0, ∞)", "(-∞, 0)", "None of these", "[2, ∞)"], 4,
+     "Domain of f⁻¹ = range of f. √(x + 5) ≥ 0, so √(x + 5) + 2 ≥ 2: [2, ∞)."),
+    (11, "Unit 2: If f(x) = 2x + 3 and g(x) = x² + x, what is g ∘ f?",
+     ["2x² + 2x + 3", "4x² + 14x + 12", "None of these", "x² + 3x + 3", "4x² + 12x + 9"], 1,
+     "g(2x + 3) = (2x + 3)² + (2x + 3) = 4x² + 12x + 9 + 2x + 3 = 4x² + 14x + 12."),
+    (11, "Unit 2: If f(x) = 2x + 3 and g(x) = x - 5, what is f ∘ g?",
+     ["2x - 10", "2x - 7", "2x - 15", "None of these", "2x - 5"], 1,
+     "f(g(x)) = f(x - 5) = 2(x - 5) + 3 = 2x - 10 + 3 = 2x - 7. Compare with g ∘ f = 2x - 2: the order matters."),
+    (11, "Unit 3: What are the x-intercepts of f(x) = x² - 6?",
+     ["(0, -6)", "{6, -6}", "(√6, 0) and (-√6, 0)", "There are no intercepts", "(6, 0) and (-6, 0)"], 2,
+     "Set f(x) = 0: x² = 6, x = ±√6. Intercepts are points with y = 0. (0, -6) is the y-intercept."),
+    (11, "Unit 3: Where does the line y = 6 meet the parabola y = x² + x for x > 0?",
+     ["(-2, 6)", "(-1, 6)", "(1, 6)", "(2, 6)", "None of these"], 3,
+     "x² + x = 6, so x² + x - 6 = 0, (x + 3)(x - 2) = 0. With x > 0, x = 2: the point (2, 6)."),
+    (11, "Unit 3: What is the equation of the line through (-1, 4) and (-2, 7)?",
+     ["y = 3x + 1", "y = -3x + 1", "y = -3x + 7", "y = 3x + 7", "None of these"], 1,
+     "Slope = (7 - 4)/(-2 - (-1)) = 3/(-1) = -3. Point-slope: y - 4 = -3(x + 1), so y = -3x + 1."),
+    (11, "Unit 3: A frog's jump is modelled by f(x) = -x² + 2x and it lands after 2 seconds. Maximum height?",
+     ["2", "0", "1", "None of these.", "The frog jumps into outer space."], 2,
+     "The vertex is halfway through the flight: x = -b/(2a) = -2/(-2) = 1, and f(1) = -1 + 2 = 1."),
+    (11, "Unit 3: f(x) is a quadratic with vertex (1, -2) that opens up. Which is f?",
+     ["x² - 2x - 1", "x² - 2x + 1", "x² + 2x - 1", "x² + 2x + 1", "None of these"], 0,
+     "Vertex form (x - 1)² - 2 = x² - 2x + 1 - 2 = x² - 2x - 1."),
+]
+
 UNIT_NAMES = {
     1: "Functions I", 2: "Functions II", 3: "Linear and Quadratic Functions",
     4: "Polynomial and Rational Functions", 5: "Exponential and Logarithmic Functions",
     6: "Trigonometry I", 7: "Trigonometry II (Identities)", 8: "Systems of Equations",
     9: "Graded Quiz Unit 3 (real questions)",
     10: "Graded Quiz Unit 6 (real questions)",
+    11: "Self-Quizzes Units 1 to 3 (real questions)",
 }
 
 if __name__ == "__main__":

@@ -107,7 +107,7 @@ footer { color: var(--muted); font-size: .82rem; }
 <div class="wrap">
   <header class="intro">
     <h1>MATH 1201 Final Practice</h1>
-    <p>48 exam-style questions, six from each unit, plus the real questions from your graded quizzes, each with a worked solution. Pick an option to check it. Your answers stay in this browser, so you can stop and come back.</p>
+    <p>48 exam-style questions, six from each unit, plus the real questions from your graded quizzes and the Unit 1 to 3 self-quizzes, each with a worked solution. Pick an option to check it. Your answers stay in this browser, so you can stop and come back.</p>
   </header>
 
   <section class="strip" aria-label="Score and filters">
@@ -139,7 +139,7 @@ footer { color: var(--muted); font-size: .82rem; }
 const QUESTIONS = __QUESTIONS__;
 const UNITS = __UNITS__;
 const KEY = "math1201-final-practice-v1";
-const LETTERS = "ABCD";
+const LETTERS = "ABCDE";
 let answers = {};          // question index -> chosen option index
 let unitFilter = 0;        // 0 = all units
 let onlyWrong = false;
@@ -160,7 +160,8 @@ function buildChips() {
   };
   make(0, "All units");
   const units = [...new Set(QUESTIONS.map(q => q.unit))].sort((a, b) => a - b);
-  units.forEach(u => make(u, u <= 8 ? "Unit " + u : "Graded Quiz " + (u === 9 ? 3 : 6)));
+  const SHORT = { 9: "Graded Quiz 3", 10: "Graded Quiz 6", 11: "Self-Quizzes 1 to 3" };
+  units.forEach(u => make(u, u <= 8 ? "Unit " + u : SHORT[u]));
 }
 
 function renderSummary() {
