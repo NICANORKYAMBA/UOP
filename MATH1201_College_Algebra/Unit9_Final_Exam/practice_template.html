@@ -1,0 +1,249 @@
+<title>MATH 1201 Final Practice</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a single exam-paper column on graph paper; a sticky score strip on top, unit chips below it. */
+:root {
+  --paper: #f7f9fc;
+  --grid: #e3e9f3;
+  --card: #ffffff;
+  --ink: #17233a;
+  --muted: #5b6780;
+  --line: #d3dbe8;
+  --accent: #1f4fa3;
+  --accent-soft: #e4ecfa;
+  --good: #1d7a46;
+  --good-soft: #e3f4ea;
+  --bad: #b3261e;
+  --bad-soft: #fbe7e5;
+  --font-q: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10151f; --grid: #182131; --card: #161e2c; --ink: #e6ebf4; --muted: #9aa6bd;
+    --line: #2a3448; --accent: #8fb0f2; --accent-soft: #1f2c46; --good: #6fd09a; --good-soft: #15301f;
+    --bad: #f2998f; --bad-soft: #3a1c1a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10151f; --grid: #182131; --card: #161e2c; --ink: #e6ebf4; --muted: #9aa6bd;
+  --line: #2a3448; --accent: #8fb0f2; --accent-soft: #1f2c46; --good: #6fd09a; --good-soft: #15301f;
+  --bad: #f2998f; --bad-soft: #3a1c1a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--card); }
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+  display: grid; gap: 16px;
+}
+header.intro h1 { font-family: var(--font-q); font-weight: 600; font-size: 1.9rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+header.intro p { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+.strip {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; display: grid; gap: 10px;
+}
+.score-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.score { font-family: var(--font-num); font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.score small { font-family: var(--font-ui); font-size: .85rem; color: var(--muted); }
+.bar { height: 6px; background: var(--accent-soft); border-radius: 3px; overflow: hidden; display: flex; }
+.bar span { display: block; height: 100%; }
+.bar .g { background: var(--good); } .bar .b { background: var(--bad); }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip {
+  font: 500 .82rem/1 var(--font-ui); letter-spacing: .02em;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  padding: 7px 10px; border-radius: 999px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--card); }
+.chip:focus-visible, .opt:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.spacer { flex: 1 1 auto; }
+.btn { font: 500 .82rem/1 var(--font-ui); background: none; border: 1px solid var(--line); color: var(--muted); padding: 7px 10px; border-radius: 6px; cursor: pointer; }
+.btn.danger { color: var(--bad); }
+.confirm { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .85rem; color: var(--muted); }
+.units { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; font-size: .8rem; }
+.units div { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 4px; }
+.units b { font-family: var(--font-num); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.unit-head { font: 600 .78rem/1 var(--font-ui); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 10px 0 0; }
+.q { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.q.right { border-color: var(--good); } .q.wrong { border-color: var(--bad); }
+.q-top { display: flex; gap: 10px; align-items: baseline; }
+.num { font-family: var(--font-num); color: var(--muted); font-size: .85rem; min-width: 2.2em; }
+.q-text { font-family: var(--font-q); font-size: 1.08rem; margin: 0; min-width: 0; }
+.opts { display: grid; gap: 6px; }
+.opt {
+  display: flex; gap: 10px; align-items: baseline; text-align: left; width: 100%;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 12px; font: 400 1rem/1.4 var(--font-q); cursor: pointer;
+}
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt:disabled { cursor: default; }
+.opt .l { font: 500 .8rem/1.4 var(--font-num); color: var(--muted); }
+.opt.correct { background: var(--good-soft); border-color: var(--good); }
+.opt.picked-wrong { background: var(--bad-soft); border-color: var(--bad); }
+.why { font-size: .92rem; border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--ink); }
+.why strong { color: var(--accent); }
+.empty { text-align: center; color: var(--muted); padding: 24px; background: var(--card); border: 1px dashed var(--line); border-radius: 10px; }
+footer { color: var(--muted); font-size: .82rem; }
+@media (prefers-reduced-motion: no-preference) { .opt { transition: border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <h1>MATH 1201 Final Practice</h1>
+    <p>48 exam-style questions, six from each unit, with a worked solution for every answer. Pick an option to check it. Your answers stay in this browser, so you can stop and come back.</p>
+  </header>
+
+  <section class="strip" aria-label="Score and filters">
+    <div class="score-row">
+      <span class="score" id="score">0 / 0 <small>correct</small></span>
+      <span id="remaining" class="score"><small>48 left</small></span>
+    </div>
+    <div class="bar" aria-hidden="true"><span class="g" id="barGood"></span><span class="b" id="barBad"></span></div>
+    <div class="controls" id="chips" role="group" aria-label="Show questions from"></div>
+    <div class="controls">
+      <button class="chip" id="onlyWrong" aria-pressed="false">Only the ones I got wrong</button>
+      <span class="spacer"></span>
+      <button class="btn danger" id="reset">Start over</button>
+    </div>
+    <div class="confirm" id="confirm" hidden>
+      Clear all your answers?
+      <button class="btn danger" id="confirmYes">Yes, clear them</button>
+      <button class="btn" id="confirmNo">Keep them</button>
+    </div>
+    <div class="units" id="units"></div>
+  </section>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer>Every answer was checked with a computer algebra system. Units follow the course: Abramson (2021), <em>Algebra and Trigonometry</em> 2e, OpenStax. On exam day you may use paper, a pencil, and a calculator; check degree or radian mode before each trig question.</footer>
+</div>
+
+<script>
+const QUESTIONS = __QUESTIONS__;
+const UNITS = __UNITS__;
+const KEY = "math1201-final-practice-v1";
+const LETTERS = "ABCD";
+let answers = {};          // question index -> chosen option index
+let unitFilter = 0;        // 0 = all units
+let onlyWrong = false;
+
+try { answers = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { answers = {}; }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch (e) { /* storage unavailable: keep in memory */ } }
+
+const $ = id => document.getElementById(id);
+
+function buildChips() {
+  const chips = $("chips");
+  const make = (value, label) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = label; b.id = "unit-" + value;
+    b.setAttribute("aria-pressed", String(value === unitFilter));
+    b.addEventListener("click", () => { unitFilter = value; render(); });
+    chips.appendChild(b);
+  };
+  make(0, "All units");
+  for (let u = 1; u <= 8; u++) make(u, "Unit " + u);
+}
+
+function renderSummary() {
+  const total = Object.keys(answers).length;
+  const right = Object.entries(answers).filter(([i, a]) => QUESTIONS[i] && QUESTIONS[i].answer === a).length;
+  $("score").innerHTML = right + " / " + total + " <small>correct</small>";
+  $("remaining").innerHTML = "<small>" + (QUESTIONS.length - total) + " left</small>";
+  $("barGood").style.width = (right / QUESTIONS.length * 100) + "%";
+  $("barBad").style.width = ((total - right) / QUESTIONS.length * 100) + "%";
+  const units = $("units"); units.innerHTML = "";
+  for (let u = 1; u <= 8; u++) {
+    const idx = QUESTIONS.map((q, i) => i).filter(i => QUESTIONS[i].unit === u);
+    const done = idx.filter(i => i in answers);
+    const ok = done.filter(i => answers[i] === QUESTIONS[i].answer).length;
+    const d = document.createElement("div");
+    d.innerHTML = "<span>U" + u + " " + UNITS[u] + "</span><b>" + ok + "/" + idx.length + "</b>";
+    d.title = UNITS[u] + ": " + ok + " correct of " + done.length + " answered";
+    units.appendChild(d);
+  }
+  document.querySelectorAll("#chips .chip").forEach(c => c.setAttribute("aria-pressed", String(c.id === "unit-" + unitFilter)));
+  $("onlyWrong").setAttribute("aria-pressed", String(onlyWrong));
+}
+
+function card(i) {
+  const q = QUESTIONS[i];
+  const chosen = answers[i];
+  const done = chosen !== undefined;
+  const el = document.createElement("article");
+  el.className = "q" + (done ? (chosen === q.answer ? " right" : " wrong") : "");
+  el.id = "q" + (i + 1);
+  const top = document.createElement("div"); top.className = "q-top";
+  const n = document.createElement("span"); n.className = "num"; n.textContent = (i + 1) + ".";
+  const t = document.createElement("p"); t.className = "q-text"; t.textContent = q.q;
+  top.append(n, t);
+  const opts = document.createElement("div"); opts.className = "opts";
+  q.options.forEach((text, k) => {
+    const b = document.createElement("button");
+    b.className = "opt"; b.id = "q" + (i + 1) + "-opt" + k; b.disabled = done;
+    if (done && k === q.answer) b.classList.add("correct");
+    if (done && k === chosen && k !== q.answer) b.classList.add("picked-wrong");
+    const l = document.createElement("span"); l.className = "l"; l.textContent = LETTERS[k];
+    const s = document.createElement("span"); s.textContent = text;
+    b.append(l, s);
+    b.addEventListener("click", () => { answers[i] = k; save(); render(); });
+    opts.appendChild(b);
+  });
+  el.append(top, opts);
+  if (done) {
+    const w = document.createElement("div"); w.className = "why";
+    const verdict = chosen === q.answer ? "Correct. " : "The answer is " + LETTERS[q.answer] + ". ";
+    w.innerHTML = "<strong></strong>"; w.firstChild.textContent = verdict;
+    w.append(document.createTextNode(q.why));
+    el.appendChild(w);
+  }
+  return el;
+}
+
+function render() {
+  renderSummary();
+  const list = $("list"); list.innerHTML = "";
+  list.style.display = "grid"; list.style.gap = "10px";
+  let shown = 0, lastUnit = 0;
+  QUESTIONS.forEach((q, i) => {
+    if (unitFilter && q.unit !== unitFilter) return;
+    if (onlyWrong && !(i in answers && answers[i] !== q.answer)) return;
+    if (q.unit !== lastUnit) {
+      const h = document.createElement("h2"); h.className = "unit-head";
+      h.textContent = "Unit " + q.unit + " · " + UNITS[q.unit];
+      list.appendChild(h); lastUnit = q.unit;
+    }
+    list.appendChild(card(i)); shown++;
+  });
+  if (!shown) {
+    const e = document.createElement("p"); e.className = "empty";
+    e.textContent = onlyWrong ? "No wrong answers here yet. Answer some questions, or switch this filter off." : "No questions match this filter.";
+    list.appendChild(e);
+  }
+}
+
+$("onlyWrong").addEventListener("click", () => { onlyWrong = !onlyWrong; render(); });
+$("reset").addEventListener("click", () => { $("confirm").hidden = false; });
+$("confirmNo").addEventListener("click", () => { $("confirm").hidden = true; });
+$("confirmYes").addEventListener("click", () => { answers = {}; save(); $("confirm").hidden = true; render(); });
+
+buildChips();
+render();
+</script>

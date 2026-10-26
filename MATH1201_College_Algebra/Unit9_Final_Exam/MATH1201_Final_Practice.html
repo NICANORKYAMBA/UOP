@@ -1,0 +1,249 @@
+<title>MATH 1201 Final Practice</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a single exam-paper column on graph paper; a sticky score strip on top, unit chips below it. */
+:root {
+  --paper: #f7f9fc;
+  --grid: #e3e9f3;
+  --card: #ffffff;
+  --ink: #17233a;
+  --muted: #5b6780;
+  --line: #d3dbe8;
+  --accent: #1f4fa3;
+  --accent-soft: #e4ecfa;
+  --good: #1d7a46;
+  --good-soft: #e3f4ea;
+  --bad: #b3261e;
+  --bad-soft: #fbe7e5;
+  --font-q: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #10151f; --grid: #182131; --card: #161e2c; --ink: #e6ebf4; --muted: #9aa6bd;
+    --line: #2a3448; --accent: #8fb0f2; --accent-soft: #1f2c46; --good: #6fd09a; --good-soft: #15301f;
+    --bad: #f2998f; --bad-soft: #3a1c1a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #10151f; --grid: #182131; --card: #161e2c; --ink: #e6ebf4; --muted: #9aa6bd;
+  --line: #2a3448; --accent: #8fb0f2; --accent-soft: #1f2c46; --good: #6fd09a; --good-soft: #15301f;
+  --bad: #f2998f; --bad-soft: #3a1c1a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--card); }
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+  display: grid; gap: 16px;
+}
+header.intro h1 { font-family: var(--font-q); font-weight: 600; font-size: 1.9rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+header.intro p { margin: 6px 0 0; color: var(--muted); max-width: 62ch; }
+.strip {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; display: grid; gap: 10px;
+}
+.score-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+.score { font-family: var(--font-num); font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.score small { font-family: var(--font-ui); font-size: .85rem; color: var(--muted); }
+.bar { height: 6px; background: var(--accent-soft); border-radius: 3px; overflow: hidden; display: flex; }
+.bar span { display: block; height: 100%; }
+.bar .g { background: var(--good); } .bar .b { background: var(--bad); }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip {
+  font: 500 .82rem/1 var(--font-ui); letter-spacing: .02em;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  padding: 7px 10px; border-radius: 999px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--card); }
+.chip:focus-visible, .opt:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.spacer { flex: 1 1 auto; }
+.btn { font: 500 .82rem/1 var(--font-ui); background: none; border: 1px solid var(--line); color: var(--muted); padding: 7px 10px; border-radius: 6px; cursor: pointer; }
+.btn.danger { color: var(--bad); }
+.confirm { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: .85rem; color: var(--muted); }
+.units { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; font-size: .8rem; }
+.units div { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 4px; }
+.units b { font-family: var(--font-num); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.unit-head { font: 600 .78rem/1 var(--font-ui); text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 10px 0 0; }
+.q { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.q.right { border-color: var(--good); } .q.wrong { border-color: var(--bad); }
+.q-top { display: flex; gap: 10px; align-items: baseline; }
+.num { font-family: var(--font-num); color: var(--muted); font-size: .85rem; min-width: 2.2em; }
+.q-text { font-family: var(--font-q); font-size: 1.08rem; margin: 0; min-width: 0; }
+.opts { display: grid; gap: 6px; }
+.opt {
+  display: flex; gap: 10px; align-items: baseline; text-align: left; width: 100%;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 12px; font: 400 1rem/1.4 var(--font-q); cursor: pointer;
+}
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt:disabled { cursor: default; }
+.opt .l { font: 500 .8rem/1.4 var(--font-num); color: var(--muted); }
+.opt.correct { background: var(--good-soft); border-color: var(--good); }
+.opt.picked-wrong { background: var(--bad-soft); border-color: var(--bad); }
+.why { font-size: .92rem; border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--ink); }
+.why strong { color: var(--accent); }
+.empty { text-align: center; color: var(--muted); padding: 24px; background: var(--card); border: 1px dashed var(--line); border-radius: 10px; }
+footer { color: var(--muted); font-size: .82rem; }
+@media (prefers-reduced-motion: no-preference) { .opt { transition: border-color .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <h1>MATH 1201 Final Practice</h1>
+    <p>48 exam-style questions, six from each unit, with a worked solution for every answer. Pick an option to check it. Your answers stay in this browser, so you can stop and come back.</p>
+  </header>
+
+  <section class="strip" aria-label="Score and filters">
+    <div class="score-row">
+      <span class="score" id="score">0 / 0 <small>correct</small></span>
+      <span id="remaining" class="score"><small>48 left</small></span>
+    </div>
+    <div class="bar" aria-hidden="true"><span class="g" id="barGood"></span><span class="b" id="barBad"></span></div>
+    <div class="controls" id="chips" role="group" aria-label="Show questions from"></div>
+    <div class="controls">
+      <button class="chip" id="onlyWrong" aria-pressed="false">Only the ones I got wrong</button>
+      <span class="spacer"></span>
+      <button class="btn danger" id="reset">Start over</button>
+    </div>
+    <div class="confirm" id="confirm" hidden>
+      Clear all your answers?
+      <button class="btn danger" id="confirmYes">Yes, clear them</button>
+      <button class="btn" id="confirmNo">Keep them</button>
+    </div>
+    <div class="units" id="units"></div>
+  </section>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer>Every answer was checked with a computer algebra system. Units follow the course: Abramson (2021), <em>Algebra and Trigonometry</em> 2e, OpenStax. On exam day you may use paper, a pencil, and a calculator; check degree or radian mode before each trig question.</footer>
+</div>
+
+<script>
+const QUESTIONS = [{"unit": 1, "q": "Which set of ordered pairs represents a function?", "options": ["{(1, 2), (2, 4), (3, 6)}", "{(1, 2), (1, 3), (2, 4)}", "{(0, 1), (0, -1)}", "{(2, 2), (2, 3), (3, 3)}"], "answer": 0, "why": "A function gives each input exactly one output. Only the first set never repeats an x-value."}, {"unit": 1, "q": "What is the domain of f(x) = √(x - 3)?", "options": ["(-∞, ∞)", "[3, ∞)", "(3, ∞)", "[0, ∞)"], "answer": 1, "why": "The inside of a square root must be at least 0: x - 3 ≥ 0, so x ≥ 3, written [3, ∞)."}, {"unit": 1, "q": "If f(x) = 2x² - 3x + 1, what is f(-2)?", "options": ["3", "-1", "15", "11"], "answer": 2, "why": "f(-2) = 2(4) - 3(-2) + 1 = 8 + 6 + 1 = 15. Watch the signs: -3 times -2 is +6."}, {"unit": 1, "q": "What is the average rate of change of f(x) = x² from x = 1 to x = 4?", "options": ["15", "4", "3", "5"], "answer": 3, "why": "Average rate of change = [f(4) - f(1)] / (4 - 1) = (16 - 1) / 3 = 15 / 3 = 5."}, {"unit": 1, "q": "f(x) = x + 2 when x < 0, and f(x) = x² when x ≥ 0. What is f(-3) + f(3)?", "options": ["8", "10", "-1", "18"], "answer": 0, "why": "f(-3) uses the first rule: -3 + 2 = -1. f(3) uses the second rule: 3² = 9. Sum: -1 + 9 = 8."}, {"unit": 1, "q": "What is the domain of f(x) = 1 / (x² - 9)?", "options": ["x ≠ 9", "x ≠ 3 and x ≠ -3", "x > 3", "All real numbers"], "answer": 1, "why": "The denominator cannot be 0: x² - 9 = 0 when x = 3 or x = -3, so those two values are excluded."}, {"unit": 2, "q": "If f(x) = x + 1 and g(x) = x², what is (f ∘ g)(x)?", "options": ["x² + 2x + 1", "(x + 1)²", "x² + 1", "x³ + x²"], "answer": 2, "why": "(f ∘ g)(x) = f(g(x)) = f(x²) = x² + 1. Work from the inside out: apply g first, then f."}, {"unit": 2, "q": "With f(x) = x + 1 and g(x) = x², what is (g ∘ f)(2)?", "options": ["6", "4", "5", "9"], "answer": 3, "why": "(g ∘ f)(2) = g(f(2)) = g(3) = 9. Note that (f ∘ g)(2) = 5, so composition order matters."}, {"unit": 2, "q": "What is the inverse of f(x) = (2x - 5) / 3?", "options": ["f⁻¹(x) = (3x + 5) / 2", "f⁻¹(x) = (3x - 5) / 2", "f⁻¹(x) = 3 / (2x - 5)", "f⁻¹(x) = (2x + 5) / 3"], "answer": 0, "why": "Write y = (2x - 5)/3, swap x and y: x = (2y - 5)/3. Then 3x = 2y - 5, 2y = 3x + 5, y = (3x + 5)/2."}, {"unit": 2, "q": "Compared with the graph of f(x), the graph of g(x) = f(x - 2) + 3 is:", "options": ["shifted left 2 and up 3", "shifted right 2 and up 3", "shifted right 2 and down 3", "shifted left 2 and down 3"], "answer": 1, "why": "Inside the brackets the shift is opposite to the sign: x - 2 means right 2. Outside, + 3 means up 3."}, {"unit": 2, "q": "Which function is even?", "options": ["f(x) = 2x", "f(x) = x³ + x", "f(x) = x⁴ - 3x²", "f(x) = x + 1"], "answer": 2, "why": "Even means f(-x) = f(x). (-x)⁴ - 3(-x)² = x⁴ - 3x², unchanged. Its graph is symmetric about the y-axis."}, {"unit": 2, "q": "The graph of y = -f(x) is the graph of y = f(x):", "options": ["shifted down 1", "unchanged", "reflected about the y-axis", "reflected about the x-axis"], "answer": 3, "why": "Multiplying the output by -1 flips every point (x, y) to (x, -y): a reflection about the x-axis. Reflection about the y-axis is f(-x)."}, {"unit": 3, "q": "What is the slope of the line through (2, -1) and (6, 7)?", "options": ["2", "-2", "8", "1/2"], "answer": 0, "why": "m = (y₂ - y₁)/(x₂ - x₁) = (7 - (-1))/(6 - 2) = 8/4 = 2."}, {"unit": 3, "q": "What is the slope of a line perpendicular to y = 3x + 1?", "options": ["1/3", "-1/3", "3", "-3"], "answer": 1, "why": "Perpendicular slopes are negative reciprocals: m₁ × m₂ = -1, so m₂ = -1/3."}, {"unit": 3, "q": "What is the vertex of f(x) = 2x² - 8x + 3?", "options": ["(4, 3)", "(2, 3)", "(2, -5)", "(-2, 27)"], "answer": 2, "why": "x = -b/(2a) = 8/4 = 2. f(2) = 2(4) - 16 + 3 = -5. Vertex (2, -5), a minimum because a > 0."}, {"unit": 3, "q": "What are the solutions of x² - 5x + 6 = 0?", "options": ["x = 1, 6", "x = -1, 6", "x = -2, -3", "x = 2, 3"], "answer": 3, "why": "Factor: two numbers that multiply to 6 and add to -5 are -2 and -3, so (x - 2)(x - 3) = 0, x = 2 or 3."}, {"unit": 3, "q": "A ball's height is h(t) = -5t² + 20t + 1 metres. What is its maximum height?", "options": ["21 m", "1 m", "41 m", "20 m"], "answer": 0, "why": "Peak at t = -b/(2a) = -20/(-10) = 2 s. h(2) = -20 + 40 + 1 = 21 m."}, {"unit": 3, "q": "How many real solutions does 2x² + 3x + 5 = 0 have?", "options": ["One", "None", "Infinitely many", "Two"], "answer": 1, "why": "Discriminant b² - 4ac = 9 - 40 = -31 < 0, so there are no real solutions (the parabola misses the x-axis)."}, {"unit": 4, "q": "What is the end behaviour of f(x) = -3x⁵ + 2x² - 1?", "options": ["Up on both ends", "Down on the left, up on the right", "Up on the left, down on the right", "Down on both ends"], "answer": 2, "why": "Only the leading term -3x⁵ matters: odd degree, negative coefficient, so it rises on the left and falls on the right."}, {"unit": 4, "q": "What is the remainder when x³ - 2x² + 4 is divided by (x - 3)?", "options": ["4", "-5", "31", "13"], "answer": 3, "why": "Remainder Theorem: the remainder is f(3) = 27 - 18 + 4 = 13."}, {"unit": 4, "q": "What is the horizontal asymptote of f(x) = (3x² + 1) / (x² - 4)?", "options": ["y = 3", "y = 1/4", "None", "y = 0"], "answer": 0, "why": "Same degree on top and bottom, so y = (leading coefficient on top)/(leading coefficient on bottom) = 3/1 = 3."}, {"unit": 4, "q": "f(x) = (x² - 1) / (x - 1) has, at x = 1:", "options": ["a vertical asymptote", "a hole", "a zero", "a horizontal asymptote"], "answer": 1, "why": "x² - 1 = (x - 1)(x + 1). The factor (x - 1) cancels, so x = 1 is a hole, not an asymptote."}, {"unit": 4, "q": "What is the greatest number of turning points a degree-6 polynomial can have?", "options": ["6", "7", "5", "3"], "answer": 2, "why": "A polynomial of degree n has at most n - 1 turning points: 6 - 1 = 5."}, {"unit": 4, "q": "At a zero of multiplicity 2, the graph of a polynomial:", "options": ["has a vertical asymptote", "has a hole", "crosses the x-axis", "touches the x-axis and turns back"], "answer": 3, "why": "Even multiplicity: the graph touches and bounces. Odd multiplicity: it crosses."}, {"unit": 5, "q": "Solve 3ˣ = 81.", "options": ["x = 4", "x = 9", "x = 27", "x = 3"], "answer": 0, "why": "81 = 3⁴, so 3ˣ = 3⁴ and x = 4."}, {"unit": 5, "q": "What is log₂ 32?", "options": ["16", "5", "4", "6"], "answer": 1, "why": "log₂ 32 asks: 2 to what power is 32? 2⁵ = 32, so the answer is 5."}, {"unit": 5, "q": "Which is the expanded form of log(x²y / z)?", "options": ["2 log x · log y / log z", "2 log(xy) - log z", "2 log x + log y - log z", "log 2x + log y - log z"], "answer": 2, "why": "Product rule adds, quotient rule subtracts, power rule brings exponents down: log x² + log y - log z = 2 log x + log y - log z."}, {"unit": 5, "q": "Solve ln x = 2.", "options": ["x = ln 2", "x = 100", "x = 2e", "x = e² ≈ 7.389"], "answer": 3, "why": "ln x = 2 means e² = x, so x = e² ≈ 7.389. (log x = 2 would give 100.)"}, {"unit": 5, "q": "$1000 is invested at 5% interest compounded annually. What is it worth after 3 years?", "options": ["$1157.63", "$1050.00", "$1161.83", "$1150.00"], "answer": 0, "why": "A = P(1 + r)ᵗ = 1000(1.05)³ = 1000 × 1.157625 = $1157.63. ($1150 would be simple interest.)"}, {"unit": 5, "q": "What is the domain of f(x) = log(x - 4)?", "options": ["[4, ∞)", "(4, ∞)", "(0, ∞)", "(-∞, ∞)"], "answer": 1, "why": "The input of a log must be greater than 0: x - 4 > 0, so x > 4, written (4, ∞) with a round bracket."}, {"unit": 6, "q": "Convert 150° to radians.", "options": ["2π/3", "5π/3", "5π/6", "3π/4"], "answer": 2, "why": "Multiply by π/180: 150 × π/180 = 15π/18 = 5π/6."}, {"unit": 6, "q": "What is the exact value of cos(5π/6)?", "options": ["1/2", "-1/2", "√3/2", "-√3/2"], "answer": 3, "why": "5π/6 = 150° is in Quadrant II, where cosine is negative. Reference angle 30°: cos 30° = √3/2, so cos(5π/6) = -√3/2."}, {"unit": 6, "q": "What is the reference angle of 225°?", "options": ["45°", "135°", "25°", "75°"], "answer": 0, "why": "225° is in Quadrant III: reference angle = 225° - 180° = 45°."}, {"unit": 6, "q": "What are the amplitude and period of y = 3 sin(2x)?", "options": ["Amplitude 2, period 3π", "Amplitude 3, period π", "Amplitude 3, period 2π", "Amplitude 6, period π"], "answer": 1, "why": "Amplitude = |A| = 3. Period = 2π/|B| = 2π/2 = π."}, {"unit": 6, "q": "In a right triangle, the side opposite θ is 5 and the hypotenuse is 13. What is cos θ?", "options": ["13/12", "5/13", "12/13", "5/12"], "answer": 2, "why": "Adjacent = √(13² - 5²) = √144 = 12. cos θ = adjacent/hypotenuse = 12/13."}, {"unit": 6, "q": "What is arcsin(1/2)?", "options": ["5π/6", "π/4", "π/3", "π/6"], "answer": 3, "why": "arcsin returns an angle in [-π/2, π/2] whose sine is 1/2: that is π/6 (30°). 5π/6 also has sine 1/2 but is outside the range."}, {"unit": 7, "q": "What is the exact value of sin 75°?", "options": ["(√6 + √2)/4", "(√6 - √2)/4", "√3/2", "(√3 + 1)/2"], "answer": 0, "why": "sin(45° + 30°) = sin45 cos30 + cos45 sin30 = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4."}, {"unit": 7, "q": "If sin θ = 3/5, what is cos 2θ?", "options": ["24/25", "7/25", "-7/25", "9/25"], "answer": 1, "why": "Use cos 2θ = 1 - 2 sin²θ = 1 - 2(9/25) = 1 - 18/25 = 7/25. No quadrant information is needed for this form."}, {"unit": 7, "q": "Simplify (1 - cos²x) / sin x.", "options": ["1", "cos x", "sin x", "tan x"], "answer": 2, "why": "By the Pythagorean identity, 1 - cos²x = sin²x, and sin²x / sin x = sin x."}, {"unit": 7, "q": "Solve 2 sin x - 1 = 0 for 0 ≤ x < 2π.", "options": ["x = π/3, 2π/3", "x = π/6, 7π/6", "x = π/6 only", "x = π/6, 5π/6"], "answer": 3, "why": "sin x = 1/2. Sine is positive in Quadrants I and II: x = π/6 and π - π/6 = 5π/6."}, {"unit": 7, "q": "If tan θ = 1/2, what is tan 2θ?", "options": ["4/3", "3/4", "1/4", "1"], "answer": 0, "why": "tan 2θ = 2 tan θ / (1 - tan²θ) = 1 / (1 - 1/4) = 1 / (3/4) = 4/3."}, {"unit": 7, "q": "Which expression equals cos²x - sin²x?", "options": ["sin 2x", "cos 2x", "1", "2 cos x"], "answer": 1, "why": "This is the double-angle identity cos 2x = cos²x - sin²x (also 2cos²x - 1 and 1 - 2sin²x)."}, {"unit": 8, "q": "Solve: x + y = 10 and x - y = 2.", "options": ["(8, 2)", "(4, 6)", "(6, 4)", "(5, 5)"], "answer": 2, "why": "Add the equations: 2x = 12, x = 6. Then y = 10 - 6 = 4. Check: 6 - 4 = 2."}, {"unit": 8, "q": "The system 2x + 4y = 8 and x + 2y = 4 is:", "options": ["has exactly two solutions", "consistent and independent", "inconsistent", "consistent and dependent"], "answer": 3, "why": "The first equation is 2 times the second, so both are the same line: infinitely many solutions (dependent)."}, {"unit": 8, "q": "The system x + y = 3 and x + y = 7 is:", "options": ["inconsistent", "consistent and dependent", "has one solution (5, 2)", "consistent and independent"], "answer": 0, "why": "Subtracting gives 0 = 4, a contradiction. The lines are parallel, so there is no solution."}, {"unit": 8, "q": "Where does the circle x² + y² = 25 meet the line y = x + 1?", "options": ["They do not meet", "(3, 4) and (-4, -3)", "(4, 3) and (-3, -4)", "(0, 5) and (5, 0)"], "answer": 1, "why": "Substitute: x² + (x + 1)² = 25, so 2x² + 2x - 24 = 0, x² + x - 12 = 0, (x + 4)(x - 3) = 0. x = 3 gives y = 4; x = -4 gives y = -3."}, {"unit": 8, "q": "Which is NOT an allowed row operation in Gaussian elimination?", "options": ["Multiply a row by a nonzero number", "Add a multiple of one row to another", "Multiply a row by 0", "Swap two rows"], "answer": 2, "why": "Multiplying a row by 0 destroys an equation. The three allowed operations keep the solution set the same."}, {"unit": 8, "q": "Solve x + y + z = 6, y + z = 5, z = 3 by back-substitution.", "options": ["(3, 2, 1)", "(2, 1, 3)", "(1, 3, 2)", "(1, 2, 3)"], "answer": 3, "why": "z = 3. Then y = 5 - 3 = 2. Then x = 6 - 2 - 3 = 1. Answer (1, 2, 3)."}];
+const UNITS = {"1": "Functions I", "2": "Functions II", "3": "Linear and Quadratic Functions", "4": "Polynomial and Rational Functions", "5": "Exponential and Logarithmic Functions", "6": "Trigonometry I", "7": "Trigonometry II (Identities)", "8": "Systems of Equations"};
+const KEY = "math1201-final-practice-v1";
+const LETTERS = "ABCD";
+let answers = {};          // question index -> chosen option index
+let unitFilter = 0;        // 0 = all units
+let onlyWrong = false;
+
+try { answers = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { answers = {}; }
+function save() { try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch (e) { /* storage unavailable: keep in memory */ } }
+
+const $ = id => document.getElementById(id);
+
+function buildChips() {
+  const chips = $("chips");
+  const make = (value, label) => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.textContent = label; b.id = "unit-" + value;
+    b.setAttribute("aria-pressed", String(value === unitFilter));
+    b.addEventListener("click", () => { unitFilter = value; render(); });
+    chips.appendChild(b);
+  };
+  make(0, "All units");
+  for (let u = 1; u <= 8; u++) make(u, "Unit " + u);
+}
+
+function renderSummary() {
+  const total = Object.keys(answers).length;
+  const right = Object.entries(answers).filter(([i, a]) => QUESTIONS[i] && QUESTIONS[i].answer === a).length;
+  $("score").innerHTML = right + " / " + total + " <small>correct</small>";
+  $("remaining").innerHTML = "<small>" + (QUESTIONS.length - total) + " left</small>";
+  $("barGood").style.width = (right / QUESTIONS.length * 100) + "%";
+  $("barBad").style.width = ((total - right) / QUESTIONS.length * 100) + "%";
+  const units = $("units"); units.innerHTML = "";
+  for (let u = 1; u <= 8; u++) {
+    const idx = QUESTIONS.map((q, i) => i).filter(i => QUESTIONS[i].unit === u);
+    const done = idx.filter(i => i in answers);
+    const ok = done.filter(i => answers[i] === QUESTIONS[i].answer).length;
+    const d = document.createElement("div");
+    d.innerHTML = "<span>U" + u + " " + UNITS[u] + "</span><b>" + ok + "/" + idx.length + "</b>";
+    d.title = UNITS[u] + ": " + ok + " correct of " + done.length + " answered";
+    units.appendChild(d);
+  }
+  document.querySelectorAll("#chips .chip").forEach(c => c.setAttribute("aria-pressed", String(c.id === "unit-" + unitFilter)));
+  $("onlyWrong").setAttribute("aria-pressed", String(onlyWrong));
+}
+
+function card(i) {
+  const q = QUESTIONS[i];
+  const chosen = answers[i];
+  const done = chosen !== undefined;
+  const el = document.createElement("article");
+  el.className = "q" + (done ? (chosen === q.answer ? " right" : " wrong") : "");
+  el.id = "q" + (i + 1);
+  const top = document.createElement("div"); top.className = "q-top";
+  const n = document.createElement("span"); n.className = "num"; n.textContent = (i + 1) + ".";
+  const t = document.createElement("p"); t.className = "q-text"; t.textContent = q.q;
+  top.append(n, t);
+  const opts = document.createElement("div"); opts.className = "opts";
+  q.options.forEach((text, k) => {
+    const b = document.createElement("button");
+    b.className = "opt"; b.id = "q" + (i + 1) + "-opt" + k; b.disabled = done;
+    if (done && k === q.answer) b.classList.add("correct");
+    if (done && k === chosen && k !== q.answer) b.classList.add("picked-wrong");
+    const l = document.createElement("span"); l.className = "l"; l.textContent = LETTERS[k];
+    const s = document.createElement("span"); s.textContent = text;
+    b.append(l, s);
+    b.addEventListener("click", () => { answers[i] = k; save(); render(); });
+    opts.appendChild(b);
+  });
+  el.append(top, opts);
+  if (done) {
+    const w = document.createElement("div"); w.className = "why";
+    const verdict = chosen === q.answer ? "Correct. " : "The answer is " + LETTERS[q.answer] + ". ";
+    w.innerHTML = "<strong></strong>"; w.firstChild.textContent = verdict;
+    w.append(document.createTextNode(q.why));
+    el.appendChild(w);
+  }
+  return el;
+}
+
+function render() {
+  renderSummary();
+  const list = $("list"); list.innerHTML = "";
+  list.style.display = "grid"; list.style.gap = "10px";
+  let shown = 0, lastUnit = 0;
+  QUESTIONS.forEach((q, i) => {
+    if (unitFilter && q.unit !== unitFilter) return;
+    if (onlyWrong && !(i in answers && answers[i] !== q.answer)) return;
+    if (q.unit !== lastUnit) {
+      const h = document.createElement("h2"); h.className = "unit-head";
+      h.textContent = "Unit " + q.unit + " · " + UNITS[q.unit];
+      list.appendChild(h); lastUnit = q.unit;
+    }
+    list.appendChild(card(i)); shown++;
+  });
+  if (!shown) {
+    const e = document.createElement("p"); e.className = "empty";
+    e.textContent = onlyWrong ? "No wrong answers here yet. Answer some questions, or switch this filter off." : "No questions match this filter.";
+    list.appendChild(e);
+  }
+}
+
+$("onlyWrong").addEventListener("click", () => { onlyWrong = !onlyWrong; render(); });
+$("reset").addEventListener("click", () => { $("confirm").hidden = false; });
+$("confirmNo").addEventListener("click", () => { $("confirm").hidden = true; });
+$("confirmYes").addEventListener("click", () => { answers = {}; save(); $("confirm").hidden = true; render(); });
+
+buildChips();
+render();
+</script>
