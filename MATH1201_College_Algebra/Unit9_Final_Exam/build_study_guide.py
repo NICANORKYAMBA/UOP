@@ -12,7 +12,7 @@ Output: Final_Exam_Study_Guide.md, practice_questions.json
 import json
 from pathlib import Path
 
-from question_bank import QUESTIONS, UNIT_NAMES
+from question_bank import GRADED_QUIZ_3, QUESTIONS, UNIT_NAMES
 
 HERE = Path(__file__).resolve().parent
 LETTERS = "ABCD"
@@ -52,6 +52,8 @@ FORMULAS = """
 - Parallel: equal slopes. Perpendicular: m₁ · m₂ = -1.
 - Quadratic f(x) = ax² + bx + c: vertex x = -b/(2a); opens up if a > 0 (minimum), down if a < 0
   (maximum). Vertex form a(x - h)² + k has vertex (h, k).
+- **Names in our textbook:** the **standard form** of a quadratic function is a(x - h)² + k, and
+  ax² + bx + c is the **general form** (Abramson, Section 5.1). Graded Quiz 3 tested this.
 - Quadratic formula x = [-b ± √(b² - 4ac)] / (2a). Discriminant b² - 4ac: > 0 two real roots,
   = 0 one, < 0 none.
 
@@ -193,6 +195,10 @@ TIPS = """
   It takes seconds and catches sign errors.
 - **Use the options:** with multiple choice, you can test each option in the equation when
   solving directly is slow.
+- **Standard vs general form:** in this course "standard form" of a quadratic is a(x - h)² + k.
+- **Inverses:** undo each step in reverse with the opposite operation (x⁴ + 50 becomes
+  (x - 50)^(1/4)); the domain of f⁻¹ is the range of f, so a linear function's inverse takes all
+  real numbers.
 - **Watch the traps from this course:** composition order (f ∘ g vs g ∘ f), round vs square
   brackets in domains, hole vs asymptote, arcsin's range, the sign of cosine in Quadrant II, and
   "dependent" systems hidden in word problems.
@@ -201,7 +207,9 @@ TIPS = """
 
 
 def main():
-    questions = balanced(QUESTIONS)
+    questions = balanced(QUESTIONS) + [
+        {"unit": u, "q": t, "options": list(o), "answer": a, "why": w} for (u, t, o, a, w) in GRADED_QUIZ_3
+    ]
     (HERE / "practice_questions.json").write_text(json.dumps(questions, ensure_ascii=False, indent=1))
 
     lines = [
@@ -220,14 +228,15 @@ def main():
         "algebra tool. Mark any question you miss and reread that unit's formulas.",
         FORMULAS,
         SELF_QUIZ,
-        "## Part 3: Practice Exam (48 Questions)",
+        f"## Part 3: Practice Exam ({len(QUESTIONS)} Questions) and Graded Quiz 3 Review",
         "",
         "Write your answers on paper, then check them in Part 4.",
         "",
     ]
     number = 0
-    for unit in range(1, 9):
-        lines += [f"### Unit {unit}: {UNIT_NAMES[unit]}", ""]
+    for unit in sorted(UNIT_NAMES):
+        heading = f"Unit {unit}: {UNIT_NAMES[unit]}" if unit <= 8 else UNIT_NAMES[unit]
+        lines += [f"### {heading}", ""]
         for q in (q for q in questions if q["unit"] == unit):
             number += 1
             lines.append(f"**{number}.** {q['q']}")
@@ -247,7 +256,7 @@ def main():
         "https://openstax.org/details/books/algebra-and-trigonometry-2e",
     ]
     (HERE / "Final_Exam_Study_Guide.md").write_text("\n".join(lines) + "\n")
-    counts = [sum(1 for q in questions if q["answer"] == i) for i in range(4)]
+    counts = [sum(1 for q in questions[:len(QUESTIONS)] if q["answer"] == i) for i in range(4)]
     print("Wrote guide and JSON; answers by position A-D:", counts)
 
 

@@ -30,6 +30,8 @@ The proctored final exam covers all eight units. Study Part 1 until you can writ
 - Parallel: equal slopes. Perpendicular: m₁ · m₂ = -1.
 - Quadratic f(x) = ax² + bx + c: vertex x = -b/(2a); opens up if a > 0 (minimum), down if a < 0
   (maximum). Vertex form a(x - h)² + k has vertex (h, k).
+- **Names in our textbook:** the **standard form** of a quadratic function is a(x - h)² + k, and
+  ax² + bx + c is the **general form** (Abramson, Section 5.1). Graded Quiz 3 tested this.
 - Quadratic formula x = [-b ± √(b² - 4ac)] / (2a). Discriminant b² - 4ac: > 0 two real roots,
   = 0 one, < 0 none.
 
@@ -158,7 +160,7 @@ The proctored final exam covers all eight units. Study Part 1 until you can writ
 | A parabola meets a line in at most two points | True | Substitution gives a quadratic |
 | Independent system | Unique solution, lines meet at a point | Definition |
 
-## Part 3: Practice Exam (48 Questions)
+## Part 3: Practice Exam (48 Questions) and Graded Quiz 3 Review
 
 Write your answers on paper, then check them in Part 4.
 
@@ -514,6 +516,109 @@ Write your answers on paper, then check them in Part 4.
 - C. (1, 3, 2)
 - D. (1, 2, 3)
 
+### Graded Quiz Unit 3 (real questions)
+
+**49.** If f(x) = 3x⁵ and g(x) = (x - 1)/x², what is g(f(x))?
+
+- A. (3x⁵ - 1)/(18x¹⁰)
+- B. (3x⁵ - 1)/(6x⁷)
+- C. (3x⁵ - 1)/(9x¹⁰)
+- D. (3x⁵ - 1)/(18x⁷)
+
+**50.** f(x) = √(x + 3). What is the range of the inverse function f⁻¹(x)?
+
+- A. (-∞, -3]
+- B. ℝ (all real numbers)
+- C. (-∞, -3) ∪ (-3, ∞)
+- D. [-3, ∞)
+
+**51.** The inverse of f(x) = x⁴ + 50 is:
+
+- A. (x - 50)^(1/4)
+- B. (50 + x)^(1/4)
+- C. (x + 50)^(1/4)
+- D. (50 - x)^(1/4)
+
+**52.** y = √(x + 2) with domain (-∞, ∞) and codomain [0, ∞). This relation is a function.
+
+- A. True
+- B. False
+
+**53.** f(x) = √(3x - 2). Which gives the domain and range?
+
+- A. Domain (-∞, ∞); Range [0, ∞)
+- B. Domain [2/3, ∞); Range (-∞, ∞)
+- C. Domain (-∞, ∞); Range (-∞, ∞)
+- D. Domain [2/3, ∞); Range [0, ∞)
+
+**54.** {(1, 3), (2, 4), (3, 6), (4, 8), (5, 10)} with domain {1, 2, 3, 4, 5} and codomain {3, 4, 5, 6, 7, 8, 9, 10} is a function.
+
+- A. True
+- B. False
+
+**55.** A city of 100,000 grows by 2,000 people per year. Which equation gives the population P after t years?
+
+- A. P = 100,000t + 2,000
+- B. P = 2,000t + 100,000
+- C. P = 2,000t - 100,000
+- D. P = 100,000 - 2,000
+
+**56.** g(x) = 3x - 10. What is the domain of g⁻¹(x)?
+
+- A. (-∞, 10/3] ∪ [10/3, ∞)
+- B. (-∞, 10/3) ∪ (10/3, ∞)
+- C. (10/3, ∞)
+- D. [-10/3, ∞)
+
+**57.** What is the standard form of a quadratic equation (course key)?
+
+- A. y = eˣ
+- B. y = a(x - h)² + k
+- C. y = mx + b
+- D. ax² + bx + c = 0
+
+**58.** f(x) = √(10 - x)/(x + 11). What is the domain of f?
+
+- A. (-11, 10]
+- B. (-∞, 10) ∪ (10, 11)
+- C. (-∞, -11) ∪ (-11, 10]
+- D. [-11, 10) ∪ (10, ∞)
+
+**59.** Which quadratic equation has exactly one real solution?
+
+- A. x² + 32x + 256 = 0
+- B. x² - 5x - 14 = 0
+- C. x² - 2x - 10 = 0
+- D. x² + 4x - 12 = 0
+
+**60.** Which polynomial function can model the height of a ball thrown into the air?
+
+- A. y = x⁵
+- B. y = x²
+- C. y = x⁴
+- D. y = x³
+
+**61.** f(x) = 10x, g(x) = x², h(x) = x³. Simplify (f ∘ g ∘ h)(x).
+
+- A. 10x⁶
+- B. 100x⁵
+- C. 10x⁵
+- D. 100x⁶
+
+**62.** f(x) = log₂(x - 2). Which gives the domain and range?
+
+- A. Domain [2, ∞); Range (-∞, 0)
+- B. Domain (2, ∞); Range (-∞, ∞)
+- C. Domain (2, ∞); Range (-∞, 0)
+- D. Domain (-∞, 2); Range (-∞, ∞)
+
+**63.** Which is a quadratic equation in the variable x?
+
+- A. y = x² + 2x + 1
+- B. y² = x²
+- C. y = y² + 2x + 1
+- D. x³ + 2x + 1 = 0
+
 ## Part 4: Answer Key With Worked Solutions
 
 **1. A** ({(1, 2), (2, 4), (3, 6)}). A function gives each input exactly one output. Only the first set never repeats an x-value.
@@ -612,6 +717,36 @@ Write your answers on paper, then check them in Part 4.
 
 **48. D** ((1, 2, 3)). z = 3. Then y = 5 - 3 = 2. Then x = 6 - 2 - 3 = 1. Answer (1, 2, 3).
 
+**49. C** ((3x⁵ - 1)/(9x¹⁰)). Put f(x) = 3x⁵ in place of x in g: (3x⁵ - 1)/(3x⁵)². The denominator is 3² · (x⁵)² = 9x¹⁰.
+
+**50. D** ([-3, ∞)). The range of f⁻¹ equals the domain of f. For √(x + 3) we need x + 3 ≥ 0, so x ≥ -3: [-3, ∞).
+
+**51. A** ((x - 50)^(1/4)). YOU MISSED THIS ONE. Swap x and y: x = y⁴ + 50. Undo the + 50 first by SUBTRACTING: y⁴ = x - 50. Then take the fourth root: y = (x - 50)^(1/4). The inverse undoes each step in reverse order with the opposite operation, so + 50 becomes - 50.
+
+**52. B** (False). False. A function must give an output for EVERY input in its domain, but √(x + 2) has no real value for x < -2 (e.g. x = -3). With domain [-2, ∞) it would be a function.
+
+**53. D** (Domain [2/3, ∞); Range [0, ∞)). 3x - 2 ≥ 0 gives x ≥ 2/3. A square root is never negative, so the range is [0, ∞).
+
+**54. A** (True). True. Every domain value has exactly one output, and every output is in the codomain. The codomain may contain extra values (5, 7, 9) that are never used.
+
+**55. B** (P = 2,000t + 100,000). Linear model P = (rate)t + (starting value): the slope is 2,000 per year, the intercept is 100,000.
+
+**56. A** ((-∞, 10/3] ∪ [10/3, ∞)). YOU MISSED THIS ONE. g is a line, so its inverse g⁻¹(x) = (x + 10)/3 is also a line, defined for ALL real numbers. The marked answer (-∞, 10/3] ∪ [10/3, ∞) is just an unusual way of writing all real numbers, because 10/3 is included in both pieces. The option you picked leaves out 10/3, which only happens when a denominator is zero, and there is no denominator here. Rule: domain of g⁻¹ = range of g.
+
+**57. B** (y = a(x - h)² + k). TRAP: in our textbook (Abramson, Section 5.1), the STANDARD form of a quadratic function is f(x) = a(x - h)² + k (the vertex form), and ax² + bx + c is called the GENERAL form. Many other books call ax² + bx + c the standard form, which is why the instructor accepted both answers here. On this course's exam, read 'standard form' as a(x - h)² + k.
+
+**58. C** ((-∞, -11) ∪ (-11, 10]). Two rules: under the root 10 - x ≥ 0, so x ≤ 10 (10 included); the denominator x + 11 ≠ 0, so x ≠ -11. Together: (-∞, -11) ∪ (-11, 10].
+
+**59. A** (x² + 32x + 256 = 0). One real solution means the discriminant b² - 4ac = 0: 32² - 4(256) = 1024 - 1024 = 0. It is a perfect square, (x + 16)² = 0.
+
+**60. B** (y = x²). A thrown ball follows a parabola, which is a quadratic (degree 2) function.
+
+**61. A** (10x⁶). Work from the inside out: h(x) = x³, then g(x³) = (x³)² = x⁶, then f(x⁶) = 10x⁶.
+
+**62. B** (Domain (2, ∞); Range (-∞, ∞)). The inside of a log must be > 0: x - 2 > 0, so x > 2 with a ROUND bracket. A log takes every real value.
+
+**63. A** (y = x² + 2x + 1). Quadratic in x means the highest power of x is 2, with y as the output: y = x² + 2x + 1.
+
 
 ## Part 5: Exam-Day Checklist
 
@@ -623,6 +758,10 @@ Write your answers on paper, then check them in Part 4.
   It takes seconds and catches sign errors.
 - **Use the options:** with multiple choice, you can test each option in the equation when
   solving directly is slow.
+- **Standard vs general form:** in this course "standard form" of a quadratic is a(x - h)² + k.
+- **Inverses:** undo each step in reverse with the opposite operation (x⁴ + 50 becomes
+  (x - 50)^(1/4)); the domain of f⁻¹ is the range of f, so a linear function's inverse takes all
+  real numbers.
 - **Watch the traps from this course:** composition order (f ∘ g vs g ∘ f), round vs square
   brackets in domains, hole vs asymptote, arcsin's range, the sign of cosine in Quadrant II, and
   "dependent" systems hidden in word problems.

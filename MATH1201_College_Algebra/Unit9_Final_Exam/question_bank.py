@@ -169,10 +169,76 @@ QUESTIONS = [
      "z = 3. Then y = 5 - 3 = 2. Then x = 6 - 2 - 3 = 1. Answer (1, 2, 3)."),
 ]
 
+# Real questions from Graded Quiz Unit 3 (closed and graded), kept in their original option order.
+# Unit number 9 groups them as their own practice set.
+GRADED_QUIZ_3 = [
+    (9, "If f(x) = 3x⁵ and g(x) = (x - 1)/x², what is g(f(x))?",
+     ["(3x⁵ - 1)/(18x¹⁰)", "(3x⁵ - 1)/(6x⁷)", "(3x⁵ - 1)/(9x¹⁰)", "(3x⁵ - 1)/(18x⁷)"], 2,
+     "Put f(x) = 3x⁵ in place of x in g: (3x⁵ - 1)/(3x⁵)². The denominator is 3² · (x⁵)² = 9x¹⁰."),
+    (9, "f(x) = √(x + 3). What is the range of the inverse function f⁻¹(x)?",
+     ["(-∞, -3]", "ℝ (all real numbers)", "(-∞, -3) ∪ (-3, ∞)", "[-3, ∞)"], 3,
+     "The range of f⁻¹ equals the domain of f. For √(x + 3) we need x + 3 ≥ 0, so x ≥ -3: [-3, ∞)."),
+    (9, "The inverse of f(x) = x⁴ + 50 is:",
+     ["(x - 50)^(1/4)", "(50 + x)^(1/4)", "(x + 50)^(1/4)", "(50 - x)^(1/4)"], 0,
+     "YOU MISSED THIS ONE. Swap x and y: x = y⁴ + 50. Undo the + 50 first by SUBTRACTING: y⁴ = x - 50. "
+     "Then take the fourth root: y = (x - 50)^(1/4). The inverse undoes each step in reverse order with the "
+     "opposite operation, so + 50 becomes - 50."),
+    (9, "y = √(x + 2) with domain (-∞, ∞) and codomain [0, ∞). This relation is a function.",
+     ["True", "False"], 1,
+     "False. A function must give an output for EVERY input in its domain, but √(x + 2) has no real value "
+     "for x < -2 (e.g. x = -3). With domain [-2, ∞) it would be a function."),
+    (9, "f(x) = √(3x - 2). Which gives the domain and range?",
+     ["Domain (-∞, ∞); Range [0, ∞)", "Domain [2/3, ∞); Range (-∞, ∞)", "Domain (-∞, ∞); Range (-∞, ∞)",
+      "Domain [2/3, ∞); Range [0, ∞)"], 3,
+     "3x - 2 ≥ 0 gives x ≥ 2/3. A square root is never negative, so the range is [0, ∞)."),
+    (9, "{(1, 3), (2, 4), (3, 6), (4, 8), (5, 10)} with domain {1, 2, 3, 4, 5} and codomain "
+        "{3, 4, 5, 6, 7, 8, 9, 10} is a function.",
+     ["True", "False"], 0,
+     "True. Every domain value has exactly one output, and every output is in the codomain. The codomain "
+     "may contain extra values (5, 7, 9) that are never used."),
+    (9, "A city of 100,000 grows by 2,000 people per year. Which equation gives the population P after t years?",
+     ["P = 100,000t + 2,000", "P = 2,000t + 100,000", "P = 2,000t - 100,000", "P = 100,000 - 2,000"], 1,
+     "Linear model P = (rate)t + (starting value): the slope is 2,000 per year, the intercept is 100,000."),
+    (9, "g(x) = 3x - 10. What is the domain of g⁻¹(x)?",
+     ["(-∞, 10/3] ∪ [10/3, ∞)", "(-∞, 10/3) ∪ (10/3, ∞)", "(10/3, ∞)", "[-10/3, ∞)"], 0,
+     "YOU MISSED THIS ONE. g is a line, so its inverse g⁻¹(x) = (x + 10)/3 is also a line, defined for ALL real "
+     "numbers. The marked answer (-∞, 10/3] ∪ [10/3, ∞) is just an unusual way of writing all real numbers, "
+     "because 10/3 is included in both pieces. The option you picked leaves out 10/3, which only happens "
+     "when a denominator is zero, and there is no denominator here. Rule: domain of g⁻¹ = range of g."),
+    (9, "What is the standard form of a quadratic equation (course key)?",
+     ["y = eˣ", "y = a(x - h)² + k", "y = mx + b", "ax² + bx + c = 0"], 1,
+     "TRAP: in our textbook (Abramson, Section 5.1), the STANDARD form of a quadratic function is "
+     "f(x) = a(x - h)² + k (the vertex form), and ax² + bx + c is called the GENERAL form. Many other books "
+     "call ax² + bx + c the standard form, which is why the instructor accepted both answers here. "
+     "On this course's exam, read 'standard form' as a(x - h)² + k."),
+    (9, "f(x) = √(10 - x)/(x + 11). What is the domain of f?",
+     ["(-11, 10]", "(-∞, 10) ∪ (10, 11)", "(-∞, -11) ∪ (-11, 10]", "[-11, 10) ∪ (10, ∞)"], 2,
+     "Two rules: under the root 10 - x ≥ 0, so x ≤ 10 (10 included); the denominator x + 11 ≠ 0, so x ≠ -11. "
+     "Together: (-∞, -11) ∪ (-11, 10]."),
+    (9, "Which quadratic equation has exactly one real solution?",
+     ["x² + 32x + 256 = 0", "x² - 5x - 14 = 0", "x² - 2x - 10 = 0", "x² + 4x - 12 = 0"], 0,
+     "One real solution means the discriminant b² - 4ac = 0: 32² - 4(256) = 1024 - 1024 = 0. "
+     "It is a perfect square, (x + 16)² = 0."),
+    (9, "Which polynomial function can model the height of a ball thrown into the air?",
+     ["y = x⁵", "y = x²", "y = x⁴", "y = x³"], 1,
+     "A thrown ball follows a parabola, which is a quadratic (degree 2) function."),
+    (9, "f(x) = 10x, g(x) = x², h(x) = x³. Simplify (f ∘ g ∘ h)(x).",
+     ["10x⁶", "100x⁵", "10x⁵", "100x⁶"], 0,
+     "Work from the inside out: h(x) = x³, then g(x³) = (x³)² = x⁶, then f(x⁶) = 10x⁶."),
+    (9, "f(x) = log₂(x - 2). Which gives the domain and range?",
+     ["Domain [2, ∞); Range (-∞, 0)", "Domain (2, ∞); Range (-∞, ∞)", "Domain (2, ∞); Range (-∞, 0)",
+      "Domain (-∞, 2); Range (-∞, ∞)"], 1,
+     "The inside of a log must be > 0: x - 2 > 0, so x > 2 with a ROUND bracket. A log takes every real value."),
+    (9, "Which is a quadratic equation in the variable x?",
+     ["y = x² + 2x + 1", "y² = x²", "y = y² + 2x + 1", "x³ + 2x + 1 = 0"], 0,
+     "Quadratic in x means the highest power of x is 2, with y as the output: y = x² + 2x + 1."),
+]
+
 UNIT_NAMES = {
     1: "Functions I", 2: "Functions II", 3: "Linear and Quadratic Functions",
     4: "Polynomial and Rational Functions", 5: "Exponential and Logarithmic Functions",
     6: "Trigonometry I", 7: "Trigonometry II (Identities)", 8: "Systems of Equations",
+    9: "Graded Quiz Unit 3 (real questions)",
 }
 
 if __name__ == "__main__":
