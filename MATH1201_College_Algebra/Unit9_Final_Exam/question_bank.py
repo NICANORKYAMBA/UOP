@@ -234,11 +234,72 @@ GRADED_QUIZ_3 = [
      "Quadratic in x means the highest power of x is 2, with y as the output: y = x² + 2x + 1."),
 ]
 
+# Real questions from Graded Quiz Unit 6 (closed and graded), kept in their original option order.
+GRADED_QUIZ_6 = [
+    (10, "Which is an example of a polynomial function used to model a real-world situation?",
+     ["f(x) = 1/x", "f(x) = 3x² - 5x + 2", "f(x) = √x", "f(x) = eˣ"], 1,
+     "A polynomial uses only whole-number powers of x. 1/x = x⁻¹, √x = x^(1/2), and eˣ has x in the exponent."),
+    (10, "What is the phase shift of 23 sin(7x + 3) - 7?",
+     ["-3/7", "-7/3", "7/3", "3/7"], 0,
+     "Factor B out: 7x + 3 = 7(x + 3/7). The graph moves 3/7 to the LEFT, a phase shift of -3/7 "
+     "(set 7x + 3 = 0, x = -3/7)."),
+    (10, "Convert 7 radians to degrees.",
+     ["401°", "2520°", "14°", "808°"], 0,
+     "Multiply by 180/π: 7 × 180/π ≈ 401.07°. (7 × 360 = 2520 is the trap.)"),
+    (10, "$25,000 earns 8% compounded annually. How much is there after 3 years?",
+     ["$31492.8", "$31692.8", "$31392.8", "$31592.8"], 0,
+     "A = P(1 + r)ᵗ = 25000(1.08)³ = 25000 × 1.259712 = $31,492.80."),
+    (10, "How many intercepts and turning points can 20x¹⁰ + 6x⁹ - 3x⁵ - 10x⁴ have (at most)?",
+     ["6, 5", "5, 6", "9, 10", "10, 9"], 3,
+     "Degree 10: at most 10 x-intercepts and at most 10 - 1 = 9 turning points."),
+    (10, "What are the domain and range of log(4x + 5)?",
+     ["(-∞, ∞), (-∞, ∞)", "(0, ∞), (-∞, ∞)", "(-5/4, ∞), (-∞, ∞)", "(5/4, ∞), (0, ∞)"], 2,
+     "4x + 5 > 0 gives x > -5/4. Every log takes all real values, so the range is (-∞, ∞)."),
+    (10, "A picture shows a straight line and a U-shaped curve drawn together on the same axes; the U-shaped "
+         "curve stops at the top instead of continuing. True or false: this graph can be a polynomial of "
+         "degree 2 or more.",
+     ["True", "False"], 1,
+     "YOU MISSED THIS ONE. The key is False. A polynomial's graph is ONE smooth, unbroken curve that passes "
+     "the vertical line test and continues forever to the left and right. This picture has two separate "
+     "graphs (a vertical line would cross both the line and the U-curve), and the U-curve is cut off, so "
+     "as drawn it is not the graph of a single polynomial. Lesson: before calling a graph a polynomial, "
+     "check it is one smooth curve, passes the vertical line test, and has no breaks, corners, or flat pieces."),
+    (10, "What does the 10 in 20(10ˣ) determine?",
+     ["x-intercept", "y-intercept", "rate of growth or decay", "slope of the tangent line"], 2,
+     "In a·bˣ, b is the growth factor. The 20 is the starting value (the y-intercept)."),
+    (10, "After 3 years at 6% compounded annually, an account holds $8,000. What was the principal?",
+     ["$6000", "$6800", "$6,720", "$5550"], 2,
+     "Work backwards: P = 8000 / 1.06³ = 8000 / 1.191016 ≈ $6,716.95, closest to $6,720."),
+    (10, "Solve 5 = 6(2ˣ) + 4.",
+     ["-2.5849", "2.5849", "0.3868", "-0.3868"], 0,
+     "Subtract 4: 1 = 6(2ˣ). Divide by 6: 2ˣ = 1/6. Take logs: x = log(1/6)/log 2 ≈ -2.5849 "
+     "(negative because 1/6 < 1)."),
+    (10, "25 log₁₀₀ x + 25 compared with log₁₀₀ x is a vertical compression by 25.",
+     ["True", "False"], 1,
+     "False. Multiplying by 25 is a vertical STRETCH by 25 (the + 25 shifts it up). A compression needs a "
+     "factor between 0 and 1."),
+    (10, "The angle of elevation to the top of a 20 m tree is 60°. About how far is the observer from the tree?",
+     ["34.6 meters", "20 meters", "11.54 meters", "40 meters"], 2,
+     "tan 60° = opposite/adjacent = 20/d, so d = 20/tan 60° = 20/√3 ≈ 11.54 m. (34.6 = 20 × √3 is the trap.)"),
+    (10, "How can the unit circle be used to find trigonometric values for any angle?",
+     ["By drawing a right triangle in the circle", "By using a calculator or table of values",
+      "By memorizing the values", "By measuring the angle in degrees"], 0,
+     "A right triangle drawn from the point (x, y) to the x-axis, with hypotenuse 1, gives cos θ = x and sin θ = y."),
+    (10, "Horizontal asymptotes of f(x) = (5x³ - 10)/(10x² - 12x + 20)?",
+     ["y = 1/2", "x = 5", "Do not exist", "x = 2"], 2,
+     "Top degree 3 is greater than bottom degree 2, so there is no horizontal asymptote (there is a slant one). "
+     "Horizontal asymptotes are written y = ..., never x = ...."),
+    (10, "What is 1560° equal to (as a coterminal angle in radians)?",
+     ["4π/3", "π", "2π/3", "2π"], 2,
+     "Remove full turns: 1560° - 4 × 360° = 120°. Then 120 × π/180 = 2π/3."),
+]
+
 UNIT_NAMES = {
     1: "Functions I", 2: "Functions II", 3: "Linear and Quadratic Functions",
     4: "Polynomial and Rational Functions", 5: "Exponential and Logarithmic Functions",
     6: "Trigonometry I", 7: "Trigonometry II (Identities)", 8: "Systems of Equations",
     9: "Graded Quiz Unit 3 (real questions)",
+    10: "Graded Quiz Unit 6 (real questions)",
 }
 
 if __name__ == "__main__":

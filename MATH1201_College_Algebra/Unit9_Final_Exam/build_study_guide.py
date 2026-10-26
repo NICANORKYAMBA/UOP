@@ -12,7 +12,7 @@ Output: Final_Exam_Study_Guide.md, practice_questions.json
 import json
 from pathlib import Path
 
-from question_bank import GRADED_QUIZ_3, QUESTIONS, UNIT_NAMES
+from question_bank import GRADED_QUIZ_3, GRADED_QUIZ_6, QUESTIONS, UNIT_NAMES
 
 HERE = Path(__file__).resolve().parent
 LETTERS = "ABCD"
@@ -208,7 +208,7 @@ TIPS = """
 
 def main():
     questions = balanced(QUESTIONS) + [
-        {"unit": u, "q": t, "options": list(o), "answer": a, "why": w} for (u, t, o, a, w) in GRADED_QUIZ_3
+        {"unit": u, "q": t, "options": list(o), "answer": a, "why": w} for (u, t, o, a, w) in GRADED_QUIZ_3 + GRADED_QUIZ_6
     ]
     (HERE / "practice_questions.json").write_text(json.dumps(questions, ensure_ascii=False, indent=1))
 
@@ -228,7 +228,7 @@ def main():
         "algebra tool. Mark any question you miss and reread that unit's formulas.",
         FORMULAS,
         SELF_QUIZ,
-        f"## Part 3: Practice Exam ({len(QUESTIONS)} Questions) and Graded Quiz 3 Review",
+        f"## Part 3: Practice Exam ({len(QUESTIONS)} Questions) and Graded Quiz Review",
         "",
         "Write your answers on paper, then check them in Part 4.",
         "",

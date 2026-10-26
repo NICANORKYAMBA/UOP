@@ -160,7 +160,7 @@ The proctored final exam covers all eight units. Study Part 1 until you can writ
 | A parabola meets a line in at most two points | True | Substitution gives a quadratic |
 | Independent system | Unique solution, lines meet at a point | Definition |
 
-## Part 3: Practice Exam (48 Questions) and Graded Quiz 3 Review
+## Part 3: Practice Exam (48 Questions) and Graded Quiz Review
 
 Write your answers on paper, then check them in Part 4.
 
@@ -619,6 +619,109 @@ Write your answers on paper, then check them in Part 4.
 - C. y = y² + 2x + 1
 - D. x³ + 2x + 1 = 0
 
+### Graded Quiz Unit 6 (real questions)
+
+**64.** Which is an example of a polynomial function used to model a real-world situation?
+
+- A. f(x) = 1/x
+- B. f(x) = 3x² - 5x + 2
+- C. f(x) = √x
+- D. f(x) = eˣ
+
+**65.** What is the phase shift of 23 sin(7x + 3) - 7?
+
+- A. -3/7
+- B. -7/3
+- C. 7/3
+- D. 3/7
+
+**66.** Convert 7 radians to degrees.
+
+- A. 401°
+- B. 2520°
+- C. 14°
+- D. 808°
+
+**67.** $25,000 earns 8% compounded annually. How much is there after 3 years?
+
+- A. $31492.8
+- B. $31692.8
+- C. $31392.8
+- D. $31592.8
+
+**68.** How many intercepts and turning points can 20x¹⁰ + 6x⁹ - 3x⁵ - 10x⁴ have (at most)?
+
+- A. 6, 5
+- B. 5, 6
+- C. 9, 10
+- D. 10, 9
+
+**69.** What are the domain and range of log(4x + 5)?
+
+- A. (-∞, ∞), (-∞, ∞)
+- B. (0, ∞), (-∞, ∞)
+- C. (-5/4, ∞), (-∞, ∞)
+- D. (5/4, ∞), (0, ∞)
+
+**70.** A picture shows a straight line and a U-shaped curve drawn together on the same axes; the U-shaped curve stops at the top instead of continuing. True or false: this graph can be a polynomial of degree 2 or more.
+
+- A. True
+- B. False
+
+**71.** What does the 10 in 20(10ˣ) determine?
+
+- A. x-intercept
+- B. y-intercept
+- C. rate of growth or decay
+- D. slope of the tangent line
+
+**72.** After 3 years at 6% compounded annually, an account holds $8,000. What was the principal?
+
+- A. $6000
+- B. $6800
+- C. $6,720
+- D. $5550
+
+**73.** Solve 5 = 6(2ˣ) + 4.
+
+- A. -2.5849
+- B. 2.5849
+- C. 0.3868
+- D. -0.3868
+
+**74.** 25 log₁₀₀ x + 25 compared with log₁₀₀ x is a vertical compression by 25.
+
+- A. True
+- B. False
+
+**75.** The angle of elevation to the top of a 20 m tree is 60°. About how far is the observer from the tree?
+
+- A. 34.6 meters
+- B. 20 meters
+- C. 11.54 meters
+- D. 40 meters
+
+**76.** How can the unit circle be used to find trigonometric values for any angle?
+
+- A. By drawing a right triangle in the circle
+- B. By using a calculator or table of values
+- C. By memorizing the values
+- D. By measuring the angle in degrees
+
+**77.** Horizontal asymptotes of f(x) = (5x³ - 10)/(10x² - 12x + 20)?
+
+- A. y = 1/2
+- B. x = 5
+- C. Do not exist
+- D. x = 2
+
+**78.** What is 1560° equal to (as a coterminal angle in radians)?
+
+- A. 4π/3
+- B. π
+- C. 2π/3
+- D. 2π
+
 ## Part 4: Answer Key With Worked Solutions
 
 **1. A** ({(1, 2), (2, 4), (3, 6)}). A function gives each input exactly one output. Only the first set never repeats an x-value.
@@ -746,6 +849,36 @@ Write your answers on paper, then check them in Part 4.
 **62. B** (Domain (2, ∞); Range (-∞, ∞)). The inside of a log must be > 0: x - 2 > 0, so x > 2 with a ROUND bracket. A log takes every real value.
 
 **63. A** (y = x² + 2x + 1). Quadratic in x means the highest power of x is 2, with y as the output: y = x² + 2x + 1.
+
+**64. B** (f(x) = 3x² - 5x + 2). A polynomial uses only whole-number powers of x. 1/x = x⁻¹, √x = x^(1/2), and eˣ has x in the exponent.
+
+**65. A** (-3/7). Factor B out: 7x + 3 = 7(x + 3/7). The graph moves 3/7 to the LEFT, a phase shift of -3/7 (set 7x + 3 = 0, x = -3/7).
+
+**66. A** (401°). Multiply by 180/π: 7 × 180/π ≈ 401.07°. (7 × 360 = 2520 is the trap.)
+
+**67. A** ($31492.8). A = P(1 + r)ᵗ = 25000(1.08)³ = 25000 × 1.259712 = $31,492.80.
+
+**68. D** (10, 9). Degree 10: at most 10 x-intercepts and at most 10 - 1 = 9 turning points.
+
+**69. C** ((-5/4, ∞), (-∞, ∞)). 4x + 5 > 0 gives x > -5/4. Every log takes all real values, so the range is (-∞, ∞).
+
+**70. B** (False). YOU MISSED THIS ONE. The key is False. A polynomial's graph is ONE smooth, unbroken curve that passes the vertical line test and continues forever to the left and right. This picture has two separate graphs (a vertical line would cross both the line and the U-curve), and the U-curve is cut off, so as drawn it is not the graph of a single polynomial. Lesson: before calling a graph a polynomial, check it is one smooth curve, passes the vertical line test, and has no breaks, corners, or flat pieces.
+
+**71. C** (rate of growth or decay). In a·bˣ, b is the growth factor. The 20 is the starting value (the y-intercept).
+
+**72. C** ($6,720). Work backwards: P = 8000 / 1.06³ = 8000 / 1.191016 ≈ $6,716.95, closest to $6,720.
+
+**73. A** (-2.5849). Subtract 4: 1 = 6(2ˣ). Divide by 6: 2ˣ = 1/6. Take logs: x = log(1/6)/log 2 ≈ -2.5849 (negative because 1/6 < 1).
+
+**74. B** (False). False. Multiplying by 25 is a vertical STRETCH by 25 (the + 25 shifts it up). A compression needs a factor between 0 and 1.
+
+**75. C** (11.54 meters). tan 60° = opposite/adjacent = 20/d, so d = 20/tan 60° = 20/√3 ≈ 11.54 m. (34.6 = 20 × √3 is the trap.)
+
+**76. A** (By drawing a right triangle in the circle). A right triangle drawn from the point (x, y) to the x-axis, with hypotenuse 1, gives cos θ = x and sin θ = y.
+
+**77. C** (Do not exist). Top degree 3 is greater than bottom degree 2, so there is no horizontal asymptote (there is a slant one). Horizontal asymptotes are written y = ..., never x = ....
+
+**78. C** (2π/3). Remove full turns: 1560° - 4 × 360° = 120°. Then 120 × π/180 = 2π/3.
 
 
 ## Part 5: Exam-Day Checklist
