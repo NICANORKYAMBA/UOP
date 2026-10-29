@@ -46,3 +46,48 @@ Q16, Q14, Q25 and Q30 were checked by running real Java code (JDK, javac).
 | 38 | GridBagLayout | gridwidth / gridheight let a component span cells |
 | 39 | Provides methods for querying thread information in the Java virtual machine | java.lang.management.ThreadMXBean |
 | 40 | Linking a property of one object to another | e.g. label.textProperty().bind(...) |
+
+# Review Quiz 2: Answers and Reasons
+
+| Q | Answer | Why |
+|---|---|---|
+| 1 | Substring() | String.substring(begin, end) |
+| 2 | read() method in FileReader | FileReader.read() reads characters; the other names do not exist |
+| 3 | To retrieve an element at the specified index | list.get(i) |
+| 4 | equalsIgnoreCase() | Returns true/false ignoring case (compareToIgnoreCase returns an int order) |
+| 5 | Easier code navigation and management (less certain) | Packages organize a shared code base so a team can find and manage classes |
+| 6 | No, a class can belong to only one package | One package declaration per file |
+| 7 | A connection to a specific database | DriverManager.getConnection(url) |
+| 8 | setExecutable(), setReadable(), and setWritable() methods in File class | Real File methods |
+| 9 | The code will not be compiled due to naming conflicts | Same as Review Quiz 1, accepted by the key |
+| 10 | default package | The unnamed package |
+| 11 | printf() (less certain) | PrintWriter has both printf and format; printf is the usual answer |
+| 12 | FileReader | Readers/Writers are character streams |
+| 13 | Checked exception | The compiler forces catch or throws |
+| 14 | Implementing DragSource and DropTarget | java.awt.dnd classes |
+| 15 | Public | Confirmed by the Review Quiz 1 key |
+| 16 | Naming conflicts between classes (less certain) | Importing the exact class you mean resolves which one is used |
+| 17 | Setting the cursor property of a component | Toolkit.createCustomCursor(...) then component.setCursor(...) |
+| 18 | Retrieves the value of a parameter specified in the HTML tag | <param name=... value=...> |
+| 19 | write () method | FileWriter.write(String) |
+| 20 | import mypackage.ClassName; (less certain) | The import statement; the fully qualified name also works but is not "the statement" |
+| 21 | By using the synchronized keyword | Locks a monitor so one thread runs the block at a time |
+| 22 | Yes, a "finally" block can be used independently | try { } finally { } is legal |
+| 23 | Execute repetitive tasks | Fires an ActionEvent every n ms on the EDT |
+| 24 | When using wildcard imports (less certain) | import java.util.*; import java.awt.*; then List is ambiguous |
+| 25 | Interactive applet | Uses buttons and text fields |
+| 26 | To get the character at a specific index | charAt |
+| 27 | True | Classes with no package statement go in the default package |
+| 28 | rollBack() | Connection.rollback() |
+| 29 | To avoid naming conflicts | Package names make class names unique |
+| 30 | To create instances of generic classes without specifying the type parameter | new ArrayList<>() infers the type |
+| 31 | class MyClass<T> { } | Type parameter goes after the class name |
+| 32 | Unlimited | No limit in the language |
+| 33 | To execute stored procedures | {call proc(?)} |
+| 34 | WHERE | Filters rows in SELECT |
+| 35 | Update the user interface | Schedules a paint of the component |
+| 36 | Optimize repainting of components (less certain) | Collapses many repaint requests into fewer paints; double buffering is a side job |
+| 37 | close() | All streams implement Closeable |
+| 38 | To assign a local address to a socket | bind attaches the IP and port |
+| 39 | False | A default-package class cannot be imported by classes in a named package |
+| 40 | JList (less certain) | The list component; JComboBox is a drop-down |
