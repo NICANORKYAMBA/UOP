@@ -20,16 +20,16 @@ Q16, Q14, Q25 and Q30 were checked by running real Java code (JDK, javac).
 | 12 | UDP | DatagramSocket sends UDP packets |
 | 13 | HashMap | Map<K, V> stores key-value pairs |
 | 14 | 5 | Thread.NORM_PRIORITY = 5 (verified) |
-| 15 | BoxLayout | BoxLayout.Y_AXIS stacks in one column |
+| 15 | FlowLayout (course key) | The quiz key says FlowLayout. Technically BoxLayout.Y_AXIS is the true single-column layout, but answer FlowLayout on the exam |
 | 16 | 5 | Verified |
 | 17 | Inet4Address | The only real Java class listed (subclass of InetAddress) |
 | 18 | Thread | `class MyThread extends Thread`; Runnable is an interface |
 | 19 | To group related classes and reduce naming conflicts | Main purpose of packages |
-| 20 | Internet Protocol | Standard name |
+| 20 | Internet Protocol (course key) | Confirmed by the key. Careful: "Internal Protocol" is the trap option right above it |
 | 21 | Basic file operations like creating, deleting, and copying files | java.nio.file.Files: createFile, delete, copy, move |
 | 22 | Checks if the current thread has been interrupted | Static Thread.interrupted() (also clears the flag) |
 | 23 | Public | Only public classes are visible outside the package |
-| 24 | To signal a timeout during data transmission (less certain) | Javadoc: "Signals that a timeout has occurred on a socket read or accept" |
+| 24 | To handle timeout scenarios when establishing a socket connection (course key) | The quiz key ties it to connecting (Socket.connect with a timeout), not to data transfer |
 | 25 | The code will not compile due to naming conflicts | Verified: javac reports "a type with the same simple name is already defined by the single-type-import" |
 | 26 | Type safety and reduced code duplication | Errors caught at compile time; one class for many types |
 | 27 | GraphicsContext | Canvas.getGraphicsContext2D() draws paths and shapes |
