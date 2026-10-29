@@ -61,20 +61,20 @@ Q16, Q14, Q25 and Q30 were checked by running real Java code (JDK, javac).
 | 8 | setExecutable(), setReadable(), and setWritable() methods in File class | Real File methods |
 | 9 | The code will not be compiled due to naming conflicts | Same as Review Quiz 1, accepted by the key |
 | 10 | default package | The unnamed package |
-| 11 | printf() (less certain) | PrintWriter has both printf and format; printf is the usual answer |
+| 11 | printf() | Javadoc: printf is "a convenience method to write a formatted string to this writer"; format() is not the method name the docs use for that phrase |
 | 12 | FileReader | Readers/Writers are character streams |
 | 13 | Checked exception | The compiler forces catch or throws |
 | 14 | Implementing DragSource and DropTarget | java.awt.dnd classes |
 | 15 | Public | Confirmed by the Review Quiz 1 key |
-| 16 | Naming conflicts between classes (less certain) | Importing the exact class you mean resolves which one is used |
+| 16 | Naming conflicts between classes | Matches quiz answer sites for this exact question |
 | 17 | Setting the cursor property of a component | Toolkit.createCustomCursor(...) then component.setCursor(...) |
 | 18 | Retrieves the value of a parameter specified in the HTML tag | <param name=... value=...> |
 | 19 | write () method | FileWriter.write(String) |
 | 20 | import mypackage.ClassName; (less certain) | The import statement; the fully qualified name also works but is not "the statement" |
 | 21 | By using the synchronized keyword | Locks a monitor so one thread runs the block at a time |
-| 22 | Yes, a "finally" block can be used independently | try { } finally { } is legal |
+| 22 | Yes, a "finally" block can be used independently | Verified: try { } finally { } compiles and runs |
 | 23 | Execute repetitive tasks | Fires an ActionEvent every n ms on the EDT |
-| 24 | When using wildcard imports (less certain) | import java.util.*; import java.awt.*; then List is ambiguous |
+| 24 | When using wildcard imports (less certain) | Wildcards pull in every class (java.util.* and java.awt.* both have List). Second choice if marked wrong: "When importing classes from different packages" |
 | 25 | Interactive applet | Uses buttons and text fields |
 | 26 | To get the character at a specific index | charAt |
 | 27 | True | Classes with no package statement go in the default package |
@@ -89,5 +89,5 @@ Q16, Q14, Q25 and Q30 were checked by running real Java code (JDK, javac).
 | 36 | Optimize repainting of components (less certain) | Collapses many repaint requests into fewer paints; double buffering is a side job |
 | 37 | close() | All streams implement Closeable |
 | 38 | To assign a local address to a socket | bind attaches the IP and port |
-| 39 | False | A default-package class cannot be imported by classes in a named package |
+| 39 | False | Verified with javac: "import D;" is a syntax error and using D from package app gives "cannot find symbol" |
 | 40 | JList (less certain) | The list component; JComboBox is a drop-down |
