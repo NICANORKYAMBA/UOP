@@ -59,7 +59,7 @@ feedback after submitting, and remember the course key's answer for the final.
 | 24 | The number of clock cycles per second | Measured in hertz (e.g. 3 GHz) |
 | 25 | 0 | Anything × 0 = 0 |
 | 26 | Resolving memory addresses to corresponding symbols (less certain) | Closest to matching symbols with addresses |
-| 27 | Execution (less certain) | Resolved, decoded instructions are simpler to execute |
+| 27 | Design | A crowd-sourced answer for this exact UoPeople question gives "design": once symbols stand for addresses and opcodes, complex instruction formats are easier to design around |
 | 28 | Data storage and memory | Flip-flops and latches each store one bit |
 | 29 | All inputs are true | NAND is NOT AND: 0 only when every input is 1 |
 | 30 | Ensuring correctness | Every signal must have one correct meaning (Unit 8 assignment) |
