@@ -13,7 +13,7 @@
 | 9 | (0, 1) and (0, −5) | y² + 4y − 5 = (y + 5)(y − 1) = 0 |
 | 10 | sqrt(2 − sqrt(3)) / 2 | Half-angle of 30°: ≈ 0.2588 |
 | 11 | (−1, 1) | x < 0: −x = 2x + 3 gives x = −1; x ≥ 0 gives x = −3, rejected |
-| 12 | Positive leading coefficient and even degree | Both ends go up |
+| 12 | Positive leading coefficient and odd degree (COURSE KEY) | Key says odd. Mathematically both ends up means even degree, but for THIS graph (W shape, dip near y = −4 between x = −1 and 1) pick "positive and odd" on the final |
 | 13 | 2 | Amplitude = |−2| |
 | 14 | 4 | Amplitude = |4| |
 | 15 | (−4, 0) | (4 cos π, 4 sin π) |
@@ -21,7 +21,7 @@
 | 17 | −1/3 | x = −b/2a = 2/(−6) |
 | 18 | $15,000 | 10000(1.05)⁸ ≈ 14,775 |
 | 19 | cos 30° | cos(A − B) = cos(π/6 − π/3) = cos(−30°) |
-| 20 | (0, 1), (−1, 2), (1, 2) | x⁴ = x², so x = 0, ±1 |
+| 20 | (0, 1), (−1, 2), (1, 2) (confirmed by key) | x⁴ = x², so x = 0, ±1; y = x² + 1 gives 1, 2, 2. Trap option has (0, −1) |
 | 21 | Undefined | g(4) = 0 |
 | 22 | (2, 1) | 4 + 3 = 7 and 6 − 5 = 1 |
 | 23 | −8x² + 12 | (2x² + 5) + (−10x² + 7) |
@@ -37,8 +37,8 @@
 | 33 | 16/3 (quiz error) | True minimum of 3x² − 2x + 5 is 14/3 at x = 1/3, not listed. 16/3 is the max of −3x² − 2x + 5 from Q17, most likely the key |
 | 34 | {±1, ±1/3, ±5, ±5/3} | p/q with p | 5, q | 3 |
 | 35 | $100,000 | 271000 / e = 271000 / 2.71 |
-| 36 | Positive leading coefficient and even degree polynomial | Same graph as Q12 |
+| 36 | Positive leading coefficient and odd degree (COURSE KEY) | Key says odd. Mathematically both ends up means even degree, but for THIS graph (W shape, dip near y = −4 between x = −1 and 1) pick "positive and odd" on the final |
 | 37 | (−1, −4) and (3, 4) | x² − 2x − 3 = 0 |
-| 38 | (4, −28) | x = 16/4 = 4, f(4) = 32 − 64 + 4 |
+| 38 | (4, −28) (confirmed by key) | x = 16/4 = +4, f(4) = 32 − 64 + 4. Trap option is (−4, −28) |
 | 39 | y = −(x + 1)² − 2 (less certain) | Vertex (−1, −2). Note x = −(y + 2)² − 1 also has vertex (−1, −2), but the standard y = form is the expected one |
 | 40 | x = 10 | (x − 10)/((x − 10)(x − 2)): x − 10 cancels, x = 2 is a vertical asymptote |
