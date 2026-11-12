@@ -16,4 +16,5 @@ Outside of studying, I enjoy tinkering with my Linux setup, solving small progra
 
 Looking forward to learning with all of you. Good luck this week!
 
-Best, Nicanor
+Best,
+Nicanor
