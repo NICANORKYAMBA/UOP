@@ -18,8 +18,7 @@ that every order must point to a real customer, so a new mobile app reads these 
 add a brand column to the product table without rewriting the checkout code. Codd designed the
 relational model for this kind of data independence (Sharma et al., 2010, p. 29).
 3. **Support for multiple views.** Shoppers see the catalogue and their own orders, warehouse staff
-see stock levels, and finance sees sales totals. Each group gets only the data it needs, which also
-protects payment details.
+see stock levels, and finance sees sales totals. Payment details stay hidden from all of them.
 4. **Data sharing and multiuser transactions.** In a flash sale, many buyers may reach for the last
 item at once. Concurrency control keeps the data correct so the item is not sold twice (Watt & Eng,
 2014, Chapter 3).
@@ -29,7 +28,9 @@ item at once. Concurrency control keeps the data correct so the item is not sold
 Sharma et al. (2010, pp. 26-27) separate an information model, a conceptual picture without
 implementation details, from data models, which are the detailed blueprints that developers
 build. I would start with an entity-relationship model, the usual high-level conceptual model
-(Watt & Eng, 2014, Chapter 4), and then map it to relational tables:
+(Watt & Eng, 2014, Chapter 4), and then map it to the relational model. Older models fit badly:
+a hierarchical tree lets a product sit under only one parent, and the network model links records
+with pointers that programs must follow (Sharma et al., 2010, pp. 28-29). The relational tables:
 
 | Table | Primary key | Foreign keys | Main data |
 |---|---|---|---|
@@ -71,7 +72,6 @@ option (Sharma et al., 2010, p. 31).
 - **Price history.** If an order only points to the product, a later price change would rewrite old
 receipts. Storing unit_price in OrderItem is a small, controlled redundancy that keeps history
 correct.
-- **Scale.** Busy pages join several tables, so foreign keys need indexes.
 - **Stock under concurrency.** Placing an order and lowering the stock must happen in one
 transaction, so the stock can never fall below zero.
 
