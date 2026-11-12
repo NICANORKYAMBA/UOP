@@ -4,10 +4,9 @@
 **Student:** Nicanor Maswili
 **Due:** November 18, 2026
 
-An online store adds products, customers and orders every minute while thousands of people shop
-at once. Vidhya et al. (2016, pp. 24-25)
+An online store adds products, customers and orders every minute. Vidhya et al. (2016, pp. 24-25)
 explain that file processing systems suffer from duplicated and inconsistent data and from
-programs that are tied to the file layout, which are exactly the problems a DBMS removes.
+programs that are tied to the file layout, which a DBMS removes.
 
 ## Four Key Characteristics of Databases and DBMS
 
