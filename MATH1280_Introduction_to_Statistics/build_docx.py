@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 AUTHOR = "Nicanor Maswili"
 AFFIL = "Department of Computer Science, University of the People"
 COURSE = "MATH 1280: Introduction to Statistics"
-INSTRUCTOR = ""
+INSTRUCTOR = "Yusuf Babatunde Hammed"
 
 # (source, output, title_page, due date)
 JOBS = [
