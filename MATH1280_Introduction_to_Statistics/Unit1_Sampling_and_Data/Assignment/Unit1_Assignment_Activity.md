@@ -4,6 +4,8 @@
 **Student:** Nicanor Maswili
 **Due:** November 18, 2026
 
+This paper explains key statistical terms and sampling methods, then organizes two data sets.
+
 ## Question 1
 
 ### a. Statistics, probability, population, and sample
@@ -13,7 +15,7 @@ Imagine a café owner who wants to know which drink customers like best.
 - **Statistics** is the science of collecting, organizing, analyzing, and interpreting data so we can make decisions (Illowsky et al., 2023, Section 1.1). For the café, it is the whole process from asking customers to deciding the menu.
 - **Probability** is the mathematics of chance: how likely an event is to happen (Illowsky et al., 2023, Section 1.1). If 30 of 100 surveyed customers chose cappuccino, the estimated probability that the next customer orders a cappuccino is 30/100 = 0.30.
 - **Population** is the whole group we want to learn about (Brief Tutorial Statistics, 2015). Here it is every customer of the café.
-- **Sample** is the smaller part of the population that we actually study. Surveying everyone is costly, so the owner surveys 100 customers. A number calculated from the sample, such as the 30% who chose cappuccino, is a statistic, and it is used to estimate the matching value for the whole population, which is called a parameter (Illowsky et al., 2023, Section 1.1).
+- **Sample** is the smaller part of the population that we actually study. Surveying everyone is costly, so the owner surveys 100 customers. The sample's 30% is a statistic, used to estimate the population's true value, the parameter (Illowsky et al., 2023, Section 1.1).
 
 ### b. Simple random sampling vs stratified sampling
 
@@ -23,7 +25,7 @@ In a **stratified sample**, the population is first divided into groups called s
 
 Suppose 60% of the café's customers come in the morning and 40% in the evening. A simple random sample of 100 could, by chance, include 80 morning customers and overstate morning tastes. A stratified sample fixes this by randomly choosing 60 morning customers and 40 evening customers.
 
-The key difference is that simple random sampling chooses from the whole population at once, while stratified sampling guarantees that every important group is represented. Statistics Canada (2021) adds that when members within each stratum are similar to each other but different from other strata, a stratified sample gives more precise estimates than a simple random sample of the same size, meaning less sampling variability.
+The key difference is that simple random sampling chooses from the whole population at once, while stratified sampling guarantees that every important group is represented. When strata differ from each other, a stratified sample gives more precise estimates than a simple random sample of the same size, so sampling variability is lower (Statistics Canada, 2021).
 
 ## Question 2
 
@@ -37,27 +39,36 @@ Household size is quantitative discrete data at the ratio level, since it is a c
 
 [FIGURE figures/fig1_dot_plot.png]
 
-*Note.* Created by the author in Python (Matplotlib) from the table in Question 2.
+*Note.* N = 23 families. Created by the author in Python (Matplotlib) from the table in Question 2.
 
-Most households have 4 or 5 members (13 of 23 families).
+Most households have 4 or 5 members.
 
 ### b. Families with more than four members
 
-"More than four" means 5, 6, or 7 members, so 4 itself is excluded.
+"More than four" means 5, 6, or 7 members, so 4 itself is excluded (Table 1).
 
-| Members (x) | Families (f) | Included? |
-|---|---|---|
-| 5 | 6 | Yes |
-| 6 | 3 | Yes |
-| 7 | 2 | Yes |
+**Table 1**
+
+*Households With More Than Four Members*
+
+| Members (x) | Families (f) |
+|---|---|
+| 5 | 6 |
+| 6 | 3 |
+| 7 | 2 |
+| **Total (x > 4)** | **11** |
 
 Number of families with x > 4 = 6 + 3 + 2 = **11 families**.
 
-As a check, the total is 1 + 4 + 7 + 6 + 3 + 2 = 23 families, and 23 − (1 + 4 + 7) = 23 − 12 = 11.
+Check: 23 − (1 + 4 + 7) = 23 − 12 = 11.
 
 ## Question 3
 
-Each cumulative frequency is a running total of all students up to the upper boundary of the interval (Illowsky et al., 2023, Section 1.3). Grouping data into classes keeps it readable (FuseSchool - Global Education, 2017), and the frequency of a single class is found by subtracting the previous cumulative frequency.
+Each cumulative frequency is a running total of all students up to the upper boundary of the interval (Illowsky et al., 2023, Section 1.3). Grouping data into classes keeps it readable (FuseSchool - Global Education, 2017), and the frequency of a single class is found by subtracting the previous cumulative frequency (Table 2).
+
+**Table 2**
+
+*Class Frequencies Derived From the Cumulative Frequencies*
 
 | Hours studied | Cumulative frequency | Class frequency |
 |---|---|---|

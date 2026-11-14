@@ -166,19 +166,45 @@ def mono(doc, lines):
     doc.add_paragraph().paragraph_format.space_after = Pt(0)
 
 
+def borders(cell, **edges):
+    """Set APA-style horizontal rules on one cell, e.g. borders(c, top=12, bottom=4)."""
+    tcpr = cell._tc.get_or_add_tcPr()
+    tb = OxmlElement("w:tcBorders")
+    for edge in ("top", "left", "bottom", "right"):
+        el = OxmlElement(f"w:{edge}")
+        size = edges.get(edge)
+        el.set(qn("w:val"), "single" if size else "nil")
+        if size:
+            el.set(qn("w:sz"), str(size))
+            el.set(qn("w:color"), "000000")
+        tb.append(el)
+    tcpr.append(tb)
+
+
 def table(doc, rows):
+    """APA 7 table: rules above and below the header and at the bottom, no vertical lines."""
     cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows]
     cells = [r for r in cells if not all(set(c) <= set("-: ") for c in r)]
     t = doc.add_table(rows=len(cells), cols=len(cells[0]))
-    t.style = "Table Grid"
+    last = len(cells) - 1
     for i, row in enumerate(cells):
         for j, val in enumerate(row):
-            p = t.cell(i, j).paragraphs[0]
+            cell = t.cell(i, j)
+            p = cell.paragraphs[0]
             p.paragraph_format.line_spacing = 1.0
+            p.paragraph_format.space_before = Pt(3)
+            p.paragraph_format.space_after = Pt(3)
+            p.alignment = WD_ALIGN_PARAGRAPH.LEFT if j == 0 else WD_ALIGN_PARAGRAPH.CENTER
             r = p.add_run(val.replace("**", ""))
             r.font.name = FONT
-            r.font.size = Pt(10.5)
-            r.bold = i == 0
+            r.font.size = Pt(11)
+            r.bold = i == 0 or "**" in val
+            edges = {}
+            if i == 0:
+                edges = {"top": 12, "bottom": 6}
+            if i == last:
+                edges["bottom"] = 12
+            borders(cell, **edges)
     doc.add_paragraph().paragraph_format.space_after = Pt(0)
 
 

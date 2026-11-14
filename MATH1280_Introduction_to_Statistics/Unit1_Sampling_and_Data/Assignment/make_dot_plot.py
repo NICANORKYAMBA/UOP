@@ -19,7 +19,7 @@ ax.set_yticks(range(0, 9))
 ax.set_ylim(0, 8.4)
 ax.set_xlabel("Number of members in the household")
 ax.set_ylabel("Number of families (one dot = one family)")
-ax.set_title("Dot Plot of Household Size in a Small Rural Area (N = 23 families)")
+# APA 7: the figure title goes in the paper above the image, not inside it
 ax.grid(axis="y", linestyle=":", alpha=0.6, zorder=0)
 for side in ("top", "right"):
     ax.spines[side].set_visible(False)
