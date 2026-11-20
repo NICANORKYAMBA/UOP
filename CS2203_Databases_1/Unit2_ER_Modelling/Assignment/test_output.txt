@@ -1,0 +1,13 @@
+order_id    customer     product_name   quantity  unit_price
+--------  ------------  --------------  --------  ----------
+     100  Amina Otieno  Ceramic Mug            2         450
+     100  Amina Otieno  Cotton T-Shirt         1         900
+ product_name   warehouse_location  quantity_on_hand  reorder_level
+--------------  ------------------  ----------------  -------------
+Cotton T-Shirt  Nairobi-WH1                        8             15
+--- constraint tests (each must fail) ---
+Error near line 20: FOREIGN KEY constraint failed
+Error near line 21: UNIQUE constraint failed: Order_Item.order_id, Order_Item.product_id
+Error near line 22: UNIQUE constraint failed: Customer.email
+Error near line 23: UNIQUE constraint failed: Inventory.product_id, Inventory.warehouse_location
+Error near line 24: CHECK constraint failed: quantity > 0
