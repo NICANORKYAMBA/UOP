@@ -35,6 +35,10 @@ INSTRUCTOR = "Yusuf Babatunde Hammed"
 JOBS = [
     ("Unit1_Sampling_and_Data/Assignment/Unit1_Assignment_Activity.md",
      "Unit1_Sampling_and_Data/Assignment/Unit1_Assignment_Activity.docx", True, "November 18, 2026"),
+    ("Unit2_Descriptive_Statistics/Assignment/Unit2_Assignment_Activity.md",
+     "Unit2_Descriptive_Statistics/Assignment/Unit2_Assignment_Activity.docx", True, "November 25, 2026"),
+    ("Unit2_Descriptive_Statistics/Discussion/Unit2_Discussion_Post.md",
+     "Unit2_Descriptive_Statistics/Discussion/Unit2_Discussion_Post.docx", False, "November 25, 2026"),
 ]
 
 URL = re.compile(r"(https?://\S+)")
