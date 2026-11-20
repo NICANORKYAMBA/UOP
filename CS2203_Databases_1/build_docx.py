@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 AUTHOR = "Nicanor Maswili"
 AFFIL = "Department of Computer Science, University of the People"
 COURSE = "CS 2203: Databases 1"
-INSTRUCTOR = ""
+INSTRUCTOR = "Debanjana Chaudhuri"
 
 # (source, output, title_page, due date)
 JOBS = [
