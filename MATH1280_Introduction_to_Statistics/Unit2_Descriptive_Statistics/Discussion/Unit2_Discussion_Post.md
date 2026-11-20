@@ -25,9 +25,9 @@ Outliers can be found in three steps:
 2. **Assess:** ask why the value is extreme. Is it a typing or measurement error, a value from a different population, or a real but rare case?
 3. **Address:** correct clear errors, and report results with and without the outlier so readers can see its effect. Using the median and IQR, which resist outliers, is another option (MarinStatsLectures-R Programming & Statistics, 2019).
 
-Excluding an outlier gives better insight when it is an error, such as a test score of 119 on a test marked out of 100, or a sensor reading of −40 °C on a summer afternoon. Keeping it would distort the mean and standard deviation for no reason.
+Excluding an outlier gives better insight when it is an error, such as a test score of 119 on a test marked out of 100. Keeping it would distort the mean and standard deviation.
 
-Excluding outliers misrepresents the data when the extreme values are the story. In my work, the rare slow requests are exactly the incidents we must fix, so removing them would make the system look healthy when users are suffering. The same is true for fraud in bank transactions or a dangerous side effect in a drug trial.
+Excluding outliers misrepresents the data when the extreme values are the story. In my work, the rare slow requests are exactly the incidents we must fix, so removing them would make the system look healthy when users are suffering. The same holds for bank fraud.
 
 **Question for the class:** When you find an outlier in your own data, how do you decide whether it is an error or an important real case?
 
