@@ -4,7 +4,7 @@
 **Student:** Nicanor Maswili
 **Due:** November 25, 2026
 
-This paper summarizes two sets of test scores, first with numerical measures and then with graphs, following the methods in Chapter 2 of Illowsky et al. (2023).
+This paper summarizes two sets of test scores with numerical measures and graphs.
 
 ## Question 1
 
@@ -54,7 +54,7 @@ The sample variance is s² = Σ(x − x̄)² / (n − 1) (Illowsky et al., 2023,
 - **Variance:** s² = 2673.56 / 8 ≈ **334.19**
 - **Standard deviation:** s = √334.19 ≈ **18.28**
 
-Dividing by n − 1 corrects for using the sample mean instead of the unknown population mean (MarinStatsLectures-R Programming & Statistics, 2018). If the nine scores were treated as the whole population, σ² = 2673.56 / 9 ≈ 297.06 and σ ≈ 17.24.
+Dividing by n − 1 corrects for using the sample mean (MarinStatsLectures-R Programming & Statistics, 2018). If the nine scores were treated as the whole population, σ² = 2673.56 / 9 ≈ 297.06 and σ ≈ 17.24.
 
 ### d. Equal values in (b) and (c)
 
@@ -70,6 +70,8 @@ The 25 ordered scores give a median of 84 (13th value), Q1 = 77.5, Q3 = 90.5, an
 
 - Lower fence = 77.5 − 1.5(13) = 58, so no low outliers.
 - Upper fence = 90.5 + 1.5(13) = 110, so **119 is a potential outlier**.
+
+The NIST handbook adds outer fences at 3 × IQR; 119 is inside the upper outer fence of 129.5, so it is a mild rather than extreme outlier (National Institute of Standards and Technology [NIST], n.d.).
 
 **Figure 1**
 
@@ -95,11 +97,13 @@ Most scores fall between 70 and 99, and the isolated bar at 110 to 119 is the po
 
 The upper whisker stops at 95, the largest value inside the fence, and 119 is drawn as a separate point (MarinStatsLectures-R Programming & Statistics, 2019b).
 
-All three graphs agree that 119 is a potential outlier. It should be checked rather than deleted: it may be a typing error for a score like 91, or a real bonus score above 100.
+All three graphs flag 119. It should be checked, not deleted: it may be a typing error or a real bonus score.
 
 ## References
 
 Illowsky, B., Dean, S., Birmajer, D., Blount, B., Boyd, S., Einsohn, M., Helmreich, J., Kenyon, L., Lee, S., & Taub, J. (2023). *Introductory statistics* (2nd ed.). OpenStax. https://openstax.org/details/books/introductory-statistics-2e
+
+National Institute of Standards and Technology. (n.d.). *What are outliers in the data?* In *NIST/SEMATECH e-handbook of statistical methods* (Section 7.1.6). https://www.itl.nist.gov/div898/handbook/prc/section1/prc16.htm
 
 MarinStatsLectures-R Programming & Statistics. (2018, June 19). *Standard deviation & degrees of freedom explained | Statistics tutorial | MarinStatsLectures* [Video]. YouTube. https://www.youtube.com/watch?v=nlm9gfso4mw
 
