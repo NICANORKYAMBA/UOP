@@ -40,9 +40,9 @@ Can people of different faiths, or of no faith, agree on what is right? Thomas A
 
 ## Why Should a Follower Be Moral?
 
-For Aquinas, being moral is not obeying an outside authority for its own sake; it is becoming what we are made to be. Because good is what all things seek, acting well fulfills our nature, and acting badly works against it (Aquinas, 1920, I-II, q. 94, a. 2). A person who lies or harms others damages the social and rational nature that makes their own life go well.
+For Aquinas, being moral is not obeying an outside authority for its own sake; it is becoming what we are made to be. Because good is what all things seek, acting well fulfills our nature, and acting badly works against it (Aquinas, 1920, I-II, q. 94, a. 2). Aquinas joins Aristotle's idea that good acts are those that lead to human flourishing with Christian theology (Floyd, n.d.). A person who lies or harms others damages the social and rational nature that makes their own life go well.
 
-This rationale is deeply religious, but not arbitrary. The order in nature comes from a wise and good God, so following it means sharing in God's own reason (Aquinas, 1920, I-II, q. 91, a. 2). This is how Aquinas avoids the Euthyphro dilemma: God commands acts because they are good, and they are good because they fit the nature God created, so God's commands are neither arbitrary nor unnecessary (Dimmock & Fisher, 2017; Morgan, 2019). God's commands also act as a "failsafe," since human reasoning can go wrong while God's cannot (Morgan, 2019). Finally, the deepest human inclination is to know God, so living morally prepares a person for their final happiness in union with God.
+This rationale is deeply religious, but not arbitrary. The order in nature comes from a wise and good God, so following it means sharing in God's own reason (Aquinas, 1920, I-II, q. 91, a. 2). This is how Aquinas avoids the Euthyphro dilemma: God commands acts because they are good, and they are good because they fit the nature God created, so God's commands are neither arbitrary nor unnecessary (Dimmock & Fisher, 2017; Morgan, 2019). God's commands also act as a "failsafe," since human reasoning can go wrong while God's cannot (Morgan, 2019). Finally, Aquinas holds that complete happiness cannot be reached in this life; it lies in beatitude, a supernatural union with God, who alone is perfectly good (Floyd, n.d.). Living morally is the path toward that end.
 
 ## Personal Reflection
 
@@ -57,6 +57,8 @@ Overall, I accept natural law's central claims, that morality is objective, root
 Aquinas, T. (1920). *Summa theologica* (Fathers of the English Dominican Province, Trans.; 2nd rev. ed.). New Advent. https://www.newadvent.org/summa/2094.htm (Original work written 1265-1274)
 
 Dimmock, M., & Fisher, A. (2017). Aquinas's natural law theory. In *Ethics for A-level* (pp. 65-77). Open Book Publishers. https://www.jstor.org/stable/j.ctt1wc7r6j.8
+
+Floyd, S. (n.d.). Thomas Aquinas: Moral philosophy. In *Internet encyclopedia of philosophy*. https://iep.utm.edu/aq-moral/
 
 Morgan, J. (2019). Can we have ethics without religion? On divine command theory and natural law theory. In G. Matthews & C. Hendricks (Eds.), *Introduction to philosophy: Ethics*. Rebus Community. https://press.rebus.community/intro-to-phil-ethics/chapter/can-we-have-ethics-without-religion-on-divine-command-theory-and-natural-law-theory/
 
