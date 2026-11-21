@@ -22,10 +22,8 @@ still reference. Watt and Eng explain that foreign key rules can block that dele
 what happens to the child rows, so for orders I would block it and mark the product as
 discontinued instead. Would you allow cascade deletes anywhere in this design?
 
-Best,
-Nicanor
+References
 
-Reference:
 Watt, A., & Eng, N. (2014). *Database design* (2nd ed.). BCcampus.
 https://opentextbc.ca/dbdesign01/chapter/chapter-9-integrity-rules-and-constraints/
 
@@ -45,10 +43,8 @@ cached product page that can be rebuilt at any time. The price copied into Order
 another safe kind of redundancy, because it never needs to change after the sale. How would you
 keep the cache from showing a stock level that is already out of date during a flash sale?
 
-Best,
-Nicanor
+References
 
-Reference:
 Sharma, N., Perniu, L., Chong, R. F., Iyer, A., Nandan, C., Mitea, A. C., Nonvinkere, M., &
 Danubianu, M. (2010). *Database fundamentals*. IBM Corporation.
 https://public.dhe.ibm.com/software/dw/db2/express-c/wiki/Database_fundamentals.pdf
