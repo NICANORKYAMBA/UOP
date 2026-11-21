@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 AUTHOR = "Nicanor Maswili"
 AFFIL = "Department of Computer Science, University of the People"
 COURSE = "PHIL 1404: Introduction to Global Ethics"
-INSTRUCTOR = ""
+INSTRUCTOR = "Louis Aurel Messi"
 
 # (source, output, title_page, due date)
 JOBS = [
